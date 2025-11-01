@@ -1,0 +1,27 @@
+[13:42:31] [main/INFO]: Setting user: Player953
+[13:42:35] [Client thread/INFO]: LWJGL Version: 2.9.1
+[13:42:46] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:NotEnoughItems, FMLFileResourcePack:HTGT6, FMLFileResourcePack:NEI Addons: Developer Tools, FMLFileResourcePack:NEI Addons: Applied Energistics 2, FMLFileResourcePack:NEI Addons: Botany, FMLFileResourcePack:NEI Addons: Forestry, FMLFileResourcePack:NEI Addons: Crafting Tables, FMLFileResourcePack:NEI Addons, FMLFileResourcePack:NEI Addons: Ex Nihilo, FMLFileResourcePack:NEI Integration
+[13:42:48] [Client thread/INFO]: Created: 16x16 textures/blocks-atlas
+[13:42:48] [Client thread/INFO]: Created: 16x16 textures/items-atlas
+[13:42:49] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:NotEnoughItems, FMLFileResourcePack:HTGT6, FMLFileResourcePack:NEI Addons: Developer Tools, FMLFileResourcePack:NEI Addons: Applied Energistics 2, FMLFileResourcePack:NEI Addons: Botany, FMLFileResourcePack:NEI Addons: Forestry, FMLFileResourcePack:NEI Addons: Crafting Tables, FMLFileResourcePack:NEI Addons, FMLFileResourcePack:NEI Addons: Ex Nihilo, FMLFileResourcePack:NEI Integration
+[13:42:49] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[13:42:49] [Client thread/INFO]: Created: 4096x2048 textures/items-atlas
+[13:43:30] [Sound Library Loader/INFO]: Sound engine started
+[13:43:30] [Sound Library Loader/INFO]: Sound engine started
+[13:49:56] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[13:49:56] [Server thread/INFO]: Generating keypair
+[13:49:57] [Server thread/INFO]: Preparing start region for level 0
+[13:49:57] [Server thread/INFO]: Changing view distance to 4, from 10
+[13:49:57] [Server thread/INFO]: Player953[local:E:178b92a6] logged in with entity id 270 at (137.40868373684475, 68.0, 194.30000001192093)
+[13:49:57] [Server thread/INFO]: Player953 присоединился к игре
+[13:50:29] [Server thread/INFO]: Saving and pausing game...
+[13:50:29] [Server thread/INFO]: Saving chunks for level 'Новый мир'/Overworld
+[13:50:29] [Server thread/INFO]: Saving chunks for level 'Новый мир'/Nether
+[13:50:29] [Server thread/INFO]: Saving chunks for level 'Новый мир'/The End
+[13:50:49] [Client thread/INFO]: Stopping!
+[13:50:49] [Server thread/INFO]: Stopping server
+[13:50:49] [Server thread/INFO]: Saving players
+[13:50:49] [Server thread/INFO]: Saving worlds
+[13:50:49] [Server thread/INFO]: Saving chunks for level 'Новый мир'/Overworld
+[13:50:49] [Server thread/INFO]: Saving chunks for level 'Новый мир'/Nether
+[13:50:49] [Server thread/INFO]: Saving chunks for level 'Новый мир'/The End

@@ -1,0 +1,122 @@
+package com.mod.htgt6.common.handler;
+
+import com.mod.htgt6.common.item.avaritia.singularies.InfiSing;
+import com.mod.htgt6.common.item.galaxy.alloys.*;
+import com.mod.htgt6.common.item.galaxy.dusts.*;
+import com.mod.htgt6.common.item.galaxy.schemas.RocketSchema1;
+import com.mod.htgt6.common.item.greg.circuits.UVCirc;
+import com.mod.htgt6.common.item.greg.circuits.ZPMcirc;
+import com.mod.htgt6.common.item.greg.coils.*;
+import com.mod.htgt6.common.item.greg.materials.CelTit.CelestialTitaniumGear;
+import com.mod.htgt6.common.item.greg.materials.CelTit.IngotASTitanium;
+import com.mod.htgt6.common.item.greg.materials.quantinum.QuantinumGear;
+import com.mod.htgt6.common.item.greg.materials.quantinum.QuantinumIngot;
+import com.mod.htgt6.common.item.greg.technological.SMDcond;
+import com.mod.htgt6.common.item.greg.technological.SMDdiode;
+import com.mod.htgt6.common.item.greg.technological.SMDreduct;
+import com.mod.htgt6.common.item.greg.technological.ZPMSocket;
+import com.mod.htgt6.common.item.htgt6.ModLogo;
+import com.mod.htgt6.common.item.htgt6.govno;
+import com.mod.htgt6.common.item.nova.NovaCrystall;
+import com.mod.htgt6.common.item.nova.NovaCrystallAlloy;
+import com.mod.htgt6.common.item.nova.NovaCrystallDust;
+import cpw.mods.fml.common.registry.GameRegistry;
+
+public class ModItems {
+    public static final PlutoDust PLUTO_DUST = new PlutoDust();
+    public static final VelaADust VELA_A_DUST = new VelaADust();
+    public static final govno GOVNO = new govno();
+    public static final CompositeT1 COMPOSITE_T_1 = new CompositeT1();
+    public static final CompositeT2 COMPOSITE_T_2 = new CompositeT2();
+    public static final CompositeT3 COMPOSITE_T_3 = new CompositeT3();
+    public static final CompositeT4 COMPOSITE_T_4 = new CompositeT4();
+    public static final CompositeT5 COMPOSITE_T_5 = new CompositeT5();
+
+    public static final CompositeT6 COMPOSITE_T_6 = new CompositeT6();
+    public static final QuantinumIngot QUANTINUM_INGOT = new QuantinumIngot();
+    public static final ZPMcirc ZP_MCIRC = new ZPMcirc();
+    public  static final SMDcond SM_DCOND = new SMDcond();
+    public static final InfiSing INFI_SING = new InfiSing();
+    public static final SMDdiode SM_DDIODE = new SMDdiode();
+    public static final NovaCrystallAlloy NOVA_CRYSTALL_ALLOY = new NovaCrystallAlloy();
+    public static final NovaCrystallDust NOVA_CRYSTALL_DUST = new NovaCrystallDust();
+    public  static final SMDreduct SM_DREDUCT = new SMDreduct();
+    public static final ZPMSocket ZPM_SOCKET = new ZPMSocket();
+    public static final DustGanym DUST_GANYM = new DustGanym();
+    public static final DustIO DUST_IO = new DustIO();
+
+    public static final dustCallisto DUST_CALLISTO = new dustCallisto();
+    public static final NovaCrystall NOVA_CRYSTALL = new NovaCrystall();
+    public static final ModLogo MOD_LOGO = new ModLogo();
+    public static final QuantinumGear QUANTINUM_GEAR = new QuantinumGear();
+    public static final UVCirc UV_CIRC = new UVCirc();
+    public static final dustVenus DUST_VENUS = new dustVenus();
+    public static final CelestialTitaniumGear CELESTIAL_TITANIUM_GEAR = new CelestialTitaniumGear();
+    public static final dustMercury DUST_MERCURY = new dustMercury();
+    public static final dustCeres DUST_CERES = new dustCeres();
+    public static final dustEurope DUST_EUROPE = new dustEurope();
+    public static final dustEnc DUST_ENC = new dustEnc();
+    public static final IngotASTitanium INGOT_AS_TITANIUM = new IngotASTitanium();
+    public static final RocketSchema1 ROCKET_SCHEMA_1 = new RocketSchema1();
+    public static final ULVcoil UL_VCOIL = new ULVcoil();
+    public static final LVCOIL LVCOIL = new LVCOIL();
+    public static final MVcoil M_VCOIL = new MVcoil();
+    public static final HVcoil H_VCOIL = new HVcoil();
+    public static final EVcoil E_VCOIL = new EVcoil();
+    public static final IVcoil I_VCOIL = new IVcoil();
+    public static final LUVcoil LU_VCOIL = new LUVcoil();
+    public static final ZPMcoil ZP_MCOIL = new ZPMcoil();
+    public static final UVcoil U_VCOIL = new UVcoil();
+    public static final PUV1coil PUV_1_COIL = new PUV1coil();
+    public static final InfiCoil INFI_COIL = new InfiCoil();
+    public static void register() {
+        GameRegistry.registerItem(INFI_COIL, "INFIcoil");
+        GameRegistry.registerItem(PUV_1_COIL, "PUV1coil");
+        GameRegistry.registerItem(U_VCOIL, "UVcoil");
+        GameRegistry.registerItem(ZP_MCOIL, "ZPMcoil");
+        GameRegistry.registerItem(LU_VCOIL, "LUVcoil");
+        GameRegistry.registerItem(I_VCOIL, "IVcoil");
+        GameRegistry.registerItem(E_VCOIL, "EVcoil");
+        GameRegistry.registerItem(H_VCOIL, "HVcoil");
+        GameRegistry.registerItem(M_VCOIL, "MVcoil");
+        GameRegistry.registerItem(LVCOIL, "LVCOIL");
+        GameRegistry.registerItem(UL_VCOIL, "ULVcoil");
+        GameRegistry.registerItem(ROCKET_SCHEMA_1, "RocketSchema1");
+        GameRegistry.registerItem(INGOT_AS_TITANIUM, "IngotASTitanium");
+        GameRegistry.registerItem(DUST_ENC, "dustEnc");
+        GameRegistry.registerItem(DUST_EUROPE, "dustEurope");
+        GameRegistry.registerItem(DUST_CERES, "dustCeres");
+        GameRegistry.registerItem(DUST_MERCURY, "dustMercury");
+        GameRegistry.registerItem(DUST_VENUS, "dustVenus");
+        GameRegistry.registerItem(CELESTIAL_TITANIUM_GEAR, "CelestialTitaniumGear");
+        GameRegistry.registerItem(UV_CIRC, "UVCirc");
+        GameRegistry.registerItem(QUANTINUM_GEAR, "QuantinumGear");
+        GameRegistry.registerItem(MOD_LOGO, "ModLogo");
+        GameRegistry.registerItem(NOVA_CRYSTALL, "NovaCrystall");
+        GameRegistry.registerItem(DUST_CALLISTO, "DustCallisto");
+        GameRegistry.registerItem(DUST_IO, "DustIO");
+        GameRegistry.registerItem(DUST_GANYM, "DustGanym");
+        GameRegistry.registerItem(ZPM_SOCKET, "ZPMSocket");
+        GameRegistry.registerItem(PLUTO_DUST, "PlutoDust");
+        GameRegistry.registerItem(VELA_A_DUST, "VelaADust");
+        GameRegistry.registerItem(GOVNO, "Govno");
+        GameRegistry.registerItem(COMPOSITE_T_1, "CompositeT1");
+        GameRegistry.registerItem(COMPOSITE_T_2, "CompositeT2");
+        GameRegistry.registerItem(COMPOSITE_T_3, "CompositeT3");
+        GameRegistry.registerItem(COMPOSITE_T_4, "CompositeT4");
+        GameRegistry.registerItem(COMPOSITE_T_5, "CompositeT5");
+        GameRegistry.registerItem(COMPOSITE_T_6, "CompositeT6");
+        GameRegistry.registerItem(QUANTINUM_INGOT, "QuantinumIngot");
+        GameRegistry.registerItem(ZP_MCIRC, "ZPMCirc");
+        GameRegistry.registerItem(SM_DCOND, "SMDcond");
+        GameRegistry.registerItem(SM_DREDUCT, "SMDreduct");
+        GameRegistry.registerItem(INFI_SING, "InfiSing");
+        GameRegistry.registerItem(SM_DDIODE, "SMDdiode");
+        GameRegistry.registerItem(NOVA_CRYSTALL_ALLOY, "NovaCrystalAlloy");
+        GameRegistry.registerItem(NOVA_CRYSTALL_DUST, "NovaCrystalDust");
+
+
+
+    }
+
+}

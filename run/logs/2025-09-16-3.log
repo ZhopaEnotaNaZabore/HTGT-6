@@ -1,0 +1,23 @@
+[16:38:33] [main/INFO]: Setting user: Player671
+[16:38:34] [Client thread/INFO]: LWJGL Version: 2.9.1
+[16:38:40] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:NotEnoughItems, FMLFileResourcePack:HTGT6 Core, FMLFileResourcePack:NEI Addons: Developer Tools, FMLFileResourcePack:NEI Addons: Applied Energistics 2, FMLFileResourcePack:NEI Addons: Botany, FMLFileResourcePack:NEI Addons: Forestry, FMLFileResourcePack:NEI Addons: Crafting Tables, FMLFileResourcePack:NEI Addons, FMLFileResourcePack:NEI Addons: Ex Nihilo, FMLFileResourcePack:NEI Integration
+[16:38:41] [Sound Library Loader/INFO]: Sound engine started
+[16:38:41] [Client thread/INFO]: Created: 16x16 textures/blocks-atlas
+[16:38:41] [Client thread/INFO]: Created: 16x16 textures/items-atlas
+[16:38:41] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:NotEnoughItems, FMLFileResourcePack:HTGT6 Core, FMLFileResourcePack:NEI Addons: Developer Tools, FMLFileResourcePack:NEI Addons: Applied Energistics 2, FMLFileResourcePack:NEI Addons: Botany, FMLFileResourcePack:NEI Addons: Forestry, FMLFileResourcePack:NEI Addons: Crafting Tables, FMLFileResourcePack:NEI Addons, FMLFileResourcePack:NEI Addons: Ex Nihilo, FMLFileResourcePack:NEI Integration
+[16:38:41] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[16:38:41] [Client thread/INFO]: Created: 2048x2048 textures/items-atlas
+[16:38:42] [Sound Library Loader/INFO]: Sound engine started
+[16:38:45] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[16:38:45] [Server thread/INFO]: Generating keypair
+[16:38:46] [Server thread/INFO]: Preparing start region for level 0
+[16:38:46] [Server thread/INFO]: Changing view distance to 4, from 10
+[16:38:46] [Server thread/INFO]: Player671[local:E:623836a1] logged in with entity id 283 at (140.08120886834533, 68.0, 197.30692988919947)
+[16:38:46] [Server thread/INFO]: Player671 присоединился к игре
+[16:38:49] [Server thread/INFO]: Player671 заработал достижение [Проверить карманы]
+[16:38:49] [Client thread/INFO]: [CHAT] Player671 заработал достижение [Проверить карманы]
+[16:38:51] [Client thread/INFO]: [CHAT] День 2. 6:00
+[16:38:53] [Server thread/INFO]: [Player671: Дано [Пыль каменной породы Энцелада] * 1 игроку Player671]
+[16:38:53] [Client thread/INFO]: [CHAT] Дано [Пыль каменной породы Энцелада] * 1 игроку Player671
+[16:39:05] [Server thread/INFO]: [Player671: Дано [Пыль каменной породы меркурия] * 1 игроку Player671]
+[16:39:05] [Client thread/INFO]: [CHAT] Дано [Пыль каменной породы меркурия] * 1 игроку Player671

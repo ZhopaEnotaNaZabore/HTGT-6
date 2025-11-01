@@ -1,0 +1,81 @@
+itemGroup.HTGT6=HTGT6_Core
+
+//Dusts
+item.PlutoDust.name=Пыль каменной породы плутона
+item.VelaADust.name=Пыль оледенелой породы Велы А
+item.DustGanym.name=Пыль каменной породы ганимеда
+item.DustIO.name=Пыль каменной породы ИО
+item.DustCallisto.name=Пыль каменной породы Каллисто
+item.dustVenus.name=Пыль каменной породы венеры
+item.dustMercury.name=Пыль каменной породы меркурия
+item.dustCeres.name=Пыль каменной породы цереры
+item.dustEurope.name= Пыль каменной породы Европы
+item.dustEnc.name=Пыль каменной породы Энцелада
+
+//food
+item.Govno.name=Кучка еще теплого аппетитного говница
+//Tile
+tile.EternalBlock.name=X-RAY блок
+
+//Composites
+item.CompositeT1.name=Композитный сплав Т1
+item.CompositeT2.name=Композитный сплав Т2
+item.CompositeT3.name=Композитный сплав Т3
+item.CompositeT4.name=Композитный сплав Т4
+item.CompositeT5.name=Композитный сплав Т5
+item.CompositeT6.name=Композитный сплав Т6
+
+//ingots
+item.QuantinumIngot.name=Слиток Квантинума
+item.IngotASTitanium.name=Слиток небесного титана
+
+//gears
+item.QuantinumGear.name=Шестерня из квантиниума
+item.CelestialTitGear.name=Шестерня из небесного титана
+
+//coils
+item.ULVcoil.name=Внутренняя трансформаторная катушка(ULV)
+item.LVCOIL.name=Внутренняя трансформаторная катушка(LV)
+item.MVcoil.name=Внутренняя трансформаторная катушка(MV)
+item.HVcoil.name=Внутренняя трансформаторная катушка(HV)
+item.EVcoil.name=Внутренняя трансформаторная катушка(EV)
+item.IVcoil.name=Внутренняя трансформаторная катушка(IV)
+item.LUVcoil.name=Внутренняя трансформаторная катушка(LUV)
+item.ZPMcoil.name=Внутренняя трансформаторная катушка(ZPM)
+item.UVcoil.name=Внутренняя трансформаторная катушка(UV)
+item.PUV1coil.name=Внутренняя трансформаторная катушка(PUV1)
+item.InfiCoil.name=Внутренняя трансформаторная катушка(§5INFINITY)
+
+
+
+
+//Additional
+item.CookingPot.name=кухонный котелок
+item.NovaCrystall.name=Кристалл NOVA
+item.ModLogo.name=Просто няшка
+
+//Technological
+item.ZPMCirc.name=Кластер кристаллопроцессоров (ZPM схема)
+item.ZPMSocket.name= Корпус процессора (ZPM)
+item.SMDcond.name=SMD конденсатор
+item.SMDdiode.name=SMD диод
+item.SMDreduct.name=SMD редуктор
+item.UVCirc.name=Схема сверхбыстрого вычисления(UV)
+
+
+//Avaritia
+item.InfiSing.name=Сингулярность из бесконечности
+
+//NOVACRAFT
+item.NovaCrystallAlloyIngot.name= Слиток "Nova" сплава
+item.NovaCrystallDust.name= Кристальная пыль "Nova"
+
+
+//achieve
+achievement.Welcome_to_the_HiTech6=Добро пожаловать на HiTech6!
+achievement.Welcome_to_the_HiTech6.desc=Начните свой путь на HiTech6!
+achievement.Get_ULV_COIL=Внутренний трансформатор ULV!
+
+
+//TILE
+tile.Furn.name=Тестовый механизм
