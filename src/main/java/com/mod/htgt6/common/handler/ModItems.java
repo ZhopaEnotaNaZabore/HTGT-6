@@ -11,9 +11,9 @@ import com.mod.htgt6.common.item.greg.materials.CelTit.CelestialTitaniumGear;
 import com.mod.htgt6.common.item.greg.materials.CelTit.IngotASTitanium;
 import com.mod.htgt6.common.item.greg.materials.quantinum.QuantinumGear;
 import com.mod.htgt6.common.item.greg.materials.quantinum.QuantinumIngot;
-import com.mod.htgt6.common.item.greg.technological.SMDcond;
-import com.mod.htgt6.common.item.greg.technological.SMDdiode;
-import com.mod.htgt6.common.item.greg.technological.SMDreduct;
+import com.mod.htgt6.common.item.greg.technological.SMD.SMDcond;
+import com.mod.htgt6.common.item.greg.technological.SMD.SMDdiode;
+import com.mod.htgt6.common.item.greg.technological.SMD.SMDreduct;
 import com.mod.htgt6.common.item.greg.technological.ZPMSocket;
 import com.mod.htgt6.common.item.htgt6.ModLogo;
 import com.mod.htgt6.common.item.htgt6.govno;
@@ -21,6 +21,7 @@ import com.mod.htgt6.common.item.nova.NovaCrystall;
 import com.mod.htgt6.common.item.nova.NovaCrystallAlloy;
 import com.mod.htgt6.common.item.nova.NovaCrystallDust;
 import cpw.mods.fml.common.registry.GameRegistry;
+import com.mod.htgt6.common.item.greg.technological.misc.*;
 
 public class ModItems {
     public static final PlutoDust PLUTO_DUST = new PlutoDust();
@@ -69,6 +70,7 @@ public class ModItems {
     public static final UVcoil U_VCOIL = new UVcoil();
     public static final PUV1coil PUV_1_COIL = new PUV1coil();
     public static final InfiCoil INFI_COIL = new InfiCoil();
+    public static final Qeye QEYE= new Qeye();
     public static void register() {
         GameRegistry.registerItem(INFI_COIL, "INFIcoil");
         GameRegistry.registerItem(PUV_1_COIL, "PUV1coil");
@@ -114,6 +116,7 @@ public class ModItems {
         GameRegistry.registerItem(SM_DDIODE, "SMDdiode");
         GameRegistry.registerItem(NOVA_CRYSTALL_ALLOY, "NovaCrystalAlloy");
         GameRegistry.registerItem(NOVA_CRYSTALL_DUST, "NovaCrystalDust");
+        GameRegistry.registerItem(QEYE, "Qeye");
 
 
 

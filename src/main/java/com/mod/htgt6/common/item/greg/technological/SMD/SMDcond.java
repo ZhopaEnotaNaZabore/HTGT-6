@@ -1,4 +1,4 @@
-package com.mod.htgt6.common.item.greg.technological;
+package com.mod.htgt6.common.item.greg.technological.SMD;
 import com.mod.htgt6.HTGT6;
 import com.mod.htgt6.common.handler.ModTab;
 import net.minecraft.item.Item;
