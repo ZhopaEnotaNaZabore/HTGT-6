@@ -78,4 +78,9 @@ achievement.Get_ULV_COIL=Внутренний трансформатор ULV!
 
 
 //TILE
-tile.Furn.name=Тестовый механизм
+tile.Furn.name=Тестовый механизм Furn
+
+
+//misc
+item.Qeye.name=Квантовое око
+item.Qeye.tooltip=Вгзляд в пустоту
