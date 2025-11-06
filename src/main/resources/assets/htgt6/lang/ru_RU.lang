@@ -84,3 +84,6 @@ tile.Furn.name=Тестовый механизм Furn
 //misc
 item.Qeye.name=Квантовое око
 item.Qeye.tooltip=Вгзляд в пустоту
+
+//fluids
+tile.HelemaLiquid.name=Странная жидкость Гелемы

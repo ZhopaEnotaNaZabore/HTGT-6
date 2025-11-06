@@ -2,6 +2,7 @@ package com.mod.htgt6.common;
 
 import com.mod.htgt6.common.achievements.Hitech6AchieveDatabase;
 import com.mod.htgt6.common.achievements.Hitech6Achievments;
+import com.mod.htgt6.common.handler.FluidDatabase;
 import com.mod.htgt6.common.handler.ModBlocks;
 import com.mod.htgt6.common.handler.ModItems;
 import com.mod.htgt6.common.handler.recipes;
@@ -15,6 +16,7 @@ public class CommonProxy {
     public void preInit(FMLPreInitializationEvent event) {
         ModItems.register();
         ModBlocks.register();
+        FluidDatabase.register();
     }
     public void init(FMLInitializationEvent event) {
         Hitech6AchieveDatabase.initialization();

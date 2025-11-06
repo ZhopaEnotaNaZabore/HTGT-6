@@ -8,9 +8,12 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 
-@Mod(modid = HTGT6.MOD_ID)
+
+@Mod(modid = HTGT6.MOD_ID, version = "1.0.4")
 public class HTGT6 {
     public static final String MOD_ID = "HTGT6";
+
+
 
 
      @SidedProxy(

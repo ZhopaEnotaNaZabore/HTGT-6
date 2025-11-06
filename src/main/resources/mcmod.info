@@ -1,7 +1,7 @@
 [{
   "modid": "HTGT6",
   "name": "HTGT6 Core",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "authorList" : [Teysera->dev, Supp Ayka,],
   "description": "Addons for HiTechGregTech6 modpack from GYMMC team",
   "url": "GoodMinecraft.com",
