@@ -8,3 +8,6 @@ Source code for Hitech6 core mod
 Gradle 4.4.1
 
 //BuilGradle настроен для работы с использованием MODID как рут провайдер.
+
+Последний тестовый релиз
+Build/libs/HTGT6 DEV
