@@ -1,5 +1,6 @@
 package com.mod.htgt6.common.handler;
 
+import com.mod.htgt6.common.item.greg.materials.arcanite.*;
 import com.mod.htgt6.common.item.avaritia.singularies.InfiSing;
 import com.mod.htgt6.common.item.galaxy.alloys.*;
 import com.mod.htgt6.common.item.galaxy.dusts.*;
@@ -7,13 +8,9 @@ import com.mod.htgt6.common.item.galaxy.schemas.RocketSchema1;
 import com.mod.htgt6.common.item.greg.circuits.UVCirc;
 import com.mod.htgt6.common.item.greg.circuits.ZPMcirc;
 import com.mod.htgt6.common.item.greg.coils.*;
-import com.mod.htgt6.common.item.greg.materials.CelTit.CelestialTitaniumGear;
-import com.mod.htgt6.common.item.greg.materials.CelTit.IngotASTitanium;
-import com.mod.htgt6.common.item.greg.materials.quantinum.QuantinumGear;
-import com.mod.htgt6.common.item.greg.materials.quantinum.QuantinumIngot;
-import com.mod.htgt6.common.item.greg.technological.SMD.SMDcond;
-import com.mod.htgt6.common.item.greg.technological.SMD.SMDdiode;
-import com.mod.htgt6.common.item.greg.technological.SMD.SMDreduct;
+import com.mod.htgt6.common.item.greg.materials.CelTit.*;
+import com.mod.htgt6.common.item.greg.materials.quantinum.*;
+import com.mod.htgt6.common.item.greg.technological.SMD.*;
 import com.mod.htgt6.common.item.greg.technological.ZPMSocket;
 import com.mod.htgt6.common.item.htgt6.ModLogo;
 import com.mod.htgt6.common.item.htgt6.govno;
@@ -71,7 +68,15 @@ public class ModItems {
     public static final PUV1coil PUV_1_COIL = new PUV1coil();
     public static final InfiCoil INFI_COIL = new InfiCoil();
     public static final Qeye QEYE= new Qeye();
+    public static final rotorCelTit ROTOR_CEL_TIT = new rotorCelTit();
+public static final rodCelTit ROD_CEL_TIT = new rodCelTit();
+public static final rotorQuantinum ROTOR_QUANTINUM = new rotorQuantinum();
+public static final ingotArcanite INGOT_ARCANITE = new ingotArcanite();
     public static void register() {
+        GameRegistry.registerItem(INGOT_ARCANITE, "ingotArcanite");
+        GameRegistry.registerItem(ROTOR_QUANTINUM, "rotorQuantinum");
+        GameRegistry.registerItem(ROD_CEL_TIT, "rodCelTit");
+        GameRegistry.registerItem(ROTOR_CEL_TIT,"rotorCelTit");
         GameRegistry.registerItem(INFI_COIL, "INFIcoil");
         GameRegistry.registerItem(PUV_1_COIL, "PUV1coil");
         GameRegistry.registerItem(U_VCOIL, "UVcoil");

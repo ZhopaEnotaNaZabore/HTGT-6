@@ -26,12 +26,23 @@ item.CompositeT5.name=Композитный сплав Т5
 item.CompositeT6.name=Композитный сплав Т6
 
 //ingots
+//green
 item.QuantinumIngot.name=Слиток Квантинума
-item.IngotASTitanium.name=Слиток небесного титана
+//dark purple
+item.IngotASTitanium.name=Слиток Астрального титана
+//lime
+item.ingotArcanite.name=Слиток Арканита
+
+//rotors
+item.rotorCelTit.name=Ротор из Астрального титана
+item.rotorQuantinum.name=Ротор из Квантинума
+
+//rods
+item.rodCelTit.name=Стержень из Астрального титана
 
 //gears
 item.QuantinumGear.name=Шестерня из квантиниума
-item.CelestialTitGear.name=Шестерня из небесного титана
+item.CelestialTitGear.name=Шестерня из Астрального титана
 
 //coils
 item.ULVcoil.name=Внутренняя трансформаторная катушка(ULV)
