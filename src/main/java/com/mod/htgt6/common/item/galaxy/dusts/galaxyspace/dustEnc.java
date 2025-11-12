@@ -1,4 +1,4 @@
-package com.mod.htgt6.common.item.galaxy.dusts;
+package com.mod.htgt6.common.item.galaxy.dusts.galaxyspace;
 
 import com.mod.htgt6.HTGT6;
 import com.mod.htgt6.common.handler.ModTab;

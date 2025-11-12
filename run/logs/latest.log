@@ -1,29 +1,23 @@
-[14:18:43] [main/INFO]: Setting user: Player453
-[14:18:44] [Client thread/INFO]: LWJGL Version: 2.9.1
-[14:18:49] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:NotEnoughItems, FMLFileResourcePack:HTGT6, FMLFileResourcePack:NEI Addons: Developer Tools, FMLFileResourcePack:NEI Addons: Applied Energistics 2, FMLFileResourcePack:NEI Addons: Botany, FMLFileResourcePack:NEI Addons: Forestry, FMLFileResourcePack:NEI Addons: Crafting Tables, FMLFileResourcePack:NEI Addons, FMLFileResourcePack:NEI Addons: Ex Nihilo, FMLFileResourcePack:NEI Integration
-[14:18:51] [Client thread/INFO]: Created: 16x16 textures/blocks-atlas
-[14:18:51] [Client thread/INFO]: Created: 16x16 textures/items-atlas
-[14:18:52] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:NotEnoughItems, FMLFileResourcePack:HTGT6, FMLFileResourcePack:NEI Addons: Developer Tools, FMLFileResourcePack:NEI Addons: Applied Energistics 2, FMLFileResourcePack:NEI Addons: Botany, FMLFileResourcePack:NEI Addons: Forestry, FMLFileResourcePack:NEI Addons: Crafting Tables, FMLFileResourcePack:NEI Addons, FMLFileResourcePack:NEI Addons: Ex Nihilo, FMLFileResourcePack:NEI Integration
-[14:18:53] [Sound Library Loader/INFO]: Sound engine started
-[14:18:53] [Client thread/INFO]: Created: 4096x2048 textures/blocks-atlas
-[14:18:53] [Client thread/INFO]: Created: 4096x2048 textures/items-atlas
-[14:18:54] [Sound Library Loader/INFO]: Sound engine started
-[14:19:15] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
-[14:19:15] [Server thread/INFO]: Generating keypair
-[14:19:15] [Server thread/INFO]: Preparing start region for level 0
-[14:19:16] [Server thread/INFO]: Changing view distance to 4, from 10
-[14:19:16] [Server thread/INFO]: Player453[local:E:33bed21a] logged in with entity id 267 at (139.71586059925153, 68.0, 195.33760742900265)
-[14:19:16] [Server thread/INFO]: Player453 присоединился к игре
-[14:19:17] [Server thread/INFO]: Saving and pausing game...
-[14:19:17] [Server thread/INFO]: Saving chunks for level 'Новый мир'/Overworld
-[14:19:17] [Server thread/INFO]: Saving chunks for level 'Новый мир'/Nether
-[14:19:17] [Server thread/INFO]: Saving chunks for level 'Новый мир'/The End
-[14:19:22] [Server thread/INFO]: [Player453: Дано [Слиток Арканита] * 1 игроку Player453]
-[14:19:22] [Client thread/INFO]: [CHAT] Дано [Слиток Арканита] * 1 игроку Player453
-[14:19:27] [Client thread/INFO]: Stopping!
-[14:19:27] [Server thread/INFO]: Stopping server
-[14:19:27] [Server thread/INFO]: Saving players
-[14:19:27] [Server thread/INFO]: Saving worlds
-[14:19:27] [Server thread/INFO]: Saving chunks for level 'Новый мир'/Overworld
-[14:19:27] [Server thread/INFO]: Saving chunks for level 'Новый мир'/Nether
-[14:19:27] [Server thread/INFO]: Saving chunks for level 'Новый мир'/The End
+[10:00:20] [main/INFO]: Setting user: Player828
+[10:00:22] [Client thread/INFO]: LWJGL Version: 2.9.1
+[10:00:41] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:NotEnoughItems, FMLFileResourcePack:HTGT6, FMLFileResourcePack:NEI Addons: Developer Tools, FMLFileResourcePack:NEI Addons: Applied Energistics 2, FMLFileResourcePack:NEI Addons: Botany, FMLFileResourcePack:NEI Addons: Forestry, FMLFileResourcePack:NEI Addons: Crafting Tables, FMLFileResourcePack:NEI Addons, FMLFileResourcePack:NEI Addons: Ex Nihilo, FMLFileResourcePack:NEI Integration
+[10:00:46] [Sound Library Loader/INFO]: Sound engine started
+[10:00:51] [Client thread/INFO]: Created: 16x16 textures/blocks-atlas
+[10:00:51] [Client thread/INFO]: Created: 16x16 textures/items-atlas
+[10:00:51] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:NotEnoughItems, FMLFileResourcePack:HTGT6, FMLFileResourcePack:NEI Addons: Developer Tools, FMLFileResourcePack:NEI Addons: Applied Energistics 2, FMLFileResourcePack:NEI Addons: Botany, FMLFileResourcePack:NEI Addons: Forestry, FMLFileResourcePack:NEI Addons: Crafting Tables, FMLFileResourcePack:NEI Addons, FMLFileResourcePack:NEI Addons: Ex Nihilo, FMLFileResourcePack:NEI Integration
+[10:00:53] [Client thread/INFO]: Created: 4096x2048 textures/blocks-atlas
+[10:00:53] [Client thread/INFO]: Created: 4096x2048 textures/items-atlas
+[10:00:54] [Sound Library Loader/INFO]: Sound engine started
+[10:01:24] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[10:01:24] [Server thread/INFO]: Generating keypair
+[10:01:25] [Server thread/INFO]: Preparing start region for level 0
+[10:01:26] [Server thread/INFO]: Changing view distance to 4, from 10
+[10:01:26] [Server thread/INFO]: Player828[local:E:f9c06bd3] logged in with entity id 293 at (140.56599009615658, 68.0, 196.75319732504326)
+[10:01:26] [Server thread/INFO]: Player828 присоединился к игре
+[10:02:35] [Client thread/INFO]: Stopping!
+[10:02:35] [Server thread/INFO]: Stopping server
+[10:02:35] [Server thread/INFO]: Saving players
+[10:02:35] [Server thread/INFO]: Saving worlds
+[10:02:35] [Server thread/INFO]: Saving chunks for level 'Новый мир'/Overworld
+[10:02:35] [Server thread/INFO]: Saving chunks for level 'Новый мир'/Nether
+[10:02:35] [Server thread/INFO]: Saving chunks for level 'Новый мир'/The End

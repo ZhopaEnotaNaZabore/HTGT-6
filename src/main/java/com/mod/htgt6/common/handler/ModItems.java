@@ -1,9 +1,10 @@
 package com.mod.htgt6.common.handler;
 
+import com.mod.htgt6.common.item.galaxy.dusts.extendedplanets.*;
+import com.mod.htgt6.common.item.galaxy.dusts.galaxyspace.*;
 import com.mod.htgt6.common.item.greg.materials.arcanite.*;
 import com.mod.htgt6.common.item.avaritia.singularies.InfiSing;
 import com.mod.htgt6.common.item.galaxy.alloys.*;
-import com.mod.htgt6.common.item.galaxy.dusts.*;
 import com.mod.htgt6.common.item.galaxy.schemas.RocketSchema1;
 import com.mod.htgt6.common.item.greg.circuits.UVCirc;
 import com.mod.htgt6.common.item.greg.circuits.ZPMcirc;
@@ -72,7 +73,18 @@ public class ModItems {
 public static final rodCelTit ROD_CEL_TIT = new rodCelTit();
 public static final rotorQuantinum ROTOR_QUANTINUM = new rotorQuantinum();
 public static final ingotArcanite INGOT_ARCANITE = new ingotArcanite();
+public static final dustHelema DUST_HELEMA = new dustHelema();
+public static final dustDomonce DUST_DOMONCE = new dustDomonce();
+public static final dustMunce DUST_MUNCE = new dustMunce();
+public static final dustRukan DUST_RUKAN = new dustRukan();
+public static final dustPlemtis DUST_PLEMTIS = new dustPlemtis();
+
     public static void register() {
+        GameRegistry.registerItem(DUST_PLEMTIS, "dustPlemtis");
+        GameRegistry.registerItem(DUST_RUKAN, "dustRukan");
+        GameRegistry.registerItem(DUST_MUNCE, "dustMunce");
+        GameRegistry.registerItem(DUST_DOMONCE, "dustDomoce");
+        GameRegistry.registerItem(DUST_HELEMA, "dustHelema");
         GameRegistry.registerItem(INGOT_ARCANITE, "ingotArcanite");
         GameRegistry.registerItem(ROTOR_QUANTINUM, "rotorQuantinum");
         GameRegistry.registerItem(ROD_CEL_TIT, "rodCelTit");

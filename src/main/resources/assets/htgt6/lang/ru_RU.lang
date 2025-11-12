@@ -11,6 +11,11 @@ item.dustMercury.name=Пыль каменной породы меркурия
 item.dustCeres.name=Пыль каменной породы цереры
 item.dustEurope.name= Пыль каменной породы Европы
 item.dustEnc.name=Пыль каменной породы Энцелада
+item.dustHelema.name=Пыль каменной породы Гелемы
+item.dustDomonce.name=Пыль каменной породы Домонса
+item.dustMunce.name=Пыль каменной породы Мунса
+item.dustRukan.name=Пыль каменной породы Рукана
+item.dustPlemtis.name=Пыль каменной породы Плимтиса
 
 //food
 item.Govno.name=Кучка еще теплого аппетитного говница
