@@ -103,3 +103,13 @@ item.Qeye.tooltip=Вгзляд в пустоту
 
 //fluids
 tile.HelemaLiquid.name=Странная жидкость Гелемы
+
+//coins
+item.BeeCoin.name=Монета Пчеловода
+item.explorersCoin.name=Монета Странника
+item.BlacksmithCoin.name=Монета Кузнеца
+item.coinFarmer.name=Монета Фермера
+item.SteamPunkCoin.name= Монета Стимпанк
+item.WizardyCoin.name=Монета Маг-Ученик
+item.SlayerCoin.name=Монета Рейдера
+item.HiTech6Coin.name=Монета GymMC
