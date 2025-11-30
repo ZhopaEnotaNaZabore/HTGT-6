@@ -7,7 +7,6 @@ import net.minecraft.item.Item;
 
 public class HiTech6Coins extends Item {
 
-    public static Item HiTech6Coins;
     public static Item BeeCoin;
     public static Item ExplorersCoin;
     public static Item BlacksmithCoin;
@@ -20,7 +19,7 @@ public class HiTech6Coins extends Item {
     public static Item ComputerMasterCoin;
     public static Item ChemicalistCoin;
     public static Item DragonForgeCoin;
-    public static Item TravelerOfUniverseCoin;
+    public static Item InfinityCoin;
     public static Item HiTech6Coin;
     public static Item ChunkLoadingCoin;
     /**
@@ -31,8 +30,6 @@ public class HiTech6Coins extends Item {
      */
 
     public static void CoinItemStack() {
-        HiTech6Coins = new Item();
-        GameRegistry.registerItem(HiTech6Coins, "HiTech6Coins");
         BeeCoin = register(new Item(), "BeeCoin");
         BeeCoin.setTextureName(HTGT6.MOD_ID + ":BeeCoin");
         BeeCoin.setUnlocalizedName("BeeCoin");
@@ -57,6 +54,28 @@ public class HiTech6Coins extends Item {
         HiTech6Coin = register(new Item(), "HiTech6Coin");
         HiTech6Coin.setTextureName(HTGT6.MOD_ID+":GymMCCoin");
         HiTech6Coin.setUnlocalizedName("HiTech6Coin");
+        SpaceTravelerCoin = register(new Item(), "SpaceTravelersCoin");
+        SpaceTravelerCoin.setUnlocalizedName("SpaceTravelersCoin");
+        SpaceTravelerCoin.setTextureName(HTGT6.MOD_ID+":coinSpaceTraveler");
+        ChemicalistCoin = register(new Item(), "coinChemicalist");
+        ChemicalistCoin.setTextureName(HTGT6.MOD_ID+":coinChemicalist");
+        ChemicalistCoin.setUnlocalizedName("coinChemicalist");
+        TechnologistCoin = register(new Item(), "TechCoin");
+        TechnologistCoin.setUnlocalizedName("TechCoin");
+        TechnologistCoin.setTextureName(HTGT6.MOD_ID+":coinTech");
+        ChunkLoadingCoin = register(new Item(), "ChunkloadingCoin");
+        ChunkLoadingCoin.setUnlocalizedName("ChunkloadingCoin");
+        ChunkLoadingCoin.setTextureName(HTGT6.MOD_ID+":coinChunkload12h");
+        ComputerMasterCoin = register(new Item(), "AE2coin");
+        ComputerMasterCoin.setUnlocalizedName("AE2coin");
+        ComputerMasterCoin.setTextureName(HTGT6.MOD_ID+":AE2coin");
+        DragonForgeCoin = register(new Item(), "DEcoin");
+        DragonForgeCoin.setUnlocalizedName("DEcoin");
+        DragonForgeCoin.setTextureName(HTGT6.MOD_ID+":DEcoin");
+        InfinityCoin = register(new Item(), "InfinityCoin");
+        InfinityCoin.setTextureName(HTGT6.MOD_ID+":coinInfinity");
+        InfinityCoin.setUnlocalizedName("InfinityCoin");
+
     }
 
     public static Item register(Item item, String name) {
