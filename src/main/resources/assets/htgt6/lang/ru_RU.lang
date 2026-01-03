@@ -50,20 +50,24 @@ item.QuantinumGear.name=Шестерня из квантиниума
 item.CelestialTitGear.name=Шестерня из Астрального титана
 
 //coils
-item.ULVcoil.name=Внутренняя трансформаторная катушка(ULV)
-item.LVCOIL.name=Внутренняя трансформаторная катушка(LV)
-item.MVcoil.name=Внутренняя трансформаторная катушка(MV)
-item.HVcoil.name=Внутренняя трансформаторная катушка(HV)
-item.EVcoil.name=Внутренняя трансформаторная катушка(EV)
-item.IVcoil.name=Внутренняя трансформаторная катушка(IV)
-item.LUVcoil.name=Внутренняя трансформаторная катушка(LUV)
-item.ZPMcoil.name=Внутренняя трансформаторная катушка(ZPM)
-item.UVcoil.name=Внутренняя трансформаторная катушка(UV)
-item.PUV1coil.name=Внутренняя трансформаторная катушка(PUV1)
-item.InfiCoil.name=Внутренняя трансформаторная катушка(§5INFINITY)
+item.ULVcoil.name=катушка (ULV)
+item.LVCOIL.name=катушка (LV)
+item.MVcoil.name=катушка(MV)
+item.HVcoil.name=катушка(HV)
+item.EVcoil.name=катушка(EV)
+item.IVcoil.name=катушка(IV)
+item.LUVcoil.name=катушка(LUV)
+item.ZPMcoil.name=катушка(ZPM)
+item.UVcoil.name=катушка(UV)
+item.PUV1coil.name=Kатушка(PUV1)
+item.InfiCoil.name=катушка §5(INFINITY)
 
 
 
+//hulls
+tile.hullULV.name=Машинный корпус ULV
+tile.hullLV.name=Машинный корпус LV
+tile.hullMV.name=Машинный корпус MV
 
 //Additional
 item.CookingPot.name=кухонный котелок
@@ -77,6 +81,12 @@ item.SMDcond.name=SMD конденсатор
 item.SMDdiode.name=SMD диод
 item.SMDreduct.name=SMD редуктор
 item.UVCirc.name=Схема сверхбыстрого вычисления(UV)
+item.basicSieve.name=Простое сито
+item.advSieve.name=Укрепленное сито
+item.GlassTube.name=Стеклянная оболочка
+item.vacuumtube.name=Самодельная лампочка
+item.simpleresistor.name=Примитивный резистор
+item.WoodCircuitPlate.name=Клеянная подложка схемы
 
 
 //Avaritia
@@ -89,13 +99,22 @@ item.NovaCrystallDust.name= Кристальная пыль "Nova"
 
 //achieve
 achievement.Welcome_to_the_HiTech6=Добро пожаловать на HiTech6!
-achievement.Welcome_to_the_HiTech6.desc=Начните свой путь на HiTech6!
-achievement.Get_ULV_COIL=Внутренний трансформатор ULV!
+achievement.Welcome_to_the_HiTech6.desc=Все начинают свой путь с грязи, и кончают его за пределами звезд!
+achievement.Pick_Up_flint=Кремень, Серьезно?
+achievement.Pick_Up_flint.desc=Получите первый кремень для ваших инструментов.
+achievement.First_Storage=Первый ящик для барахла
+achievement.First_Storage.desc=Создайте свой первый сундук для вашего кремния и грязи.
+achievement.Get_Clay=Глиномес!
+achievement.Get_Clay.desc=Добудьте глину чтобы с неё лепить изделия!
+
 
 
 //TILE
 tile.Furn.name=Тестовый механизм Furn
 
+//materials
+item.UnfFireClyBrick.name=Сырой термостойкий кирпичь
+item.FireClayBrick.name=Термостойкий кирпичь
 
 //misc
 item.Qeye.name=Квантовое око
@@ -119,3 +138,6 @@ item.TechCoin.name= Монета Механика
 item.ChunkloadingCoin.name= Монета Чанклоудера 12часов
 item.AE2coin.name= Монета AE2
 item.InfinityCoin.name=Монета Хранителя Вечности
+
+//rocket controllers
+item.RocketTerminalT1.name= Схема управление ракетой (T1)
