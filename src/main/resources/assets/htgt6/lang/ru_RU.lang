@@ -62,24 +62,31 @@ item.UVcoil.name=катушка(UV)
 item.PUV1coil.name=Kатушка(PUV1)
 item.InfiCoil.name=катушка §5(INFINITY)
 
-
+//IC2
+item.HullBatteryIC2.name=Корпус маленького редстоун аккумулятора
+item.HullBatteryIC2_2.name=Корпус продвинутого аккумулятора
 
 //hulls
 tile.hullULV.name=Машинный корпус ULV
 tile.hullLV.name=Машинный корпус LV
 tile.hullMV.name=Машинный корпус MV
+tile.hullHV.name=Машинный корпус HV
 
 //Additional
 item.CookingPot.name=кухонный котелок
 item.NovaCrystall.name=Кристалл NOVA
 item.ModLogo.name=Просто няшка
+item.itemDildo.name=Банхаммер Администратора
+
+
+//glass
+tile.BoronGlass1.name= Боросиликатное стекло
+item.BoronGlassDust1.name= Смесь боросиликатного стекла
+item.BoronGlassPane1.name= Панель из Боросиликатного стекла
 
 //Technological
 item.ZPMCirc.name=Кластер кристаллопроцессоров (ZPM схема)
 item.ZPMSocket.name= Корпус процессора (ZPM)
-item.SMDcond.name=SMD конденсатор
-item.SMDdiode.name=SMD диод
-item.SMDreduct.name=SMD редуктор
 item.UVCirc.name=Схема сверхбыстрого вычисления(UV)
 item.basicSieve.name=Простое сито
 item.advSieve.name=Укрепленное сито
@@ -141,3 +148,25 @@ item.InfinityCoin.name=Монета Хранителя Вечности
 
 //rocket controllers
 item.RocketTerminalT1.name= Схема управление ракетой (T1)
+
+//CP
+item.itemTransistor.name=Транзистор ручной сборки
+item.itemDiode.name=Диод ручной сборки
+item.itemInductiveCoil.name=Проводниковая катушка ручной сборки
+item.itemSMDResistor.name=SMD устройство (Резистор)
+item.itemSMDdiode.name=SMD устройство (Диод)
+item.itemSMDTransistor.name= SMD устройство (Транзистор)
+item.itemSMDCapacitor.name= SMD устройство ( Конденсатор )
+item.itemSMDInductiveCoil.name= SMD устройство (Катушка индуктивности)
+
+item.itemADVSMDResistor.name= Продвинутое SMD устройство (Резистор)
+item.itemADVSMDdiode.name=Продвинутое SMD устройство (Диод)
+item.itemADVSMDTransistor.name=Продвинутое SMD устройство (Транзистор)
+item.itemADVSMDCapacitor.name= Продвинутое SMD устройство (Конденсатор)
+item.itemADVSMDInductiveCoil.name= Продвинутое SMD устройство (Катушка индуктивности)
+
+item.itemOPSMDResistor.name=Оптическое SMD устройство (Резистор)
+item.itemOPSMDdiode.name=Оптическое SMD устройство (Диод)
+item.itemOPSMDCapacitor.name=Оптическое SMD устройство (Конденсатор)
+item.itemOPSMDTransistor.name=Оптическое SMD устройство (Транзистор)
+item.itemOPSMDInductiveCoil.name=Оптическое SMD устройство (Катушка Индуктивности)

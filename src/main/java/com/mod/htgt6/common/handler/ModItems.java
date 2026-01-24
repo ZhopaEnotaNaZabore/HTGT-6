@@ -11,7 +11,6 @@ import com.mod.htgt6.common.item.greg.circuits.ZPMcirc;
 import com.mod.htgt6.common.item.greg.coils.*;
 import com.mod.htgt6.common.item.greg.materials.CelTit.*;
 import com.mod.htgt6.common.item.greg.materials.quantinum.*;
-import com.mod.htgt6.common.item.greg.technological.SMD.*;
 import com.mod.htgt6.common.item.greg.technological.ZPMSocket;
 import com.mod.htgt6.common.item.htgt6.ModLogo;
 import com.mod.htgt6.common.item.htgt6.govno;
@@ -34,12 +33,11 @@ public class ModItems {
     public static final CompositeT6 COMPOSITE_T_6 = new CompositeT6();
     public static final QuantinumIngot QUANTINUM_INGOT = new QuantinumIngot();
     public static final ZPMcirc ZP_MCIRC = new ZPMcirc();
-    public  static final SMDcond SM_DCOND = new SMDcond();
+
     public static final InfiSing INFI_SING = new InfiSing();
-    public static final SMDdiode SM_DDIODE = new SMDdiode();
+
     public static final NovaCrystallAlloy NOVA_CRYSTALL_ALLOY = new NovaCrystallAlloy();
     public static final NovaCrystallDust NOVA_CRYSTALL_DUST = new NovaCrystallDust();
-    public  static final SMDreduct SM_DREDUCT = new SMDreduct();
     public static final ZPMSocket ZPM_SOCKET = new ZPMSocket();
     public static final DustGanym DUST_GANYM = new DustGanym();
     public static final DustIO DUST_IO = new DustIO();
@@ -127,10 +125,6 @@ public static final dustPlemtis DUST_PLEMTIS = new dustPlemtis();
         GameRegistry.registerItem(COMPOSITE_T_6, "CompositeT6");
         GameRegistry.registerItem(QUANTINUM_INGOT, "QuantinumIngot");
         GameRegistry.registerItem(ZP_MCIRC, "ZPMCirc");
-        GameRegistry.registerItem(SM_DCOND, "SMDcond");
-        GameRegistry.registerItem(SM_DREDUCT, "SMDreduct");
-        GameRegistry.registerItem(INFI_SING, "InfiSing");
-        GameRegistry.registerItem(SM_DDIODE, "SMDdiode");
         GameRegistry.registerItem(NOVA_CRYSTALL_ALLOY, "NovaCrystalAlloy");
         GameRegistry.registerItem(NOVA_CRYSTALL_DUST, "NovaCrystalDust");
         GameRegistry.registerItem(QEYE, "Qeye");
