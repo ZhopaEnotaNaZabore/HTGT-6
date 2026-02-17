@@ -170,3 +170,17 @@ item.itemOPSMDdiode.name=Оптическое SMD устройство (Диод
 item.itemOPSMDCapacitor.name=Оптическое SMD устройство (Конденсатор)
 item.itemOPSMDTransistor.name=Оптическое SMD устройство (Транзистор)
 item.itemOPSMDInductiveCoil.name=Оптическое SMD устройство (Катушка Индуктивности)
+
+
+//monocrystalls
+item.itemMonocrystall1.name=Монокристалл из полисилана
+item.itemMonocrystall2.name=Монокристалл из полисилана с примесью титана
+item.itemMonocrystall3.name=Монокристалл из наквадаха
+item.itemMonocrystall4.name=Монокристалл из нейтрония
+
+
+//CP2
+item.itemWafer1.name=Кристалический срез (ULV-HV)
+item.itemWafer2.name=Кристалический срез (EV-LUV)
+item.itemWafer3.name=Кристалический срез (ZPM-PUV1)
+item.itemWafer4.name=Кристалический срез (INFI+)

@@ -9,9 +9,11 @@ import com.mod.htgt6.common.item.IC2.miscIC2;
 import com.mod.htgt6.common.item.greg.circuits.CiruitParts;
 import com.mod.htgt6.common.item.greg.materials.firecly.fireclys;
 import com.mod.htgt6.common.item.greg.technological.sieves.sieves;
+import com.mod.htgt6.common.item.htgt6.circuits.CP2;
 import com.mod.htgt6.common.item.htgt6.circuits.CircuitsAndParts;
 import com.mod.htgt6.common.item.htgt6.coins.HiTech6Coins;
 import com.mod.htgt6.common.item.htgt6.govnoebanoe.misscellouse;
+import com.mod.htgt6.common.item.htgt6.monocrystalls.crystalls;
 import com.mod.htgt6.common.item.htgt6.rocketcomputers.HiTech6RocketTerminals;
 import com.mod.htgt6.common.item.htgt6.weapons.HiTech6Weapons;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -33,6 +35,8 @@ public class CommonProxy {
         CircuitsAndParts.CP();
         misscellouse.GVN();
         HiTech6Weapons.weapons();
+        crystalls.Monocrystals();
+        CP2.logisticsCP2();
 
     }
     public void init(FMLInitializationEvent event) {
