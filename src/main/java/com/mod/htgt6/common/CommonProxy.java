@@ -1,5 +1,6 @@
 package com.mod.htgt6.common;
 
+import com.mod.htgt6.HTGT6;
 import com.mod.htgt6.common.achievements.Hitech6AchieveDatabase;
 import com.mod.htgt6.common.handler.FluidDatabase;
 import com.mod.htgt6.common.handler.ModBlocks;
@@ -12,6 +13,8 @@ import com.mod.htgt6.common.item.greg.technological.sieves.sieves;
 import com.mod.htgt6.common.item.htgt6.circuits.CP2;
 import com.mod.htgt6.common.item.htgt6.circuits.CircuitsAndParts;
 import com.mod.htgt6.common.item.htgt6.coins.HiTech6Coins;
+import com.mod.htgt6.common.item.htgt6.fluids.FluidItemsSub;
+import com.mod.htgt6.common.item.htgt6.fluids.FluidsHTGT6;
 import com.mod.htgt6.common.item.htgt6.govnoebanoe.misscellouse;
 import com.mod.htgt6.common.item.htgt6.monocrystalls.crystalls;
 import com.mod.htgt6.common.item.htgt6.rocketcomputers.HiTech6RocketTerminals;
@@ -37,10 +40,15 @@ public class CommonProxy {
         HiTech6Weapons.weapons();
         crystalls.Monocrystals();
         CP2.logisticsCP2();
+        FluidsHTGT6.initialize();
+        FluidItemsSub.InitFluidSubItems();
+
+
 
     }
     public void init(FMLInitializationEvent event) {
         Hitech6AchieveDatabase.initialization();
+
 
     }
     public void postInit(FMLPostInitializationEvent event) {

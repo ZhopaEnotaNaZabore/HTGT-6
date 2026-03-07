@@ -16,6 +16,10 @@ public class PickUpAchievments {
         if (event.pickedUp.getEntityItem().isItemEqual(new ItemStack(Blocks.dirt))) {
             event.player.addStat((StatBase)Hitech6AchieveDatabase.GetStarted, 1);
         }
+        if (event.pickedUp.getEntityItem().isItemEqual((new ItemStack(Items.flint)))
+        ) {event.player.addStat((StatBase)Hitech6AchieveDatabase.Flint, 2);
+
+        }
 
             }
         }

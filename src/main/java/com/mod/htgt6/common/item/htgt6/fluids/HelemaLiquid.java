@@ -15,7 +15,7 @@ public class HelemaLiquid extends BlockFluidClassic {
         // Привязываем жидкость к текущему блоку
         fluid.setBlock(this);
         setBlockName("HelemaLiquid");
-        setBlockTextureName(HTGT6.MOD_ID+":fluid1");
+        setBlockTextureName(HTGT6.MOD_ID+":fluid1f");
         setCreativeTab(ModTab.INSTANCE);
     }
     @Override

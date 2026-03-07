@@ -16,6 +16,17 @@ item.dustDomonce.name=Пыль каменной породы Домонса
 item.dustMunce.name=Пыль каменной породы Мунса
 item.dustRukan.name=Пыль каменной породы Рукана
 item.dustPlemtis.name=Пыль каменной породы Плимтиса
+item.DustOsIrRhRu.name=Пыль выщелоченной осадок
+item.dustPdKeNiCu.name=Пыль Палладиевой металлической смеси
+item.dustPtCl.name= Пыль Хлорид Платины
+item.dustPdNH.name= Пыль Переосажденный палладий
+item.dustRhSo4.name=Пыль Сульфат родия
+item.dustOsIr.name=Пыль Рудно-металлическая смесь Осмия-Иридия
+item.dustIrO.name= Пыль Оксид Иридия
+item.dustKeNiCu.name=Пыль Триниевый Шлак
+item.dustNiCu.name=Пыль Металлического шлака
+
+
 
 //food
 item.Govno.name=Кучка еще теплого аппетитного говница
@@ -77,7 +88,7 @@ item.CookingPot.name=кухонный котелок
 item.NovaCrystall.name=Кристалл NOVA
 item.ModLogo.name=Просто няшка
 item.itemDildo.name=Банхаммер Администратора
-
+tile.PCcube.name=GregTech Компьютерный блок
 
 //glass
 tile.BoronGlass1.name= Боросиликатное стекло
@@ -129,6 +140,14 @@ item.Qeye.tooltip=Вгзляд в пустоту
 
 //fluids
 tile.HelemaLiquid.name=Странная жидкость Гелемы
+tile.PlatinumSollution.name= Богатый платиной раствор
+tile.PalladiumSollution.name= Щелочной концентрат палладия
+tile.KalliumSuplhate.name=Сульфат Каллия
+tile.RutheniumSalt.name=Соль Рутения
+tile.AcidicOsmium.name=Щелочной Раствор Осмия
+tile.TriniumFluoirite.name=Фторит Триния
+
+
 
 //coins
 item.BeeCoin.name=Монета Пчеловода
@@ -147,6 +166,8 @@ item.AE2coin.name= Монета AE2
 item.InfinityCoin.name=Монета Хранителя Вечности
 
 //rocket controllers
+item.itemDisplay.name=Дисплей
+item.itemMonitor.name=GregTech Компухтер
 item.RocketTerminalT1.name= Схема управление ракетой (T1)
 
 //CP
@@ -184,3 +205,9 @@ item.itemWafer1.name=Кристалический срез (ULV-HV)
 item.itemWafer2.name=Кристалический срез (EV-LUV)
 item.itemWafer3.name=Кристалический срез (ZPM-PUV1)
 item.itemWafer4.name=Кристалический срез (INFI+)
+item.itemWaferRAM.name=Гравировка ( RAM )
+item.itemRAM.name=Чип оперативной памяти
+item.itemWaferCPU.name= Гравировка ( CPU )
+item.itemCPU.name=Чип Центрального процессора
+item.itemWaferIC.name= Гравировка ( IC )
+item.itemIC.name= Чип Интегрированная система

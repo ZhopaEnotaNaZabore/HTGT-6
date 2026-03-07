@@ -4,11 +4,11 @@ import com.mod.htgt6.HTGT6;
 import com.mod.htgt6.common.TE.FurnTE;
 import com.mod.htgt6.common.block.CookingPot;
 import com.mod.htgt6.common.block.EternalBlock;
-import com.mod.htgt6.common.block.Furn;
+import com.mod.htgt6.common.block.technological.Furn;
 import com.mod.htgt6.common.block.glass.BoronGlass1;
+import com.mod.htgt6.common.block.technological.PCcube;
 import cpw.mods.fml.common.registry.GameRegistry;
 import com.mod.htgt6.common.block.greg.technological.hulls.*;
-import net.minecraft.block.Block;
 
 public class ModBlocks {
     public static final EternalBlock ETERNAL_BLOCK = new EternalBlock();
@@ -19,6 +19,7 @@ public class ModBlocks {
     private static final hullMV HULL_MV = new hullMV();
     private static final hullHV HULL_HV = new hullHV();
 private static final BoronGlass1 BORON_GLASS_1 = new BoronGlass1();
+private static final PCcube P_CCUBE = new PCcube();
 
     public static void register() {
 
@@ -35,5 +36,6 @@ private static final BoronGlass1 BORON_GLASS_1 = new BoronGlass1();
         GameRegistry.registerBlock(HULL_MV, "hullMV");
         GameRegistry.registerBlock(HULL_HV, "hullHV");
         GameRegistry.registerBlock(BORON_GLASS_1, "BoronGlass1");
+        GameRegistry.registerBlock(P_CCUBE, "PCcube");
     }
 }
