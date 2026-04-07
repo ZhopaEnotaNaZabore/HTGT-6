@@ -36,12 +36,12 @@ public class FluidsHTGT6 {
     }
 
     public static void FluidRegistration(){
-        liqPlatinumSol = new Fluid("platinumsol").setGaseous(false).setDensity(400).setViscosity(2500);
-        liqPalladConc = new Fluid("palladconc").setGaseous(false).setDensity(400).setViscosity(2500);
-        liqKSo4 = new Fluid("KalliumSulphate").setGaseous(false).setDensity(400).setViscosity(2500);
-        liqRuCl = new Fluid("RutheniumSalt").setGaseous(false).setDensity(400).setViscosity(2500);
-        liqAcidicOsmium = new Fluid("AcidicOsmium").setGaseous(false).setDensity(400).setViscosity(2500);
-        liqKeF = new Fluid("TriniumFluoirite").setGaseous(false).setDensity(400).setViscosity(2500);
+        liqPlatinumSol = new Fluid("Platiunum_sollution").setGaseous(false).setDensity(400).setViscosity(2500);
+        liqPalladConc = new Fluid("Palladium_sollution").setGaseous(false).setDensity(400).setViscosity(2500);
+        liqKSo4 = new Fluid("Potassium_Disuplhate").setGaseous(false).setDensity(400).setViscosity(2500);
+        liqRuCl = new Fluid("Ruthenium_Salt").setGaseous(false).setDensity(400).setViscosity(2500);
+        liqAcidicOsmium = new Fluid("Acidic_Osmium_sollution").setGaseous(false).setDensity(400).setViscosity(2500);
+        liqKeF = new Fluid("Trinium_Fluiride").setGaseous(false).setDensity(400).setViscosity(2500);
 
 
         FluidRegistry.registerFluid(liqKSo4);

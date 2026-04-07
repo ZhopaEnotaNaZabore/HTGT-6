@@ -24,6 +24,7 @@ apply plugin: 'forge'
 
 targetCompatibility = sourceCompatibility = JavaVersion.VERSION_1_8
 
+archivesBaseName = "HiTech6_V_1.0.4_Build_"
 /* Вспомогательные конфиги для IDEA */
 idea {
     module {

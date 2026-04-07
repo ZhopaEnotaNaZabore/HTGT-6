@@ -26,8 +26,17 @@ public class CircuitsAndParts extends Item {
     public static Item itemOPSMDTransistor;
     public static Item itemOPSMDCapacitor;
     public static Item itemOPSMDInductiveCoil;
+
+    public static Item itemPlasticCircBoard;
+    public static Item itemEpoxidCircBoard;
+    public static Item itemCrystallCirctBoard;
+    public static Item itemOpticalCirctBoard;
+    public static Item itemLivingCirctBoard;
+    public static Item itemMAXcircBoard;
+
     public static void CP() {
         //register
+        itemPlasticCircBoard = register(new Item(), "itemPlasticCircBoard");
         itemDiode = register(new Item(), "itemDiode");
         itemTransistor = register(new Item(), "itemTransistor");
         itemInductiveCoil = register(new Item(), "itemInductiveCoil");
@@ -49,6 +58,12 @@ public class CircuitsAndParts extends Item {
         itemOPSMDCapacitor = register(new Item(), "itemOPSMDCapacitor");
         itemOPSMDTransistor = register(new Item(), "itemOPSMDTransistor");
         itemOPSMDInductiveCoil = register(new Item(), "itemOPSMDInductiveCoil");
+        itemEpoxidCircBoard= register(new Item(), "itemEpoxidCircBoard");
+        itemCrystallCirctBoard= register(new Item(), "itemCrystallCirctBoard");
+        itemOpticalCirctBoard= register(new Item(), "itemOpticalCirctBoard");
+        itemLivingCirctBoard= register(new Item(), "itemLivingCirctBoard");
+        itemMAXcircBoard= register(new Item(), "itemMAXcircBoard");
+
 
         //name
         itemDiode.setUnlocalizedName("itemDiode");
@@ -70,11 +85,18 @@ public class CircuitsAndParts extends Item {
         itemOPSMDCapacitor.setUnlocalizedName("itemOPSMDCapacitor");
         itemOPSMDTransistor.setUnlocalizedName("itemOPSMDTransistor");
         itemOPSMDInductiveCoil.setUnlocalizedName("itemOPSMDInductiveCoil");
+        itemPlasticCircBoard.setUnlocalizedName("itemPlasticCircBoard");
+        itemEpoxidCircBoard.setUnlocalizedName("itemEpoxidCircBoard");
+        itemCrystallCirctBoard.setUnlocalizedName("itemCrystallCirctBoard");
+        itemOpticalCirctBoard.setUnlocalizedName("itemOpticalCirctBoard");
+        itemLivingCirctBoard.setUnlocalizedName("itemLivingCirctBoard");
+        itemMAXcircBoard.setUnlocalizedName("itemMAXcircBoard");
+
+
         //textures
         itemDiode.setTextureName(HTGT6.MOD_ID+":itemDiode");
         itemTransistor.setTextureName(HTGT6.MOD_ID+":itemTransistor");
         itemInductiveCoil.setTextureName(HTGT6.MOD_ID+":itemInductiveCoil");
-
         itemSMDResistor.setTextureName(HTGT6.MOD_ID+":itemSMDResistor");
         itemSMDdiode.setTextureName(HTGT6.MOD_ID+":itemSMDdiode");
         itemSMDTransistor.setTextureName(HTGT6.MOD_ID+":itemSMDTransistor");
@@ -90,6 +112,13 @@ public class CircuitsAndParts extends Item {
         itemOPSMDCapacitor.setTextureName(HTGT6.MOD_ID+":itemOPSMDCapacitor");
         itemOPSMDInductiveCoil.setTextureName(HTGT6.MOD_ID+":itemOPSMDInductiveCoil");
         itemOPSMDTransistor.setTextureName(HTGT6.MOD_ID+":itemOPSMDTransistor");
+        itemPlasticCircBoard.setTextureName(HTGT6.MOD_ID+":itemPlasticCircBoard");
+        itemEpoxidCircBoard.setTextureName(HTGT6.MOD_ID+":itemEpoxidCircBoard");
+        itemCrystallCirctBoard.setTextureName(HTGT6.MOD_ID+":itemCrystallCirctBoard");
+        itemOpticalCirctBoard.setTextureName(HTGT6.MOD_ID+":itemOpticalCirctBoard");
+        itemLivingCirctBoard.setTextureName(HTGT6.MOD_ID+":itemLivingCirctBoard");
+        itemMAXcircBoard.setTextureName(HTGT6.MOD_ID+":itemMAXcircBoard");
+
 
     }
 

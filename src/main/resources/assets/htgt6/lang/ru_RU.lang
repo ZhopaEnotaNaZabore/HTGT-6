@@ -82,6 +82,13 @@ tile.hullULV.name=Машинный корпус ULV
 tile.hullLV.name=Машинный корпус LV
 tile.hullMV.name=Машинный корпус MV
 tile.hullHV.name=Машинный корпус HV
+tile.HullEV.name=Машинный корпус EV
+tile.HullIV.name=Машинный корпус IV
+tile.HullLUV.name= Машинный корпус LUV
+tile.HullZPM.name= Машинный корпус ZPM
+tile.HullUV.name= Машинный корпус UV
+tile.HullPUV.name= Машинный корпус PUV
+tile.HullMAX.name=Машинный корпус MAX
 
 //Additional
 item.CookingPot.name=кухонный котелок
@@ -124,6 +131,8 @@ achievement.First_Storage=Первый ящик для барахла
 achievement.First_Storage.desc=Создайте свой первый сундук для вашего кремния и грязи.
 achievement.Get_Clay=Глиномес!
 achievement.Get_Clay.desc=Добудьте глину чтобы с неё лепить изделия!
+achievement.HeyYo_EV_TIER=Т4 ExtremeVoltage!
+achievement.HeyYo_EV_TIER.desc=Пройдя сквозь ад и лунные просторы, вам стал доступен EV тир!
 
 
 
@@ -137,15 +146,55 @@ item.FireClayBrick.name=Термостойкий кирпичь
 //misc
 item.Qeye.name=Квантовое око
 item.Qeye.tooltip=Вгзляд в пустоту
+item.itemCarbonHelmet.name=Карбоновый шлем
+item.itemCarbonChestplate.name=Карбоновая кираса
+item.itemCarbonleggins.name=Карбоновые штаны
+item.itemCarbonBoots.name=Карбоновые ботинки
+item.itemNanoCrystall.name=Нано-Кристалл
+item.itemDustLapatron.name=Лапатроновая смесь
+item.itemRawLapatron.name=Необработанный лапатрон
+item.itemQuantumPartHelmet.name=Заготовка квантового шлема
+item.itemQuantumPartChestplate.name=Заготовка квантовой кирасы
+item.itemQuantumPartLeggins.name=Заготовка квантовых штанов
+item.itemQuantumPartBoots.name=Заготовка квантовых ботинок
+item.itemQuantumCrystall.name=Квантовый кристалл
+item.itemChipDiamond.name=Алмазный чип
+item.itemChipGold.name=Золотой чип
+item.itemChipEmerald.name=Изумрудный чип
+item.itemChipEnergycrystall.name=Энергокристалический чип
+item.itemChipLapatron.name=Гравированный лапатронный чип
+
+
+
 
 //fluids
 tile.HelemaLiquid.name=Странная жидкость Гелемы
+fluid.HelemaLiquid.name=Странная жидкость Гелемы
+HelemaLiquid.name=Странная жидкость Гелемы
 tile.PlatinumSollution.name= Богатый платиной раствор
+Platiunum_sollution.name= Богатый платиной раствор
+fluid.Platiunum_sollution = Богатый платиной раствор
+
 tile.PalladiumSollution.name= Щелочной концентрат палладия
+palladconc.name=  Щелочной концентрат палладия
+fluid,palladconc.name=  Щелочной концентрат палладия
+
 tile.KalliumSuplhate.name=Сульфат Каллия
+fluid.KalliumSulphate.name=Сульфат Каллия
+KalliumSulphate.name=Сульфат Каллия
+
 tile.RutheniumSalt.name=Соль Рутения
+RutheniumSalt.name=Соль Рутения
+fluid.RutheniumSalt.name=Соль Рутения
+
 tile.AcidicOsmium.name=Щелочной Раствор Осмия
+AcidicOsmium.name=Щелочной Раствор Осмия
+fluid.AcidicOsmium.name=Щелочной Раствор Осмия
+
 tile.TriniumFluoirite.name=Фторит Триния
+TriniumFluoirite.name=Фторит Триния
+fluid.TriniumFluoirite.name=Фторит Триния
+
 
 
 
@@ -179,18 +228,22 @@ item.itemSMDdiode.name=SMD устройство (Диод)
 item.itemSMDTransistor.name= SMD устройство (Транзистор)
 item.itemSMDCapacitor.name= SMD устройство ( Конденсатор )
 item.itemSMDInductiveCoil.name= SMD устройство (Катушка индуктивности)
-
+item.itemPlasticCircBoard.name=Пластиковая подложка схемы
 item.itemADVSMDResistor.name= Продвинутое SMD устройство (Резистор)
 item.itemADVSMDdiode.name=Продвинутое SMD устройство (Диод)
 item.itemADVSMDTransistor.name=Продвинутое SMD устройство (Транзистор)
 item.itemADVSMDCapacitor.name= Продвинутое SMD устройство (Конденсатор)
 item.itemADVSMDInductiveCoil.name= Продвинутое SMD устройство (Катушка индуктивности)
-
 item.itemOPSMDResistor.name=Оптическое SMD устройство (Резистор)
 item.itemOPSMDdiode.name=Оптическое SMD устройство (Диод)
 item.itemOPSMDCapacitor.name=Оптическое SMD устройство (Конденсатор)
 item.itemOPSMDTransistor.name=Оптическое SMD устройство (Транзистор)
 item.itemOPSMDInductiveCoil.name=Оптическое SMD устройство (Катушка Индуктивности)
+item.itemEpoxidCircBoard.name=Эпоксидная подложка схемы
+item.itemCrystallCirctBoard.name=Кристальная подложка схемы
+item.itemOpticalCirctBoard.name=интегрированная оптическая подложка схемы
+item.itemLivingCirctBoard.name=Подложка схемы на основе живой материи.
+item.itemMAXcircBoard.name= Максимальная подложка схемы из метастабильной пространство-временной кристаллизированной материи
 
 
 //monocrystalls

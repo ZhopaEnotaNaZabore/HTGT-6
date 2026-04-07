@@ -1,5 +1,6 @@
 package com.mod.htgt6.common.achievements;
 
+import com.mod.htgt6.common.block.greg.technological.hulls.blockHullDatabase;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.PlayerEvent;
 import net.minecraft.block.Block;
@@ -15,6 +16,10 @@ public class craftingachieve {
         }
         if (event.crafting.getItem() == Item.getItemFromBlock(Blocks.chest)) {
             event.player.triggerAchievement(Hitech6AchieveDatabase.FirstStorage);
+        }
+        if (event.crafting.getItem() == Item.getItemFromBlock(blockHullDatabase.HullEV)) {
+            event.player.triggerAchievement(Hitech6AchieveDatabase.EVTIER);
+
         }
     }
 }

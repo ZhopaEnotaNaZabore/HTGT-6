@@ -1,7 +1,7 @@
 package com.mod.htgt6.common;
 
-import com.mod.htgt6.HTGT6;
 import com.mod.htgt6.common.achievements.Hitech6AchieveDatabase;
+import com.mod.htgt6.common.block.greg.technological.hulls.blockHullDatabase;
 import com.mod.htgt6.common.handler.FluidDatabase;
 import com.mod.htgt6.common.handler.ModBlocks;
 import com.mod.htgt6.common.handler.ModItems;
@@ -22,7 +22,6 @@ import com.mod.htgt6.common.item.htgt6.weapons.HiTech6Weapons;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import ic2.api.item.IC2Items;
 
 public class CommonProxy {
     public void preInit(FMLPreInitializationEvent event) {
@@ -42,6 +41,8 @@ public class CommonProxy {
         CP2.logisticsCP2();
         FluidsHTGT6.initialize();
         FluidItemsSub.InitFluidSubItems();
+        blockHullDatabase.InitiHulls();
+
 
 
 
