@@ -26,5 +26,20 @@
       <option name="name" value="forge" />
       <option name="url" value="https://maven.minecraftforge.net" />
     </remote-repository>
+    <remote-repository>
+      <option name="id" value="gt" />
+      <option name="name" value="gt" />
+      <option name="url" value="https://gregtech.overminddl1.com/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="sonatype" />
+      <option name="name" value="sonatype" />
+      <option name="url" value="https://oss.sonatype.org/content/repositories/snapshots/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="chickenbones" />
+      <option name="name" value="chickenbones" />
+      <option name="url" value="http://chickenbones.net/maven/" />
+    </remote-repository>
   </component>
 </project>

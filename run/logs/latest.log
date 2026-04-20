@@ -1,31 +1,27 @@
-[13:41:08] [main/INFO]: Setting user: Player734
-[13:41:08] [Client thread/INFO]: LWJGL Version: 2.9.1
-[13:41:12] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:NotEnoughItems, FMLFileResourcePack:HTGT6, FMLFileResourcePack:NEI Addons: Developer Tools, FMLFileResourcePack:NEI Addons: Applied Energistics 2, FMLFileResourcePack:NEI Addons: Botany, FMLFileResourcePack:NEI Addons: Forestry, FMLFileResourcePack:NEI Addons: Crafting Tables, FMLFileResourcePack:NEI Addons, FMLFileResourcePack:NEI Addons: Ex Nihilo, FMLFileResourcePack:NEI Integration
-[13:41:13] [Client thread/INFO]: Created: 16x16 textures/blocks-atlas
-[13:41:13] [Client thread/INFO]: Created: 16x16 textures/items-atlas
-[13:41:13] [Sound Library Loader/INFO]: Sound engine started
-[13:41:14] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:NotEnoughItems, FMLFileResourcePack:HTGT6, FMLFileResourcePack:NEI Addons: Developer Tools, FMLFileResourcePack:NEI Addons: Applied Energistics 2, FMLFileResourcePack:NEI Addons: Botany, FMLFileResourcePack:NEI Addons: Forestry, FMLFileResourcePack:NEI Addons: Crafting Tables, FMLFileResourcePack:NEI Addons, FMLFileResourcePack:NEI Addons: Ex Nihilo, FMLFileResourcePack:NEI Integration
-[13:41:18] [Client thread/INFO]: Created: 8192x4096 textures/blocks-atlas
-[13:41:19] [Client thread/INFO]: Created: 8192x4096 textures/items-atlas
-[13:41:20] [Sound Library Loader/INFO]: Sound engine started
-[13:41:22] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
-[13:41:22] [Server thread/INFO]: Generating keypair
-[13:41:22] [Server thread/INFO]: Preparing start region for level 0
-[13:41:23] [Server thread/INFO]: Changing view distance to 4, from 10
-[13:41:23] [Server thread/INFO]: Player734[local:E:a33ef28a] logged in with entity id 180 at (178.8492984950233, 83.86552334764377, -4.753158280654222)
-[13:41:23] [Server thread/INFO]: Player734 присоединился к игре
-[13:41:27] [Server thread/INFO]: [Player734: Дано [Карбоновая кираса] * 1 игроку Player734]
-[13:41:27] [Client thread/INFO]: [CHAT] Дано [Карбоновая кираса] * 1 игроку Player734
-[13:41:28] [Server thread/INFO]: [Player734: Дано [Карбоновый шлем] * 1 игроку Player734]
-[13:41:28] [Client thread/INFO]: [CHAT] Дано [Карбоновый шлем] * 1 игроку Player734
-[13:41:28] [Server thread/INFO]: [Player734: Дано [Карбоновые штаны] * 1 игроку Player734]
-[13:41:28] [Client thread/INFO]: [CHAT] Дано [Карбоновые штаны] * 1 игроку Player734
-[13:41:29] [Server thread/INFO]: [Player734: Дано [Карбоновые ботинки] * 1 игроку Player734]
-[13:41:29] [Client thread/INFO]: [CHAT] Дано [Карбоновые ботинки] * 1 игроку Player734
-[13:41:48] [Client thread/INFO]: Stopping!
-[13:41:48] [Server thread/INFO]: Stopping server
-[13:41:48] [Server thread/INFO]: Saving players
-[13:41:48] [Server thread/INFO]: Saving worlds
-[13:41:48] [Server thread/INFO]: Saving chunks for level 'Новый мир'/Overworld
-[13:41:48] [Server thread/INFO]: Saving chunks for level 'Новый мир'/Nether
-[13:41:48] [Server thread/INFO]: Saving chunks for level 'Новый мир'/The End
+[19:48:08] [main/INFO]: Setting user: Player625
+[19:48:09] [Client thread/INFO]: LWJGL Version: 2.9.1
+[19:48:14] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:NotEnoughItems, FMLFileResourcePack:HTGT6, FMLFileResourcePack:IndustrialCraft 2 Classic, FMLFileResourcePack:IC2 Classic Detection Helper, FMLFileResourcePack:NEI Addons: Developer Tools, FMLFileResourcePack:NEI Addons: Applied Energistics 2, FMLFileResourcePack:NEI Addons: Botany, FMLFileResourcePack:NEI Addons: Forestry, FMLFileResourcePack:NEI Addons: Crafting Tables, FMLFileResourcePack:NEI Addons, FMLFileResourcePack:NEI Addons: Ex Nihilo, FMLFileResourcePack:NEI Integration
+[19:48:16] [Sound Library Loader/INFO]: Sound engine started
+[19:48:16] [Client thread/INFO]: Created: 16x16 textures/blocks-atlas
+[19:48:16] [Client thread/INFO]: Created: 16x16 textures/items-atlas
+[19:48:17] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:NotEnoughItems, FMLFileResourcePack:HTGT6, FMLFileResourcePack:Industrial Craft Classic, FMLFileResourcePack:IC2 Classic Detection Helper, FMLFileResourcePack:NEI Addons: Developer Tools, FMLFileResourcePack:NEI Addons: Applied Energistics 2, FMLFileResourcePack:NEI Addons: Botany, FMLFileResourcePack:NEI Addons: Forestry, FMLFileResourcePack:NEI Addons: Crafting Tables, FMLFileResourcePack:NEI Addons, FMLFileResourcePack:NEI Addons: Ex Nihilo, FMLFileResourcePack:NEI Integration
+[19:48:23] [Client thread/INFO]: Created: 8192x4096 textures/blocks-atlas
+[19:48:24] [Client thread/INFO]: Created: 8192x4096 textures/items-atlas
+[19:48:25] [Sound Library Loader/INFO]: Sound engine started
+[19:48:26] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[19:48:26] [Server thread/INFO]: Generating keypair
+[19:48:26] [Server thread/INFO]: Preparing start region for level 0
+[19:48:27] [Server thread/INFO]: Changing view distance to 5, from 10
+[19:48:27] [Server thread/INFO]: Player625[local:E:8f9667c1] logged in with entity id 253 at (-219.14950530556553, 69.0, 239.02603156303192)
+[19:48:27] [Server thread/INFO]: Player625 присоединился к игре
+[19:48:40] [Server thread/INFO]: [Player625: Дано [Алмаз] * 1 игроку Player625]
+[19:48:40] [Client thread/INFO]: [CHAT] Дано [Алмаз] * 1 игроку Player625
+[19:49:00] [Server thread/INFO]: Player625 заработал достижение [Проверить карманы]
+[19:49:00] [Client thread/INFO]: [CHAT] Player625 заработал достижение [Проверить карманы]
+[19:49:04] [Client thread/INFO]: Stopping!
+[19:49:04] [Server thread/INFO]: Stopping server
+[19:49:04] [Server thread/INFO]: Saving players
+[19:49:04] [Server thread/INFO]: Saving worlds
+[19:49:04] [Server thread/INFO]: Saving chunks for level 'Новый мир'/Overworld
+[19:49:04] [Server thread/INFO]: Saving chunks for level 'Новый мир'/Nether
+[19:49:04] [Server thread/INFO]: Saving chunks for level 'Новый мир'/The End

@@ -4,7 +4,7 @@
   "description": "For hitech6 modpack!!",
   "mcversion": "${mcversion}",
   "version": "${version}",
-  "logoFile": "/logos/logo.png",
+  "logoFile": "/items/logo.png",
   "url": "https://www.goodminecraft.com",
   "authors": "Teysera",
   "credits": "Hryu",

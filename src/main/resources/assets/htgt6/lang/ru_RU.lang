@@ -26,7 +26,8 @@ item.dustIrO.name= Пыль Оксид Иридия
 item.dustKeNiCu.name=Пыль Триниевый Шлак
 item.dustNiCu.name=Пыль Металлического шлака
 
-
+//Machines
+tile.assembler.name=Станок Автоматической Сборки
 
 //food
 item.Govno.name=Кучка еще теплого аппетитного говница
