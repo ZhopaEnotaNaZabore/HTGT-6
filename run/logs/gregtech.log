@@ -1,0 +1,72 @@
+GT_API: ======================
+GT_API: PreInit-Phase started!
+GT_API: PreInit-Phase finished!
+GT_API: =======================
+GT_API_POST: ======================
+GT_API_POST: PreInit-Phase started!
+GT_API_POST: PreInit-Phase finished!
+GT_API_POST: =======================
+GT_Mod: ======================
+GT_Mod: PreInit-Phase started!
+GT_Mod: PreInit-Phase finished!
+GT_Mod: =======================
+GT_API: ===================
+GT_DL_Thread: Current Version = '6.15.08'; Recent Version = '6.17.06'; Majorly Outdated = No
+GT_API: Init-Phase started!
+GT_API: If the Loading Bar somehow Freezes at this Point, then you definetly ran out of Memory or permgenspace, look at the other Logs to confirm it.
+GT_API: Init-Phase finished!
+GT_API: ====================
+GT_API_POST: ===================
+GT_API_POST: Init-Phase started!
+GT_API_POST: Init-Phase finished!
+GT_API_POST: ====================
+GT_Mod: ===================
+GT_Mod: Init-Phase started!
+MTE REGISTRY ERROR: Class Container uses occupied MetaData!
+MTE REGISTRY ERROR: STACKTRACE START
+	at gregapi.block.multitileentity.MultiTileEntityRegistry.add(MultiTileEntityRegistry.java:185)
+	at gregapi.block.multitileentity.MultiTileEntityRegistry.add(MultiTileEntityRegistry.java:152)
+	at gregtech.loaders.b.Loader_MultiTileEntities.unsorted1(Loader_MultiTileEntities.java:571)
+	at gregtech.loaders.b.Loader_MultiTileEntities.run(Loader_MultiTileEntities.java:158)
+	at gregtech.GT6_Main.onModInit2(GT6_Main.java:356)
+MTE REGISTRY ERROR: STACKTRACE END
+GT_Mod: Init-Phase finished!
+GT_Mod: ====================
+GT_API: =======================
+GT_API: PostInit-Phase started!
+GT_API: If the Loading Bar somehow Freezes at this Point, then you definetly ran out of Memory or permgenspace, look at the other Logs to confirm it.
+GT_API: PostInit-Phase finished!
+GT_API: ========================
+GT_API_POST: =======================
+GT_API_POST: PostInit-Phase started!
+GT_API_POST: PostInit-Phase finished!
+GT_API_POST: ========================
+GT_Mod: =======================
+GT_Mod: PostInit-Phase started!
+GT_Mod: PostInit-Phase finished!
+GT_Mod: Registering Achievements.
+ERROR: Recipe has less than the minimal amount of general Inputs!
+Recipe Map: gt.recipe.electrolyzer
+Input Items:  gt.integrated_circuit.name; 
+Input Fluid:  
+Output Items: oredict.dustSiliconDioxide.name; 
+Output Fluid: 
+	at gregtech.loaders.c.Loader_Recipes_Vanilla.run(Loader_Recipes_Vanilla.java:875)
+	at gregtech.GT6_Main$1.onPostLoad(GT6_Main.java:271)
+	at gregapi.api.Abstract_Mod.onModPostInit(Abstract_Mod.java:273)
+	at gregtech.GT6_Main.onPostLoad(GT6_Main.java:765)
+ERROR: Recipe has less than the minimal amount of general Inputs!
+Recipe Map: gt.recipe.mixer
+Input Items:  
+Input Fluid:  hydrogenfluoride;
+Output Items: 
+Output Fluid: water;hexafluorosilicicacid;
+	at gregtech.loaders.c.Loader_Recipes_Chem.run(Loader_Recipes_Chem.java:100)
+	at gregtech.GT6_Main$1.onPostLoad(GT6_Main.java:271)
+	at gregapi.api.Abstract_Mod.onModPostInit(Abstract_Mod.java:273)
+	at gregtech.GT6_Main.onPostLoad(GT6_Main.java:765)
+GT_Mod: Doing IC2-Classic Things.
+GT_Mod: Replacing Vanilla alike Recipes.
+GT_Mod: ========================
+GT_API: Remapping ItemStackMaps due to ID Map change. Those damn Items should have a consistent Hashcode, but noooo, ofcourse they break Basic Code Conventions! Thanks Forge and Mojang!
+GT_API: Remapping ItemStackMaps due to ID Map change. Those damn Items should have a consistent Hashcode, but noooo, ofcourse they break Basic Code Conventions! Thanks Forge and Mojang!

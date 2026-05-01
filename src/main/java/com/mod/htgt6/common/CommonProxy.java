@@ -4,6 +4,8 @@ import com.mod.htgt6.common.achievements.Hitech6AchieveDatabase;
 import com.mod.htgt6.common.block.greg.technological.hulls.blockHullDatabase;
 import com.mod.htgt6.common.handler.*;
 import com.mod.htgt6.common.handler.biometweaks.biomeLukewarmOcean;
+
+import com.mod.htgt6.common.handler.recipe.AssemblerRecipes;
 import com.mod.htgt6.common.handler.worldgeneration.shipwerk.structurehandler.OceanStructureHandler;
 import com.mod.htgt6.common.item.IC2.miscIC2;
 import com.mod.htgt6.common.item.greg.circuits.CiruitParts;
@@ -21,7 +23,6 @@ import com.mod.htgt6.common.item.htgt6.weapons.HiTech6Weapons;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.network.NetworkRegistry;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeManager;
@@ -29,7 +30,7 @@ import net.minecraftforge.common.MinecraftForge;
 
 public class CommonProxy {
     public void preInit(FMLPreInitializationEvent event) {
-        com.mod.htgt6.common.handler.recipe.AssemblerRecipes.init();
+        AssemblerRecipes.getInstance().registerRecipes();
         ModItems.register();
         ModBlocks.register();
         FluidDatabase.register();
@@ -67,7 +68,6 @@ public class CommonProxy {
     }
     public void postInit(FMLPostInitializationEvent event) {
         recipes.registerRecipes();
-
-
+        AssemblerRecipes.getInstance().registerRecipes();
     }
 }

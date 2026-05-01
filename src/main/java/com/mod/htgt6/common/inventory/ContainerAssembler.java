@@ -29,14 +29,14 @@ public class ContainerAssembler extends Container {
         // 3. Upgrade/Warning Slot (Slot 10)
         this.addSlotToContainer(new Slot(te, 10, 53, 62));
 
-        // 4. Player Inventory
+        // 4. Player Inventory (Slots 11-37)
         for (int i = 0; i < 3; ++i) {
             for (int j = 0; j < 9; ++j) {
                 this.addSlotToContainer(new Slot(playerInv, j + i * 9 + 9, 8 + j * 18, 84 + i * 18));
             }
         }
 
-        // 5. Hotbar
+        // 5. Hotbar (Slots 38-46)
         for (int i = 0; i < 9; ++i) {
             this.addSlotToContainer(new Slot(playerInv, i, 8 + i * 18, 142));
         }
@@ -64,27 +64,50 @@ public class ContainerAssembler extends Container {
     }
 
     @Override
-    public boolean canInteractWith(EntityPlayer p) { return te.isUseableByPlayer(p); }
+    public boolean canInteractWith(EntityPlayer p) {
+        return te.isUseableByPlayer(p);
+    }
 
     @Override
-    public ItemStack transferStackInSlot(EntityPlayer player, int index) {
+    public ItemStack transferStackInSlot(EntityPlayer player, int slotIndex) {
         ItemStack itemstack = null;
-        Slot slot = (Slot)this.inventorySlots.get(index);
+        Slot slot = (Slot)this.inventorySlots.get(slotIndex);
 
         if (slot != null && slot.getHasStack()) {
             ItemStack itemstack1 = slot.getStack();
             itemstack = itemstack1.copy();
 
-            if (index < 11) { // From Machine to Player
-                if (!this.mergeItemStack(itemstack1, 11, 47, true)) return null;
-            } else { // From Player to Machine (Inputs only)
-                if (!this.mergeItemStack(itemstack1, 0, 9, false)) return null;
+            // Case A: Item is in the Machine (Slots 0-10)
+            if (slotIndex < 11) {
+                // Try to move to Player Inventory (Slots 11-47)
+                if (!this.mergeItemStack(itemstack1, 11, 47, true)) {
+                    return null;
+                }
+                slot.onSlotChange(itemstack1, itemstack);
+            }
+            // Case B: Item is in Player Inventory
+            else {
+                // First try to put in Input Grid (0-8) or Upgrade (10)
+                // Note: We skip Slot 9 because it's an Output slot (SlotFurnace)
+                if (!this.mergeItemStack(itemstack1, 0, 9, false) && !this.mergeItemStack(itemstack1, 10, 11, false)) {
+                    // If Machine is full, move between Hotbar and Main Inventory
+                    if (slotIndex >= 11 && slotIndex < 38) {
+                        if (!this.mergeItemStack(itemstack1, 38, 47, false)) return null;
+                    } else if (slotIndex >= 38 && slotIndex < 47 && !this.mergeItemStack(itemstack1, 11, 38, false)) {
+                        return null;
+                    }
+                }
             }
 
-            if (itemstack1.stackSize == 0) slot.putStack(null);
-            else slot.onSlotChanged();
+            if (itemstack1.stackSize == 0) {
+                slot.putStack((ItemStack)null);
+            } else {
+                slot.onSlotChanged();
+            }
 
-            if (itemstack1.stackSize == itemstack.stackSize) return null;
+            if (itemstack1.stackSize == itemstack.stackSize) {
+                return null;
+            }
             slot.onPickupFromSlot(player, itemstack1);
         }
         return itemstack;

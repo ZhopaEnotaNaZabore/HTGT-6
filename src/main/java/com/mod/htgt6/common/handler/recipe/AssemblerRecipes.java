@@ -1,25 +1,60 @@
 package com.mod.htgt6.common.handler.recipe;
 
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import java.util.ArrayList;
 import java.util.List;
 
 public class AssemblerRecipes {
-    private static final List<AssemblerRecipe> recipeList = new ArrayList<AssemblerRecipe>();
+    private static final AssemblerRecipes instance = new AssemblerRecipes();
+    private final List<AssemblerRecipe> recipes = new ArrayList<AssemblerRecipe>();
 
-    public static void init() {
-        // Example: 1 Coal (Slot 0) -> 1 Diamond (Tier 2 req, 200 ticks, 32 EU/t)
-        addRecipe(new ItemStack(Items.diamond), 2, 200, 32, new ItemStack(Items.coal));
+    public static AssemblerRecipes getInstance() {
+        return instance;
     }
 
-    public static void addRecipe(ItemStack out, int tier, int time, int eu, ItemStack... in) {
-        recipeList.add(new AssemblerRecipe(out, tier, time, eu, in));
+    private AssemblerRecipes() {}
+    public List<AssemblerRecipe> getRecipes() {
+        return recipes;
     }
 
-    public static AssemblerRecipe getMatchingRecipe(ItemStack[] inv, int tier) {
-        for (AssemblerRecipe r : recipeList) {
-            if (r.matches(inv, tier)) return r;
+    public void registerRecipes() {
+        // Example: 16 Torches Recipe
+        ItemStack[] torchInput = new ItemStack[9];
+        torchInput[0] = new ItemStack(Items.coal, 4);
+        torchInput[1] = new ItemStack(Items.stick, 4);
+
+        addRecipe(new AssemblerRecipe(
+                torchInput,
+                new ItemStack(Blocks.torch, 16),
+                100,
+                8,
+                1
+        ));
+        ItemStack[] IOdispenser = new ItemStack[9];
+        IOdispenser[0] = new ItemStack(Blocks.cobblestone, 6);
+        IOdispenser[1] = new ItemStack(Items.redstone, 4);
+        IOdispenser[3] = new ItemStack(Items.iron_ingot, 2);
+
+        addRecipe(new AssemblerRecipe(
+                IOdispenser,
+                new ItemStack(Blocks.dispenser, 1),
+                400,
+                16,
+                1
+        ));
+    }
+
+    public void addRecipe(AssemblerRecipe recipe) {
+        this.recipes.add(recipe);
+    }
+
+    public AssemblerRecipe getRecipe(ItemStack[] inv) {
+        for (AssemblerRecipe recipe : recipes) {
+            if (recipe.matches(inv)) {
+                return recipe;
+            }
         }
         return null;
     }

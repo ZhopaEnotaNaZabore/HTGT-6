@@ -1,5 +1,6 @@
 package com.mod.htgt6.client.GUI;
 
+import codechicken.nei.recipe.GuiCraftingRecipe;
 import com.mod.htgt6.common.TE.TileEntityAssembler;
 import com.mod.htgt6.common.inventory.ContainerAssembler;
 import net.minecraft.client.gui.inventory.GuiContainer;
@@ -21,8 +22,8 @@ public class GuiAssembler extends GuiContainer {
     protected void drawGuiContainerBackgroundLayer(float p, int mx, int my) {
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
         this.mc.getTextureManager().bindTexture(texture);
-        int k = (width - xSize) / 2;
-        int l = (height - ySize) / 2;
+        int k = (this.width - this.xSize) / 2;
+        int l = (this.height - this.ySize) / 2;
         this.drawTexturedModalRect(k, l, 0, 0, xSize, ySize);
 
         if (this.te.maxProgress > 0 && this.te.progress > 0) {
@@ -46,4 +47,22 @@ public class GuiAssembler extends GuiContainer {
             this.fontRendererObj.drawString(warn, 88 - (fontRendererObj.getStringWidth(warn) / 2), 45, 0xFF0000);
         }
     }
+
+    @Override
+    protected void mouseClicked(int x, int y, int button) {
+        // ESSENTIAL: This allows GuiContainer to handle slot clicks,
+        // shift-clicks, and dragging items into/out of slots.
+        super.mouseClicked(x, y, button);
+
+        int guiLeft = (this.width - this.xSize) / 2;
+        int guiTop = (this.height - this.ySize) / 2;
+
+        // Custom logic for clicking the progress bar (e.g., for NEI integration)
+        if (x >= guiLeft + 78 && x <= guiLeft + 100 && y >= guiTop + 25 && y <= guiTop + 41) {
+            // Add recipe look-up logic here if using NEI/JEI
+            if (x >= guiLeft + 74 && x <= guiLeft + 74 + 24 && y >= guiTop + 23 && y <= guiTop + 23 + 17) {
+                GuiCraftingRecipe.openRecipeGui("assembling_machine");
+        }
+    }
+}
 }
