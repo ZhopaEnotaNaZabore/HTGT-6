@@ -1,0 +1,104 @@
+// class version 50.0 (50)
+// access flags 0x401
+public abstract class TTileNetwork$$PassThrough$class {
+
+
+  // access flags 0x9
+  public static $init$(LTTileNetwork$$PassThrough;)V
+    RETURN
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x9
+  public static bindPart(LTTileNetwork$$PassThrough;Lcodechicken/multipart/TMultiPart;)V
+    ALOAD 0
+    ALOAD 1
+    INVOKEINTERFACE TTileNetwork$$PassThrough.TTileNetwork$$PassThrough$$super$bindPart (Lcodechicken/multipart/TMultiPart;)V
+    ALOAD 1
+    INSTANCEOF mekanism/common/base/ITileNetwork
+    IFEQ L0
+    ALOAD 0
+    ALOAD 1
+    CHECKCAST mekanism/common/base/ITileNetwork
+    INVOKEINTERFACE TTileNetwork$$PassThrough.TTileNetwork$$PassThrough$$impl_$eq (Lmekanism/common/base/ITileNetwork;)V
+   L0
+   FRAME FULL [TTileNetwork$$PassThrough codechicken/multipart/TMultiPart] []
+    RETURN
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x9
+  public static partRemoved(LTTileNetwork$$PassThrough;Lcodechicken/multipart/TMultiPart;I)V
+    ALOAD 0
+    ALOAD 1
+    ILOAD 2
+    INVOKEINTERFACE TTileNetwork$$PassThrough.TTileNetwork$$PassThrough$$super$partRemoved (Lcodechicken/multipart/TMultiPart;I)V
+    ALOAD 1
+    ALOAD 0
+    INVOKEINTERFACE TTileNetwork$$PassThrough.TTileNetwork$$PassThrough$$impl ()Lmekanism/common/base/ITileNetwork;
+    IF_ACMPNE L0
+    ALOAD 0
+    ACONST_NULL
+    INVOKEINTERFACE TTileNetwork$$PassThrough.TTileNetwork$$PassThrough$$impl_$eq (Lmekanism/common/base/ITileNetwork;)V
+   L0
+   FRAME FULL [TTileNetwork$$PassThrough codechicken/multipart/TMultiPart I] []
+    RETURN
+    MAXSTACK = 3
+    MAXLOCALS = 3
+
+  // access flags 0x9
+  public static canAddPart(LTTileNetwork$$PassThrough;Lcodechicken/multipart/TMultiPart;)Z
+    ALOAD 0
+    INVOKEINTERFACE TTileNetwork$$PassThrough.TTileNetwork$$PassThrough$$impl ()Lmekanism/common/base/ITileNetwork;
+    IFNULL L0
+    ALOAD 1
+    INSTANCEOF mekanism/common/base/ITileNetwork
+    IFEQ L0
+    ICONST_0
+    IRETURN
+   L0
+   FRAME FULL [TTileNetwork$$PassThrough codechicken/multipart/TMultiPart] []
+    ALOAD 0
+    ALOAD 1
+    INVOKEINTERFACE TTileNetwork$$PassThrough.TTileNetwork$$PassThrough$$super$canAddPart (Lcodechicken/multipart/TMultiPart;)Z
+    IRETURN
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x9
+  public static handlePacketData(LTTileNetwork$$PassThrough;Lio/netty/buffer/ByteBuf;)V throws java/lang/Exception 
+    ALOAD 0
+    INVOKEINTERFACE TTileNetwork$$PassThrough.TTileNetwork$$PassThrough$$impl ()Lmekanism/common/base/ITileNetwork;
+    ALOAD 1
+    INVOKEINTERFACE mekanism/common/base/ITileNetwork.handlePacketData (Lio/netty/buffer/ByteBuf;)V
+    RETURN
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x9
+  public static getNetworkedData(LTTileNetwork$$PassThrough;Ljava/util/ArrayList;)Ljava/util/ArrayList;
+    ALOAD 0
+    INVOKEINTERFACE TTileNetwork$$PassThrough.TTileNetwork$$PassThrough$$impl ()Lmekanism/common/base/ITileNetwork;
+    ALOAD 1
+    INVOKEINTERFACE mekanism/common/base/ITileNetwork.getNetworkedData (Ljava/util/ArrayList;)Ljava/util/ArrayList;
+    ARETURN
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x9
+  public static copyFrom(LTTileNetwork$$PassThrough;Lcodechicken/multipart/TileMultipart;)V
+    ALOAD 0
+    ALOAD 1
+    INVOKEINTERFACE TTileNetwork$$PassThrough.TTileNetwork$$PassThrough$$super$copyFrom (Lcodechicken/multipart/TileMultipart;)V
+    ALOAD 1
+    INSTANCEOF TTileNetwork$$PassThrough
+    IFEQ L0
+    ALOAD 0
+    ALOAD 1
+    INVOKEINTERFACE TTileNetwork$$PassThrough.TTileNetwork$$PassThrough$$impl ()Lmekanism/common/base/ITileNetwork;
+    INVOKEINTERFACE TTileNetwork$$PassThrough.TTileNetwork$$PassThrough$$impl_$eq (Lmekanism/common/base/ITileNetwork;)V
+   L0
+    RETURN
+    MAXSTACK = 2
+    MAXLOCALS = 2
+}

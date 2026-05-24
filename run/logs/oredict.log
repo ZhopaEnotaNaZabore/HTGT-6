@@ -40,6 +40,7 @@ GT_Mod: ========================
 ============================
 Outputting Unknown Materials
 ============================
+oreCobaltum
 ============================
 ============================
 Outputting Colors of unknown Materials
@@ -49,6 +50,8 @@ Outputting Colors of unknown Materials
 Outputting Unknown OreDict Names
 ================================
 UUMatter
+uranium
+sapphire
 ================================
 *
 TagData:
@@ -270,6 +273,280 @@ ItemRegistry:
 *
 *
 *
+GalacticraftCore:item.airFan
+GalacticraftCore:item.airVent
+GalacticraftCore:item.basicItem
+GalacticraftCore:item.battery
+GalacticraftCore:item.bucketFuel
+GalacticraftCore:item.bucketOil
+GalacticraftCore:item.buggy
+GalacticraftCore:item.buggymat
+GalacticraftCore:item.canister
+GalacticraftCore:item.canvas
+GalacticraftCore:item.cheeseCurd
+GalacticraftCore:item.engine
+GalacticraftCore:item.flag
+GalacticraftCore:item.fuelCanisterPartial
+GalacticraftCore:item.heavyPlating
+GalacticraftCore:item.infiniteBattery
+GalacticraftCore:item.infiniteOxygen
+GalacticraftCore:item.key
+GalacticraftCore:item.meteoricIronIngot
+GalacticraftCore:item.meteoricIronRaw
+GalacticraftCore:item.noseCone
+GalacticraftCore:item.null
+GalacticraftCore:item.oilCanisterPartial
+GalacticraftCore:item.oilExtractor
+GalacticraftCore:item.oxygenConcentrator
+GalacticraftCore:item.oxygenGear
+GalacticraftCore:item.oxygenMask
+GalacticraftCore:item.oxygenTankHeavyFull
+GalacticraftCore:item.oxygenTankLightFull
+GalacticraftCore:item.oxygenTankMedFull
+GalacticraftCore:item.parachute
+GalacticraftCore:item.rocketFins
+GalacticraftCore:item.schematic
+GalacticraftCore:item.sensorGlasses
+GalacticraftCore:item.sensorLens
+GalacticraftCore:item.spaceship
+GalacticraftCore:item.standardWrench
+GalacticraftCore:item.steelPole
+GalacticraftCore:item.steel_axe
+GalacticraftCore:item.steel_boots
+GalacticraftCore:item.steel_chestplate
+GalacticraftCore:item.steel_helmet
+GalacticraftCore:item.steel_hoe
+GalacticraftCore:item.steel_leggings
+GalacticraftCore:item.steel_pickaxe
+GalacticraftCore:item.steel_shovel
+GalacticraftCore:item.steel_sword
+GalacticraftCore:slabGCDouble
+GalacticraftCore:slabGCHalf
+GalacticraftCore:tile.airLockFrame
+GalacticraftCore:tile.airLockSeal
+GalacticraftCore:tile.aluminumWire
+GalacticraftCore:tile.arclamp
+GalacticraftCore:tile.breatheableAir
+GalacticraftCore:tile.brightAir
+GalacticraftCore:tile.brightBreathableAir
+GalacticraftCore:tile.cargo
+GalacticraftCore:tile.cheeseBlock
+GalacticraftCore:tile.crudeOilStill
+GalacticraftCore:tile.dish
+GalacticraftCore:tile.distributor
+GalacticraftCore:tile.dummyblock
+GalacticraftCore:tile.enclosed
+GalacticraftCore:tile.fallenMeteor
+GalacticraftCore:tile.fuel
+GalacticraftCore:tile.fuelLoader
+GalacticraftCore:tile.gcBlockCore
+GalacticraftCore:tile.glowstoneTorch
+GalacticraftCore:tile.landingPad
+GalacticraftCore:tile.landingPadFull
+GalacticraftCore:tile.machine
+GalacticraftCore:tile.machine2
+GalacticraftCore:tile.machineTiered
+GalacticraftCore:tile.moonBlock
+GalacticraftCore:tile.moonBricksStairs
+GalacticraftCore:tile.moonStoneStairs
+GalacticraftCore:tile.oxygenCollector
+GalacticraftCore:tile.oxygenCompressor
+GalacticraftCore:tile.oxygenDetector
+GalacticraftCore:tile.oxygenPipe
+GalacticraftCore:tile.parachest
+GalacticraftCore:tile.refinery
+GalacticraftCore:tile.rocketWorkbench
+GalacticraftCore:tile.sealer
+GalacticraftCore:tile.solar
+GalacticraftCore:tile.spaceStationBase
+GalacticraftCore:tile.spinThruster
+GalacticraftCore:tile.telemetry
+GalacticraftCore:tile.tinStairs1
+GalacticraftCore:tile.tinStairs2
+GalacticraftCore:tile.treasureChest
+GalacticraftCore:tile.unlitTorch
+GalacticraftCore:tile.unlitTorchLit
+GalacticraftCore:tile.viewScreen
+GalacticraftCore:tile.wallGC
+GalacticraftMars:item.atmosphericValve
+GalacticraftMars:item.bucketSludge
+GalacticraftMars:item.canisterPartialLN2
+GalacticraftMars:item.canisterPartialLOX
+GalacticraftMars:item.carbonFragments
+GalacticraftMars:item.deshAxe
+GalacticraftMars:item.deshBoots
+GalacticraftMars:item.deshChestplate
+GalacticraftMars:item.deshHelmet
+GalacticraftMars:item.deshHoe
+GalacticraftMars:item.deshLeggings
+GalacticraftMars:item.deshPick
+GalacticraftMars:item.deshPickSlime
+GalacticraftMars:item.deshSpade
+GalacticraftMars:item.deshSword
+GalacticraftMars:item.grapple
+GalacticraftMars:item.heavyNoseCone
+GalacticraftMars:item.itemAstroMiner
+GalacticraftMars:item.itemBasicAsteroids
+GalacticraftMars:item.itemTier3Rocket
+GalacticraftMars:item.key
+GalacticraftMars:item.methaneCanisterPartial
+GalacticraftMars:item.null
+GalacticraftMars:item.orionDrive
+GalacticraftMars:item.schematic
+GalacticraftMars:item.spaceshipTier2
+GalacticraftMars:item.thermalPadding
+GalacticraftMars:item.titanium_axe
+GalacticraftMars:item.titanium_boots
+GalacticraftMars:item.titanium_chestplate
+GalacticraftMars:item.titanium_helmet
+GalacticraftMars:item.titanium_hoe
+GalacticraftMars:item.titanium_leggings
+GalacticraftMars:item.titanium_pickaxe
+GalacticraftMars:item.titanium_shovel
+GalacticraftMars:item.titanium_sword
+GalacticraftMars:tile.asteroidsBlock
+GalacticraftMars:tile.beamReceiver
+GalacticraftMars:tile.beamReflector
+GalacticraftMars:tile.cavernVines
+GalacticraftMars:tile.creeperEgg
+GalacticraftMars:tile.denseIce
+GalacticraftMars:tile.hydrogenPipe
+GalacticraftMars:tile.mars
+GalacticraftMars:tile.marsCobblestoneStairs
+GalacticraftMars:tile.marsDungeonBricksStairs
+GalacticraftMars:tile.marsMachine
+GalacticraftMars:tile.marsMachineT2
+GalacticraftMars:tile.minerBase
+GalacticraftMars:tile.minerBaseFull
+GalacticraftMars:tile.slimelingEgg
+GalacticraftMars:tile.sludge
+GalacticraftMars:tile.telepadFake
+GalacticraftMars:tile.telepadShort
+GalacticraftMars:tile.treasureT2
+GalacticraftMars:tile.treasureT3
+GalacticraftMars:tile.walkway
+GalacticraftMars:tile.walkwayOxygenPipe
+GalacticraftMars:tile.walkwayWire
+GalaxySpace:advFuelLoader
+GalaxySpace:advlandingpad
+GalaxySpace:advlandingpadfull
+GalaxySpace:assemblymachine
+GalaxySpace:barnardacblocks
+GalaxySpace:barnardacdandelions
+GalaxySpace:barnardacfalling
+GalaxySpace:barnardacgrass
+GalaxySpace:barnardacleaves
+GalaxySpace:barnardaclog
+GalaxySpace:barnardacores
+GalaxySpace:barnardacwatergrass
+GalaxySpace:barnardaeblocks
+GalaxySpace:callistoblocks
+GalaxySpace:ceresTChestT4
+GalaxySpace:ceresblocks
+GalaxySpace:ceresweb
+GalaxySpace:convertersurface
+GalaxySpace:decometalsblock
+GalaxySpace:dungeonbricks
+GalaxySpace:dungeonglowstone
+GalaxySpace:enceladusblocks
+GalaxySpace:enceladuscrystal
+GalaxySpace:europablocks
+GalaxySpace:europageyser
+GalaxySpace:europaunderwatergeyser
+GalaxySpace:fluidtank
+GalaxySpace:fuelgenerator
+GalaxySpace:futureglass
+GalaxySpace:futureglasses
+GalaxySpace:ganymedeblocks
+GalaxySpace:gravitationmoduleon
+GalaxySpace:helium3
+GalaxySpace:heliumhydrogen
+GalaxySpace:hydrogen2
+GalaxySpace:hydroponicbase
+GalaxySpace:hydroponicfarm
+GalaxySpace:ioTChestT5
+GalaxySpace:ioblocks
+GalaxySpace:item.AdvancedBattery
+GalaxySpace:item.BasicItems
+GalaxySpace:item.CompressedPlates
+GalaxySpace:item.EthaneMethaneBucket
+GalaxySpace:item.ExtraBattery
+GalaxySpace:item.GlowstoneDusts
+GalaxySpace:item.HeavyDutyPlate
+GalaxySpace:item.HeliumHydrogenBucket
+GalaxySpace:item.IceBucket
+GalaxySpace:item.Ingots
+GalaxySpace:item.ItemHelium3Canister
+GalaxySpace:item.ItemHeliumHydrogenCanister
+GalaxySpace:item.ItemHydrogenCanister
+GalaxySpace:item.ItemSchematics
+GalaxySpace:item.JetPack
+GalaxySpace:item.ModernBattery
+GalaxySpace:item.Modules
+GalaxySpace:item.QuantBow
+GalaxySpace:item.RocketParts
+GalaxySpace:item.SulfurAcidBucket
+GalaxySpace:item.ThermalClothT2
+GalaxySpace:item.ThermalPaddingT2
+GalaxySpace:item.Tier4Rocket
+GalaxySpace:item.Tier5Rocket
+GalaxySpace:item.Tier6Rocket
+GalaxySpace:item.TierKeys
+GalaxySpace:item.UltraBattery
+GalaxySpace:item.ancient_pickaxe
+GalaxySpace:item.ancient_sword
+GalaxySpace:item.br_food
+GalaxySpace:item.cobalt_axe
+GalaxySpace:item.cobalt_boots
+GalaxySpace:item.cobalt_helmet
+GalaxySpace:item.cobalt_hoe
+GalaxySpace:item.cobalt_leg
+GalaxySpace:item.cobalt_pickaxe
+GalaxySpace:item.cobalt_plate
+GalaxySpace:item.cobalt_shovel
+GalaxySpace:item.cobalt_sword
+GalaxySpace:item.oxygentank_epp_t1
+GalaxySpace:item.oxygentank_t4
+GalaxySpace:item.oxygentank_t5
+GalaxySpace:item.oxygentank_t6
+GalaxySpace:item.plasmaaxe
+GalaxySpace:item.plasmahoe
+GalaxySpace:item.plasmapickaxe
+GalaxySpace:item.plasmashovel
+GalaxySpace:item.plasmasword
+GalaxySpace:item.small_oxygen_canister
+GalaxySpace:item.spacesuit_boots
+GalaxySpace:item.spacesuit_helmet
+GalaxySpace:item.spacesuit_leg
+GalaxySpace:item.spacesuit_plate
+GalaxySpace:liquidethanemethane
+GalaxySpace:liquidextractor
+GalaxySpace:liquidseparator
+GalaxySpace:machineframes
+GalaxySpace:marsoresblocks
+GalaxySpace:mercuryblocks
+GalaxySpace:mirandablocks
+GalaxySpace:modificationtable
+GalaxySpace:ores
+GalaxySpace:oxstoragemoduleT2
+GalaxySpace:oxygenfiller
+GalaxySpace:plutoblocks
+GalaxySpace:portablenuclearreactor
+GalaxySpace:proximabblocks
+GalaxySpace:proximabburntlog
+GalaxySpace:proximabfrozenlog
+GalaxySpace:radiationstabiliser
+GalaxySpace:recycler
+GalaxySpace:rocketAssembly
+GalaxySpace:solarPanel
+GalaxySpace:solarwindpanel
+GalaxySpace:storagemoduleT3
+GalaxySpace:sulfuracid
+GalaxySpace:surfaceice
+GalaxySpace:titanblocks
+GalaxySpace:tritonblocks
+GalaxySpace:venusblocks
+GalaxySpace:windTurbine
 HTGT6:AE2coin
 HTGT6:AcidicOsmium
 HTGT6:BeeCoin
@@ -294,10 +571,16 @@ HTGT6:DustOsIrRhRu
 HTGT6:EVcoil
 HTGT6:FireclayBrick
 HTGT6:GlassTube
+HTGT6:Gliese792bSurface
+HTGT6:GlieseCStone
+HTGT6:Gliese_C_water_flowing
+HTGT6:Gliese_C_water_still
+HTGT6:GliseCDirt
 HTGT6:Govno
 HTGT6:HVcoil
 HTGT6:HelemaLiquid
 HTGT6:HiTech6Coin
+HTGT6:HighLevelTransformer
 HTGT6:HullEV
 HTGT6:HullIV
 HTGT6:HullLUV
@@ -313,11 +596,14 @@ HTGT6:IngotASTitanium
 HTGT6:KalliumSuplhate
 HTGT6:LUVcoil
 HTGT6:LVCOIL
+HTGT6:LowLevelTransformer
 HTGT6:MVcoil
+HTGT6:MediumLevelTransformer
 HTGT6:ModLogo
 HTGT6:NovaCrystalAlloy
 HTGT6:NovaCrystalDust
 HTGT6:NovaCrystall
+HTGT6:OmegaTransformer
 HTGT6:PCcube
 HTGT6:PUV1coil
 HTGT6:PalladiumSollution
@@ -334,11 +620,27 @@ HTGT6:SlayerCoin
 HTGT6:SpaceTravelersCoin
 HTGT6:SteamPunkCoin
 HTGT6:TechCoin
+HTGT6:TierModuleEV
+HTGT6:TierModuleHV
+HTGT6:TierModuleIV
+HTGT6:TierModuleLuV
+HTGT6:TierModuleMAX
+HTGT6:TierModuleMV
+HTGT6:TierModuleOEV
+HTGT6:TierModuleOHV
+HTGT6:TierModuleOIV
+HTGT6:TierModuleOLV
+HTGT6:TierModuleOMV
+HTGT6:TierModulePUV1
+HTGT6:TierModuleUV
+HTGT6:TierModuleUX
+HTGT6:TierModuleZPM
 HTGT6:TriniumFluoirite
 HTGT6:ULVcoil
 HTGT6:ULVhull
 HTGT6:UVCirc
 HTGT6:UVcoil
+HTGT6:UltimateLevelTransformer
 HTGT6:UnfFireclybrick
 HTGT6:VelaADust
 HTGT6:WizardyCoin
@@ -982,6 +1284,13 @@ gregtech:gt.meta.ore.broken.etfu.deepslate
 gregtech:gt.meta.ore.broken.etfu.diorite
 gregtech:gt.meta.ore.broken.etfu.granite
 gregtech:gt.meta.ore.broken.gasu.basalt
+gregtech:gt.meta.ore.broken.gc.asteroids.dark
+gregtech:gt.meta.ore.broken.gc.asteroids.gray
+gregtech:gt.meta.ore.broken.gc.asteroids.light
+gregtech:gt.meta.ore.broken.gc.mars.dirt
+gregtech:gt.meta.ore.broken.gc.mars.rock
+gregtech:gt.meta.ore.broken.gc.moon.dirt
+gregtech:gt.meta.ore.broken.gc.moon.rock
 gregtech:gt.meta.ore.broken.granite
 gregtech:gt.meta.ore.broken.greenschist
 gregtech:gt.meta.ore.broken.kimberlite
@@ -1098,6 +1407,13 @@ gregtech:gt.meta.ore.normal.etfu.deepslate
 gregtech:gt.meta.ore.normal.etfu.diorite
 gregtech:gt.meta.ore.normal.etfu.granite
 gregtech:gt.meta.ore.normal.gasu.basalt
+gregtech:gt.meta.ore.normal.gc.asteroids.dark
+gregtech:gt.meta.ore.normal.gc.asteroids.gray
+gregtech:gt.meta.ore.normal.gc.asteroids.light
+gregtech:gt.meta.ore.normal.gc.mars.dirt
+gregtech:gt.meta.ore.normal.gc.mars.rock
+gregtech:gt.meta.ore.normal.gc.moon.dirt
+gregtech:gt.meta.ore.normal.gc.moon.rock
 gregtech:gt.meta.ore.normal.granite
 gregtech:gt.meta.ore.normal.gravel
 gregtech:gt.meta.ore.normal.greenschist
@@ -1218,6 +1534,13 @@ gregtech:gt.meta.ore.small.etfu.deepslate
 gregtech:gt.meta.ore.small.etfu.diorite
 gregtech:gt.meta.ore.small.etfu.granite
 gregtech:gt.meta.ore.small.gasu.basalt
+gregtech:gt.meta.ore.small.gc.asteroids.dark
+gregtech:gt.meta.ore.small.gc.asteroids.gray
+gregtech:gt.meta.ore.small.gc.asteroids.light
+gregtech:gt.meta.ore.small.gc.mars.dirt
+gregtech:gt.meta.ore.small.gc.mars.rock
+gregtech:gt.meta.ore.small.gc.moon.dirt
+gregtech:gt.meta.ore.small.gc.moon.rock
 gregtech:gt.meta.ore.small.granite
 gregtech:gt.meta.ore.small.gravel
 gregtech:gt.meta.ore.small.greenschist
@@ -3035,9 +3358,9 @@ OreDictionary:
  1x blockAlexandrite
  1x blockAlmandine
  1x blockAlmond
- 1x blockAluminium
+ 2x blockAluminium
  1x blockAluminiumChloride
- 1x blockAluminum
+ 2x blockAluminum
  1x blockAmazonite
  1x blockAmber
  1x blockAmbrosium
@@ -3048,8 +3371,8 @@ OreDictionary:
  1x blockAndradite
  1x blockAngmallen
  1x blockAnthracite
- 3x blockAnyCopper
- 6x blockAnyIron
+ 4x blockAnyCopper
+ 7x blockAnyIron
  3x blockAnyIronSteel
  1x blockApatite
  1x blockAquaMiddle
@@ -3077,7 +3400,7 @@ OreDictionary:
  1x blockBlueAventurine
  1x blockBlueFluorite
  1x blockBlueJasper
- 1x blockBlueSapphire
+ 2x blockBlueSapphire
  1x blockBlueSteel
  1x blockBlueTopaz
  1x blockBlutonium
@@ -3114,7 +3437,7 @@ OreDictionary:
  1x blockCoffee
  1x blockConstantan
  1x blockContinuum
- 2x blockCopper
+ 3x blockCopper
  1x blockCorn
  1x blockCraponite
  1x blockCrimsonMiddle
@@ -3128,7 +3451,7 @@ OreDictionary:
  1x blockDarkIron
  1x blockDarkSteel
  1x blockDeepIron
- 1x blockDesh
+ 2x blockDesh
  1x blockDesichalkos
  2x blockDiamond
  1x blockDiamondIndustrial
@@ -4443,8 +4766,8 @@ OreDictionary:
  6x blockGemAnyJasper
  2x blockGemAnyPrismarine
  2x blockGemAnySalt
- 7x blockGemAnySapphire
-19x blockGemAnySiliconDioxide
+ 8x blockGemAnySapphire
+21x blockGemAnySiliconDioxide
  3x blockGemAnyStone
  9x blockGemAnyThaumicCrystal
  6x blockGemAnyTigerEye
@@ -4465,7 +4788,7 @@ OreDictionary:
  1x blockGemBlueAventurine
  1x blockGemBlueFluorite
  1x blockGemBlueJasper
- 1x blockGemBlueSapphire
+ 2x blockGemBlueSapphire
  1x blockGemBlueTigerEye
  1x blockGemBlueTopaz
  1x blockGemBrownAventurine
@@ -4523,7 +4846,7 @@ OreDictionary:
  1x blockGemGarnetPurple
  1x blockGemGarnetRed
  1x blockGemGarnetYellow
- 3x blockGemGlass
+ 5x blockGemGlass
  1x blockGemGloomstone
  1x blockGemGlowstone
  1x blockGemGlowstoneCeres
@@ -4672,7 +4995,7 @@ OreDictionary:
  1x blockGemZanite
  1x blockGemZircon
  1x blockGemZirconium
- 3x blockGlass
+ 5x blockGlass
  1x blockGlassBlack
  1x blockGlassBlue
  1x blockGlassBrown
@@ -4744,11 +5067,11 @@ OreDictionary:
  1x blockIngotAdluorite
  1x blockIngotAlduorite
  1x blockIngotAlumina
- 1x blockIngotAluminium
+ 2x blockIngotAluminium
  1x blockIngotAluminiumAlloy
  1x blockIngotAluminiumBrass
  1x blockIngotAluminiumFluoride
- 1x blockIngotAluminum
+ 2x blockIngotAluminum
  1x blockIngotAluminumBrass
  1x blockIngotAlumite
  1x blockIngotAmericium
@@ -4887,10 +5210,10 @@ OreDictionary:
  1x blockIngotAntimony
  1x blockIngotAnyCalcite
  3x blockIngotAnyCoalCarbon
- 3x blockIngotAnyCopper
+ 4x blockIngotAnyCopper
  1x blockIngotAnyFluorite
- 6x blockIngotAnyIron
- 9x blockIngotAnyIronOrSteel
+ 7x blockIngotAnyIron
+10x blockIngotAnyIronOrSteel
  3x blockIngotAnyIronSteel
  3x blockIngotAnySalt
  1x blockIngotAnySilicon
@@ -4959,7 +5282,7 @@ OreDictionary:
  1x blockIngotConductiveIron
  1x blockIngotConstantan
  1x blockIngotCopernicium
- 2x blockIngotCopper
+ 3x blockIngotCopper
  1x blockIngotCoralium
  1x blockIngotCosmicNeutronium
  1x blockIngotCryolite
@@ -4973,7 +5296,7 @@ OreDictionary:
  1x blockIngotDarkThaumium
  1x blockIngotDarmstadtium
  1x blockIngotDeepIron
- 1x blockIngotDesh
+ 2x blockIngotDesh
  1x blockIngotDesichalkos
  1x blockIngotDraconium
  1x blockIngotDraconiumAwakened
@@ -5094,7 +5417,7 @@ OreDictionary:
  1x blockIngotMeitnerium
  1x blockIngotMendelevium
  1x blockIngotMercury
- 1x blockIngotMeteoricIron
+ 2x blockIngotMeteoricIron
  1x blockIngotMeteoricSteel
  1x blockIngotMeteorite
  1x blockIngotMeutoite
@@ -5108,7 +5431,7 @@ OreDictionary:
  1x blockIngotNaquadahEnriched
  1x blockIngotNaquadria
  1x blockIngotNatrium
- 1x blockIngotNaturalAluminum
+ 2x blockIngotNaturalAluminum
  1x blockIngotNeodymium
  1x blockIngotNeodymiumMagnetic
  1x blockIngotNeptunium
@@ -5226,7 +5549,7 @@ OreDictionary:
  1x blockIngotThorium
  1x blockIngotThorium232
  1x blockIngotThulium
- 2x blockIngotTin
+ 3x blockIngotTin
  1x blockIngotTinAlloy
  1x blockIngotTitan
  1x blockIngotTitanium
@@ -7619,12 +7942,12 @@ OreDictionary:
  1x blockThorium
  1x blockTigerEye
  1x blockTigerIron
- 2x blockTin
+ 3x blockTin
  1x blockTitaniumAluminide
  1x blockTitaniumIridium
  1x blockTofu
  1x blockTopaz
- 1x blockTorch
+ 2x blockTorch
  1x blockTungsten
  1x blockTungsticAcid
  2x blockUranium
@@ -14661,8 +14984,29 @@ OreDictionary:
  1x circuitUltimate
  3x coal
  3x coalCoke
-32x cobblestone
+34x cobblestone
  3x coke
+ 1x compressedAluminium
+ 1x compressedAluminum
+ 1x compressedAnyCoalCarbon
+ 1x compressedAnyCopper
+ 2x compressedAnyIron
+ 3x compressedAnyIronOrSteel
+ 1x compressedAnyIronSteel
+ 1x compressedBronze
+ 1x compressedCoal
+ 1x compressedCobalt
+ 1x compressedCopper
+ 1x compressedDesh
+ 1x compressedIron
+ 1x compressedMagnesium
+ 1x compressedMeteoricIron
+ 1x compressedNaturalAluminum
+ 1x compressedNickel
+ 1x compressedSteel
+ 1x compressedTin
+ 1x compressedTitan
+ 1x compressedTitanium
 16x concrete
  9x container1000creosote
  9x container1000glue
@@ -14709,7 +15053,7 @@ OreDictionary:
 12x craftingLensYellow
  2x craftingPiston
 15x craftingPistonGlue
-27x craftingPistonIngot
+31x craftingPistonIngot
 30x craftingQuartz
  1x craftingRedstoneTorch
  1x craftingTable
@@ -26744,7 +27088,7 @@ OreDictionary:
  3x dustAnyAshes
  6x dustAnyAventurine
  4x dustAnyBlaze
- 5x dustAnyCalcite
+ 6x dustAnyCalcite
  2x dustAnyCarbon
  7x dustAnyClay
  6x dustAnyCoalCarbon
@@ -28249,7 +28593,7 @@ OreDictionary:
  1x dustDiv72Zircon
  1x dustDiv72Zirconium
  1x dustDolamide
- 1x dustDolomite
+ 2x dustDolomite
  1x dustDominicanAmber
  1x dustDouglasFir
  1x dustDraconium
@@ -30114,8 +30458,8 @@ OreDictionary:
  1x dustStone
  1x dustStrontium
  1x dustSugar
- 1x dustSulfur
- 1x dustSulphur
+ 2x dustSulfur
+ 2x dustSulphur
  1x dustSunnarium
  1x dustSunnyQuartz
  1x dustSunstone
@@ -32260,7 +32604,7 @@ OreDictionary:
  2x foodButter
  1x foodCaramelicecream
  2x foodCarrotjuice
- 2x foodCheese
+ 3x foodCheese
  1x foodCherryicecream
  1x foodCherryjuice
  1x foodCherrysmoothie
@@ -33767,7 +34111,7 @@ OreDictionary:
  6x gemAnyJasper
  2x gemAnyPrismarine
  2x gemAnySalt
- 7x gemAnySapphire
+ 8x gemAnySapphire
 16x gemAnySiliconDioxide
  3x gemAnyStone
  9x gemAnyThaumicCrystal
@@ -33789,7 +34133,7 @@ OreDictionary:
  1x gemBlueAventurine
  1x gemBlueFluorite
  1x gemBlueJasper
- 1x gemBlueSapphire
+ 2x gemBlueSapphire
  1x gemBlueTigerEye
  1x gemBlueTopaz
  1x gemBrownAventurine
@@ -34684,7 +35028,7 @@ OreDictionary:
  1x gemZircon
  1x gemZirconium
  1x glassReinforced
- 1x glowstone
+ 3x glowstone
 12x glue
 14x granite
  1x gravel
@@ -34702,15 +35046,15 @@ OreDictionary:
  3x gt:circuit4
  2x gt:circuit5
  1x gt:circuit6
- 1x gt:complateAluminium
- 1x gt:complateBronze
- 2x gt:complateCopper
- 1x gt:complateDesh
- 5x gt:complateIron
- 1x gt:complateMeteoricIron
- 3x gt:complateSteel
- 1x gt:complateTin
- 1x gt:complateTitanium
+ 2x gt:complateAluminium
+ 2x gt:complateBronze
+ 3x gt:complateCopper
+ 2x gt:complateDesh
+ 6x gt:complateIron
+ 2x gt:complateMeteoricIron
+ 4x gt:complateSteel
+ 2x gt:complateTin
+ 2x gt:complateTitanium
  5x gt:re-battery0
  5x gt:re-battery1
  5x gt:re-battery2
@@ -34750,11 +35094,11 @@ OreDictionary:
  1x ingotAdluorite
  1x ingotAlduorite
  1x ingotAlumina
- 1x ingotAluminium
+ 2x ingotAluminium
  1x ingotAluminiumAlloy
  1x ingotAluminiumBrass
  1x ingotAluminiumFluoride
- 1x ingotAluminum
+ 2x ingotAluminum
  1x ingotAluminumBrass
  1x ingotAlumite
  1x ingotAmericium
@@ -34893,10 +35237,10 @@ OreDictionary:
  1x ingotAntimony
  1x ingotAnyCalcite
  3x ingotAnyCoalCarbon
- 3x ingotAnyCopper
+ 4x ingotAnyCopper
  1x ingotAnyFluorite
- 5x ingotAnyIron
- 8x ingotAnyIronOrSteel
+ 6x ingotAnyIron
+ 9x ingotAnyIronOrSteel
  3x ingotAnyIronSteel
  3x ingotAnySalt
  1x ingotAnySilicon
@@ -34962,14 +35306,14 @@ OreDictionary:
  1x ingotClayBrick
  1x ingotCoal
  1x ingotCoalCoke
- 1x ingotCobalt
+ 2x ingotCobalt
  1x ingotCobalt60
  1x ingotCobaltBrass
  1x ingotCoke
  1x ingotConductiveIron
  1x ingotConstantan
  1x ingotCopernicium
- 2x ingotCopper
+ 3x ingotCopper
  1x ingotCoralium
  1x ingotCosmicNeutronium
  1x ingotCryolite
@@ -34983,7 +35327,7 @@ OreDictionary:
  1x ingotDarkThaumium
  1x ingotDarmstadtium
  1x ingotDeepIron
- 1x ingotDesh
+ 2x ingotDesh
  1x ingotDesichalkos
  1x ingotDoubleAbyssalnite
  1x ingotDoubleActinium
@@ -35894,7 +36238,7 @@ OreDictionary:
  1x ingotLutetium
  1x ingotMagnalium
  1x ingotMagnesite
- 1x ingotMagnesium
+ 2x ingotMagnesium
  1x ingotMagnesiumCarbonate
  1x ingotMagnesiumChloride
  1x ingotManasteel
@@ -35909,7 +36253,7 @@ OreDictionary:
  1x ingotMeitnerium
  1x ingotMendelevium
  1x ingotMercury
- 1x ingotMeteoricIron
+ 2x ingotMeteoricIron
  1x ingotMeteoricSteel
  1x ingotMeteorite
  1x ingotMeutoite
@@ -35923,7 +36267,7 @@ OreDictionary:
  1x ingotNaquadahEnriched
  1x ingotNaquadria
  1x ingotNatrium
- 1x ingotNaturalAluminum
+ 2x ingotNaturalAluminum
  1x ingotNeodymium
  1x ingotNeodymiumMagnetic
  1x ingotNeptunium
@@ -35931,7 +36275,7 @@ OreDictionary:
  1x ingotNetherite
  1x ingotNetherizedDiamond
  1x ingotNichrome
- 1x ingotNickel
+ 2x ingotNickel
  1x ingotNiflheimPower
  1x ingotNihonium
  1x ingotNikolineAlloy
@@ -37023,10 +37367,10 @@ OreDictionary:
  1x ingotThorium
  1x ingotThorium232
  1x ingotThulium
- 2x ingotTin
+ 3x ingotTin
  1x ingotTinAlloy
- 1x ingotTitan
- 1x ingotTitanium
+ 2x ingotTitan
+ 2x ingotTitanium
  1x ingotTitaniumAluminide
  1x ingotTitaniumGold
  1x ingotTitaniumIridium
@@ -37619,7 +37963,7 @@ OreDictionary:
 53x itemRock
  2x itemRubber
  1x itemSalt
- 2x itemSilicon
+ 3x itemSilicon
  2x itemSlimeball
 1124x itemString
  1x itemWheat
@@ -37831,7 +38175,7 @@ OreDictionary:
  4x listAllwheats
  1x livingwoodTwig
  9x logRubber
-66x logWood
+67x logWood
  1x manaDiamond
 14x marble
  1x materialHoneycomb
@@ -38656,16 +39000,18 @@ OreDictionary:
  1x obsidian
  1x obsidianRod
  1x oc:materialCircuitBoardPrinted
-39x oreAbyssalnite
-39x oreAdamant
-39x oreAdamantite
-39x oreAdamantium
-40x oreAmber
-39x oreAmbrosium
-40x oreAmethyst
-39x oreAmethystEnder
-39x oreAncient
-39x oreAncientDebris
+53x oreAbyssalnite
+53x oreAdamant
+53x oreAdamantite
+53x oreAdamantium
+ 5x oreAluminium
+ 5x oreAluminum
+54x oreAmber
+53x oreAmbrosium
+54x oreAmethyst
+53x oreAmethystEnder
+53x oreAncient
+53x oreAncientDebris
  2x oreAndesiteAbyssalnite
  2x oreAndesiteActinium
  2x oreAndesiteAdamant
@@ -39404,22 +39750,24 @@ OreDictionary:
  2x oreAndesiteZinc
  2x oreAndesiteZircon
  2x oreAndesiteZirconium
-39x oreAnthracite
-79x oreAnyAmethyst
-40x oreAnyCoalCarbon
-40x oreAnyCopper
-196x oreAnyDiamond
-274x oreAnyEmerald
-390x oreAnyFluorite
-78x oreAnyGlowstone
-79x oreAnyIron
-79x oreAnyIronOrSteel
-39x oreAnySalt
-274x oreAnySapphire
-117x oreAnySiliconDioxide
-351x oreAnyThaumicCrystal
-39x oreAquamarine
-39x oreArdite
+53x oreAnthracite
+107x oreAnyAmethyst
+ 2x oreAnyCalcite
+58x oreAnyCoalCarbon
+60x oreAnyCopper
+269x oreAnyDiamond
+374x oreAnyEmerald
+530x oreAnyFluorite
+106x oreAnyGlowstone
+112x oreAnyIron
+112x oreAnyIronOrSteel
+53x oreAnySalt
+373x oreAnySapphire
+ 5x oreAnySilicon
+159x oreAnySiliconDioxide
+477x oreAnyThaumicCrystal
+53x oreAquamarine
+53x oreArdite
  2x oreBasaltAbyssalnite
  2x oreBasaltActinium
  2x oreBasaltAdamant
@@ -40896,10 +41244,10 @@ OreDictionary:
  1x oreBedrockZinc
  1x oreBedrockZircon
  1x oreBedrockZirconium
-39x oreBibibium
-39x oreBismuth
-39x oreBixbite
-39x oreBlackFluorite
+53x oreBibibium
+53x oreBismuth
+53x oreBixbite
+53x oreBlackFluorite
  2x oreBlackgraniteAbyssalnite
  2x oreBlackgraniteActinium
  2x oreBlackgraniteAdamant
@@ -41638,9 +41986,9 @@ OreDictionary:
  2x oreBlackgraniteZinc
  2x oreBlackgraniteZircon
  2x oreBlackgraniteZirconium
-39x oreBlueFluorite
-39x oreBlueSapphire
-39x oreBlueTopaz
+53x oreBlueFluorite
+54x oreBlueSapphire
+53x oreBlueTopaz
  2x oreBlueschistAbyssalnite
  2x oreBlueschistActinium
  2x oreBlueschistAdamant
@@ -42379,17 +42727,18 @@ OreDictionary:
  2x oreBlueschistZinc
  2x oreBlueschistZircon
  2x oreBlueschistZirconium
-39x oreBlutonium
-39x oreCertusQuartz
-39x oreChargedCertusQuartz
-39x oreCheese
-39x oreChimerite
-40x oreCoal
-39x oreCobalt
-39x oreContinuum
-40x oreCopper
-39x oreCoralium
-39x oreCyanite
+53x oreBlutonium
+53x oreCertusQuartz
+53x oreChargedCertusQuartz
+54x oreCheese
+53x oreChimerite
+58x oreCoal
+55x oreCobalt
+ 1x oreCobaltum
+53x oreContinuum
+60x oreCopper
+53x oreCoralium
+53x oreCyanite
  2x oreDarkprismarineAbyssalnite
  2x oreDarkprismarineActinium
  2x oreDarkprismarineAdamant
@@ -43154,10 +43503,10 @@ OreDictionary:
  1x oreDenseStannite
  1x oreDenseStibnite
  1x oreDenseTetrahedrite
-39x oreDesh
-40x oreDiamond
-39x oreDiamondIndustrial
-39x oreDilithium
+54x oreDesh
+57x oreDiamond
+53x oreDiamondIndustrial
+53x oreDilithium
  2x oreDioriteAbyssalnite
  2x oreDioriteActinium
  2x oreDioriteAdamant
@@ -43896,17 +44245,18 @@ OreDictionary:
  2x oreDioriteZinc
  2x oreDioriteZircon
  2x oreDioriteZirconium
-39x oreDominicanAmber
-39x oreDraconium
-39x oreDreadium
-39x oreDuraniumElemental
-39x oreEfrine
-39x oreElectrotine
-39x oreElvenDragonstone
-40x oreEmerald
-39x oreEndEndium
-39x oreEndHeeEndium
-39x oreEndium
+ 2x oreDolomite
+53x oreDominicanAmber
+53x oreDraconium
+53x oreDreadium
+53x oreDuraniumElemental
+53x oreEfrine
+53x oreElectrotine
+53x oreElvenDragonstone
+56x oreEmerald
+53x oreEndEndium
+53x oreEndHeeEndium
+53x oreEndium
  2x oreEndstoneAbyssalnite
  2x oreEndstoneActinium
  2x oreEndstoneAdamant
@@ -44645,18 +44995,18 @@ OreDictionary:
  2x oreEndstoneZinc
  2x oreEndstoneZircon
  2x oreEndstoneZirconium
-39x oreEthaxium
-39x oreFirestone
-39x oreFluix
-39x oreFluorite
-39x oreForce
-39x oreForcicium
-39x oreForcillium
-40x oreGalena
-39x oreGloomstone
-39x oreGlowstone
-40x oreGold
-39x oreGoshenite
+53x oreEthaxium
+53x oreFirestone
+53x oreFluix
+53x oreFluorite
+53x oreForce
+53x oreForcicium
+53x oreForcillium
+54x oreGalena
+53x oreGloomstone
+53x oreGlowstone
+57x oreGold
+53x oreGoshenite
  1x oreGravelAbyssalnite
  1x oreGravelActinium
  1x oreGravelAdamant
@@ -45395,9 +45745,9 @@ OreDictionary:
  1x oreGravelZinc
  1x oreGravelZircon
  1x oreGravelZirconium
-39x oreGravitite
-39x oreGreenFluorite
-39x oreGreenSapphire
+53x oreGravitite
+53x oreGreenFluorite
+53x oreGreenSapphire
  2x oreGreenschistAbyssalnite
  2x oreGreenschistActinium
  2x oreGreenschistAdamant
@@ -46136,24 +46486,26 @@ OreDictionary:
  2x oreGreenschistZinc
  2x oreGreenschistZircon
  2x oreGreenschistZirconium
-39x oreHeliodor
-195x oreHexorium
-39x oreHexoriumBlack
-39x oreHexoriumBlue
-39x oreHexoriumGreen
-39x oreHexoriumRed
-39x oreHexoriumWhite
-39x oreInfusedAir
-39x oreInfusedBalance
-39x oreInfusedDull
-39x oreInfusedEarth
-39x oreInfusedEntropy
-39x oreInfusedFire
-39x oreInfusedOrder
-39x oreInfusedVis
-39x oreInfusedWater
-39x oreIridium
-40x oreIron
+53x oreHeliodor
+265x oreHexorium
+53x oreHexoriumBlack
+53x oreHexoriumBlue
+53x oreHexoriumGreen
+53x oreHexoriumRed
+53x oreHexoriumWhite
+ 2x oreIllmenite
+ 2x oreIlmenite
+53x oreInfusedAir
+53x oreInfusedBalance
+53x oreInfusedDull
+53x oreInfusedEarth
+53x oreInfusedEntropy
+53x oreInfusedFire
+53x oreInfusedOrder
+53x oreInfusedVis
+53x oreInfusedWater
+53x oreIridium
+59x oreIron
  2x oreKimberliteAbyssalnite
  2x oreKimberliteActinium
  2x oreKimberliteAdamant
@@ -47630,8 +47982,8 @@ OreDictionary:
  2x oreKomatiiteZinc
  2x oreKomatiiteZircon
  2x oreKomatiiteZirconium
-40x oreLapis
-39x oreLead
+55x oreLapis
+53x oreLead
  2x oreLightprismarineAbyssalnite
  2x oreLightprismarineActinium
  2x oreLightprismarineAdamant
@@ -49108,10 +49460,11 @@ OreDictionary:
  2x oreLimestoneZinc
  2x oreLimestoneZircon
  2x oreLimestoneZirconium
-39x oreLiquifiedCoralium
-39x oreLudicrite
-39x oreMagentaFluorite
-39x oreManaDiamond
+53x oreLiquifiedCoralium
+53x oreLudicrite
+53x oreMagentaFluorite
+ 1x oreMagnesium
+53x oreManaDiamond
  2x oreMarbleAbyssalnite
  2x oreMarbleActinium
  2x oreMarbleAdamant
@@ -49850,12 +50203,1487 @@ OreDictionary:
  2x oreMarbleZinc
  2x oreMarbleZircon
  2x oreMarbleZirconium
-39x oreMaxixe
-39x oreMercury
-39x oreMeteorite
-39x oreMoonAnyStone
-39x oreMoonstone
-39x oreMorganite
+ 4x oreMarsAbyssalnite
+ 4x oreMarsActinium
+ 4x oreMarsAdamant
+ 4x oreMarsAdamantine
+ 4x oreMarsAdamantite
+ 4x oreMarsAdamantium
+ 4x oreMarsAdluorite
+ 4x oreMarsAlduorite
+ 4x oreMarsAlexandrite
+ 4x oreMarsAlmandine
+ 4x oreMarsAlumina
+ 4x oreMarsAluminium
+ 4x oreMarsAluminiumFluoride
+ 4x oreMarsAluminiumHydroxide
+ 4x oreMarsAluminum
+ 4x oreMarsAlunite
+ 4x oreMarsAmazonite
+ 4x oreMarsAmber
+ 4x oreMarsAmbrosium
+ 4x oreMarsAmericium
+ 4x oreMarsAmericium241
+ 4x oreMarsAmethyst
+ 4x oreMarsAmethystEnder
+ 4x oreMarsAncient
+ 4x oreMarsAncientDebris
+ 4x oreMarsAndradite
+ 4x oreMarsAnthracite
+ 4x oreMarsAntiActinium
+ 4x oreMarsAntiAdamant
+ 4x oreMarsAntiAdamantine
+ 4x oreMarsAntiAdamantium
+ 4x oreMarsAntiAluminium
+ 4x oreMarsAntiAluminum
+ 4x oreMarsAntiAmericium
+ 4x oreMarsAntiAmericium241
+ 4x oreMarsAntiAntimony
+ 4x oreMarsAntiArsenic
+ 4x oreMarsAntiAstatine
+ 4x oreMarsAntiBarium
+ 4x oreMarsAntiBerkelium
+ 4x oreMarsAntiBeryllium
+ 4x oreMarsAntiBibibium
+ 4x oreMarsAntiBismuth
+ 4x oreMarsAntiBohrium
+ 4x oreMarsAntiBoron
+ 4x oreMarsAntiBromine
+ 4x oreMarsAntiCadmium
+ 4x oreMarsAntiCaesium
+ 4x oreMarsAntiCalcium
+ 4x oreMarsAntiCalifornium
+ 4x oreMarsAntiCarbon
+ 4x oreMarsAntiCarbon13
+ 4x oreMarsAntiCarbon14
+ 4x oreMarsAntiCerium
+ 4x oreMarsAntiChlorine
+ 4x oreMarsAntiChrome
+ 4x oreMarsAntiChromium
+ 4x oreMarsAntiCobalt
+ 4x oreMarsAntiCobalt60
+ 4x oreMarsAntiCopernicium
+ 4x oreMarsAntiCopper
+ 4x oreMarsAntiCurium
+ 4x oreMarsAntiDarmstadtium
+ 4x oreMarsAntiDubnium
+ 4x oreMarsAntiDysprosium
+ 4x oreMarsAntiEinsteinium
+ 4x oreMarsAntiErbium
+ 4x oreMarsAntiEuropium
+ 4x oreMarsAntiFarnsium
+ 4x oreMarsAntiFermium
+ 4x oreMarsAntiFlerovium
+ 4x oreMarsAntiFlerovium298
+ 4x oreMarsAntiFluorine
+ 4x oreMarsAntiFrancium
+ 4x oreMarsAntiGadolinium
+ 4x oreMarsAntiGallium
+ 4x oreMarsAntiGermanium
+ 4x oreMarsAntiGold
+ 4x oreMarsAntiGregorium
+ 4x oreMarsAntiHafnium
+ 4x oreMarsAntiHassium
+ 4x oreMarsAntiHolmium
+ 4x oreMarsAntiIndium
+ 4x oreMarsAntiIodine
+ 4x oreMarsAntiIridium
+ 4x oreMarsAntiIron
+ 4x oreMarsAntiKalium
+ 4x oreMarsAntiLanthanum
+ 4x oreMarsAntiLawrencium
+ 4x oreMarsAntiLead
+ 4x oreMarsAntiLithium
+ 4x oreMarsAntiLithium6
+ 4x oreMarsAntiLivermorium
+ 4x oreMarsAntiLutetium
+ 4x oreMarsAntiMagnesium
+ 4x oreMarsAntiManganese
+ 4x oreMarsAntiMeitnerium
+ 4x oreMarsAntiMendelevium
+ 4x oreMarsAntiMercury
+ 4x oreMarsAntiMolybdenum
+ 4x oreMarsAntiNaquadah
+ 4x oreMarsAntiNaquadahEnriched
+ 4x oreMarsAntiNaquadria
+ 4x oreMarsAntiNatrium
+ 4x oreMarsAntiNeodymium
+ 4x oreMarsAntiNeptunium
+ 4x oreMarsAntiNickel
+ 4x oreMarsAntiNiobium
+ 4x oreMarsAntiNobelium
+ 4x oreMarsAntiOsmium
+ 4x oreMarsAntiPalladium
+ 4x oreMarsAntiPhosphor
+ 4x oreMarsAntiPlatinum
+ 4x oreMarsAntiPlutonium
+ 4x oreMarsAntiPlutonium241
+ 4x oreMarsAntiPlutonium243
+ 4x oreMarsAntiPlutonium244
+ 4x oreMarsAntiPolonium
+ 4x oreMarsAntiPotassium
+ 4x oreMarsAntiPraseodymium
+ 4x oreMarsAntiPromethium
+ 4x oreMarsAntiProtactinium
+ 4x oreMarsAntiQuickSilver
+ 4x oreMarsAntiQuicksilver
+ 4x oreMarsAntiRadium
+ 4x oreMarsAntiRhenium
+ 4x oreMarsAntiRhodium
+ 4x oreMarsAntiRoentgenium
+ 4x oreMarsAntiRubidium
+ 4x oreMarsAntiRuthenium
+ 4x oreMarsAntiRutherfordium
+ 4x oreMarsAntiSamarium
+ 4x oreMarsAntiScandium
+ 4x oreMarsAntiSeaborgium
+ 4x oreMarsAntiSelenium
+ 4x oreMarsAntiSilicon
+ 4x oreMarsAntiSilver
+ 4x oreMarsAntiSodium
+ 4x oreMarsAntiStrontium
+ 4x oreMarsAntiSulfur
+ 4x oreMarsAntiTantalum
+ 4x oreMarsAntiTechnetium
+ 4x oreMarsAntiTellurium
+ 4x oreMarsAntiTerbium
+ 4x oreMarsAntiThallium
+ 4x oreMarsAntiThorium
+ 4x oreMarsAntiThulium
+ 4x oreMarsAntiTin
+ 4x oreMarsAntiTitan
+ 4x oreMarsAntiTitanium
+ 4x oreMarsAntiTungsten
+ 4x oreMarsAntiUnbinilium
+ 4x oreMarsAntiUnpentbium
+ 4x oreMarsAntiUnseptquadium
+ 4x oreMarsAntiUnunennium
+ 4x oreMarsAntiUnunoctium
+ 4x oreMarsAntiUnunpentium
+ 4x oreMarsAntiUnunseptium
+ 4x oreMarsAntiUnuntrium
+ 4x oreMarsAntiUran
+ 4x oreMarsAntiUranium
+ 4x oreMarsAntiUranium235
+ 4x oreMarsAntiUranium238
+ 4x oreMarsAntiVanadium
+ 4x oreMarsAntiVibranium
+ 4x oreMarsAntiWolfram
+ 4x oreMarsAntiWolframium
+ 4x oreMarsAntiYtterbium
+ 4x oreMarsAntiYttrium
+ 4x oreMarsAntiZinc
+ 4x oreMarsAntiZirconium
+ 4x oreMarsAntimony
+ 8x oreMarsAnyAmethyst
+24x oreMarsAnyAventurine
+12x oreMarsAnyCalcite
+ 8x oreMarsAnyCarbon
+24x oreMarsAnyClay
+20x oreMarsAnyCoalCarbon
+ 4x oreMarsAnyCopper
+20x oreMarsAnyDiamond
+28x oreMarsAnyEmerald
+40x oreMarsAnyFluorite
+24x oreMarsAnyGarnet
+28x oreMarsAnyGlowstone
+16x oreMarsAnyIron
+20x oreMarsAnyIronOrSteel
+ 4x oreMarsAnyIronSteel
+24x oreMarsAnyJasper
+ 8x oreMarsAnyPrismarine
+20x oreMarsAnySalt
+28x oreMarsAnySapphire
+ 4x oreMarsAnySilicon
+68x oreMarsAnySiliconDioxide
+12x oreMarsAnyStone
+36x oreMarsAnyThaumicCrystal
+24x oreMarsAnyTigerEye
+ 4x oreMarsAnyTungsten
+ 4x oreMarsApatite
+ 4x oreMarsAquaMiddle
+ 4x oreMarsAquamarine
+ 4x oreMarsAragonite
+ 4x oreMarsArdite
+ 4x oreMarsAredrite
+ 4x oreMarsArsenic
+ 4x oreMarsArsenopyrite
+ 4x oreMarsAsbestos
+ 4x oreMarsAstatine
+ 4x oreMarsAstralSilver
+ 4x oreMarsAtlarus
+ 4x oreMarsAventurine
+ 4x oreMarsAzurite
+ 4x oreMarsBalasRuby
+ 4x oreMarsBandedIron
+ 4x oreMarsBarite
+ 4x oreMarsBarium
+ 4x oreMarsBasalticMineralSand
+ 4x oreMarsBastnasite
+ 4x oreMarsBauxite
+ 4x oreMarsBedrockium
+ 4x oreMarsBentonite
+ 4x oreMarsBerkelium
+ 4x oreMarsBeryllium
+ 4x oreMarsBeryllium7
+ 4x oreMarsBeryllium8
+ 4x oreMarsBibibium
+ 4x oreMarsBibiunium
+ 4x oreMarsBiotite
+ 4x oreMarsBischofite
+ 4x oreMarsBismuth
+ 4x oreMarsBixbite
+ 4x oreMarsBlackAventurine
+ 4x oreMarsBlackEye
+ 4x oreMarsBlackFluorite
+ 4x oreMarsBlackTigerEye
+ 4x oreMarsBlazeQuartz
+ 4x oreMarsBlueAventurine
+ 4x oreMarsBlueFluorite
+ 4x oreMarsBlueJasper
+ 4x oreMarsBlueSapphire
+ 4x oreMarsBlueTigerEye
+ 4x oreMarsBlueTopaz
+ 4x oreMarsBlutonium
+ 4x oreMarsBogIron
+ 4x oreMarsBohrium
+ 4x oreMarsBorax
+ 4x oreMarsBoron
+ 4x oreMarsBoron11
+ 4x oreMarsBromargyrite
+ 4x oreMarsBrownAventurine
+ 4x oreMarsBrownLimonite
+ 4x oreMarsCadmium
+ 4x oreMarsCaesium
+ 4x oreMarsCalcite
+ 4x oreMarsCalcium
+ 4x oreMarsCalciumChloride
+ 4x oreMarsCalciumTungstate
+ 4x oreMarsCalifornium
+ 4x oreMarsCarbon
+ 4x oreMarsCarbon13
+ 4x oreMarsCarbon14
+ 4x oreMarsCarborundum
+ 4x oreMarsCarmot
+ 4x oreMarsCassiterite
+ 4x oreMarsCassiteriteSand
+ 4x oreMarsCatsEye
+ 4x oreMarsCelestine
+ 4x oreMarsCerium
+ 4x oreMarsCertusQuartz
+ 4x oreMarsCeruclase
+ 4x oreMarsChalcopyrite
+ 4x oreMarsChalk
+ 4x oreMarsCharcoal
+ 4x oreMarsChargedCertusQuartz
+ 4x oreMarsCheese
+ 4x oreMarsChimerite
+ 4x oreMarsChrome
+ 4x oreMarsChromite
+ 4x oreMarsChromium
+ 4x oreMarsChrysotile
+ 4x oreMarsCinnabar
+ 4x oreMarsClay
+ 4x oreMarsClayBrown
+ 4x oreMarsClayRed
+ 4x oreMarsCoal
+ 4x oreMarsCoalCoke
+ 4x oreMarsCobalt
+ 4x oreMarsCobalt60
+ 4x oreMarsCobaltite
+ 4x oreMarsCoke
+ 4x oreMarsContinuum
+ 4x oreMarsCooperite
+ 4x oreMarsCopernicium
+ 4x oreMarsCopper
+ 4x oreMarsCoralium
+ 4x oreMarsCraponite
+ 4x oreMarsCrimsonMiddle
+ 4x oreMarsCrudeOil
+ 4x oreMarsCryolite
+ 4x oreMarsCurium
+ 4x oreMarsCyanite
+ 4x oreMarsDarkIron
+ 4x oreMarsDarmstadtium
+ 4x oreMarsDatolite
+ 4x oreMarsDeepIron
+ 4x oreMarsDesh
+ 4x oreMarsDiamond
+ 4x oreMarsDiamondIndustrial
+ 4x oreMarsDiatomite
+ 4x oreMarsDiduraniumTrioxide
+ 4x oreMarsDilithium
+ 4x oreMarsDioptase
+ 4x oreMarsDolamide
+ 4x oreMarsDolomite
+ 4x oreMarsDominicanAmber
+ 4x oreMarsDraconium
+ 4x oreMarsDragonEye
+ 4x oreMarsDreadium
+ 4x oreMarsDubnium
+ 4x oreMarsDuraniumElemental
+ 4x oreMarsDuraniumHexaastatide
+ 4x oreMarsDuraniumHexabromide
+ 4x oreMarsDuraniumHexachloride
+ 4x oreMarsDuraniumHexafluoride
+ 4x oreMarsDuraniumHexaiodide
+ 4x oreMarsDysprosium
+ 4x oreMarsEfrine
+ 4x oreMarsEinsteinium
+ 4x oreMarsElectrotine
+ 4x oreMarsElectrum
+ 4x oreMarsElnTungsten
+ 4x oreMarsElvenDragonstone
+ 4x oreMarsElvenElementium
+ 4x oreMarsElvenQuartz
+ 4x oreMarsElvorium
+ 4x oreMarsEmerald
+ 4x oreMarsEmery
+ 4x oreMarsEndium
+ 4x oreMarsEnergiumCyan
+ 4x oreMarsEnergiumRed
+ 4x oreMarsErbium
+ 4x oreMarsEthaxium
+ 4x oreMarsEudialyte
+ 4x oreMarsEuropium
+ 4x oreMarsEximite
+ 4x oreMarsFZDarkIron
+ 4x oreMarsFarnsium
+ 4x oreMarsFerberite
+ 4x oreMarsFermium
+ 4x oreMarsFerrite
+ 4x oreMarsFerrovanadium
+ 4x oreMarsFirestone
+ 4x oreMarsFlerovium
+ 4x oreMarsFlerovium298
+ 4x oreMarsFluix
+ 4x oreMarsFluorine
+ 4x oreMarsFluorite
+ 4x oreMarsFlux
+ 4x oreMarsFoolsRuby
+ 4x oreMarsForce
+ 4x oreMarsForcicium
+ 4x oreMarsForcillium
+ 4x oreMarsFrancium
+ 4x oreMarsFrozenIron
+ 4x oreMarsFullersEarth
+ 4x oreMarsFzDarkIron
+ 4x oreMarsGadolinium
+ 4x oreMarsGalena
+ 4x oreMarsGallium
+ 4x oreMarsGarnet
+ 4x oreMarsGarnetGreen
+ 4x oreMarsGarnetOrange
+ 4x oreMarsGarnetPurple
+ 4x oreMarsGarnetRed
+ 4x oreMarsGarnetSand
+ 4x oreMarsGarnetYellow
+ 4x oreMarsGarnierite
+ 4x oreMarsGermanium
+ 4x oreMarsGibbsite
+ 4x oreMarsGlass
+ 4x oreMarsGlauconite
+ 4x oreMarsGlauconiteSand
+ 4x oreMarsGloomstone
+ 4x oreMarsGlowstone
+ 4x oreMarsGlowstoneCeres
+ 4x oreMarsGlowstoneEnceladus
+ 4x oreMarsGlowstoneIo
+ 4x oreMarsGlowstonePluto
+ 4x oreMarsGlowstoneProteus
+ 4x oreMarsGold
+ 4x oreMarsGoshenite
+ 4x oreMarsGraniticMineralSand
+ 4x oreMarsGraphite
+ 4x oreMarsGravitite
+ 4x oreMarsGreenAventurine
+ 4x oreMarsGreenFluorite
+ 4x oreMarsGreenJasper
+ 4x oreMarsGreenMiddle
+ 4x oreMarsGreenSapphire
+ 4x oreMarsGreenTigerEye
+ 4x oreMarsGregorium
+ 4x oreMarsGrossular
+ 4x oreMarsGypsum
+ 4x oreMarsGyubnera
+ 4x oreMarsHafnium
+ 4x oreMarsHassium
+ 4x oreMarsHawksEye
+ 4x oreMarsHeeEndium
+ 4x oreMarsHeliodor
+ 4x oreMarsHematite
+20x oreMarsHexorium
+ 4x oreMarsHexoriumBlack
+ 4x oreMarsHexoriumBlue
+ 4x oreMarsHexoriumGreen
+ 4x oreMarsHexoriumRed
+ 4x oreMarsHexoriumWhite
+ 4x oreMarsHolmium
+ 4x oreMarsHoney
+ 4x oreMarsHoneydew
+ 4x oreMarsHuebnerite
+ 4x oreMarsIffesal
+ 4x oreMarsIgnatius
+ 4x oreMarsIllmenite
+ 4x oreMarsIlmenite
+ 4x oreMarsIndium
+ 4x oreMarsInfuscolium
+ 4x oreMarsInfusedAir
+ 4x oreMarsInfusedBalance
+ 4x oreMarsInfusedDull
+ 4x oreMarsInfusedEarth
+ 4x oreMarsInfusedEntropy
+ 4x oreMarsInfusedFire
+ 4x oreMarsInfusedOrder
+ 4x oreMarsInfusedVis
+ 4x oreMarsInfusedWater
+ 4x oreMarsIodine
+ 4x oreMarsIodineSalt
+ 4x oreMarsIridium
+ 4x oreMarsIron
+ 4x oreMarsIronOxide
+ 4x oreMarsJade
+ 4x oreMarsJasper
+ 4x oreMarsKalendrite
+ 4x oreMarsKalium
+ 4x oreMarsKaolinite
+ 4x oreMarsKesterite
+ 4x oreMarsKreknorite
+ 4x oreMarsKyanite
+ 4x oreMarsLantanium
+ 4x oreMarsLantanum
+ 4x oreMarsLanthanium
+ 4x oreMarsLanthanum
+ 4x oreMarsLapis
+ 4x oreMarsLavenderQuartz
+ 4x oreMarsLawrencium
+ 4x oreMarsLazurite
+ 4x oreMarsLead
+ 4x oreMarsLemurite
+ 4x oreMarsLepidolite
+ 4x oreMarsLicorice
+ 4x oreMarsLignite
+ 4x oreMarsLigniteCoke
+ 4x oreMarsLiquifiedCoralium
+ 4x oreMarsLithium
+ 4x oreMarsLithium6
+ 4x oreMarsLithiumChloride
+ 4x oreMarsLivermorium
+ 4x oreMarsLonsdaleite
+ 4x oreMarsLudicrite
+ 4x oreMarsLutetium
+ 4x oreMarsMagentaFluorite
+ 4x oreMarsMagnesite
+ 4x oreMarsMagnesium
+ 4x oreMarsMagnesiumCarbonate
+ 4x oreMarsMagnesiumChloride
+ 4x oreMarsMagnetite
+ 4x oreMarsMalachite
+ 4x oreMarsManaDiamond
+ 4x oreMarsManaQuartz
+ 4x oreMarsManganese
+ 4x oreMarsMauftrium
+ 4x oreMarsMaxixe
+ 4x oreMarsMeitnerium
+ 4x oreMarsMendelevium
+ 4x oreMarsMercury
+ 4x oreMarsMeteoricIron
+ 4x oreMarsMeteorite
+ 4x oreMarsMeutoite
+ 4x oreMarsMica
+ 4x oreMarsMidasium
+ 4x oreMarsMilkyQuartz
+ 4x oreMarsMirabilite
+ 4x oreMarsMithril
+ 4x oreMarsMolybdenite
+ 4x oreMarsMolybdenum
+ 4x oreMarsMonazite
+ 4x oreMarsMoonstone
+ 4x oreMarsMorganite
+ 4x oreMarsMoscovium
+ 4x oreMarsNaquadah
+ 4x oreMarsNaquadahEnriched
+ 4x oreMarsNaquadria
+ 4x oreMarsNatrium
+ 4x oreMarsNaturalAluminum
+ 4x oreMarsNeodymium
+ 4x oreMarsNeptunium
+ 4x oreMarsNetherQuartz
+ 4x oreMarsNetherStar
+ 4x oreMarsNickel
+ 4x oreMarsNihonium
+ 4x oreMarsNikolite
+ 4x oreMarsNiobium
+ 4x oreMarsNiter
+ 4x oreMarsNitrate
+ 4x oreMarsNitre
+ 4x oreMarsNobelium
+ 4x oreMarsNougat
+ 4x oreMarsOceanJasper
+ 4x oreMarsOctine
+ 4x oreMarsOganesson
+ 4x oreMarsOilSand
+ 4x oreMarsOilShale
+ 4x oreMarsOilsands
+ 4x oreMarsOilshale
+ 4x oreMarsOlivine
+ 4x oreMarsOnyx
+ 4x oreMarsOnyxBlack
+ 4x oreMarsOnyxRed
+ 4x oreMarsOpal
+ 4x oreMarsOrangeFluorite
+ 4x oreMarsOrangeSapphire
+ 4x oreMarsOrichalcum
+ 4x oreMarsOriharukon
+ 4x oreMarsOsmium
+ 4x oreMarsOsmiumElemental
+ 4x oreMarsOureclase
+ 4x oreMarsPEZ
+ 4x oreMarsPalladium
+ 4x oreMarsPalygorskite
+ 4x oreMarsPentlandite
+ 4x oreMarsPeridot
+ 4x oreMarsPerlite
+ 4x oreMarsPetCoke
+ 4x oreMarsPetroleumCoke
+ 4x oreMarsPhosphate
+ 4x oreMarsPhosphor
+ 4x oreMarsPhosphorite
+ 4x oreMarsPhosphorous
+ 4x oreMarsPhosphorus
+ 4x oreMarsPigIron
+ 4x oreMarsPinalite
+ 4x oreMarsPinkDiamond
+ 4x oreMarsPinkFluorite
+ 4x oreMarsPitchblende
+ 4x oreMarsPlatinum
+ 4x oreMarsPlatinumGroupSludge
+ 4x oreMarsPlutonium
+ 4x oreMarsPlutonium238
+ 4x oreMarsPlutonium239
+ 4x oreMarsPlutonium240
+ 4x oreMarsPlutonium241
+ 4x oreMarsPlutonium243
+ 4x oreMarsPlutonium244
+ 4x oreMarsPollucite
+ 4x oreMarsPolonium
+ 4x oreMarsPotassium
+ 4x oreMarsPotassiumFeldspar
+ 4x oreMarsPotassiumNitrate
+ 4x oreMarsPowellite
+ 4x oreMarsPraseodymium
+ 4x oreMarsPrismane
+ 4x oreMarsPrismarine
+ 4x oreMarsPrismarineDark
+ 4x oreMarsPrometheum
+ 4x oreMarsPromethium
+ 4x oreMarsProtactinium
+ 4x oreMarsPurpleSapphire
+ 4x oreMarsPyrite
+ 4x oreMarsPyrolusite
+ 4x oreMarsPyrope
+60x oreMarsQuartz
+ 4x oreMarsQuartzBlack
+ 4x oreMarsQuartzSand
+ 4x oreMarsQuartzSmoky
+ 4x oreMarsQuartzite
+ 4x oreMarsQuickSilver
+ 4x oreMarsQuicksilver
+ 4x oreMarsRadium
+ 4x oreMarsRainforestJasper
+ 4x oreMarsRareEarth
+ 4x oreMarsRaspite
+ 4x oreMarsRealgar
+ 4x oreMarsRedAventurine
+ 4x oreMarsRedFluorite
+ 4x oreMarsRedJasper
+ 4x oreMarsRedQuartz
+ 4x oreMarsRedTigerEye
+ 4x oreMarsRedstone
+ 4x oreMarsRhenium
+ 4x oreMarsRhodium
+ 4x oreMarsRockSalt
+ 4x oreMarsRoentgenium
+ 4x oreMarsRubidium
+ 4x oreMarsRubracium
+ 4x oreMarsRuby
+ 4x oreMarsRussellite
+ 4x oreMarsRuthenium
+ 4x oreMarsRutherfordium
+ 4x oreMarsRutile
+ 4x oreMarsSalpeter
+ 4x oreMarsSalt
+ 4x oreMarsSaltpeter
+ 4x oreMarsSamarium
+ 4x oreMarsSanguinite
+ 4x oreMarsSaphire
+ 4x oreMarsSapphire
+ 4x oreMarsScabyst
+ 4x oreMarsScandium
+ 4x oreMarsScarletEmerald
+ 4x oreMarsScheelite
+ 4x oreMarsSeaborgium
+ 4x oreMarsSelenium
+ 4x oreMarsShadowIron
+ 4x oreMarsSheldonite
+ 4x oreMarsSilicon
+ 4x oreMarsSiliconDioxide
+ 4x oreMarsSilver
+ 4x oreMarsSilverIodide
+ 4x oreMarsSlimyBone
+ 4x oreMarsSluiceSand
+ 4x oreMarsSmithsonite
+ 4x oreMarsSmokeyQuartz
+ 4x oreMarsSmokyQuartz
+ 4x oreMarsSoapstone
+ 4x oreMarsSodalite
+ 4x oreMarsSodium
+ 4x oreMarsSodiumNitrate
+ 4x oreMarsSoulsand
+ 4x oreMarsSperrylite
+ 4x oreMarsSpessartine
+ 4x oreMarsSphalerite
+ 4x oreMarsSpinel
+ 4x oreMarsSpodumene
+ 4x oreMarsStannite
+ 4x oreMarsSteel
+ 4x oreMarsStibnite
+ 4x oreMarsStolzite
+ 4x oreMarsStrontium
+ 4x oreMarsSulfur
+ 4x oreMarsSulphur
+ 4x oreMarsSunnyQuartz
+ 4x oreMarsSunstone
+ 4x oreMarsSyrmorite
+ 4x oreMarsTalc
+ 4x oreMarsTantalite
+ 4x oreMarsTantalum
+ 4x oreMarsTanzanite
+ 4x oreMarsTechnetium
+ 4x oreMarsTellurium
+ 4x oreMarsTennessine
+ 4x oreMarsTerbium
+ 4x oreMarsTeslatite
+ 4x oreMarsTetrahedrite
+ 4x oreMarsThallium
+ 4x oreMarsThorium
+ 4x oreMarsThorium232
+ 4x oreMarsThulium
+ 4x oreMarsTigerEye
+ 4x oreMarsTigerIron
+ 4x oreMarsTin
+ 4x oreMarsTitan
+ 4x oreMarsTitanium
+ 4x oreMarsTitaniumIron
+ 4x oreMarsTopaz
+ 4x oreMarsTrinium
+ 4x oreMarsTritaniumDioxide
+ 4x oreMarsTritaniumElemental
+ 4x oreMarsTritaniumHexaastatide
+ 4x oreMarsTritaniumHexabromide
+ 4x oreMarsTritaniumHexachloride
+ 4x oreMarsTritaniumHexafluoride
+ 4x oreMarsTritaniumHexaiodide
+ 4x oreMarsTrona
+ 4x oreMarsTungstate
+ 4x oreMarsTungsten
+ 4x oreMarsTungstenOxide
+ 4x oreMarsTungstenTrioxide
+ 4x oreMarsUnbihexium
+ 4x oreMarsUnbinilium
+ 4x oreMarsUnbipentium
+ 4x oreMarsUnocthexium
+ 4x oreMarsUnoctoctium
+ 4x oreMarsUnoctpentium
+ 4x oreMarsUnoctseptium
+ 4x oreMarsUnpentbium
+ 4x oreMarsUnquadpentium
+ 4x oreMarsUnseptquadium
+ 4x oreMarsUnunennium
+ 4x oreMarsUran
+ 4x oreMarsUraninite
+ 4x oreMarsUranium
+ 4x oreMarsUranium233
+ 4x oreMarsUranium235
+ 4x oreMarsUranium238
+ 4x oreMarsUraniumEnriched
+ 4x oreMarsUvarovite
+ 4x oreMarsValerite
+ 4x oreMarsValonite
+ 4x oreMarsVanadium
+ 4x oreMarsVanadiumMagnetite
+ 4x oreMarsVanadiumPentoxide
+ 4x oreMarsVermiculite
+ 4x oreMarsVibranium
+ 4x oreMarsVinteum
+ 4x oreMarsVinteumPurified
+ 4x oreMarsVoidQuartz
+ 4x oreMarsVulcanite
+ 4x oreMarsVyroxeres
+ 4x oreMarsWhiteFluorite
+ 4x oreMarsWolfram
+ 4x oreMarsWolframite
+ 4x oreMarsWolframium
+ 4x oreMarsWollastonite
+ 4x oreMarsWulfenite
+ 4x oreMarsYellorite
+ 4x oreMarsYellorium
+ 4x oreMarsYellowAventurine
+ 4x oreMarsYellowFluorite
+ 4x oreMarsYellowJasper
+ 4x oreMarsYellowLimonite
+ 4x oreMarsYellowSapphire
+ 4x oreMarsYellowTigerEye
+ 4x oreMarsYtterbium
+ 4x oreMarsYttrium
+ 4x oreMarsZanite
+ 4x oreMarsZeolite
+ 4x oreMarsZinc
+ 4x oreMarsZircon
+ 4x oreMarsZirconium
+53x oreMaxixe
+53x oreMercury
+53x oreMeteorite
+ 4x oreMoonAbyssalnite
+ 4x oreMoonActinium
+ 4x oreMoonAdamant
+ 4x oreMoonAdamantine
+ 4x oreMoonAdamantite
+ 4x oreMoonAdamantium
+ 4x oreMoonAdluorite
+ 4x oreMoonAlduorite
+ 4x oreMoonAlexandrite
+ 4x oreMoonAlmandine
+ 4x oreMoonAlumina
+ 4x oreMoonAluminium
+ 4x oreMoonAluminiumFluoride
+ 4x oreMoonAluminiumHydroxide
+ 4x oreMoonAluminum
+ 4x oreMoonAlunite
+ 4x oreMoonAmazonite
+ 4x oreMoonAmber
+ 4x oreMoonAmbrosium
+ 4x oreMoonAmericium
+ 4x oreMoonAmericium241
+ 4x oreMoonAmethyst
+ 4x oreMoonAmethystEnder
+ 4x oreMoonAncient
+ 4x oreMoonAncientDebris
+ 4x oreMoonAndradite
+ 4x oreMoonAnthracite
+ 4x oreMoonAntiActinium
+ 4x oreMoonAntiAdamant
+ 4x oreMoonAntiAdamantine
+ 4x oreMoonAntiAdamantium
+ 4x oreMoonAntiAluminium
+ 4x oreMoonAntiAluminum
+ 4x oreMoonAntiAmericium
+ 4x oreMoonAntiAmericium241
+ 4x oreMoonAntiAntimony
+ 4x oreMoonAntiArsenic
+ 4x oreMoonAntiAstatine
+ 4x oreMoonAntiBarium
+ 4x oreMoonAntiBerkelium
+ 4x oreMoonAntiBeryllium
+ 4x oreMoonAntiBibibium
+ 4x oreMoonAntiBismuth
+ 4x oreMoonAntiBohrium
+ 4x oreMoonAntiBoron
+ 4x oreMoonAntiBromine
+ 4x oreMoonAntiCadmium
+ 4x oreMoonAntiCaesium
+ 4x oreMoonAntiCalcium
+ 4x oreMoonAntiCalifornium
+ 4x oreMoonAntiCarbon
+ 4x oreMoonAntiCarbon13
+ 4x oreMoonAntiCarbon14
+ 4x oreMoonAntiCerium
+ 4x oreMoonAntiChlorine
+ 4x oreMoonAntiChrome
+ 4x oreMoonAntiChromium
+ 4x oreMoonAntiCobalt
+ 4x oreMoonAntiCobalt60
+ 4x oreMoonAntiCopernicium
+ 4x oreMoonAntiCopper
+ 4x oreMoonAntiCurium
+ 4x oreMoonAntiDarmstadtium
+ 4x oreMoonAntiDubnium
+ 4x oreMoonAntiDysprosium
+ 4x oreMoonAntiEinsteinium
+ 4x oreMoonAntiErbium
+ 4x oreMoonAntiEuropium
+ 4x oreMoonAntiFarnsium
+ 4x oreMoonAntiFermium
+ 4x oreMoonAntiFlerovium
+ 4x oreMoonAntiFlerovium298
+ 4x oreMoonAntiFluorine
+ 4x oreMoonAntiFrancium
+ 4x oreMoonAntiGadolinium
+ 4x oreMoonAntiGallium
+ 4x oreMoonAntiGermanium
+ 4x oreMoonAntiGold
+ 4x oreMoonAntiGregorium
+ 4x oreMoonAntiHafnium
+ 4x oreMoonAntiHassium
+ 4x oreMoonAntiHolmium
+ 4x oreMoonAntiIndium
+ 4x oreMoonAntiIodine
+ 4x oreMoonAntiIridium
+ 4x oreMoonAntiIron
+ 4x oreMoonAntiKalium
+ 4x oreMoonAntiLanthanum
+ 4x oreMoonAntiLawrencium
+ 4x oreMoonAntiLead
+ 4x oreMoonAntiLithium
+ 4x oreMoonAntiLithium6
+ 4x oreMoonAntiLivermorium
+ 4x oreMoonAntiLutetium
+ 4x oreMoonAntiMagnesium
+ 4x oreMoonAntiManganese
+ 4x oreMoonAntiMeitnerium
+ 4x oreMoonAntiMendelevium
+ 4x oreMoonAntiMercury
+ 4x oreMoonAntiMolybdenum
+ 4x oreMoonAntiNaquadah
+ 4x oreMoonAntiNaquadahEnriched
+ 4x oreMoonAntiNaquadria
+ 4x oreMoonAntiNatrium
+ 4x oreMoonAntiNeodymium
+ 4x oreMoonAntiNeptunium
+ 4x oreMoonAntiNickel
+ 4x oreMoonAntiNiobium
+ 4x oreMoonAntiNobelium
+ 4x oreMoonAntiOsmium
+ 4x oreMoonAntiPalladium
+ 4x oreMoonAntiPhosphor
+ 4x oreMoonAntiPlatinum
+ 4x oreMoonAntiPlutonium
+ 4x oreMoonAntiPlutonium241
+ 4x oreMoonAntiPlutonium243
+ 4x oreMoonAntiPlutonium244
+ 4x oreMoonAntiPolonium
+ 4x oreMoonAntiPotassium
+ 4x oreMoonAntiPraseodymium
+ 4x oreMoonAntiPromethium
+ 4x oreMoonAntiProtactinium
+ 4x oreMoonAntiQuickSilver
+ 4x oreMoonAntiQuicksilver
+ 4x oreMoonAntiRadium
+ 4x oreMoonAntiRhenium
+ 4x oreMoonAntiRhodium
+ 4x oreMoonAntiRoentgenium
+ 4x oreMoonAntiRubidium
+ 4x oreMoonAntiRuthenium
+ 4x oreMoonAntiRutherfordium
+ 4x oreMoonAntiSamarium
+ 4x oreMoonAntiScandium
+ 4x oreMoonAntiSeaborgium
+ 4x oreMoonAntiSelenium
+ 4x oreMoonAntiSilicon
+ 4x oreMoonAntiSilver
+ 4x oreMoonAntiSodium
+ 4x oreMoonAntiStrontium
+ 4x oreMoonAntiSulfur
+ 4x oreMoonAntiTantalum
+ 4x oreMoonAntiTechnetium
+ 4x oreMoonAntiTellurium
+ 4x oreMoonAntiTerbium
+ 4x oreMoonAntiThallium
+ 4x oreMoonAntiThorium
+ 4x oreMoonAntiThulium
+ 4x oreMoonAntiTin
+ 4x oreMoonAntiTitan
+ 4x oreMoonAntiTitanium
+ 4x oreMoonAntiTungsten
+ 4x oreMoonAntiUnbinilium
+ 4x oreMoonAntiUnpentbium
+ 4x oreMoonAntiUnseptquadium
+ 4x oreMoonAntiUnunennium
+ 4x oreMoonAntiUnunoctium
+ 4x oreMoonAntiUnunpentium
+ 4x oreMoonAntiUnunseptium
+ 4x oreMoonAntiUnuntrium
+ 4x oreMoonAntiUran
+ 4x oreMoonAntiUranium
+ 4x oreMoonAntiUranium235
+ 4x oreMoonAntiUranium238
+ 4x oreMoonAntiVanadium
+ 4x oreMoonAntiVibranium
+ 4x oreMoonAntiWolfram
+ 4x oreMoonAntiWolframium
+ 4x oreMoonAntiYtterbium
+ 4x oreMoonAntiYttrium
+ 4x oreMoonAntiZinc
+ 4x oreMoonAntiZirconium
+ 4x oreMoonAntimony
+ 8x oreMoonAnyAmethyst
+24x oreMoonAnyAventurine
+12x oreMoonAnyCalcite
+ 8x oreMoonAnyCarbon
+24x oreMoonAnyClay
+20x oreMoonAnyCoalCarbon
+ 4x oreMoonAnyCopper
+20x oreMoonAnyDiamond
+28x oreMoonAnyEmerald
+40x oreMoonAnyFluorite
+24x oreMoonAnyGarnet
+28x oreMoonAnyGlowstone
+16x oreMoonAnyIron
+20x oreMoonAnyIronOrSteel
+ 4x oreMoonAnyIronSteel
+24x oreMoonAnyJasper
+ 8x oreMoonAnyPrismarine
+20x oreMoonAnySalt
+28x oreMoonAnySapphire
+ 4x oreMoonAnySilicon
+68x oreMoonAnySiliconDioxide
+65x oreMoonAnyStone
+36x oreMoonAnyThaumicCrystal
+24x oreMoonAnyTigerEye
+ 4x oreMoonAnyTungsten
+ 4x oreMoonApatite
+ 4x oreMoonAquaMiddle
+ 4x oreMoonAquamarine
+ 4x oreMoonAragonite
+ 4x oreMoonArdite
+ 4x oreMoonAredrite
+ 4x oreMoonArsenic
+ 4x oreMoonArsenopyrite
+ 4x oreMoonAsbestos
+ 4x oreMoonAstatine
+ 4x oreMoonAstralSilver
+ 4x oreMoonAtlarus
+ 4x oreMoonAventurine
+ 4x oreMoonAzurite
+ 4x oreMoonBalasRuby
+ 4x oreMoonBandedIron
+ 4x oreMoonBarite
+ 4x oreMoonBarium
+ 4x oreMoonBasalticMineralSand
+ 4x oreMoonBastnasite
+ 4x oreMoonBauxite
+ 4x oreMoonBedrockium
+ 4x oreMoonBentonite
+ 4x oreMoonBerkelium
+ 4x oreMoonBeryllium
+ 4x oreMoonBeryllium7
+ 4x oreMoonBeryllium8
+ 4x oreMoonBibibium
+ 4x oreMoonBibiunium
+ 4x oreMoonBiotite
+ 4x oreMoonBischofite
+ 4x oreMoonBismuth
+ 4x oreMoonBixbite
+ 4x oreMoonBlackAventurine
+ 4x oreMoonBlackEye
+ 4x oreMoonBlackFluorite
+ 4x oreMoonBlackTigerEye
+ 4x oreMoonBlazeQuartz
+ 4x oreMoonBlueAventurine
+ 4x oreMoonBlueFluorite
+ 4x oreMoonBlueJasper
+ 4x oreMoonBlueSapphire
+ 4x oreMoonBlueTigerEye
+ 4x oreMoonBlueTopaz
+ 4x oreMoonBlutonium
+ 4x oreMoonBogIron
+ 4x oreMoonBohrium
+ 4x oreMoonBorax
+ 4x oreMoonBoron
+ 4x oreMoonBoron11
+ 4x oreMoonBromargyrite
+ 4x oreMoonBrownAventurine
+ 4x oreMoonBrownLimonite
+ 4x oreMoonCadmium
+ 4x oreMoonCaesium
+ 4x oreMoonCalcite
+ 4x oreMoonCalcium
+ 4x oreMoonCalciumChloride
+ 4x oreMoonCalciumTungstate
+ 4x oreMoonCalifornium
+ 4x oreMoonCarbon
+ 4x oreMoonCarbon13
+ 4x oreMoonCarbon14
+ 4x oreMoonCarborundum
+ 4x oreMoonCarmot
+ 4x oreMoonCassiterite
+ 4x oreMoonCassiteriteSand
+ 4x oreMoonCatsEye
+ 4x oreMoonCelestine
+ 4x oreMoonCerium
+ 4x oreMoonCertusQuartz
+ 4x oreMoonCeruclase
+ 4x oreMoonChalcopyrite
+ 4x oreMoonChalk
+ 4x oreMoonCharcoal
+ 4x oreMoonChargedCertusQuartz
+ 4x oreMoonCheese
+ 4x oreMoonChimerite
+ 4x oreMoonChrome
+ 4x oreMoonChromite
+ 4x oreMoonChromium
+ 4x oreMoonChrysotile
+ 4x oreMoonCinnabar
+ 4x oreMoonClay
+ 4x oreMoonClayBrown
+ 4x oreMoonClayRed
+ 4x oreMoonCoal
+ 4x oreMoonCoalCoke
+ 4x oreMoonCobalt
+ 4x oreMoonCobalt60
+ 4x oreMoonCobaltite
+ 4x oreMoonCoke
+ 4x oreMoonContinuum
+ 4x oreMoonCooperite
+ 4x oreMoonCopernicium
+ 4x oreMoonCopper
+ 4x oreMoonCoralium
+ 4x oreMoonCraponite
+ 4x oreMoonCrimsonMiddle
+ 4x oreMoonCrudeOil
+ 4x oreMoonCryolite
+ 4x oreMoonCurium
+ 4x oreMoonCyanite
+ 4x oreMoonDarkIron
+ 4x oreMoonDarmstadtium
+ 4x oreMoonDatolite
+ 4x oreMoonDeepIron
+ 4x oreMoonDesh
+ 4x oreMoonDiamond
+ 4x oreMoonDiamondIndustrial
+ 4x oreMoonDiatomite
+ 4x oreMoonDiduraniumTrioxide
+ 4x oreMoonDilithium
+ 4x oreMoonDioptase
+ 4x oreMoonDolamide
+ 4x oreMoonDolomite
+ 4x oreMoonDominicanAmber
+ 4x oreMoonDraconium
+ 4x oreMoonDragonEye
+ 4x oreMoonDreadium
+ 4x oreMoonDubnium
+ 4x oreMoonDuraniumElemental
+ 4x oreMoonDuraniumHexaastatide
+ 4x oreMoonDuraniumHexabromide
+ 4x oreMoonDuraniumHexachloride
+ 4x oreMoonDuraniumHexafluoride
+ 4x oreMoonDuraniumHexaiodide
+ 4x oreMoonDysprosium
+ 4x oreMoonEfrine
+ 4x oreMoonEinsteinium
+ 4x oreMoonElectrotine
+ 4x oreMoonElectrum
+ 4x oreMoonElnTungsten
+ 4x oreMoonElvenDragonstone
+ 4x oreMoonElvenElementium
+ 4x oreMoonElvenQuartz
+ 4x oreMoonElvorium
+ 4x oreMoonEmerald
+ 4x oreMoonEmery
+ 4x oreMoonEndium
+ 4x oreMoonEnergiumCyan
+ 4x oreMoonEnergiumRed
+ 4x oreMoonErbium
+ 4x oreMoonEthaxium
+ 4x oreMoonEudialyte
+ 4x oreMoonEuropium
+ 4x oreMoonEximite
+ 4x oreMoonFZDarkIron
+ 4x oreMoonFarnsium
+ 4x oreMoonFerberite
+ 4x oreMoonFermium
+ 4x oreMoonFerrite
+ 4x oreMoonFerrovanadium
+ 4x oreMoonFirestone
+ 4x oreMoonFlerovium
+ 4x oreMoonFlerovium298
+ 4x oreMoonFluix
+ 4x oreMoonFluorine
+ 4x oreMoonFluorite
+ 4x oreMoonFlux
+ 4x oreMoonFoolsRuby
+ 4x oreMoonForce
+ 4x oreMoonForcicium
+ 4x oreMoonForcillium
+ 4x oreMoonFrancium
+ 4x oreMoonFrozenIron
+ 4x oreMoonFullersEarth
+ 4x oreMoonFzDarkIron
+ 4x oreMoonGadolinium
+ 4x oreMoonGalena
+ 4x oreMoonGallium
+ 4x oreMoonGarnet
+ 4x oreMoonGarnetGreen
+ 4x oreMoonGarnetOrange
+ 4x oreMoonGarnetPurple
+ 4x oreMoonGarnetRed
+ 4x oreMoonGarnetSand
+ 4x oreMoonGarnetYellow
+ 4x oreMoonGarnierite
+ 4x oreMoonGermanium
+ 4x oreMoonGibbsite
+ 4x oreMoonGlass
+ 4x oreMoonGlauconite
+ 4x oreMoonGlauconiteSand
+ 4x oreMoonGloomstone
+ 4x oreMoonGlowstone
+ 4x oreMoonGlowstoneCeres
+ 4x oreMoonGlowstoneEnceladus
+ 4x oreMoonGlowstoneIo
+ 4x oreMoonGlowstonePluto
+ 4x oreMoonGlowstoneProteus
+ 4x oreMoonGold
+ 4x oreMoonGoshenite
+ 4x oreMoonGraniticMineralSand
+ 4x oreMoonGraphite
+ 4x oreMoonGravitite
+ 4x oreMoonGreenAventurine
+ 4x oreMoonGreenFluorite
+ 4x oreMoonGreenJasper
+ 4x oreMoonGreenMiddle
+ 4x oreMoonGreenSapphire
+ 4x oreMoonGreenTigerEye
+ 4x oreMoonGregorium
+ 4x oreMoonGrossular
+ 4x oreMoonGypsum
+ 4x oreMoonGyubnera
+ 4x oreMoonHafnium
+ 4x oreMoonHassium
+ 4x oreMoonHawksEye
+ 4x oreMoonHeeEndium
+ 4x oreMoonHeliodor
+ 4x oreMoonHematite
+20x oreMoonHexorium
+ 4x oreMoonHexoriumBlack
+ 4x oreMoonHexoriumBlue
+ 4x oreMoonHexoriumGreen
+ 4x oreMoonHexoriumRed
+ 4x oreMoonHexoriumWhite
+ 4x oreMoonHolmium
+ 4x oreMoonHoney
+ 4x oreMoonHoneydew
+ 4x oreMoonHuebnerite
+ 4x oreMoonIffesal
+ 4x oreMoonIgnatius
+ 4x oreMoonIllmenite
+ 4x oreMoonIlmenite
+ 4x oreMoonIndium
+ 4x oreMoonInfuscolium
+ 4x oreMoonInfusedAir
+ 4x oreMoonInfusedBalance
+ 4x oreMoonInfusedDull
+ 4x oreMoonInfusedEarth
+ 4x oreMoonInfusedEntropy
+ 4x oreMoonInfusedFire
+ 4x oreMoonInfusedOrder
+ 4x oreMoonInfusedVis
+ 4x oreMoonInfusedWater
+ 4x oreMoonIodine
+ 4x oreMoonIodineSalt
+ 4x oreMoonIridium
+ 4x oreMoonIron
+ 4x oreMoonIronOxide
+ 4x oreMoonJade
+ 4x oreMoonJasper
+ 4x oreMoonKalendrite
+ 4x oreMoonKalium
+ 4x oreMoonKaolinite
+ 4x oreMoonKesterite
+ 4x oreMoonKreknorite
+ 4x oreMoonKyanite
+ 4x oreMoonLantanium
+ 4x oreMoonLantanum
+ 4x oreMoonLanthanium
+ 4x oreMoonLanthanum
+ 4x oreMoonLapis
+ 4x oreMoonLavenderQuartz
+ 4x oreMoonLawrencium
+ 4x oreMoonLazurite
+ 4x oreMoonLead
+ 4x oreMoonLemurite
+ 4x oreMoonLepidolite
+ 4x oreMoonLicorice
+ 4x oreMoonLignite
+ 4x oreMoonLigniteCoke
+ 4x oreMoonLiquifiedCoralium
+ 4x oreMoonLithium
+ 4x oreMoonLithium6
+ 4x oreMoonLithiumChloride
+ 4x oreMoonLivermorium
+ 4x oreMoonLonsdaleite
+ 4x oreMoonLudicrite
+ 4x oreMoonLutetium
+ 4x oreMoonMagentaFluorite
+ 4x oreMoonMagnesite
+ 4x oreMoonMagnesium
+ 4x oreMoonMagnesiumCarbonate
+ 4x oreMoonMagnesiumChloride
+ 4x oreMoonMagnetite
+ 4x oreMoonMalachite
+ 4x oreMoonManaDiamond
+ 4x oreMoonManaQuartz
+ 4x oreMoonManganese
+ 4x oreMoonMauftrium
+ 4x oreMoonMaxixe
+ 4x oreMoonMeitnerium
+ 4x oreMoonMendelevium
+ 4x oreMoonMercury
+ 4x oreMoonMeteoricIron
+ 4x oreMoonMeteorite
+ 4x oreMoonMeutoite
+ 4x oreMoonMica
+ 4x oreMoonMidasium
+ 4x oreMoonMilkyQuartz
+ 4x oreMoonMirabilite
+ 4x oreMoonMithril
+ 4x oreMoonMolybdenite
+ 4x oreMoonMolybdenum
+ 4x oreMoonMonazite
+ 4x oreMoonMoonstone
+ 4x oreMoonMorganite
+ 4x oreMoonMoscovium
+ 4x oreMoonNaquadah
+ 4x oreMoonNaquadahEnriched
+ 4x oreMoonNaquadria
+ 4x oreMoonNatrium
+ 4x oreMoonNaturalAluminum
+ 4x oreMoonNeodymium
+ 4x oreMoonNeptunium
+ 4x oreMoonNetherQuartz
+ 4x oreMoonNetherStar
+ 4x oreMoonNickel
+ 4x oreMoonNihonium
+ 4x oreMoonNikolite
+ 4x oreMoonNiobium
+ 4x oreMoonNiter
+ 4x oreMoonNitrate
+ 4x oreMoonNitre
+ 4x oreMoonNobelium
+ 4x oreMoonNougat
+ 4x oreMoonOceanJasper
+ 4x oreMoonOctine
+ 4x oreMoonOganesson
+ 4x oreMoonOilSand
+ 4x oreMoonOilShale
+ 4x oreMoonOilsands
+ 4x oreMoonOilshale
+ 4x oreMoonOlivine
+ 4x oreMoonOnyx
+ 4x oreMoonOnyxBlack
+ 4x oreMoonOnyxRed
+ 4x oreMoonOpal
+ 4x oreMoonOrangeFluorite
+ 4x oreMoonOrangeSapphire
+ 4x oreMoonOrichalcum
+ 4x oreMoonOriharukon
+ 4x oreMoonOsmium
+ 4x oreMoonOsmiumElemental
+ 4x oreMoonOureclase
+ 4x oreMoonPEZ
+ 4x oreMoonPalladium
+ 4x oreMoonPalygorskite
+ 4x oreMoonPentlandite
+ 4x oreMoonPeridot
+ 4x oreMoonPerlite
+ 4x oreMoonPetCoke
+ 4x oreMoonPetroleumCoke
+ 4x oreMoonPhosphate
+ 4x oreMoonPhosphor
+ 4x oreMoonPhosphorite
+ 4x oreMoonPhosphorous
+ 4x oreMoonPhosphorus
+ 4x oreMoonPigIron
+ 4x oreMoonPinalite
+ 4x oreMoonPinkDiamond
+ 4x oreMoonPinkFluorite
+ 4x oreMoonPitchblende
+ 4x oreMoonPlatinum
+ 4x oreMoonPlatinumGroupSludge
+ 4x oreMoonPlutonium
+ 4x oreMoonPlutonium238
+ 4x oreMoonPlutonium239
+ 4x oreMoonPlutonium240
+ 4x oreMoonPlutonium241
+ 4x oreMoonPlutonium243
+ 4x oreMoonPlutonium244
+ 4x oreMoonPollucite
+ 4x oreMoonPolonium
+ 4x oreMoonPotassium
+ 4x oreMoonPotassiumFeldspar
+ 4x oreMoonPotassiumNitrate
+ 4x oreMoonPowellite
+ 4x oreMoonPraseodymium
+ 4x oreMoonPrismane
+ 4x oreMoonPrismarine
+ 4x oreMoonPrismarineDark
+ 4x oreMoonPrometheum
+ 4x oreMoonPromethium
+ 4x oreMoonProtactinium
+ 4x oreMoonPurpleSapphire
+ 4x oreMoonPyrite
+ 4x oreMoonPyrolusite
+ 4x oreMoonPyrope
+60x oreMoonQuartz
+ 4x oreMoonQuartzBlack
+ 4x oreMoonQuartzSand
+ 4x oreMoonQuartzSmoky
+ 4x oreMoonQuartzite
+ 4x oreMoonQuickSilver
+ 4x oreMoonQuicksilver
+ 4x oreMoonRadium
+ 4x oreMoonRainforestJasper
+ 4x oreMoonRareEarth
+ 4x oreMoonRaspite
+ 4x oreMoonRealgar
+ 4x oreMoonRedAventurine
+ 4x oreMoonRedFluorite
+ 4x oreMoonRedJasper
+ 4x oreMoonRedQuartz
+ 4x oreMoonRedTigerEye
+ 4x oreMoonRedstone
+ 4x oreMoonRhenium
+ 4x oreMoonRhodium
+ 4x oreMoonRockSalt
+ 4x oreMoonRoentgenium
+ 4x oreMoonRubidium
+ 4x oreMoonRubracium
+ 4x oreMoonRuby
+ 4x oreMoonRussellite
+ 4x oreMoonRuthenium
+ 4x oreMoonRutherfordium
+ 4x oreMoonRutile
+ 4x oreMoonSalpeter
+ 4x oreMoonSalt
+ 4x oreMoonSaltpeter
+ 4x oreMoonSamarium
+ 4x oreMoonSanguinite
+ 4x oreMoonSaphire
+ 4x oreMoonSapphire
+ 4x oreMoonScabyst
+ 4x oreMoonScandium
+ 4x oreMoonScarletEmerald
+ 4x oreMoonScheelite
+ 4x oreMoonSeaborgium
+ 4x oreMoonSelenium
+ 4x oreMoonShadowIron
+ 4x oreMoonSheldonite
+ 4x oreMoonSilicon
+ 4x oreMoonSiliconDioxide
+ 4x oreMoonSilver
+ 4x oreMoonSilverIodide
+ 4x oreMoonSlimyBone
+ 4x oreMoonSluiceSand
+ 4x oreMoonSmithsonite
+ 4x oreMoonSmokeyQuartz
+ 4x oreMoonSmokyQuartz
+ 4x oreMoonSoapstone
+ 4x oreMoonSodalite
+ 4x oreMoonSodium
+ 4x oreMoonSodiumNitrate
+ 4x oreMoonSoulsand
+ 4x oreMoonSperrylite
+ 4x oreMoonSpessartine
+ 4x oreMoonSphalerite
+ 4x oreMoonSpinel
+ 4x oreMoonSpodumene
+ 4x oreMoonStannite
+ 4x oreMoonSteel
+ 4x oreMoonStibnite
+ 4x oreMoonStolzite
+ 4x oreMoonStrontium
+ 4x oreMoonSulfur
+ 4x oreMoonSulphur
+ 4x oreMoonSunnyQuartz
+ 4x oreMoonSunstone
+ 4x oreMoonSyrmorite
+ 4x oreMoonTalc
+ 4x oreMoonTantalite
+ 4x oreMoonTantalum
+ 4x oreMoonTanzanite
+ 4x oreMoonTechnetium
+ 4x oreMoonTellurium
+ 4x oreMoonTennessine
+ 4x oreMoonTerbium
+ 4x oreMoonTeslatite
+ 4x oreMoonTetrahedrite
+ 4x oreMoonThallium
+ 4x oreMoonThorium
+ 4x oreMoonThorium232
+ 4x oreMoonThulium
+ 4x oreMoonTigerEye
+ 4x oreMoonTigerIron
+ 4x oreMoonTin
+ 4x oreMoonTitan
+ 4x oreMoonTitanium
+ 4x oreMoonTitaniumIron
+ 4x oreMoonTopaz
+ 4x oreMoonTrinium
+ 4x oreMoonTritaniumDioxide
+ 4x oreMoonTritaniumElemental
+ 4x oreMoonTritaniumHexaastatide
+ 4x oreMoonTritaniumHexabromide
+ 4x oreMoonTritaniumHexachloride
+ 4x oreMoonTritaniumHexafluoride
+ 4x oreMoonTritaniumHexaiodide
+ 4x oreMoonTrona
+ 4x oreMoonTungstate
+ 4x oreMoonTungsten
+ 4x oreMoonTungstenOxide
+ 4x oreMoonTungstenTrioxide
+ 4x oreMoonUnbihexium
+ 4x oreMoonUnbinilium
+ 4x oreMoonUnbipentium
+ 4x oreMoonUnocthexium
+ 4x oreMoonUnoctoctium
+ 4x oreMoonUnoctpentium
+ 4x oreMoonUnoctseptium
+ 4x oreMoonUnpentbium
+ 4x oreMoonUnquadpentium
+ 4x oreMoonUnseptquadium
+ 4x oreMoonUnunennium
+ 4x oreMoonUran
+ 4x oreMoonUraninite
+ 4x oreMoonUranium
+ 4x oreMoonUranium233
+ 4x oreMoonUranium235
+ 4x oreMoonUranium238
+ 4x oreMoonUraniumEnriched
+ 4x oreMoonUvarovite
+ 4x oreMoonValerite
+ 4x oreMoonValonite
+ 4x oreMoonVanadium
+ 4x oreMoonVanadiumMagnetite
+ 4x oreMoonVanadiumPentoxide
+ 4x oreMoonVermiculite
+ 4x oreMoonVibranium
+ 4x oreMoonVinteum
+ 4x oreMoonVinteumPurified
+ 4x oreMoonVoidQuartz
+ 4x oreMoonVulcanite
+ 4x oreMoonVyroxeres
+ 4x oreMoonWhiteFluorite
+ 4x oreMoonWolfram
+ 4x oreMoonWolframite
+ 4x oreMoonWolframium
+ 4x oreMoonWollastonite
+ 4x oreMoonWulfenite
+ 4x oreMoonYellorite
+ 4x oreMoonYellorium
+ 4x oreMoonYellowAventurine
+ 4x oreMoonYellowFluorite
+ 4x oreMoonYellowJasper
+ 4x oreMoonYellowLimonite
+ 4x oreMoonYellowSapphire
+ 4x oreMoonYellowTigerEye
+ 4x oreMoonYtterbium
+ 4x oreMoonYttrium
+ 4x oreMoonZanite
+ 4x oreMoonZeolite
+ 4x oreMoonZinc
+ 4x oreMoonZircon
+ 4x oreMoonZirconium
+53x oreMoonstone
+53x oreMorganite
  1x oreMudAbyssalnite
  1x oreMudActinium
  1x oreMudAdamant
@@ -50594,10 +52422,11 @@ OreDictionary:
  1x oreMudZinc
  1x oreMudZircon
  1x oreMudZirconium
-39x oreNaquadah
-39x oreNaquadahEnriched
-39x oreNaquadria
-40x oreNetherQuartz
+53x oreNaquadah
+53x oreNaquadahEnriched
+53x oreNaquadria
+ 5x oreNaturalAluminum
+54x oreNetherQuartz
  2x oreNetherrackAbyssalnite
  2x oreNetherrackActinium
  2x oreNetherrackAdamant
@@ -51336,25 +53165,25 @@ OreDictionary:
  2x oreNetherrackZinc
  2x oreNetherrackZircon
  2x oreNetherrackZirconium
-39x oreNickel
-39x oreNikolite
-39x oreNiter
-39x oreNitrate
-39x oreNitre
-39x oreOctine
-39x oreOlivine
-39x oreOrangeFluorite
-39x oreOrangeSapphire
-39x oreOriharukon
-39x oreOsmium
-39x oreOsmiumElemental
-39x orePeridot
-39x orePinkDiamond
-39x orePinkFluorite
-39x orePlatinum
-39x orePotassiumNitrate
-39x orePurpleSapphire
-118x oreQuartz
+56x oreNickel
+53x oreNikolite
+53x oreNiter
+53x oreNitrate
+53x oreNitre
+53x oreOctine
+53x oreOlivine
+53x oreOrangeFluorite
+53x oreOrangeSapphire
+53x oreOriharukon
+53x oreOsmium
+53x oreOsmiumElemental
+53x orePeridot
+53x orePinkDiamond
+53x orePinkFluorite
+53x orePlatinum
+53x orePotassiumNitrate
+53x orePurpleSapphire
+161x oreQuartz
  2x oreQuartziteAbyssalnite
  2x oreQuartziteActinium
  2x oreQuartziteAdamant
@@ -52093,9 +53922,9 @@ OreDictionary:
  2x oreQuartziteZinc
  2x oreQuartziteZircon
  2x oreQuartziteZirconium
-39x oreQuickSilver
-39x oreQuicksilver
-39x oreRareEarth
+53x oreQuickSilver
+53x oreQuicksilver
+53x oreRareEarth
  1x oreRawAbyssalnite
  1x oreRawActinium
  1x oreRawAdamant
@@ -52834,7 +54663,7 @@ OreDictionary:
  1x oreRawZinc
  1x oreRawZircon
  1x oreRawZirconium
-39x oreRedFluorite
+53x oreRedFluorite
  1x oreRedSandAbyssalnite
  1x oreRedSandActinium
  1x oreRedSandAdamant
@@ -54311,12 +56140,12 @@ OreDictionary:
  2x oreRedgraniteZinc
  2x oreRedgraniteZircon
  2x oreRedgraniteZirconium
-40x oreRedstone
-40x oreRuby
-40x oreRutile
-39x oreSalpeter
-39x oreSalt
-39x oreSaltpeter
+56x oreRedstone
+54x oreRuby
+54x oreRutile
+53x oreSalpeter
+53x oreSalt
+53x oreSaltpeter
  1x oreSandAbyssalnite
  1x oreSandActinium
  1x oreSandAdamant
@@ -55793,767 +57622,1507 @@ OreDictionary:
  2x oreSandstoneZinc
  2x oreSandstoneZircon
  2x oreSandstoneZirconium
-39x oreSaphire
-39x oreSapphire
-39x oreScarletEmerald
-39x oreSilver
-24x oreSmallAbyssalnite
-24x oreSmallActinium
-24x oreSmallAdamant
-24x oreSmallAdamantine
-24x oreSmallAdamantite
-24x oreSmallAdamantium
-24x oreSmallAdluorite
-24x oreSmallAlduorite
-24x oreSmallAlexandrite
-24x oreSmallAlmandine
-24x oreSmallAlumina
-24x oreSmallAluminium
-24x oreSmallAluminiumFluoride
-24x oreSmallAluminiumHydroxide
-24x oreSmallAluminum
-24x oreSmallAlunite
-24x oreSmallAmazonite
-24x oreSmallAmber
-24x oreSmallAmbrosium
-24x oreSmallAmericium
-24x oreSmallAmericium241
-24x oreSmallAmethyst
-24x oreSmallAmethystEnder
-24x oreSmallAncient
-24x oreSmallAncientDebris
-24x oreSmallAndradite
-24x oreSmallAnthracite
-24x oreSmallAntiActinium
-24x oreSmallAntiAdamant
-24x oreSmallAntiAdamantine
-24x oreSmallAntiAdamantium
-24x oreSmallAntiAluminium
-24x oreSmallAntiAluminum
-24x oreSmallAntiAmericium
-24x oreSmallAntiAmericium241
-24x oreSmallAntiAntimony
-24x oreSmallAntiArsenic
-24x oreSmallAntiAstatine
-24x oreSmallAntiBarium
-24x oreSmallAntiBerkelium
-24x oreSmallAntiBeryllium
-24x oreSmallAntiBibibium
-24x oreSmallAntiBismuth
-24x oreSmallAntiBohrium
-24x oreSmallAntiBoron
-24x oreSmallAntiBromine
-24x oreSmallAntiCadmium
-24x oreSmallAntiCaesium
-24x oreSmallAntiCalcium
-24x oreSmallAntiCalifornium
-24x oreSmallAntiCarbon
-24x oreSmallAntiCarbon13
-24x oreSmallAntiCarbon14
-24x oreSmallAntiCerium
-24x oreSmallAntiChlorine
-24x oreSmallAntiChrome
-24x oreSmallAntiChromium
-24x oreSmallAntiCobalt
-24x oreSmallAntiCobalt60
-24x oreSmallAntiCopernicium
-24x oreSmallAntiCopper
-24x oreSmallAntiCurium
-24x oreSmallAntiDarmstadtium
-24x oreSmallAntiDubnium
-24x oreSmallAntiDysprosium
-24x oreSmallAntiEinsteinium
-24x oreSmallAntiErbium
-24x oreSmallAntiEuropium
-24x oreSmallAntiFarnsium
-24x oreSmallAntiFermium
-24x oreSmallAntiFlerovium
-24x oreSmallAntiFlerovium298
-24x oreSmallAntiFluorine
-24x oreSmallAntiFrancium
-24x oreSmallAntiGadolinium
-24x oreSmallAntiGallium
-24x oreSmallAntiGermanium
-24x oreSmallAntiGold
-24x oreSmallAntiGregorium
-24x oreSmallAntiHafnium
-24x oreSmallAntiHassium
-24x oreSmallAntiHolmium
-24x oreSmallAntiIndium
-24x oreSmallAntiIodine
-24x oreSmallAntiIridium
-24x oreSmallAntiIron
-24x oreSmallAntiKalium
-24x oreSmallAntiLanthanum
-24x oreSmallAntiLawrencium
-24x oreSmallAntiLead
-24x oreSmallAntiLithium
-24x oreSmallAntiLithium6
-24x oreSmallAntiLivermorium
-24x oreSmallAntiLutetium
-24x oreSmallAntiMagnesium
-24x oreSmallAntiManganese
-24x oreSmallAntiMeitnerium
-24x oreSmallAntiMendelevium
-24x oreSmallAntiMercury
-24x oreSmallAntiMolybdenum
-24x oreSmallAntiNaquadah
-24x oreSmallAntiNaquadahEnriched
-24x oreSmallAntiNaquadria
-24x oreSmallAntiNatrium
-24x oreSmallAntiNeodymium
-24x oreSmallAntiNeptunium
-24x oreSmallAntiNickel
-24x oreSmallAntiNiobium
-24x oreSmallAntiNobelium
-24x oreSmallAntiOsmium
-24x oreSmallAntiPalladium
-24x oreSmallAntiPhosphor
-24x oreSmallAntiPlatinum
-24x oreSmallAntiPlutonium
-24x oreSmallAntiPlutonium241
-24x oreSmallAntiPlutonium243
-24x oreSmallAntiPlutonium244
-24x oreSmallAntiPolonium
-24x oreSmallAntiPotassium
-24x oreSmallAntiPraseodymium
-24x oreSmallAntiPromethium
-24x oreSmallAntiProtactinium
-24x oreSmallAntiQuickSilver
-24x oreSmallAntiQuicksilver
-24x oreSmallAntiRadium
-24x oreSmallAntiRhenium
-24x oreSmallAntiRhodium
-24x oreSmallAntiRoentgenium
-24x oreSmallAntiRubidium
-24x oreSmallAntiRuthenium
-24x oreSmallAntiRutherfordium
-24x oreSmallAntiSamarium
-24x oreSmallAntiScandium
-24x oreSmallAntiSeaborgium
-24x oreSmallAntiSelenium
-24x oreSmallAntiSilicon
-24x oreSmallAntiSilver
-24x oreSmallAntiSodium
-24x oreSmallAntiStrontium
-24x oreSmallAntiSulfur
-24x oreSmallAntiTantalum
-24x oreSmallAntiTechnetium
-24x oreSmallAntiTellurium
-24x oreSmallAntiTerbium
-24x oreSmallAntiThallium
-24x oreSmallAntiThorium
-24x oreSmallAntiThulium
-24x oreSmallAntiTin
-24x oreSmallAntiTitan
-24x oreSmallAntiTitanium
-24x oreSmallAntiTungsten
-24x oreSmallAntiUnbinilium
-24x oreSmallAntiUnpentbium
-24x oreSmallAntiUnseptquadium
-24x oreSmallAntiUnunennium
-24x oreSmallAntiUnunoctium
-24x oreSmallAntiUnunpentium
-24x oreSmallAntiUnunseptium
-24x oreSmallAntiUnuntrium
-24x oreSmallAntiUran
-24x oreSmallAntiUranium
-24x oreSmallAntiUranium235
-24x oreSmallAntiUranium238
-24x oreSmallAntiVanadium
-24x oreSmallAntiVibranium
-24x oreSmallAntiWolfram
-24x oreSmallAntiWolframium
-24x oreSmallAntiYtterbium
-24x oreSmallAntiYttrium
-24x oreSmallAntiZinc
-24x oreSmallAntiZirconium
-24x oreSmallAntimony
-48x oreSmallAnyAmethyst
-144x oreSmallAnyAventurine
-72x oreSmallAnyCalcite
-48x oreSmallAnyCarbon
-144x oreSmallAnyClay
-120x oreSmallAnyCoalCarbon
-24x oreSmallAnyCopper
-120x oreSmallAnyDiamond
-168x oreSmallAnyEmerald
-240x oreSmallAnyFluorite
-144x oreSmallAnyGarnet
-168x oreSmallAnyGlowstone
-96x oreSmallAnyIron
-120x oreSmallAnyIronOrSteel
-24x oreSmallAnyIronSteel
-144x oreSmallAnyJasper
-48x oreSmallAnyPrismarine
-120x oreSmallAnySalt
-168x oreSmallAnySapphire
-24x oreSmallAnySilicon
-408x oreSmallAnySiliconDioxide
-72x oreSmallAnyStone
-216x oreSmallAnyThaumicCrystal
-144x oreSmallAnyTigerEye
-24x oreSmallAnyTungsten
-24x oreSmallApatite
-24x oreSmallAquaMiddle
-24x oreSmallAquamarine
-24x oreSmallAragonite
-24x oreSmallArdite
-24x oreSmallAredrite
-24x oreSmallArsenic
-24x oreSmallArsenopyrite
-24x oreSmallAsbestos
-24x oreSmallAstatine
-24x oreSmallAstralSilver
-24x oreSmallAtlarus
-24x oreSmallAventurine
-24x oreSmallAzurite
-24x oreSmallBalasRuby
-24x oreSmallBandedIron
-24x oreSmallBarite
-24x oreSmallBarium
-24x oreSmallBasalticMineralSand
-24x oreSmallBastnasite
-24x oreSmallBauxite
-24x oreSmallBedrockium
-24x oreSmallBentonite
-24x oreSmallBerkelium
-24x oreSmallBeryllium
-24x oreSmallBeryllium7
-24x oreSmallBeryllium8
-24x oreSmallBibibium
-24x oreSmallBibiunium
-24x oreSmallBiotite
-24x oreSmallBischofite
-24x oreSmallBismuth
-24x oreSmallBixbite
-24x oreSmallBlackAventurine
-24x oreSmallBlackEye
-24x oreSmallBlackFluorite
-24x oreSmallBlackTigerEye
-24x oreSmallBlazeQuartz
-24x oreSmallBlueAventurine
-24x oreSmallBlueFluorite
-24x oreSmallBlueJasper
-24x oreSmallBlueSapphire
-24x oreSmallBlueTigerEye
-24x oreSmallBlueTopaz
-24x oreSmallBlutonium
-24x oreSmallBogIron
-24x oreSmallBohrium
-24x oreSmallBorax
-24x oreSmallBoron
-24x oreSmallBoron11
-24x oreSmallBromargyrite
-24x oreSmallBrownAventurine
-24x oreSmallBrownLimonite
-24x oreSmallCadmium
-24x oreSmallCaesium
-24x oreSmallCalcite
-24x oreSmallCalcium
-24x oreSmallCalciumChloride
-24x oreSmallCalciumTungstate
-24x oreSmallCalifornium
-24x oreSmallCarbon
-24x oreSmallCarbon13
-24x oreSmallCarbon14
-24x oreSmallCarborundum
-24x oreSmallCarmot
-24x oreSmallCassiterite
-24x oreSmallCassiteriteSand
-24x oreSmallCatsEye
-24x oreSmallCelestine
-24x oreSmallCerium
-24x oreSmallCertusQuartz
-24x oreSmallCeruclase
-24x oreSmallChalcopyrite
-24x oreSmallChalk
-24x oreSmallCharcoal
-24x oreSmallChargedCertusQuartz
-24x oreSmallCheese
-24x oreSmallChimerite
-24x oreSmallChrome
-24x oreSmallChromite
-24x oreSmallChromium
-24x oreSmallChrysotile
-24x oreSmallCinnabar
-24x oreSmallClay
-24x oreSmallClayBrown
-24x oreSmallClayRed
-24x oreSmallCoal
-24x oreSmallCoalCoke
-24x oreSmallCobalt
-24x oreSmallCobalt60
-24x oreSmallCobaltite
-24x oreSmallCoke
-24x oreSmallContinuum
-24x oreSmallCooperite
-24x oreSmallCopernicium
-24x oreSmallCopper
-24x oreSmallCoralium
-24x oreSmallCraponite
-24x oreSmallCrimsonMiddle
-24x oreSmallCrudeOil
-24x oreSmallCryolite
-24x oreSmallCurium
-24x oreSmallCyanite
-24x oreSmallDarkIron
-24x oreSmallDarmstadtium
-24x oreSmallDatolite
-24x oreSmallDeepIron
-24x oreSmallDesh
-24x oreSmallDiamond
-24x oreSmallDiamondIndustrial
-24x oreSmallDiatomite
-24x oreSmallDiduraniumTrioxide
-24x oreSmallDilithium
-24x oreSmallDioptase
-24x oreSmallDolamide
-24x oreSmallDolomite
-24x oreSmallDominicanAmber
-24x oreSmallDraconium
-24x oreSmallDragonEye
-24x oreSmallDreadium
-24x oreSmallDubnium
-24x oreSmallDuraniumElemental
-24x oreSmallDuraniumHexaastatide
-24x oreSmallDuraniumHexabromide
-24x oreSmallDuraniumHexachloride
-24x oreSmallDuraniumHexafluoride
-24x oreSmallDuraniumHexaiodide
-24x oreSmallDysprosium
-24x oreSmallEfrine
-24x oreSmallEinsteinium
-24x oreSmallElectrotine
-24x oreSmallElectrum
-24x oreSmallElnTungsten
-24x oreSmallElvenDragonstone
-24x oreSmallElvenElementium
-24x oreSmallElvenQuartz
-24x oreSmallElvorium
-24x oreSmallEmerald
-24x oreSmallEmery
-24x oreSmallEndium
-24x oreSmallEnergiumCyan
-24x oreSmallEnergiumRed
-24x oreSmallErbium
-24x oreSmallEthaxium
-24x oreSmallEudialyte
-24x oreSmallEuropium
-24x oreSmallEximite
-24x oreSmallFZDarkIron
-24x oreSmallFarnsium
-24x oreSmallFerberite
-24x oreSmallFermium
-24x oreSmallFerrite
-24x oreSmallFerrovanadium
-24x oreSmallFirestone
-24x oreSmallFlerovium
-24x oreSmallFlerovium298
-24x oreSmallFluix
-24x oreSmallFluorine
-24x oreSmallFluorite
-24x oreSmallFlux
-24x oreSmallFoolsRuby
-24x oreSmallForce
-24x oreSmallForcicium
-24x oreSmallForcillium
-24x oreSmallFrancium
-24x oreSmallFrozenIron
-24x oreSmallFullersEarth
-24x oreSmallFzDarkIron
-24x oreSmallGadolinium
-24x oreSmallGalena
-24x oreSmallGallium
-24x oreSmallGarnet
-24x oreSmallGarnetGreen
-24x oreSmallGarnetOrange
-24x oreSmallGarnetPurple
-24x oreSmallGarnetRed
-24x oreSmallGarnetSand
-24x oreSmallGarnetYellow
-24x oreSmallGarnierite
-24x oreSmallGermanium
-24x oreSmallGibbsite
-24x oreSmallGlass
-24x oreSmallGlauconite
-24x oreSmallGlauconiteSand
-24x oreSmallGloomstone
-24x oreSmallGlowstone
-24x oreSmallGlowstoneCeres
-24x oreSmallGlowstoneEnceladus
-24x oreSmallGlowstoneIo
-24x oreSmallGlowstonePluto
-24x oreSmallGlowstoneProteus
-24x oreSmallGold
-24x oreSmallGoshenite
-24x oreSmallGraniticMineralSand
-24x oreSmallGraphite
-24x oreSmallGravitite
-24x oreSmallGreenAventurine
-24x oreSmallGreenFluorite
-24x oreSmallGreenJasper
-24x oreSmallGreenMiddle
-24x oreSmallGreenSapphire
-24x oreSmallGreenTigerEye
-24x oreSmallGregorium
-24x oreSmallGrossular
-24x oreSmallGypsum
-24x oreSmallGyubnera
-24x oreSmallHafnium
-24x oreSmallHassium
-24x oreSmallHawksEye
-24x oreSmallHeeEndium
-24x oreSmallHeliodor
-24x oreSmallHematite
-120x oreSmallHexorium
-24x oreSmallHexoriumBlack
-24x oreSmallHexoriumBlue
-24x oreSmallHexoriumGreen
-24x oreSmallHexoriumRed
-24x oreSmallHexoriumWhite
-24x oreSmallHolmium
-24x oreSmallHoney
-24x oreSmallHoneydew
-24x oreSmallHuebnerite
-24x oreSmallIffesal
-24x oreSmallIgnatius
-24x oreSmallIllmenite
-24x oreSmallIlmenite
-24x oreSmallIndium
-24x oreSmallInfuscolium
-24x oreSmallInfusedAir
-24x oreSmallInfusedBalance
-24x oreSmallInfusedDull
-24x oreSmallInfusedEarth
-24x oreSmallInfusedEntropy
-24x oreSmallInfusedFire
-24x oreSmallInfusedOrder
-24x oreSmallInfusedVis
-24x oreSmallInfusedWater
-24x oreSmallIodine
-24x oreSmallIodineSalt
-24x oreSmallIridium
-24x oreSmallIron
-24x oreSmallIronOxide
-24x oreSmallJade
-24x oreSmallJasper
-24x oreSmallKalendrite
-24x oreSmallKalium
-24x oreSmallKaolinite
-24x oreSmallKesterite
-24x oreSmallKreknorite
-24x oreSmallKyanite
-24x oreSmallLantanium
-24x oreSmallLantanum
-24x oreSmallLanthanium
-24x oreSmallLanthanum
-24x oreSmallLapis
-24x oreSmallLavenderQuartz
-24x oreSmallLawrencium
-24x oreSmallLazurite
-24x oreSmallLead
-24x oreSmallLemurite
-24x oreSmallLepidolite
-24x oreSmallLicorice
-24x oreSmallLignite
-24x oreSmallLigniteCoke
-24x oreSmallLiquifiedCoralium
-24x oreSmallLithium
-24x oreSmallLithium6
-24x oreSmallLithiumChloride
-24x oreSmallLivermorium
-24x oreSmallLonsdaleite
-24x oreSmallLudicrite
-24x oreSmallLutetium
-24x oreSmallMagentaFluorite
-24x oreSmallMagnesite
-24x oreSmallMagnesium
-24x oreSmallMagnesiumCarbonate
-24x oreSmallMagnesiumChloride
-24x oreSmallMagnetite
-24x oreSmallMalachite
-24x oreSmallManaDiamond
-24x oreSmallManaQuartz
-24x oreSmallManganese
-24x oreSmallMauftrium
-24x oreSmallMaxixe
-24x oreSmallMeitnerium
-24x oreSmallMendelevium
-24x oreSmallMercury
-24x oreSmallMeteoricIron
-24x oreSmallMeteorite
-24x oreSmallMeutoite
-24x oreSmallMica
-24x oreSmallMidasium
-24x oreSmallMilkyQuartz
-24x oreSmallMirabilite
-24x oreSmallMithril
-24x oreSmallMolybdenite
-24x oreSmallMolybdenum
-24x oreSmallMonazite
-24x oreSmallMoonstone
-24x oreSmallMorganite
-24x oreSmallMoscovium
-24x oreSmallNaquadah
-24x oreSmallNaquadahEnriched
-24x oreSmallNaquadria
-24x oreSmallNatrium
-24x oreSmallNaturalAluminum
-24x oreSmallNeodymium
-24x oreSmallNeptunium
-24x oreSmallNetherQuartz
-24x oreSmallNetherStar
-24x oreSmallNickel
-24x oreSmallNihonium
-24x oreSmallNikolite
-24x oreSmallNiobium
-24x oreSmallNiter
-24x oreSmallNitrate
-24x oreSmallNitre
-24x oreSmallNobelium
-24x oreSmallNougat
-24x oreSmallOceanJasper
-24x oreSmallOctine
-24x oreSmallOganesson
-24x oreSmallOilSand
-24x oreSmallOilShale
-24x oreSmallOilsands
-24x oreSmallOilshale
-24x oreSmallOlivine
-24x oreSmallOnyx
-24x oreSmallOnyxBlack
-24x oreSmallOnyxRed
-24x oreSmallOpal
-24x oreSmallOrangeFluorite
-24x oreSmallOrangeSapphire
-24x oreSmallOrichalcum
-24x oreSmallOriharukon
-24x oreSmallOsmium
-24x oreSmallOsmiumElemental
-24x oreSmallOureclase
-24x oreSmallPEZ
-24x oreSmallPalladium
-24x oreSmallPalygorskite
-24x oreSmallPentlandite
-24x oreSmallPeridot
-24x oreSmallPerlite
-24x oreSmallPetCoke
-24x oreSmallPetroleumCoke
-24x oreSmallPhosphate
-24x oreSmallPhosphor
-24x oreSmallPhosphorite
-24x oreSmallPhosphorous
-24x oreSmallPhosphorus
-24x oreSmallPigIron
-24x oreSmallPinalite
-24x oreSmallPinkDiamond
-24x oreSmallPinkFluorite
-24x oreSmallPitchblende
-24x oreSmallPlatinum
-24x oreSmallPlatinumGroupSludge
-24x oreSmallPlutonium
-24x oreSmallPlutonium238
-24x oreSmallPlutonium239
-24x oreSmallPlutonium240
-24x oreSmallPlutonium241
-24x oreSmallPlutonium243
-24x oreSmallPlutonium244
-24x oreSmallPollucite
-24x oreSmallPolonium
-24x oreSmallPotassium
-24x oreSmallPotassiumFeldspar
-24x oreSmallPotassiumNitrate
-24x oreSmallPowellite
-24x oreSmallPraseodymium
-24x oreSmallPrismane
-24x oreSmallPrismarine
-24x oreSmallPrismarineDark
-24x oreSmallPrometheum
-24x oreSmallPromethium
-24x oreSmallProtactinium
-24x oreSmallPurpleSapphire
-24x oreSmallPyrite
-24x oreSmallPyrolusite
-24x oreSmallPyrope
-360x oreSmallQuartz
-24x oreSmallQuartzBlack
-24x oreSmallQuartzSand
-24x oreSmallQuartzSmoky
-24x oreSmallQuartzite
-24x oreSmallQuickSilver
-24x oreSmallQuicksilver
-24x oreSmallRadium
-24x oreSmallRainforestJasper
-24x oreSmallRareEarth
-24x oreSmallRaspite
-24x oreSmallRealgar
-24x oreSmallRedAventurine
-24x oreSmallRedFluorite
-24x oreSmallRedJasper
-24x oreSmallRedQuartz
-24x oreSmallRedTigerEye
-24x oreSmallRedstone
-24x oreSmallRhenium
-24x oreSmallRhodium
-24x oreSmallRockSalt
-24x oreSmallRoentgenium
-24x oreSmallRubidium
-24x oreSmallRubracium
-24x oreSmallRuby
-24x oreSmallRussellite
-24x oreSmallRuthenium
-24x oreSmallRutherfordium
-24x oreSmallRutile
-24x oreSmallSalpeter
-24x oreSmallSalt
-24x oreSmallSaltpeter
-24x oreSmallSamarium
-24x oreSmallSanguinite
-24x oreSmallSaphire
-24x oreSmallSapphire
-24x oreSmallScabyst
-24x oreSmallScandium
-24x oreSmallScarletEmerald
-24x oreSmallScheelite
-24x oreSmallSeaborgium
-24x oreSmallSelenium
-24x oreSmallShadowIron
-24x oreSmallSheldonite
-24x oreSmallSilicon
-24x oreSmallSiliconDioxide
-24x oreSmallSilver
-24x oreSmallSilverIodide
-24x oreSmallSlimyBone
-24x oreSmallSluiceSand
-24x oreSmallSmithsonite
-24x oreSmallSmokeyQuartz
-24x oreSmallSmokyQuartz
-24x oreSmallSoapstone
-24x oreSmallSodalite
-24x oreSmallSodium
-24x oreSmallSodiumNitrate
-24x oreSmallSoulsand
-24x oreSmallSperrylite
-24x oreSmallSpessartine
-24x oreSmallSphalerite
-24x oreSmallSpinel
-24x oreSmallSpodumene
-24x oreSmallStannite
-24x oreSmallSteel
-24x oreSmallStibnite
-24x oreSmallStolzite
-24x oreSmallStrontium
-24x oreSmallSulfur
-24x oreSmallSulphur
-24x oreSmallSunnyQuartz
-24x oreSmallSunstone
-24x oreSmallSyrmorite
-24x oreSmallTalc
-24x oreSmallTantalite
-24x oreSmallTantalum
-24x oreSmallTanzanite
-24x oreSmallTechnetium
-24x oreSmallTellurium
-24x oreSmallTennessine
-24x oreSmallTerbium
-24x oreSmallTeslatite
-24x oreSmallTetrahedrite
-24x oreSmallThallium
-24x oreSmallThorium
-24x oreSmallThorium232
-24x oreSmallThulium
-24x oreSmallTigerEye
-24x oreSmallTigerIron
-24x oreSmallTin
-24x oreSmallTitan
-24x oreSmallTitanium
-24x oreSmallTitaniumIron
-24x oreSmallTopaz
-24x oreSmallTrinium
-24x oreSmallTritaniumDioxide
-24x oreSmallTritaniumElemental
-24x oreSmallTritaniumHexaastatide
-24x oreSmallTritaniumHexabromide
-24x oreSmallTritaniumHexachloride
-24x oreSmallTritaniumHexafluoride
-24x oreSmallTritaniumHexaiodide
-24x oreSmallTrona
-24x oreSmallTungstate
-24x oreSmallTungsten
-24x oreSmallTungstenOxide
-24x oreSmallTungstenTrioxide
-24x oreSmallUnbihexium
-24x oreSmallUnbinilium
-24x oreSmallUnbipentium
-24x oreSmallUnocthexium
-24x oreSmallUnoctoctium
-24x oreSmallUnoctpentium
-24x oreSmallUnoctseptium
-24x oreSmallUnpentbium
-24x oreSmallUnquadpentium
-24x oreSmallUnseptquadium
-24x oreSmallUnunennium
-24x oreSmallUran
-24x oreSmallUraninite
-24x oreSmallUranium
-24x oreSmallUranium233
-24x oreSmallUranium235
-24x oreSmallUranium238
-24x oreSmallUraniumEnriched
-24x oreSmallUvarovite
-24x oreSmallValerite
-24x oreSmallValonite
-24x oreSmallVanadium
-24x oreSmallVanadiumMagnetite
-24x oreSmallVanadiumPentoxide
-24x oreSmallVermiculite
-24x oreSmallVibranium
-24x oreSmallVinteum
-24x oreSmallVinteumPurified
-24x oreSmallVoidQuartz
-24x oreSmallVulcanite
-24x oreSmallVyroxeres
-24x oreSmallWhiteFluorite
-24x oreSmallWolfram
-24x oreSmallWolframite
-24x oreSmallWolframium
-24x oreSmallWollastonite
-24x oreSmallWulfenite
-24x oreSmallYellorite
-24x oreSmallYellorium
-24x oreSmallYellowAventurine
-24x oreSmallYellowFluorite
-24x oreSmallYellowJasper
-24x oreSmallYellowLimonite
-24x oreSmallYellowSapphire
-24x oreSmallYellowTigerEye
-24x oreSmallYtterbium
-24x oreSmallYttrium
-24x oreSmallZanite
-24x oreSmallZeolite
-24x oreSmallZinc
-24x oreSmallZircon
-24x oreSmallZirconium
-39x oreSphalerite
-40x oreSulfur
-40x oreSulphur
-39x oreSunstone
-39x oreSyrmorite
-39x oreTeslatite
-40x oreTin
-39x oreTopaz
-39x oreTrinium
-39x oreUnbihexium
-39x oreUnocthexium
-39x oreUnoctoctium
-39x oreUnoctpentium
-39x oreUnoctseptium
-39x oreUnquadpentium
-39x oreUnseptquadium
- 1x oreUran
- 1x oreUranium
- 1x oreUranium238
+53x oreSaphire
+53x oreSapphire
+53x oreScarletEmerald
+ 5x oreSilicon
+53x oreSilver
+31x oreSmallAbyssalnite
+31x oreSmallActinium
+31x oreSmallAdamant
+31x oreSmallAdamantine
+31x oreSmallAdamantite
+31x oreSmallAdamantium
+31x oreSmallAdluorite
+31x oreSmallAlduorite
+31x oreSmallAlexandrite
+31x oreSmallAlmandine
+31x oreSmallAlumina
+31x oreSmallAluminium
+31x oreSmallAluminiumFluoride
+31x oreSmallAluminiumHydroxide
+31x oreSmallAluminum
+31x oreSmallAlunite
+31x oreSmallAmazonite
+31x oreSmallAmber
+31x oreSmallAmbrosium
+31x oreSmallAmericium
+31x oreSmallAmericium241
+31x oreSmallAmethyst
+31x oreSmallAmethystEnder
+31x oreSmallAncient
+31x oreSmallAncientDebris
+31x oreSmallAndradite
+31x oreSmallAnthracite
+31x oreSmallAntiActinium
+31x oreSmallAntiAdamant
+31x oreSmallAntiAdamantine
+31x oreSmallAntiAdamantium
+31x oreSmallAntiAluminium
+31x oreSmallAntiAluminum
+31x oreSmallAntiAmericium
+31x oreSmallAntiAmericium241
+31x oreSmallAntiAntimony
+31x oreSmallAntiArsenic
+31x oreSmallAntiAstatine
+31x oreSmallAntiBarium
+31x oreSmallAntiBerkelium
+31x oreSmallAntiBeryllium
+31x oreSmallAntiBibibium
+31x oreSmallAntiBismuth
+31x oreSmallAntiBohrium
+31x oreSmallAntiBoron
+31x oreSmallAntiBromine
+31x oreSmallAntiCadmium
+31x oreSmallAntiCaesium
+31x oreSmallAntiCalcium
+31x oreSmallAntiCalifornium
+31x oreSmallAntiCarbon
+31x oreSmallAntiCarbon13
+31x oreSmallAntiCarbon14
+31x oreSmallAntiCerium
+31x oreSmallAntiChlorine
+31x oreSmallAntiChrome
+31x oreSmallAntiChromium
+31x oreSmallAntiCobalt
+31x oreSmallAntiCobalt60
+31x oreSmallAntiCopernicium
+31x oreSmallAntiCopper
+31x oreSmallAntiCurium
+31x oreSmallAntiDarmstadtium
+31x oreSmallAntiDubnium
+31x oreSmallAntiDysprosium
+31x oreSmallAntiEinsteinium
+31x oreSmallAntiErbium
+31x oreSmallAntiEuropium
+31x oreSmallAntiFarnsium
+31x oreSmallAntiFermium
+31x oreSmallAntiFlerovium
+31x oreSmallAntiFlerovium298
+31x oreSmallAntiFluorine
+31x oreSmallAntiFrancium
+31x oreSmallAntiGadolinium
+31x oreSmallAntiGallium
+31x oreSmallAntiGermanium
+31x oreSmallAntiGold
+31x oreSmallAntiGregorium
+31x oreSmallAntiHafnium
+31x oreSmallAntiHassium
+31x oreSmallAntiHolmium
+31x oreSmallAntiIndium
+31x oreSmallAntiIodine
+31x oreSmallAntiIridium
+31x oreSmallAntiIron
+31x oreSmallAntiKalium
+31x oreSmallAntiLanthanum
+31x oreSmallAntiLawrencium
+31x oreSmallAntiLead
+31x oreSmallAntiLithium
+31x oreSmallAntiLithium6
+31x oreSmallAntiLivermorium
+31x oreSmallAntiLutetium
+31x oreSmallAntiMagnesium
+31x oreSmallAntiManganese
+31x oreSmallAntiMeitnerium
+31x oreSmallAntiMendelevium
+31x oreSmallAntiMercury
+31x oreSmallAntiMolybdenum
+31x oreSmallAntiNaquadah
+31x oreSmallAntiNaquadahEnriched
+31x oreSmallAntiNaquadria
+31x oreSmallAntiNatrium
+31x oreSmallAntiNeodymium
+31x oreSmallAntiNeptunium
+31x oreSmallAntiNickel
+31x oreSmallAntiNiobium
+31x oreSmallAntiNobelium
+31x oreSmallAntiOsmium
+31x oreSmallAntiPalladium
+31x oreSmallAntiPhosphor
+31x oreSmallAntiPlatinum
+31x oreSmallAntiPlutonium
+31x oreSmallAntiPlutonium241
+31x oreSmallAntiPlutonium243
+31x oreSmallAntiPlutonium244
+31x oreSmallAntiPolonium
+31x oreSmallAntiPotassium
+31x oreSmallAntiPraseodymium
+31x oreSmallAntiPromethium
+31x oreSmallAntiProtactinium
+31x oreSmallAntiQuickSilver
+31x oreSmallAntiQuicksilver
+31x oreSmallAntiRadium
+31x oreSmallAntiRhenium
+31x oreSmallAntiRhodium
+31x oreSmallAntiRoentgenium
+31x oreSmallAntiRubidium
+31x oreSmallAntiRuthenium
+31x oreSmallAntiRutherfordium
+31x oreSmallAntiSamarium
+31x oreSmallAntiScandium
+31x oreSmallAntiSeaborgium
+31x oreSmallAntiSelenium
+31x oreSmallAntiSilicon
+31x oreSmallAntiSilver
+31x oreSmallAntiSodium
+31x oreSmallAntiStrontium
+31x oreSmallAntiSulfur
+31x oreSmallAntiTantalum
+31x oreSmallAntiTechnetium
+31x oreSmallAntiTellurium
+31x oreSmallAntiTerbium
+31x oreSmallAntiThallium
+31x oreSmallAntiThorium
+31x oreSmallAntiThulium
+31x oreSmallAntiTin
+31x oreSmallAntiTitan
+31x oreSmallAntiTitanium
+31x oreSmallAntiTungsten
+31x oreSmallAntiUnbinilium
+31x oreSmallAntiUnpentbium
+31x oreSmallAntiUnseptquadium
+31x oreSmallAntiUnunennium
+31x oreSmallAntiUnunoctium
+31x oreSmallAntiUnunpentium
+31x oreSmallAntiUnunseptium
+31x oreSmallAntiUnuntrium
+31x oreSmallAntiUran
+31x oreSmallAntiUranium
+31x oreSmallAntiUranium235
+31x oreSmallAntiUranium238
+31x oreSmallAntiVanadium
+31x oreSmallAntiVibranium
+31x oreSmallAntiWolfram
+31x oreSmallAntiWolframium
+31x oreSmallAntiYtterbium
+31x oreSmallAntiYttrium
+31x oreSmallAntiZinc
+31x oreSmallAntiZirconium
+31x oreSmallAntimony
+62x oreSmallAnyAmethyst
+186x oreSmallAnyAventurine
+93x oreSmallAnyCalcite
+62x oreSmallAnyCarbon
+186x oreSmallAnyClay
+155x oreSmallAnyCoalCarbon
+31x oreSmallAnyCopper
+155x oreSmallAnyDiamond
+217x oreSmallAnyEmerald
+310x oreSmallAnyFluorite
+186x oreSmallAnyGarnet
+217x oreSmallAnyGlowstone
+124x oreSmallAnyIron
+155x oreSmallAnyIronOrSteel
+31x oreSmallAnyIronSteel
+186x oreSmallAnyJasper
+62x oreSmallAnyPrismarine
+155x oreSmallAnySalt
+217x oreSmallAnySapphire
+31x oreSmallAnySilicon
+527x oreSmallAnySiliconDioxide
+93x oreSmallAnyStone
+279x oreSmallAnyThaumicCrystal
+186x oreSmallAnyTigerEye
+31x oreSmallAnyTungsten
+31x oreSmallApatite
+31x oreSmallAquaMiddle
+31x oreSmallAquamarine
+31x oreSmallAragonite
+31x oreSmallArdite
+31x oreSmallAredrite
+31x oreSmallArsenic
+31x oreSmallArsenopyrite
+31x oreSmallAsbestos
+31x oreSmallAstatine
+31x oreSmallAstralSilver
+31x oreSmallAtlarus
+31x oreSmallAventurine
+31x oreSmallAzurite
+31x oreSmallBalasRuby
+31x oreSmallBandedIron
+31x oreSmallBarite
+31x oreSmallBarium
+31x oreSmallBasalticMineralSand
+31x oreSmallBastnasite
+31x oreSmallBauxite
+31x oreSmallBedrockium
+31x oreSmallBentonite
+31x oreSmallBerkelium
+31x oreSmallBeryllium
+31x oreSmallBeryllium7
+31x oreSmallBeryllium8
+31x oreSmallBibibium
+31x oreSmallBibiunium
+31x oreSmallBiotite
+31x oreSmallBischofite
+31x oreSmallBismuth
+31x oreSmallBixbite
+31x oreSmallBlackAventurine
+31x oreSmallBlackEye
+31x oreSmallBlackFluorite
+31x oreSmallBlackTigerEye
+31x oreSmallBlazeQuartz
+31x oreSmallBlueAventurine
+31x oreSmallBlueFluorite
+31x oreSmallBlueJasper
+31x oreSmallBlueSapphire
+31x oreSmallBlueTigerEye
+31x oreSmallBlueTopaz
+31x oreSmallBlutonium
+31x oreSmallBogIron
+31x oreSmallBohrium
+31x oreSmallBorax
+31x oreSmallBoron
+31x oreSmallBoron11
+31x oreSmallBromargyrite
+31x oreSmallBrownAventurine
+31x oreSmallBrownLimonite
+31x oreSmallCadmium
+31x oreSmallCaesium
+31x oreSmallCalcite
+31x oreSmallCalcium
+31x oreSmallCalciumChloride
+31x oreSmallCalciumTungstate
+31x oreSmallCalifornium
+31x oreSmallCarbon
+31x oreSmallCarbon13
+31x oreSmallCarbon14
+31x oreSmallCarborundum
+31x oreSmallCarmot
+31x oreSmallCassiterite
+31x oreSmallCassiteriteSand
+31x oreSmallCatsEye
+31x oreSmallCelestine
+31x oreSmallCerium
+31x oreSmallCertusQuartz
+31x oreSmallCeruclase
+31x oreSmallChalcopyrite
+31x oreSmallChalk
+31x oreSmallCharcoal
+31x oreSmallChargedCertusQuartz
+31x oreSmallCheese
+31x oreSmallChimerite
+31x oreSmallChrome
+31x oreSmallChromite
+31x oreSmallChromium
+31x oreSmallChrysotile
+31x oreSmallCinnabar
+31x oreSmallClay
+31x oreSmallClayBrown
+31x oreSmallClayRed
+31x oreSmallCoal
+31x oreSmallCoalCoke
+31x oreSmallCobalt
+31x oreSmallCobalt60
+31x oreSmallCobaltite
+31x oreSmallCoke
+31x oreSmallContinuum
+31x oreSmallCooperite
+31x oreSmallCopernicium
+31x oreSmallCopper
+31x oreSmallCoralium
+31x oreSmallCraponite
+31x oreSmallCrimsonMiddle
+31x oreSmallCrudeOil
+31x oreSmallCryolite
+31x oreSmallCurium
+31x oreSmallCyanite
+31x oreSmallDarkIron
+31x oreSmallDarmstadtium
+31x oreSmallDatolite
+31x oreSmallDeepIron
+31x oreSmallDesh
+31x oreSmallDiamond
+31x oreSmallDiamondIndustrial
+31x oreSmallDiatomite
+31x oreSmallDiduraniumTrioxide
+31x oreSmallDilithium
+31x oreSmallDioptase
+31x oreSmallDolamide
+31x oreSmallDolomite
+31x oreSmallDominicanAmber
+31x oreSmallDraconium
+31x oreSmallDragonEye
+31x oreSmallDreadium
+31x oreSmallDubnium
+31x oreSmallDuraniumElemental
+31x oreSmallDuraniumHexaastatide
+31x oreSmallDuraniumHexabromide
+31x oreSmallDuraniumHexachloride
+31x oreSmallDuraniumHexafluoride
+31x oreSmallDuraniumHexaiodide
+31x oreSmallDysprosium
+31x oreSmallEfrine
+31x oreSmallEinsteinium
+31x oreSmallElectrotine
+31x oreSmallElectrum
+31x oreSmallElnTungsten
+31x oreSmallElvenDragonstone
+31x oreSmallElvenElementium
+31x oreSmallElvenQuartz
+31x oreSmallElvorium
+31x oreSmallEmerald
+31x oreSmallEmery
+31x oreSmallEndium
+31x oreSmallEnergiumCyan
+31x oreSmallEnergiumRed
+31x oreSmallErbium
+31x oreSmallEthaxium
+31x oreSmallEudialyte
+31x oreSmallEuropium
+31x oreSmallEximite
+31x oreSmallFZDarkIron
+31x oreSmallFarnsium
+31x oreSmallFerberite
+31x oreSmallFermium
+31x oreSmallFerrite
+31x oreSmallFerrovanadium
+31x oreSmallFirestone
+31x oreSmallFlerovium
+31x oreSmallFlerovium298
+31x oreSmallFluix
+31x oreSmallFluorine
+31x oreSmallFluorite
+31x oreSmallFlux
+31x oreSmallFoolsRuby
+31x oreSmallForce
+31x oreSmallForcicium
+31x oreSmallForcillium
+31x oreSmallFrancium
+31x oreSmallFrozenIron
+31x oreSmallFullersEarth
+31x oreSmallFzDarkIron
+31x oreSmallGadolinium
+31x oreSmallGalena
+31x oreSmallGallium
+31x oreSmallGarnet
+31x oreSmallGarnetGreen
+31x oreSmallGarnetOrange
+31x oreSmallGarnetPurple
+31x oreSmallGarnetRed
+31x oreSmallGarnetSand
+31x oreSmallGarnetYellow
+31x oreSmallGarnierite
+31x oreSmallGermanium
+31x oreSmallGibbsite
+31x oreSmallGlass
+31x oreSmallGlauconite
+31x oreSmallGlauconiteSand
+31x oreSmallGloomstone
+31x oreSmallGlowstone
+31x oreSmallGlowstoneCeres
+31x oreSmallGlowstoneEnceladus
+31x oreSmallGlowstoneIo
+31x oreSmallGlowstonePluto
+31x oreSmallGlowstoneProteus
+31x oreSmallGold
+31x oreSmallGoshenite
+31x oreSmallGraniticMineralSand
+31x oreSmallGraphite
+31x oreSmallGravitite
+31x oreSmallGreenAventurine
+31x oreSmallGreenFluorite
+31x oreSmallGreenJasper
+31x oreSmallGreenMiddle
+31x oreSmallGreenSapphire
+31x oreSmallGreenTigerEye
+31x oreSmallGregorium
+31x oreSmallGrossular
+31x oreSmallGypsum
+31x oreSmallGyubnera
+31x oreSmallHafnium
+31x oreSmallHassium
+31x oreSmallHawksEye
+31x oreSmallHeeEndium
+31x oreSmallHeliodor
+31x oreSmallHematite
+155x oreSmallHexorium
+31x oreSmallHexoriumBlack
+31x oreSmallHexoriumBlue
+31x oreSmallHexoriumGreen
+31x oreSmallHexoriumRed
+31x oreSmallHexoriumWhite
+31x oreSmallHolmium
+31x oreSmallHoney
+31x oreSmallHoneydew
+31x oreSmallHuebnerite
+31x oreSmallIffesal
+31x oreSmallIgnatius
+31x oreSmallIllmenite
+31x oreSmallIlmenite
+31x oreSmallIndium
+31x oreSmallInfuscolium
+31x oreSmallInfusedAir
+31x oreSmallInfusedBalance
+31x oreSmallInfusedDull
+31x oreSmallInfusedEarth
+31x oreSmallInfusedEntropy
+31x oreSmallInfusedFire
+31x oreSmallInfusedOrder
+31x oreSmallInfusedVis
+31x oreSmallInfusedWater
+31x oreSmallIodine
+31x oreSmallIodineSalt
+31x oreSmallIridium
+31x oreSmallIron
+31x oreSmallIronOxide
+31x oreSmallJade
+31x oreSmallJasper
+31x oreSmallKalendrite
+31x oreSmallKalium
+31x oreSmallKaolinite
+31x oreSmallKesterite
+31x oreSmallKreknorite
+31x oreSmallKyanite
+31x oreSmallLantanium
+31x oreSmallLantanum
+31x oreSmallLanthanium
+31x oreSmallLanthanum
+31x oreSmallLapis
+31x oreSmallLavenderQuartz
+31x oreSmallLawrencium
+31x oreSmallLazurite
+31x oreSmallLead
+31x oreSmallLemurite
+31x oreSmallLepidolite
+31x oreSmallLicorice
+31x oreSmallLignite
+31x oreSmallLigniteCoke
+31x oreSmallLiquifiedCoralium
+31x oreSmallLithium
+31x oreSmallLithium6
+31x oreSmallLithiumChloride
+31x oreSmallLivermorium
+31x oreSmallLonsdaleite
+31x oreSmallLudicrite
+31x oreSmallLutetium
+31x oreSmallMagentaFluorite
+31x oreSmallMagnesite
+31x oreSmallMagnesium
+31x oreSmallMagnesiumCarbonate
+31x oreSmallMagnesiumChloride
+31x oreSmallMagnetite
+31x oreSmallMalachite
+31x oreSmallManaDiamond
+31x oreSmallManaQuartz
+31x oreSmallManganese
+31x oreSmallMauftrium
+31x oreSmallMaxixe
+31x oreSmallMeitnerium
+31x oreSmallMendelevium
+31x oreSmallMercury
+31x oreSmallMeteoricIron
+31x oreSmallMeteorite
+31x oreSmallMeutoite
+31x oreSmallMica
+31x oreSmallMidasium
+31x oreSmallMilkyQuartz
+31x oreSmallMirabilite
+31x oreSmallMithril
+31x oreSmallMolybdenite
+31x oreSmallMolybdenum
+31x oreSmallMonazite
+31x oreSmallMoonstone
+31x oreSmallMorganite
+31x oreSmallMoscovium
+31x oreSmallNaquadah
+31x oreSmallNaquadahEnriched
+31x oreSmallNaquadria
+31x oreSmallNatrium
+31x oreSmallNaturalAluminum
+31x oreSmallNeodymium
+31x oreSmallNeptunium
+31x oreSmallNetherQuartz
+31x oreSmallNetherStar
+31x oreSmallNickel
+31x oreSmallNihonium
+31x oreSmallNikolite
+31x oreSmallNiobium
+31x oreSmallNiter
+31x oreSmallNitrate
+31x oreSmallNitre
+31x oreSmallNobelium
+31x oreSmallNougat
+31x oreSmallOceanJasper
+31x oreSmallOctine
+31x oreSmallOganesson
+31x oreSmallOilSand
+31x oreSmallOilShale
+31x oreSmallOilsands
+31x oreSmallOilshale
+31x oreSmallOlivine
+31x oreSmallOnyx
+31x oreSmallOnyxBlack
+31x oreSmallOnyxRed
+31x oreSmallOpal
+31x oreSmallOrangeFluorite
+31x oreSmallOrangeSapphire
+31x oreSmallOrichalcum
+31x oreSmallOriharukon
+31x oreSmallOsmium
+31x oreSmallOsmiumElemental
+31x oreSmallOureclase
+31x oreSmallPEZ
+31x oreSmallPalladium
+31x oreSmallPalygorskite
+31x oreSmallPentlandite
+31x oreSmallPeridot
+31x oreSmallPerlite
+31x oreSmallPetCoke
+31x oreSmallPetroleumCoke
+31x oreSmallPhosphate
+31x oreSmallPhosphor
+31x oreSmallPhosphorite
+31x oreSmallPhosphorous
+31x oreSmallPhosphorus
+31x oreSmallPigIron
+31x oreSmallPinalite
+31x oreSmallPinkDiamond
+31x oreSmallPinkFluorite
+31x oreSmallPitchblende
+31x oreSmallPlatinum
+31x oreSmallPlatinumGroupSludge
+31x oreSmallPlutonium
+31x oreSmallPlutonium238
+31x oreSmallPlutonium239
+31x oreSmallPlutonium240
+31x oreSmallPlutonium241
+31x oreSmallPlutonium243
+31x oreSmallPlutonium244
+31x oreSmallPollucite
+31x oreSmallPolonium
+31x oreSmallPotassium
+31x oreSmallPotassiumFeldspar
+31x oreSmallPotassiumNitrate
+31x oreSmallPowellite
+31x oreSmallPraseodymium
+31x oreSmallPrismane
+31x oreSmallPrismarine
+31x oreSmallPrismarineDark
+31x oreSmallPrometheum
+31x oreSmallPromethium
+31x oreSmallProtactinium
+31x oreSmallPurpleSapphire
+31x oreSmallPyrite
+31x oreSmallPyrolusite
+31x oreSmallPyrope
+465x oreSmallQuartz
+31x oreSmallQuartzBlack
+31x oreSmallQuartzSand
+31x oreSmallQuartzSmoky
+31x oreSmallQuartzite
+31x oreSmallQuickSilver
+31x oreSmallQuicksilver
+31x oreSmallRadium
+31x oreSmallRainforestJasper
+31x oreSmallRareEarth
+31x oreSmallRaspite
+31x oreSmallRealgar
+31x oreSmallRedAventurine
+31x oreSmallRedFluorite
+31x oreSmallRedJasper
+31x oreSmallRedQuartz
+31x oreSmallRedTigerEye
+31x oreSmallRedstone
+31x oreSmallRhenium
+31x oreSmallRhodium
+31x oreSmallRockSalt
+31x oreSmallRoentgenium
+31x oreSmallRubidium
+31x oreSmallRubracium
+31x oreSmallRuby
+31x oreSmallRussellite
+31x oreSmallRuthenium
+31x oreSmallRutherfordium
+31x oreSmallRutile
+31x oreSmallSalpeter
+31x oreSmallSalt
+31x oreSmallSaltpeter
+31x oreSmallSamarium
+31x oreSmallSanguinite
+31x oreSmallSaphire
+31x oreSmallSapphire
+31x oreSmallScabyst
+31x oreSmallScandium
+31x oreSmallScarletEmerald
+31x oreSmallScheelite
+31x oreSmallSeaborgium
+31x oreSmallSelenium
+31x oreSmallShadowIron
+31x oreSmallSheldonite
+31x oreSmallSilicon
+31x oreSmallSiliconDioxide
+31x oreSmallSilver
+31x oreSmallSilverIodide
+31x oreSmallSlimyBone
+31x oreSmallSluiceSand
+31x oreSmallSmithsonite
+31x oreSmallSmokeyQuartz
+31x oreSmallSmokyQuartz
+31x oreSmallSoapstone
+31x oreSmallSodalite
+31x oreSmallSodium
+31x oreSmallSodiumNitrate
+31x oreSmallSoulsand
+31x oreSmallSperrylite
+31x oreSmallSpessartine
+31x oreSmallSphalerite
+31x oreSmallSpinel
+31x oreSmallSpodumene
+31x oreSmallStannite
+31x oreSmallSteel
+31x oreSmallStibnite
+31x oreSmallStolzite
+31x oreSmallStrontium
+31x oreSmallSulfur
+31x oreSmallSulphur
+31x oreSmallSunnyQuartz
+31x oreSmallSunstone
+31x oreSmallSyrmorite
+31x oreSmallTalc
+31x oreSmallTantalite
+31x oreSmallTantalum
+31x oreSmallTanzanite
+31x oreSmallTechnetium
+31x oreSmallTellurium
+31x oreSmallTennessine
+31x oreSmallTerbium
+31x oreSmallTeslatite
+31x oreSmallTetrahedrite
+31x oreSmallThallium
+31x oreSmallThorium
+31x oreSmallThorium232
+31x oreSmallThulium
+31x oreSmallTigerEye
+31x oreSmallTigerIron
+31x oreSmallTin
+31x oreSmallTitan
+31x oreSmallTitanium
+31x oreSmallTitaniumIron
+31x oreSmallTopaz
+31x oreSmallTrinium
+31x oreSmallTritaniumDioxide
+31x oreSmallTritaniumElemental
+31x oreSmallTritaniumHexaastatide
+31x oreSmallTritaniumHexabromide
+31x oreSmallTritaniumHexachloride
+31x oreSmallTritaniumHexafluoride
+31x oreSmallTritaniumHexaiodide
+31x oreSmallTrona
+31x oreSmallTungstate
+31x oreSmallTungsten
+31x oreSmallTungstenOxide
+31x oreSmallTungstenTrioxide
+31x oreSmallUnbihexium
+31x oreSmallUnbinilium
+31x oreSmallUnbipentium
+31x oreSmallUnocthexium
+31x oreSmallUnoctoctium
+31x oreSmallUnoctpentium
+31x oreSmallUnoctseptium
+31x oreSmallUnpentbium
+31x oreSmallUnquadpentium
+31x oreSmallUnseptquadium
+31x oreSmallUnunennium
+31x oreSmallUran
+31x oreSmallUraninite
+31x oreSmallUranium
+31x oreSmallUranium233
+31x oreSmallUranium235
+31x oreSmallUranium238
+31x oreSmallUraniumEnriched
+31x oreSmallUvarovite
+31x oreSmallValerite
+31x oreSmallValonite
+31x oreSmallVanadium
+31x oreSmallVanadiumMagnetite
+31x oreSmallVanadiumPentoxide
+31x oreSmallVermiculite
+31x oreSmallVibranium
+31x oreSmallVinteum
+31x oreSmallVinteumPurified
+31x oreSmallVoidQuartz
+31x oreSmallVulcanite
+31x oreSmallVyroxeres
+31x oreSmallWhiteFluorite
+31x oreSmallWolfram
+31x oreSmallWolframite
+31x oreSmallWolframium
+31x oreSmallWollastonite
+31x oreSmallWulfenite
+31x oreSmallYellorite
+31x oreSmallYellorium
+31x oreSmallYellowAventurine
+31x oreSmallYellowFluorite
+31x oreSmallYellowJasper
+31x oreSmallYellowLimonite
+31x oreSmallYellowSapphire
+31x oreSmallYellowTigerEye
+31x oreSmallYtterbium
+31x oreSmallYttrium
+31x oreSmallZanite
+31x oreSmallZeolite
+31x oreSmallZinc
+31x oreSmallZircon
+31x oreSmallZirconium
+ 6x oreSpaceAbyssalnite
+ 6x oreSpaceActinium
+ 6x oreSpaceAdamant
+ 6x oreSpaceAdamantine
+ 6x oreSpaceAdamantite
+ 6x oreSpaceAdamantium
+ 6x oreSpaceAdluorite
+ 6x oreSpaceAlduorite
+ 6x oreSpaceAlexandrite
+ 6x oreSpaceAlmandine
+ 6x oreSpaceAlumina
+ 6x oreSpaceAluminium
+ 6x oreSpaceAluminiumFluoride
+ 6x oreSpaceAluminiumHydroxide
+ 6x oreSpaceAluminum
+ 6x oreSpaceAlunite
+ 6x oreSpaceAmazonite
+ 6x oreSpaceAmber
+ 6x oreSpaceAmbrosium
+ 6x oreSpaceAmericium
+ 6x oreSpaceAmericium241
+ 6x oreSpaceAmethyst
+ 6x oreSpaceAmethystEnder
+ 6x oreSpaceAncient
+ 6x oreSpaceAncientDebris
+ 6x oreSpaceAndradite
+ 6x oreSpaceAnthracite
+ 6x oreSpaceAntiActinium
+ 6x oreSpaceAntiAdamant
+ 6x oreSpaceAntiAdamantine
+ 6x oreSpaceAntiAdamantium
+ 6x oreSpaceAntiAluminium
+ 6x oreSpaceAntiAluminum
+ 6x oreSpaceAntiAmericium
+ 6x oreSpaceAntiAmericium241
+ 6x oreSpaceAntiAntimony
+ 6x oreSpaceAntiArsenic
+ 6x oreSpaceAntiAstatine
+ 6x oreSpaceAntiBarium
+ 6x oreSpaceAntiBerkelium
+ 6x oreSpaceAntiBeryllium
+ 6x oreSpaceAntiBibibium
+ 6x oreSpaceAntiBismuth
+ 6x oreSpaceAntiBohrium
+ 6x oreSpaceAntiBoron
+ 6x oreSpaceAntiBromine
+ 6x oreSpaceAntiCadmium
+ 6x oreSpaceAntiCaesium
+ 6x oreSpaceAntiCalcium
+ 6x oreSpaceAntiCalifornium
+ 6x oreSpaceAntiCarbon
+ 6x oreSpaceAntiCarbon13
+ 6x oreSpaceAntiCarbon14
+ 6x oreSpaceAntiCerium
+ 6x oreSpaceAntiChlorine
+ 6x oreSpaceAntiChrome
+ 6x oreSpaceAntiChromium
+ 6x oreSpaceAntiCobalt
+ 6x oreSpaceAntiCobalt60
+ 6x oreSpaceAntiCopernicium
+ 6x oreSpaceAntiCopper
+ 6x oreSpaceAntiCurium
+ 6x oreSpaceAntiDarmstadtium
+ 6x oreSpaceAntiDubnium
+ 6x oreSpaceAntiDysprosium
+ 6x oreSpaceAntiEinsteinium
+ 6x oreSpaceAntiErbium
+ 6x oreSpaceAntiEuropium
+ 6x oreSpaceAntiFarnsium
+ 6x oreSpaceAntiFermium
+ 6x oreSpaceAntiFlerovium
+ 6x oreSpaceAntiFlerovium298
+ 6x oreSpaceAntiFluorine
+ 6x oreSpaceAntiFrancium
+ 6x oreSpaceAntiGadolinium
+ 6x oreSpaceAntiGallium
+ 6x oreSpaceAntiGermanium
+ 6x oreSpaceAntiGold
+ 6x oreSpaceAntiGregorium
+ 6x oreSpaceAntiHafnium
+ 6x oreSpaceAntiHassium
+ 6x oreSpaceAntiHolmium
+ 6x oreSpaceAntiIndium
+ 6x oreSpaceAntiIodine
+ 6x oreSpaceAntiIridium
+ 6x oreSpaceAntiIron
+ 6x oreSpaceAntiKalium
+ 6x oreSpaceAntiLanthanum
+ 6x oreSpaceAntiLawrencium
+ 6x oreSpaceAntiLead
+ 6x oreSpaceAntiLithium
+ 6x oreSpaceAntiLithium6
+ 6x oreSpaceAntiLivermorium
+ 6x oreSpaceAntiLutetium
+ 6x oreSpaceAntiMagnesium
+ 6x oreSpaceAntiManganese
+ 6x oreSpaceAntiMeitnerium
+ 6x oreSpaceAntiMendelevium
+ 6x oreSpaceAntiMercury
+ 6x oreSpaceAntiMolybdenum
+ 6x oreSpaceAntiNaquadah
+ 6x oreSpaceAntiNaquadahEnriched
+ 6x oreSpaceAntiNaquadria
+ 6x oreSpaceAntiNatrium
+ 6x oreSpaceAntiNeodymium
+ 6x oreSpaceAntiNeptunium
+ 6x oreSpaceAntiNickel
+ 6x oreSpaceAntiNiobium
+ 6x oreSpaceAntiNobelium
+ 6x oreSpaceAntiOsmium
+ 6x oreSpaceAntiPalladium
+ 6x oreSpaceAntiPhosphor
+ 6x oreSpaceAntiPlatinum
+ 6x oreSpaceAntiPlutonium
+ 6x oreSpaceAntiPlutonium241
+ 6x oreSpaceAntiPlutonium243
+ 6x oreSpaceAntiPlutonium244
+ 6x oreSpaceAntiPolonium
+ 6x oreSpaceAntiPotassium
+ 6x oreSpaceAntiPraseodymium
+ 6x oreSpaceAntiPromethium
+ 6x oreSpaceAntiProtactinium
+ 6x oreSpaceAntiQuickSilver
+ 6x oreSpaceAntiQuicksilver
+ 6x oreSpaceAntiRadium
+ 6x oreSpaceAntiRhenium
+ 6x oreSpaceAntiRhodium
+ 6x oreSpaceAntiRoentgenium
+ 6x oreSpaceAntiRubidium
+ 6x oreSpaceAntiRuthenium
+ 6x oreSpaceAntiRutherfordium
+ 6x oreSpaceAntiSamarium
+ 6x oreSpaceAntiScandium
+ 6x oreSpaceAntiSeaborgium
+ 6x oreSpaceAntiSelenium
+ 6x oreSpaceAntiSilicon
+ 6x oreSpaceAntiSilver
+ 6x oreSpaceAntiSodium
+ 6x oreSpaceAntiStrontium
+ 6x oreSpaceAntiSulfur
+ 6x oreSpaceAntiTantalum
+ 6x oreSpaceAntiTechnetium
+ 6x oreSpaceAntiTellurium
+ 6x oreSpaceAntiTerbium
+ 6x oreSpaceAntiThallium
+ 6x oreSpaceAntiThorium
+ 6x oreSpaceAntiThulium
+ 6x oreSpaceAntiTin
+ 6x oreSpaceAntiTitan
+ 6x oreSpaceAntiTitanium
+ 6x oreSpaceAntiTungsten
+ 6x oreSpaceAntiUnbinilium
+ 6x oreSpaceAntiUnpentbium
+ 6x oreSpaceAntiUnseptquadium
+ 6x oreSpaceAntiUnunennium
+ 6x oreSpaceAntiUnunoctium
+ 6x oreSpaceAntiUnunpentium
+ 6x oreSpaceAntiUnunseptium
+ 6x oreSpaceAntiUnuntrium
+ 6x oreSpaceAntiUran
+ 6x oreSpaceAntiUranium
+ 6x oreSpaceAntiUranium235
+ 6x oreSpaceAntiUranium238
+ 6x oreSpaceAntiVanadium
+ 6x oreSpaceAntiVibranium
+ 6x oreSpaceAntiWolfram
+ 6x oreSpaceAntiWolframium
+ 6x oreSpaceAntiYtterbium
+ 6x oreSpaceAntiYttrium
+ 6x oreSpaceAntiZinc
+ 6x oreSpaceAntiZirconium
+ 6x oreSpaceAntimony
+12x oreSpaceAnyAmethyst
+36x oreSpaceAnyAventurine
+18x oreSpaceAnyCalcite
+12x oreSpaceAnyCarbon
+36x oreSpaceAnyClay
+30x oreSpaceAnyCoalCarbon
+ 6x oreSpaceAnyCopper
+30x oreSpaceAnyDiamond
+42x oreSpaceAnyEmerald
+60x oreSpaceAnyFluorite
+36x oreSpaceAnyGarnet
+42x oreSpaceAnyGlowstone
+24x oreSpaceAnyIron
+30x oreSpaceAnyIronOrSteel
+ 6x oreSpaceAnyIronSteel
+36x oreSpaceAnyJasper
+12x oreSpaceAnyPrismarine
+30x oreSpaceAnySalt
+42x oreSpaceAnySapphire
+ 6x oreSpaceAnySilicon
+102x oreSpaceAnySiliconDioxide
+18x oreSpaceAnyStone
+54x oreSpaceAnyThaumicCrystal
+36x oreSpaceAnyTigerEye
+ 6x oreSpaceAnyTungsten
+ 6x oreSpaceApatite
+ 6x oreSpaceAquaMiddle
+ 6x oreSpaceAquamarine
+ 6x oreSpaceAragonite
+ 6x oreSpaceArdite
+ 6x oreSpaceAredrite
+ 6x oreSpaceArsenic
+ 6x oreSpaceArsenopyrite
+ 6x oreSpaceAsbestos
+ 6x oreSpaceAstatine
+ 6x oreSpaceAstralSilver
+ 6x oreSpaceAtlarus
+ 6x oreSpaceAventurine
+ 6x oreSpaceAzurite
+ 6x oreSpaceBalasRuby
+ 6x oreSpaceBandedIron
+ 6x oreSpaceBarite
+ 6x oreSpaceBarium
+ 6x oreSpaceBasalticMineralSand
+ 6x oreSpaceBastnasite
+ 6x oreSpaceBauxite
+ 6x oreSpaceBedrockium
+ 6x oreSpaceBentonite
+ 6x oreSpaceBerkelium
+ 6x oreSpaceBeryllium
+ 6x oreSpaceBeryllium7
+ 6x oreSpaceBeryllium8
+ 6x oreSpaceBibibium
+ 6x oreSpaceBibiunium
+ 6x oreSpaceBiotite
+ 6x oreSpaceBischofite
+ 6x oreSpaceBismuth
+ 6x oreSpaceBixbite
+ 6x oreSpaceBlackAventurine
+ 6x oreSpaceBlackEye
+ 6x oreSpaceBlackFluorite
+ 6x oreSpaceBlackTigerEye
+ 6x oreSpaceBlazeQuartz
+ 6x oreSpaceBlueAventurine
+ 6x oreSpaceBlueFluorite
+ 6x oreSpaceBlueJasper
+ 6x oreSpaceBlueSapphire
+ 6x oreSpaceBlueTigerEye
+ 6x oreSpaceBlueTopaz
+ 6x oreSpaceBlutonium
+ 6x oreSpaceBogIron
+ 6x oreSpaceBohrium
+ 6x oreSpaceBorax
+ 6x oreSpaceBoron
+ 6x oreSpaceBoron11
+ 6x oreSpaceBromargyrite
+ 6x oreSpaceBrownAventurine
+ 6x oreSpaceBrownLimonite
+ 6x oreSpaceCadmium
+ 6x oreSpaceCaesium
+ 6x oreSpaceCalcite
+ 6x oreSpaceCalcium
+ 6x oreSpaceCalciumChloride
+ 6x oreSpaceCalciumTungstate
+ 6x oreSpaceCalifornium
+ 6x oreSpaceCarbon
+ 6x oreSpaceCarbon13
+ 6x oreSpaceCarbon14
+ 6x oreSpaceCarborundum
+ 6x oreSpaceCarmot
+ 6x oreSpaceCassiterite
+ 6x oreSpaceCassiteriteSand
+ 6x oreSpaceCatsEye
+ 6x oreSpaceCelestine
+ 6x oreSpaceCerium
+ 6x oreSpaceCertusQuartz
+ 6x oreSpaceCeruclase
+ 6x oreSpaceChalcopyrite
+ 6x oreSpaceChalk
+ 6x oreSpaceCharcoal
+ 6x oreSpaceChargedCertusQuartz
+ 6x oreSpaceCheese
+ 6x oreSpaceChimerite
+ 6x oreSpaceChrome
+ 6x oreSpaceChromite
+ 6x oreSpaceChromium
+ 6x oreSpaceChrysotile
+ 6x oreSpaceCinnabar
+ 6x oreSpaceClay
+ 6x oreSpaceClayBrown
+ 6x oreSpaceClayRed
+ 6x oreSpaceCoal
+ 6x oreSpaceCoalCoke
+ 6x oreSpaceCobalt
+ 6x oreSpaceCobalt60
+ 6x oreSpaceCobaltite
+ 6x oreSpaceCoke
+ 6x oreSpaceContinuum
+ 6x oreSpaceCooperite
+ 6x oreSpaceCopernicium
+ 6x oreSpaceCopper
+ 6x oreSpaceCoralium
+ 6x oreSpaceCraponite
+ 6x oreSpaceCrimsonMiddle
+ 6x oreSpaceCrudeOil
+ 6x oreSpaceCryolite
+ 6x oreSpaceCurium
+ 6x oreSpaceCyanite
+ 6x oreSpaceDarkIron
+ 6x oreSpaceDarmstadtium
+ 6x oreSpaceDatolite
+ 6x oreSpaceDeepIron
+ 6x oreSpaceDesh
+ 6x oreSpaceDiamond
+ 6x oreSpaceDiamondIndustrial
+ 6x oreSpaceDiatomite
+ 6x oreSpaceDiduraniumTrioxide
+ 6x oreSpaceDilithium
+ 6x oreSpaceDioptase
+ 6x oreSpaceDolamide
+ 6x oreSpaceDolomite
+ 6x oreSpaceDominicanAmber
+ 6x oreSpaceDraconium
+ 6x oreSpaceDragonEye
+ 6x oreSpaceDreadium
+ 6x oreSpaceDubnium
+ 6x oreSpaceDuraniumElemental
+ 6x oreSpaceDuraniumHexaastatide
+ 6x oreSpaceDuraniumHexabromide
+ 6x oreSpaceDuraniumHexachloride
+ 6x oreSpaceDuraniumHexafluoride
+ 6x oreSpaceDuraniumHexaiodide
+ 6x oreSpaceDysprosium
+ 6x oreSpaceEfrine
+ 6x oreSpaceEinsteinium
+ 6x oreSpaceElectrotine
+ 6x oreSpaceElectrum
+ 6x oreSpaceElnTungsten
+ 6x oreSpaceElvenDragonstone
+ 6x oreSpaceElvenElementium
+ 6x oreSpaceElvenQuartz
+ 6x oreSpaceElvorium
+ 6x oreSpaceEmerald
+ 6x oreSpaceEmery
+ 6x oreSpaceEndium
+ 6x oreSpaceEnergiumCyan
+ 6x oreSpaceEnergiumRed
+ 6x oreSpaceErbium
+ 6x oreSpaceEthaxium
+ 6x oreSpaceEudialyte
+ 6x oreSpaceEuropium
+ 6x oreSpaceEximite
+ 6x oreSpaceFZDarkIron
+ 6x oreSpaceFarnsium
+ 6x oreSpaceFerberite
+ 6x oreSpaceFermium
+ 6x oreSpaceFerrite
+ 6x oreSpaceFerrovanadium
+ 6x oreSpaceFirestone
+ 6x oreSpaceFlerovium
+ 6x oreSpaceFlerovium298
+ 6x oreSpaceFluix
+ 6x oreSpaceFluorine
+ 6x oreSpaceFluorite
+ 6x oreSpaceFlux
+ 6x oreSpaceFoolsRuby
+ 6x oreSpaceForce
+ 6x oreSpaceForcicium
+ 6x oreSpaceForcillium
+ 6x oreSpaceFrancium
+ 6x oreSpaceFrozenIron
+ 6x oreSpaceFullersEarth
+ 6x oreSpaceFzDarkIron
+ 6x oreSpaceGadolinium
+ 6x oreSpaceGalena
+ 6x oreSpaceGallium
+ 6x oreSpaceGarnet
+ 6x oreSpaceGarnetGreen
+ 6x oreSpaceGarnetOrange
+ 6x oreSpaceGarnetPurple
+ 6x oreSpaceGarnetRed
+ 6x oreSpaceGarnetSand
+ 6x oreSpaceGarnetYellow
+ 6x oreSpaceGarnierite
+ 6x oreSpaceGermanium
+ 6x oreSpaceGibbsite
+ 6x oreSpaceGlass
+ 6x oreSpaceGlauconite
+ 6x oreSpaceGlauconiteSand
+ 6x oreSpaceGloomstone
+ 6x oreSpaceGlowstone
+ 6x oreSpaceGlowstoneCeres
+ 6x oreSpaceGlowstoneEnceladus
+ 6x oreSpaceGlowstoneIo
+ 6x oreSpaceGlowstonePluto
+ 6x oreSpaceGlowstoneProteus
+ 6x oreSpaceGold
+ 6x oreSpaceGoshenite
+ 6x oreSpaceGraniticMineralSand
+ 6x oreSpaceGraphite
+ 6x oreSpaceGravitite
+ 6x oreSpaceGreenAventurine
+ 6x oreSpaceGreenFluorite
+ 6x oreSpaceGreenJasper
+ 6x oreSpaceGreenMiddle
+ 6x oreSpaceGreenSapphire
+ 6x oreSpaceGreenTigerEye
+ 6x oreSpaceGregorium
+ 6x oreSpaceGrossular
+ 6x oreSpaceGypsum
+ 6x oreSpaceGyubnera
+ 6x oreSpaceHafnium
+ 6x oreSpaceHassium
+ 6x oreSpaceHawksEye
+ 6x oreSpaceHeeEndium
+ 6x oreSpaceHeliodor
+ 6x oreSpaceHematite
+30x oreSpaceHexorium
+ 6x oreSpaceHexoriumBlack
+ 6x oreSpaceHexoriumBlue
+ 6x oreSpaceHexoriumGreen
+ 6x oreSpaceHexoriumRed
+ 6x oreSpaceHexoriumWhite
+ 6x oreSpaceHolmium
+ 6x oreSpaceHoney
+ 6x oreSpaceHoneydew
+ 6x oreSpaceHuebnerite
+ 6x oreSpaceIffesal
+ 6x oreSpaceIgnatius
+ 6x oreSpaceIllmenite
+ 6x oreSpaceIlmenite
+ 6x oreSpaceIndium
+ 6x oreSpaceInfuscolium
+ 6x oreSpaceInfusedAir
+ 6x oreSpaceInfusedBalance
+ 6x oreSpaceInfusedDull
+ 6x oreSpaceInfusedEarth
+ 6x oreSpaceInfusedEntropy
+ 6x oreSpaceInfusedFire
+ 6x oreSpaceInfusedOrder
+ 6x oreSpaceInfusedVis
+ 6x oreSpaceInfusedWater
+ 6x oreSpaceIodine
+ 6x oreSpaceIodineSalt
+ 6x oreSpaceIridium
+ 6x oreSpaceIron
+ 6x oreSpaceIronOxide
+ 6x oreSpaceJade
+ 6x oreSpaceJasper
+ 6x oreSpaceKalendrite
+ 6x oreSpaceKalium
+ 6x oreSpaceKaolinite
+ 6x oreSpaceKesterite
+ 6x oreSpaceKreknorite
+ 6x oreSpaceKyanite
+ 6x oreSpaceLantanium
+ 6x oreSpaceLantanum
+ 6x oreSpaceLanthanium
+ 6x oreSpaceLanthanum
+ 6x oreSpaceLapis
+ 6x oreSpaceLavenderQuartz
+ 6x oreSpaceLawrencium
+ 6x oreSpaceLazurite
+ 6x oreSpaceLead
+ 6x oreSpaceLemurite
+ 6x oreSpaceLepidolite
+ 6x oreSpaceLicorice
+ 6x oreSpaceLignite
+ 6x oreSpaceLigniteCoke
+ 6x oreSpaceLiquifiedCoralium
+ 6x oreSpaceLithium
+ 6x oreSpaceLithium6
+ 6x oreSpaceLithiumChloride
+ 6x oreSpaceLivermorium
+ 6x oreSpaceLonsdaleite
+ 6x oreSpaceLudicrite
+ 6x oreSpaceLutetium
+ 6x oreSpaceMagentaFluorite
+ 6x oreSpaceMagnesite
+ 6x oreSpaceMagnesium
+ 6x oreSpaceMagnesiumCarbonate
+ 6x oreSpaceMagnesiumChloride
+ 6x oreSpaceMagnetite
+ 6x oreSpaceMalachite
+ 6x oreSpaceManaDiamond
+ 6x oreSpaceManaQuartz
+ 6x oreSpaceManganese
+ 6x oreSpaceMauftrium
+ 6x oreSpaceMaxixe
+ 6x oreSpaceMeitnerium
+ 6x oreSpaceMendelevium
+ 6x oreSpaceMercury
+ 6x oreSpaceMeteoricIron
+ 6x oreSpaceMeteorite
+ 6x oreSpaceMeutoite
+ 6x oreSpaceMica
+ 6x oreSpaceMidasium
+ 6x oreSpaceMilkyQuartz
+ 6x oreSpaceMirabilite
+ 6x oreSpaceMithril
+ 6x oreSpaceMolybdenite
+ 6x oreSpaceMolybdenum
+ 6x oreSpaceMonazite
+ 6x oreSpaceMoonstone
+ 6x oreSpaceMorganite
+ 6x oreSpaceMoscovium
+ 6x oreSpaceNaquadah
+ 6x oreSpaceNaquadahEnriched
+ 6x oreSpaceNaquadria
+ 6x oreSpaceNatrium
+ 6x oreSpaceNaturalAluminum
+ 6x oreSpaceNeodymium
+ 6x oreSpaceNeptunium
+ 6x oreSpaceNetherQuartz
+ 6x oreSpaceNetherStar
+ 6x oreSpaceNickel
+ 6x oreSpaceNihonium
+ 6x oreSpaceNikolite
+ 6x oreSpaceNiobium
+ 6x oreSpaceNiter
+ 6x oreSpaceNitrate
+ 6x oreSpaceNitre
+ 6x oreSpaceNobelium
+ 6x oreSpaceNougat
+ 6x oreSpaceOceanJasper
+ 6x oreSpaceOctine
+ 6x oreSpaceOganesson
+ 6x oreSpaceOilSand
+ 6x oreSpaceOilShale
+ 6x oreSpaceOilsands
+ 6x oreSpaceOilshale
+ 6x oreSpaceOlivine
+ 6x oreSpaceOnyx
+ 6x oreSpaceOnyxBlack
+ 6x oreSpaceOnyxRed
+ 6x oreSpaceOpal
+ 6x oreSpaceOrangeFluorite
+ 6x oreSpaceOrangeSapphire
+ 6x oreSpaceOrichalcum
+ 6x oreSpaceOriharukon
+ 6x oreSpaceOsmium
+ 6x oreSpaceOsmiumElemental
+ 6x oreSpaceOureclase
+ 6x oreSpacePEZ
+ 6x oreSpacePalladium
+ 6x oreSpacePalygorskite
+ 6x oreSpacePentlandite
+ 6x oreSpacePeridot
+ 6x oreSpacePerlite
+ 6x oreSpacePetCoke
+ 6x oreSpacePetroleumCoke
+ 6x oreSpacePhosphate
+ 6x oreSpacePhosphor
+ 6x oreSpacePhosphorite
+ 6x oreSpacePhosphorous
+ 6x oreSpacePhosphorus
+ 6x oreSpacePigIron
+ 6x oreSpacePinalite
+ 6x oreSpacePinkDiamond
+ 6x oreSpacePinkFluorite
+ 6x oreSpacePitchblende
+ 6x oreSpacePlatinum
+ 6x oreSpacePlatinumGroupSludge
+ 6x oreSpacePlutonium
+ 6x oreSpacePlutonium238
+ 6x oreSpacePlutonium239
+ 6x oreSpacePlutonium240
+ 6x oreSpacePlutonium241
+ 6x oreSpacePlutonium243
+ 6x oreSpacePlutonium244
+ 6x oreSpacePollucite
+ 6x oreSpacePolonium
+ 6x oreSpacePotassium
+ 6x oreSpacePotassiumFeldspar
+ 6x oreSpacePotassiumNitrate
+ 6x oreSpacePowellite
+ 6x oreSpacePraseodymium
+ 6x oreSpacePrismane
+ 6x oreSpacePrismarine
+ 6x oreSpacePrismarineDark
+ 6x oreSpacePrometheum
+ 6x oreSpacePromethium
+ 6x oreSpaceProtactinium
+ 6x oreSpacePurpleSapphire
+ 6x oreSpacePyrite
+ 6x oreSpacePyrolusite
+ 6x oreSpacePyrope
+90x oreSpaceQuartz
+ 6x oreSpaceQuartzBlack
+ 6x oreSpaceQuartzSand
+ 6x oreSpaceQuartzSmoky
+ 6x oreSpaceQuartzite
+ 6x oreSpaceQuickSilver
+ 6x oreSpaceQuicksilver
+ 6x oreSpaceRadium
+ 6x oreSpaceRainforestJasper
+ 6x oreSpaceRareEarth
+ 6x oreSpaceRaspite
+ 6x oreSpaceRealgar
+ 6x oreSpaceRedAventurine
+ 6x oreSpaceRedFluorite
+ 6x oreSpaceRedJasper
+ 6x oreSpaceRedQuartz
+ 6x oreSpaceRedTigerEye
+ 6x oreSpaceRedstone
+ 6x oreSpaceRhenium
+ 6x oreSpaceRhodium
+ 6x oreSpaceRockSalt
+ 6x oreSpaceRoentgenium
+ 6x oreSpaceRubidium
+ 6x oreSpaceRubracium
+ 6x oreSpaceRuby
+ 6x oreSpaceRussellite
+ 6x oreSpaceRuthenium
+ 6x oreSpaceRutherfordium
+ 6x oreSpaceRutile
+ 6x oreSpaceSalpeter
+ 6x oreSpaceSalt
+ 6x oreSpaceSaltpeter
+ 6x oreSpaceSamarium
+ 6x oreSpaceSanguinite
+ 6x oreSpaceSaphire
+ 6x oreSpaceSapphire
+ 6x oreSpaceScabyst
+ 6x oreSpaceScandium
+ 6x oreSpaceScarletEmerald
+ 6x oreSpaceScheelite
+ 6x oreSpaceSeaborgium
+ 6x oreSpaceSelenium
+ 6x oreSpaceShadowIron
+ 6x oreSpaceSheldonite
+ 6x oreSpaceSilicon
+ 6x oreSpaceSiliconDioxide
+ 6x oreSpaceSilver
+ 6x oreSpaceSilverIodide
+ 6x oreSpaceSlimyBone
+ 6x oreSpaceSluiceSand
+ 6x oreSpaceSmithsonite
+ 6x oreSpaceSmokeyQuartz
+ 6x oreSpaceSmokyQuartz
+ 6x oreSpaceSoapstone
+ 6x oreSpaceSodalite
+ 6x oreSpaceSodium
+ 6x oreSpaceSodiumNitrate
+ 6x oreSpaceSoulsand
+ 6x oreSpaceSperrylite
+ 6x oreSpaceSpessartine
+ 6x oreSpaceSphalerite
+ 6x oreSpaceSpinel
+ 6x oreSpaceSpodumene
+ 6x oreSpaceStannite
+ 6x oreSpaceSteel
+ 6x oreSpaceStibnite
+ 6x oreSpaceStolzite
+ 6x oreSpaceStrontium
+ 6x oreSpaceSulfur
+ 6x oreSpaceSulphur
+ 6x oreSpaceSunnyQuartz
+ 6x oreSpaceSunstone
+ 6x oreSpaceSyrmorite
+ 6x oreSpaceTalc
+ 6x oreSpaceTantalite
+ 6x oreSpaceTantalum
+ 6x oreSpaceTanzanite
+ 6x oreSpaceTechnetium
+ 6x oreSpaceTellurium
+ 6x oreSpaceTennessine
+ 6x oreSpaceTerbium
+ 6x oreSpaceTeslatite
+ 6x oreSpaceTetrahedrite
+ 6x oreSpaceThallium
+ 6x oreSpaceThorium
+ 6x oreSpaceThorium232
+ 6x oreSpaceThulium
+ 6x oreSpaceTigerEye
+ 6x oreSpaceTigerIron
+ 6x oreSpaceTin
+ 6x oreSpaceTitan
+ 6x oreSpaceTitanium
+ 6x oreSpaceTitaniumIron
+ 6x oreSpaceTopaz
+ 6x oreSpaceTrinium
+ 6x oreSpaceTritaniumDioxide
+ 6x oreSpaceTritaniumElemental
+ 6x oreSpaceTritaniumHexaastatide
+ 6x oreSpaceTritaniumHexabromide
+ 6x oreSpaceTritaniumHexachloride
+ 6x oreSpaceTritaniumHexafluoride
+ 6x oreSpaceTritaniumHexaiodide
+ 6x oreSpaceTrona
+ 6x oreSpaceTungstate
+ 6x oreSpaceTungsten
+ 6x oreSpaceTungstenOxide
+ 6x oreSpaceTungstenTrioxide
+ 6x oreSpaceUnbihexium
+ 6x oreSpaceUnbinilium
+ 6x oreSpaceUnbipentium
+ 6x oreSpaceUnocthexium
+ 6x oreSpaceUnoctoctium
+ 6x oreSpaceUnoctpentium
+ 6x oreSpaceUnoctseptium
+ 6x oreSpaceUnpentbium
+ 6x oreSpaceUnquadpentium
+ 6x oreSpaceUnseptquadium
+ 6x oreSpaceUnunennium
+ 6x oreSpaceUran
+ 6x oreSpaceUraninite
+ 6x oreSpaceUranium
+ 6x oreSpaceUranium233
+ 6x oreSpaceUranium235
+ 6x oreSpaceUranium238
+ 6x oreSpaceUraniumEnriched
+ 6x oreSpaceUvarovite
+ 6x oreSpaceValerite
+ 6x oreSpaceValonite
+ 6x oreSpaceVanadium
+ 6x oreSpaceVanadiumMagnetite
+ 6x oreSpaceVanadiumPentoxide
+ 6x oreSpaceVermiculite
+ 6x oreSpaceVibranium
+ 6x oreSpaceVinteum
+ 6x oreSpaceVinteumPurified
+ 6x oreSpaceVoidQuartz
+ 6x oreSpaceVulcanite
+ 6x oreSpaceVyroxeres
+ 6x oreSpaceWhiteFluorite
+ 6x oreSpaceWolfram
+ 6x oreSpaceWolframite
+ 6x oreSpaceWolframium
+ 6x oreSpaceWollastonite
+ 6x oreSpaceWulfenite
+ 6x oreSpaceYellorite
+ 6x oreSpaceYellorium
+ 6x oreSpaceYellowAventurine
+ 6x oreSpaceYellowFluorite
+ 6x oreSpaceYellowJasper
+ 6x oreSpaceYellowLimonite
+ 6x oreSpaceYellowSapphire
+ 6x oreSpaceYellowTigerEye
+ 6x oreSpaceYtterbium
+ 6x oreSpaceYttrium
+ 6x oreSpaceZanite
+ 6x oreSpaceZeolite
+ 6x oreSpaceZinc
+ 6x oreSpaceZircon
+ 6x oreSpaceZirconium
+53x oreSphalerite
+56x oreSulfur
+56x oreSulphur
+53x oreSunstone
+53x oreSyrmorite
+53x oreTeslatite
+59x oreTin
+ 2x oreTitaniumIron
+53x oreTopaz
+53x oreTrinium
+53x oreUnbihexium
+53x oreUnocthexium
+53x oreUnoctoctium
+53x oreUnoctpentium
+53x oreUnoctseptium
+53x oreUnquadpentium
+53x oreUnseptquadium
+ 3x oreUran
+ 3x oreUranium
+ 3x oreUranium238
  2x oreVanillagraniteAbyssalnite
  2x oreVanillagraniteActinium
  2x oreVanillagraniteAdamant
@@ -57482,7 +60051,7 @@ OreDictionary:
 12x oreVanillastoneAnyJasper
  4x oreVanillastoneAnyPrismarine
 10x oreVanillastoneAnySalt
-15x oreVanillastoneAnySapphire
+16x oreVanillastoneAnySapphire
  2x oreVanillastoneAnySilicon
 34x oreVanillastoneAnySiliconDioxide
  6x oreVanillastoneAnyStone
@@ -57530,7 +60099,7 @@ OreDictionary:
  2x oreVanillastoneBlueAventurine
  2x oreVanillastoneBlueFluorite
  2x oreVanillastoneBlueJasper
- 2x oreVanillastoneBlueSapphire
+ 3x oreVanillastoneBlueSapphire
  2x oreVanillastoneBlueTigerEye
  2x oreVanillastoneBlueTopaz
  2x oreVanillastoneBlutonium
@@ -57577,7 +60146,7 @@ OreDictionary:
  2x oreVanillastoneClayRed
  3x oreVanillastoneCoal
  2x oreVanillastoneCoalCoke
- 2x oreVanillastoneCobalt
+ 3x oreVanillastoneCobalt
  2x oreVanillastoneCobalt60
  2x oreVanillastoneCobaltite
  2x oreVanillastoneCoke
@@ -57799,7 +60368,7 @@ OreDictionary:
  2x oreVanillastoneNeptunium
  2x oreVanillastoneNetherQuartz
  2x oreVanillastoneNetherStar
- 2x oreVanillastoneNickel
+ 3x oreVanillastoneNickel
  2x oreVanillastoneNihonium
  2x oreVanillastoneNikolite
  2x oreVanillastoneNiobium
@@ -57990,7 +60559,7 @@ OreDictionary:
  2x oreVanillastoneUnseptquadium
  2x oreVanillastoneUnunennium
  2x oreVanillastoneUran
- 3x oreVanillastoneUraninite
+ 4x oreVanillastoneUraninite
  2x oreVanillastoneUranium
  2x oreVanillastoneUranium233
  2x oreVanillastoneUranium235
@@ -58030,14 +60599,14 @@ OreDictionary:
  2x oreVanillastoneZinc
  2x oreVanillastoneZircon
  2x oreVanillastoneZirconium
-39x oreVinteum
-39x oreWhiteFluorite
-39x oreYellorite
-39x oreYellorium
-39x oreYellowFluorite
-39x oreYellowSapphire
-39x oreZanite
-39x oreZinc
+53x oreVinteum
+53x oreWhiteFluorite
+53x oreYellorite
+53x oreYellorium
+53x oreYellowFluorite
+53x oreYellowSapphire
+53x oreZanite
+53x oreZinc
  2x paneGlass
  1x paneGlassBlack
  1x paneGlassBlue
@@ -58679,9 +61248,9 @@ OreDictionary:
  1x pipeTinyWood
  1x pipeTinyWoodSealed
  1x pipeTinyWoodTreated
-41x plankAnyWood
+42x plankAnyWood
  2x plankTreatedWood
-39x plankWood
+40x plankWood
  2x plankWoodTreated
  1x plantGtBerryAbyssalOat
  1x plantGtBerryAbyssalnite
@@ -65685,9 +68254,9 @@ OreDictionary:
  1x plateClay
  1x plateClayBrown
  1x plateClayRed
- 1x plateCoal
+ 2x plateCoal
  1x plateCoalCoke
- 1x plateCobalt
+ 2x plateCobalt
  1x plateCobalt60
  1x plateCobaltBrass
  1x plateCoke
@@ -68048,7 +70617,7 @@ OreDictionary:
  1x plateLutetium
  1x plateMagic
  1x plateMagnalium
- 1x plateMagnesium
+ 2x plateMagnesium
  1x plateManasteel
  1x plateManganese
  1x plateManyullyn
@@ -68086,7 +70655,7 @@ OreDictionary:
  1x plateNetherrack
  1x plateNeutronium
  1x plateNichrome
- 1x plateNickel
+ 2x plateNickel
  1x plateNiflheimPower
  1x plateNihonium
  1x plateNikolineAlloy
@@ -73256,8 +75825,9 @@ OreDictionary:
  1x roundZebrawood
  1x roundZircon
  1x roundZirconium
- 1x sand
+ 2x sand
  1x sandstone
+ 1x sapphire
  1x scrapGtAbyssalOat
  1x scrapGtAbyssalnite
  1x scrapGtAcacia
@@ -75448,7 +78018,9 @@ OreDictionary:
  1x shardEarth
  1x shardEntropy
  1x shardFire
+ 1x shardIron
  1x shardOrder
+ 1x shardTitanium
  1x shardWater
  3x sheetMetal
  1x sheetPlastic
@@ -76845,7 +79417,7 @@ OreDictionary:
  1x stickDarmstadtium
  1x stickDeadrock
  1x stickDeepIron
- 1x stickDesh
+ 2x stickDesh
  1x stickDesichalkos
  1x stickDiamantine
  1x stickDiamond
@@ -78359,7 +80931,7 @@ OreDictionary:
  1x stickZinc
  1x stickZircon
  1x stickZirconium
-16x stone
+17x stone
 14x stoneAndesite
  8x stoneAndesiteBricks
  1x stoneAndesiteChiseled
@@ -78368,7 +80940,7 @@ OreDictionary:
 28x stoneAnyPrismarine
  1x stoneAnySand
 15x stoneAnySiliconDioxide
-229x stoneAnyStone
+245x stoneAnyStone
 14x stoneBasalt
  8x stoneBasaltBricks
  1x stoneBasaltChiseled
@@ -78409,7 +80981,7 @@ OreDictionary:
  1x stoneChiseledPrismarine
  1x stoneChiseledPrismarineDark
  1x stoneChiseledQuartzite
-32x stoneCobble
+34x stoneCobble
  1x stoneCobbleAndesite
  1x stoneCobbleBasalt
  1x stoneCobbleBlueschist
@@ -78458,6 +81030,10 @@ OreDictionary:
 14x stoneKomatiite
 14x stoneLimestone
 14x stoneMarble
+ 1x stoneMarsSand
+ 3x stoneMarsStone
+ 1x stoneMoonStone
+ 1x stoneMoonTurf
 32x stoneMossy
  1x stoneMossyAndesite
  1x stoneMossyBasalt
@@ -78499,7 +81075,7 @@ OreDictionary:
 14x stoneQuartz
 14x stoneQuartzite
  1x stoneSand
-16x stoneSmooth
+17x stoneSmooth
  1x stoneSmoothAndesite
  1x stoneSmoothBasalt
  1x stoneSmoothBlueschist
@@ -78515,6 +81091,7 @@ OreDictionary:
  1x stoneSmoothPrismarine
  1x stoneSmoothPrismarineDark
  1x stoneSmoothQuartzite
+10x stoneSpaceStone
  1x tinyPu238
  1x tinyPu239
  1x tinyPu240
@@ -96069,6 +98646,11 @@ OreDictionary:
  1x treatedStick
 20x treeLeaves
 19x treeSapling
+ 1x uranium
+ 1x waferAdvanced
+ 1x waferBasic
+ 1x waferModern
+ 1x waferSolar
  2x waxMagical
  1x wheat
  2x wireCopper
@@ -97166,7 +99748,7 @@ OreDictionary:
  1x wireSilver
  1x wireSteel
  1x wireTin
-105x woodLog
+106x woodLog
  9x woodRubber
 111x woodStick
 *
@@ -99812,9 +102394,11 @@ aquaticnutrition
 aquaticwaste
 argon
 astatine
+atmosphericgases
 bacillus
 bacteria_differentiationpromotingproteinneuron
 bacteria_medium
+bacterialsludge
 bananasmoothie
 bawls
 bbqsauce
@@ -100016,10 +102600,12 @@ fluorine
 for.honey
 fruitsmoothie
 fuel
+fuelgc
 gas_natural_gas
 gasoil
 glass
 glenmckenner
+gliesecwater
 glue
 glycerol
 glyceryl
@@ -100039,6 +102625,7 @@ greenvitriol
 heavywater
 helium
 helium3
+heliumhydrogen
 heliumneon
 heliumplasma
 hellderberryjuice
@@ -100061,6 +102648,7 @@ hottritiatedwater
 htgt6:helemaliquid
 hydrochloricacid
 hydrogen
+hydrogen2
 hydrogenfluoride
 hydrogenperoxide
 hydrosulfuricacid
@@ -100095,7 +102683,11 @@ liquid_extra_heavy_oil
 liquid_heavy_oil
 liquid_light_oil
 liquid_medium_oil
+liquidargon
+liquidethanemethane
 liquidhydrogen
+liquidmethane
+liquidnitrogen
 liquidoxygen
 lpg
 lubricant
@@ -100340,6 +102932,7 @@ nitrogenplasma
 nutella
 nutoil
 oil
+oilgc
 orangesmoothie
 osmiumtetroxide
 oxygen
@@ -100626,13 +103219,25 @@ Biomes:
 37 = Mesa
 38 = Mesa Plateau F
 39 = Mesa Plateau
+102 = moon
+103 = glieseb
+104 = Gliese_c
+105 = space
 120 = Lukewarm Ocean
-129 = Sunflower Plains
-130 = Desert M
-131 = Extreme Hills M
-132 = Flower Forest
-133 = Taiga M
-134 = Swampland M
+125 = -=|WorldEngine|=-
+126 = SpaceBeach
+127 = SpacePartiallySubmerged
+128 = SpaceLowIslands
+129 = SpaceRockyWaters
+130 = SpaceMidHills
+131 = SpaceHighPlateaus
+132 = SpaceLowHills
+133 = SpaceMidPlains
+134 = SpaceLowPlains
+135 = SpaceDeepOceans
+136 = SpaceOceans
+137 = SpaceShallowWaters
+138 = Space
 140 = Ice Plains Spikes
 149 = Jungle M
 151 = JungleEdge M

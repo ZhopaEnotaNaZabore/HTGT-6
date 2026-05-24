@@ -7,13 +7,11 @@ import com.mod.htgt6.common.block.hitech6.*;
 import com.mod.htgt6.common.block.technological.PCcube;
 import cpw.mods.fml.common.registry.GameRegistry;
 import com.mod.htgt6.common.block.greg.technological.hulls.hullHV;
-import com.mod.htgt6.common.block.greg.technological.hulls.hullULV;
 import com.mod.htgt6.common.block.greg.technological.hulls.hullMV;
 import com.mod.htgt6.common.block.greg.technological.hulls.hullLV;
 
 public class ModBlocks {
 
-    private static final hullULV HULL_ULV = new hullULV();
     private static final hullLV HULL_LV = new hullLV();
     private static final hullMV HULL_MV = new hullMV();
     private static final hullHV HULL_HV = new hullHV();
@@ -32,7 +30,6 @@ public class ModBlocks {
 
         //Регистр просто блоков
 
-        GameRegistry.registerBlock(HULL_ULV, "ULVhull");
         GameRegistry.registerBlock(HULL_LV, "HullLV");
         GameRegistry.registerBlock(HULL_MV, "hullMV");
         GameRegistry.registerBlock(HULL_HV, "hullHV");

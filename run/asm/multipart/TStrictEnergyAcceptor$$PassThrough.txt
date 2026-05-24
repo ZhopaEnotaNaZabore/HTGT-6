@@ -1,0 +1,50 @@
+// class version 50.0 (50)
+// access flags 0x601
+public abstract interface TStrictEnergyAcceptor$$PassThrough implements mekanism/api/energy/IStrictEnergyAcceptor  {
+
+
+  // access flags 0x401
+  public abstract TStrictEnergyAcceptor$$PassThrough$$impl()Lmekanism/api/energy/IStrictEnergyAcceptor;
+
+  // access flags 0x401
+  public abstract TStrictEnergyAcceptor$$PassThrough$$impl_$eq(Lmekanism/api/energy/IStrictEnergyAcceptor;)V
+
+  // access flags 0x401
+  public abstract bindPart(Lcodechicken/multipart/TMultiPart;)V
+
+  // access flags 0x401
+  public abstract TStrictEnergyAcceptor$$PassThrough$$super$bindPart(Lcodechicken/multipart/TMultiPart;)V
+
+  // access flags 0x401
+  public abstract partRemoved(Lcodechicken/multipart/TMultiPart;I)V
+
+  // access flags 0x401
+  public abstract TStrictEnergyAcceptor$$PassThrough$$super$partRemoved(Lcodechicken/multipart/TMultiPart;I)V
+
+  // access flags 0x401
+  public abstract canAddPart(Lcodechicken/multipart/TMultiPart;)Z
+
+  // access flags 0x401
+  public abstract TStrictEnergyAcceptor$$PassThrough$$super$canAddPart(Lcodechicken/multipart/TMultiPart;)Z
+
+  // access flags 0x401
+  public abstract transferEnergyToAcceptor(Lnet/minecraftforge/common/util/ForgeDirection;D)D
+
+  // access flags 0x401
+  public abstract canReceiveEnergy(Lnet/minecraftforge/common/util/ForgeDirection;)Z
+
+  // access flags 0x401
+  public abstract getEnergy()D
+
+  // access flags 0x401
+  public abstract setEnergy(D)V
+
+  // access flags 0x401
+  public abstract getMaxEnergy()D
+
+  // access flags 0x401
+  public abstract copyFrom(Lcodechicken/multipart/TileMultipart;)V
+
+  // access flags 0x401
+  public abstract TStrictEnergyAcceptor$$PassThrough$$super$copyFrom(Lcodechicken/multipart/TileMultipart;)V
+}

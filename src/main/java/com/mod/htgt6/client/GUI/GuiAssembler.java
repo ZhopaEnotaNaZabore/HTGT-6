@@ -1,68 +1,327 @@
 package com.mod.htgt6.client.GUI;
 
-import codechicken.nei.recipe.GuiCraftingRecipe;
+import codechicken.nei.api.API;
+import codechicken.nei.recipe.DefaultOverlayHandler;
 import com.mod.htgt6.common.TE.TileEntityAssembler;
+import com.mod.htgt6.common.handler.recipe.ASrecipeHandler;
 import com.mod.htgt6.common.inventory.ContainerAssembler;
+
+import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.inventory.GuiContainer;
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.nbt.NBTTagList;
 import net.minecraft.util.ResourceLocation;
+
 import org.lwjgl.opengl.GL11;
 
 public class GuiAssembler extends GuiContainer {
-    private static final ResourceLocation texture = new ResourceLocation("htgt6", "textures/gui/Assembler.png");
-    private TileEntityAssembler te;
 
-    public GuiAssembler(ContainerAssembler container, TileEntityAssembler te) {
+    // ==========================================
+    // TEXTURE
+    // ==========================================
+
+    private static final ResourceLocation texture =
+            new ResourceLocation(
+                    "htgt6",
+                    "textures/gui/Assembler.png"
+            );
+
+    // ==========================================
+    // TILE
+    // ==========================================
+
+    private final TileEntityAssembler te;
+
+    // ==========================================
+    // BUTTON
+    // ==========================================
+
+    private GuiButton powerButton;
+
+    // ==========================================
+    // GUI
+    // ==========================================
+
+    public GuiAssembler(
+            ContainerAssembler container,
+            TileEntityAssembler te
+    ) {
+
         super(container);
+
         this.te = te;
+
+        // STANDARD SIZE
         this.xSize = 176;
         this.ySize = 166;
     }
 
-    @Override
-    protected void drawGuiContainerBackgroundLayer(float p, int mx, int my) {
-        GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-        this.mc.getTextureManager().bindTexture(texture);
-        int k = (this.width - this.xSize) / 2;
-        int l = (this.height - this.ySize) / 2;
-        this.drawTexturedModalRect(k, l, 0, 0, xSize, ySize);
+    // ==========================================
+    // INIT
+    // ==========================================
 
-        if (this.te.maxProgress > 0 && this.te.progress > 0) {
-            int prog = (this.te.progress * 22) / this.te.maxProgress;
-            this.drawTexturedModalRect(k + 78, l + 25, 176, 0, prog, 16);
+    //@Override
+   // public void initGui() {
+
+  //      super.initGui();
+
+   //     buttonList.clear();
+
+  //      int guiLeft =
+    //            (width - xSize) / 2;
+
+  //      int guiTop =
+  //              (height - ySize) / 2;
+
+        // ==========================================
+        // POWER BUTTON
+        // ==========================================
+
+     //   powerButton = new GuiButton(
+      //          0,
+     //           guiLeft + 136,
+     //           guiTop + 54,
+     //           30,
+     //           16,
+    //            te.enabled
+     //                   ? "ON"
+     //                   : "OFF"
+    //    );
+
+    //    buttonList.add(powerButton);
+ //   }
+
+    // ==========================================
+    // BUTTON
+    // ==========================================
+
+    @Override
+    protected void actionPerformed(
+            GuiButton button
+    ) {
+
+        if (button.id == 0) {
+
+            te.enabled = !te.enabled;
+
+            button.displayString =
+                    te.enabled
+                            ? "ON"
+                            : "OFF";
         }
     }
 
-    @Override
-    protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
-        this.fontRendererObj.drawString("Assembler", 8, 6, 4210752);
-
-        if (this.te.maxProgress > 0 && this.te.progress > 0) {
-            int percent = (this.te.progress * 100) / this.te.maxProgress;
-            String s = Math.min(100, percent) + "%";
-            this.fontRendererObj.drawString(s, 89 - (fontRendererObj.getStringWidth(s) / 2), 14, 4210752);
-        }
-
-        if (this.te.progress > 0 && this.te.energy < 8) {
-            String warn = "LOW POWER";
-            this.fontRendererObj.drawString(warn, 88 - (fontRendererObj.getStringWidth(warn) / 2), 45, 0xFF0000);
-        }
-    }
+    // ==========================================
+    // BACKGROUND
+    // ==========================================
 
     @Override
-    protected void mouseClicked(int x, int y, int button) {
-        // ESSENTIAL: This allows GuiContainer to handle slot clicks,
-        // shift-clicks, and dragging items into/out of slots.
-        super.mouseClicked(x, y, button);
+    protected void drawGuiContainerBackgroundLayer(
+            float partialTicks,
+            int mouseX,
+            int mouseY
+    ) {
 
-        int guiLeft = (this.width - this.xSize) / 2;
-        int guiTop = (this.height - this.ySize) / 2;
+        GL11.glColor4f(
+                1F,
+                1F,
+                1F,
+                1F
+        );
 
-        // Custom logic for clicking the progress bar (e.g., for NEI integration)
-        if (x >= guiLeft + 78 && x <= guiLeft + 100 && y >= guiTop + 25 && y <= guiTop + 41) {
-            // Add recipe look-up logic here if using NEI/JEI
-            if (x >= guiLeft + 74 && x <= guiLeft + 74 + 24 && y >= guiTop + 23 && y <= guiTop + 23 + 17) {
-                GuiCraftingRecipe.openRecipeGui("assembling_machine");
+        mc.getTextureManager()
+                .bindTexture(texture);
+
+        // ==========================================
+        // SMOOTH TEXTURE
+        // ==========================================
+
+        GL11.glTexParameteri(
+                GL11.GL_TEXTURE_2D,
+                GL11.GL_TEXTURE_MIN_FILTER,
+                GL11.GL_LINEAR
+        );
+
+        GL11.glTexParameteri(
+                GL11.GL_TEXTURE_2D,
+                GL11.GL_TEXTURE_MAG_FILTER,
+                GL11.GL_LINEAR
+        );
+
+        int guiLeft =
+                (width - xSize) / 2;
+
+        int guiTop =
+                (height - ySize) / 2;
+
+        // ==========================================
+        // GUI
+        // ==========================================
+
+        drawTexturedModalRect(
+                guiLeft,
+                guiTop,
+                0,
+                0,
+                xSize,
+                ySize
+        );
+
+        // ==========================================
+        // PROGRESS BAR
+        // ==========================================
+
+        if (te.maxProgress > 0
+                && te.progress > 0) {
+
+            int progressWidth =
+                    (te.progress * 24)
+                            / te.maxProgress;
+
+            drawTexturedModalRect(
+                    guiLeft + 78,
+                    guiTop + 23,
+                    176,
+                    0,
+                    progressWidth,
+                    16
+            );
         }
+
+        // ==========================================
+        // RESET OPENGL
+        // ==========================================
+
+        GL11.glTexParameteri(
+                GL11.GL_TEXTURE_2D,
+                GL11.GL_TEXTURE_MIN_FILTER,
+                GL11.GL_NEAREST
+        );
+
+        GL11.glTexParameteri(
+                GL11.GL_TEXTURE_2D,
+                GL11.GL_TEXTURE_MAG_FILTER,
+                GL11.GL_NEAREST
+        );
+
+        GL11.glDisable(GL11.GL_BLEND);
+
+        GL11.glEnable(GL11.GL_ALPHA_TEST);
+
+        GL11.glColor4f(
+                1F,
+                1F,
+                1F,
+                1F
+        );
     }
-}
-}
+    // ==========================================
+// READ NBT
+// ==========================================
+
+
+    // ==========================================
+    // FOREGROUND
+    // ==========================================
+
+    @Override
+    protected void drawGuiContainerForegroundLayer(
+            int mouseX,
+            int mouseY
+    ) {
+
+        // ==========================================
+        // TITLE
+        // ==========================================
+
+        fontRendererObj.drawString(
+                "Assembler",
+                8,
+                6,
+                0x404040
+        );
+
+        // ==========================================
+        // ENERGY
+        // ==========================================
+
+        fontRendererObj.drawString(
+                "EU: " + te.energy,
+                145,
+                14,
+                0x00FF00
+        );
+
+        // ==========================================
+        // VOLTAGE
+        // ==========================================
+
+        fontRendererObj.drawString(
+                te.getMaxInputVoltage()
+                        + " EU/t",
+                145,
+                20,
+                0xFFFF00
+        );
+        // ==========================================
+// READ NBT
+// ==========================================
+
+        // ==========================================
+        // MACHINE TIER
+        // ==========================================
+
+        fontRendererObj.drawString(
+                te.getTierName(),
+                145,
+                8,
+                te.getTierColor()
+        );
+
+        // ==========================================
+        // PROGRESS %
+        // ==========================================
+
+        if (te.maxProgress > 0) {
+
+            int percent =
+                    (te.progress * 100)
+                            / te.maxProgress;
+
+            fontRendererObj.drawString(
+                    percent + "%",
+                    82,
+                    22,
+                    0xFFFFFF
+            );
+        }
+
+        // ==========================================
+        // MACHINE OFF
+        // ==========================================
+
+        if (!te.enabled) {
+
+            fontRendererObj.drawString(
+                    "OFF",
+                    138,
+                    22,
+                    0xFF0000
+            );
+        }
+
+    API.registerRecipeHandler(new ASrecipeHandler());
+    API.registerUsageHandler(new ASrecipeHandler());
+
+    API.registerGuiOverlay(
+    GuiAssembler.class,
+            "assembling_machine"
+            );
+
+   API.registerGuiOverlayHandler(
+    GuiAssembler.class,
+            new DefaultOverlayHandler(),
+        "assembling_machine"
+                );
+}}

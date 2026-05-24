@@ -19,26 +19,29 @@ import net.minecraft.stats.Achievement;
 import net.minecraftforge.common.AchievementPage;
 import net.minecraftforge.oredict.OreDictionary;
 
-public class Hitech6AchieveDatabase {
-    public static Achievement GetStarted, Flint, FirstStorage, Clay, KnifeC, EVTIER, Rock;
+public class Hitech6AchieveDatabase {}
+   // public static Achievement GetStarted, Flint, FirstStorage, Clay, KnifeC, EVTIER, Rock, TierULV;
 
 
-    public static AchievementPage HiTech6;
+ //   public static AchievementPage HiTech6;
 
-    public static void initialization() {
-        GetStarted = new Hitech6Achievments("advancement.HiTech6.Get_Started", "Welcome_to_the_HiTech6", 0, 1, Blocks.dirt, (Achievement) null).registerStat();
-        Flint = new Hitech6Achievments("advancement.HiTech6.Flint", "Pick_Up_flint", 1, 2, Items.flint, (Achievement) GetStarted).registerStat();
-        FirstStorage = new Hitech6Achievments("advancement.HiTech6.FirstStorage", "First_Storage", 2, 3, Blocks.chest, (Achievement) Flint).registerStat();
-        Clay = new Hitech6Achievments("advancement.HiTech6.clay", "Get_Clay", 3, 4, Items.clay_ball, (Achievement) FirstStorage).registerStat();
-        EVTIER = new Hitech6Achievments("advancement.HiTech6.EVTIER", "HeyYo_EV_TIER", 20, 20, blockHullDatabase.HullEV,  null).registerStat();
-        KnifeC = new Hitech6Achievments("advancement.HiTech6.Knife", "Craft_Knife", 22, 22, CS.ToolsGT.sMetaTool.getToolWithStats(34, null, null), (Achievement) KnifeC).registerStat();
-       // Rock =  new Hitech6Achievments("advancement.HiTech6.Knife", "Just_a_Rock", 21, 21, MT.STONES.Rhyolite.mDictionaryBook, (Achievement) Rock).registerStat();
+//    public static void initialization() {
+ //       GetStarted = new Hitech6Achievments("advancement.HiTech6.Get_Started", "Welcome_to_the_HiTech6", 0, 1, Blocks.dirt, (Achievement) null).registerStat();
+//        Flint = new Hitech6Achievments("advancement.HiTech6.Flint", "Pick_Up_flint", 1, 2, Items.flint, (Achievement) GetStarted).registerStat();
+  //      FirstStorage = new Hitech6Achievments("advancement.HiTech6.FirstStorage", "First_Storage", 2, 3, Blocks.chest, (Achievement) Flint).registerStat();
+  //      Clay = new Hitech6Achievments("advancement.HiTech6.clay", "Get_Clay", 3, 4, Items.clay_ball, (Achievement) FirstStorage).registerStat();
+  //      EVTIER = new Hitech6Achievments("advancement.HiTech6.EVTIER", "HeyYo_EV_TIER", 20, 20, blockHullDatabase.HullEV,  null).registerStat();
+   //     KnifeC = new Hitech6Achievments("advancement.HiTech6.Knife", "Craft_Knife", 22, 22, CS.ToolsGT.sMetaTool.getToolWithStats(34, null, null), (Achievement) KnifeC).registerStat();
+   //     TierULV = new Hitech6Achievments("advancement.HiTech6.ULVtier", "The_Industry_Beging", 21, 20, blockHullDatabase.hullULV,  null).registerStat();
+    //    Rock =  new Hitech6Achievments("advancement.HiTech6.Knife", "Just_a_Rock", 21, 21, MT.Stone.mDictionaryBook, (Achievement) Rock).registerStat();
 
-    HiTech6 = new AchievementPage("HiTech6", GetStarted, Flint, FirstStorage, Clay, EVTIER, KnifeC);
 
-    AchievementPage.registerAchievementPage(HiTech6);
-	FMLCommonHandler.instance().bus().register((Object)new PickUpAchievments());
-    FMLCommonHandler.instance().bus().register((Object)new craftingachieve());
-    FMLCommonHandler.instance().bus().register((Object)new onLivingUpdate());
-}
-}
+
+  //  HiTech6 = new AchievementPage("HiTech6", GetStarted, Flint, FirstStorage, Clay, EVTIER, KnifeC, TierULV, Rock);
+
+  //  AchievementPage.registerAchievementPage(HiTech6);
+//	FMLCommonHandler.instance().bus().register((Object)new PickUpAchievments());
+ //   FMLCommonHandler.instance().bus().register((Object)new craftingachieve());
+
+//}
+//}

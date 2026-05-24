@@ -12,23 +12,23 @@ import net.minecraft.stats.StatBase;
 import net.minecraftforge.oredict.OreDictionary;
 
 
-public class PickUpAchievments {
+public class PickUpAchievments {}
 
-    @SubscribeEvent
-    public void PickUp(final PlayerEvent.ItemPickupEvent event) {
-        if (event.pickedUp.getEntityItem().isItemEqual(new ItemStack(Blocks.dirt))) {
-            event.player.addStat((StatBase) Hitech6AchieveDatabase.GetStarted, 1);
-        }
-        if (event.pickedUp.getEntityItem().isItemEqual((new ItemStack(Items.flint)))
-        ) {
-            event.player.addStat((StatBase) Hitech6AchieveDatabase.Flint, 2);
+//    @SubscribeEvent
+ //   public void PickUp(final PlayerEvent.ItemPickupEvent event) {
+  //      if (event.pickedUp.getEntityItem().isItemEqual(new ItemStack(Blocks.dirt))) {
+  //          event.player.addStat((StatBase) Hitech6AchieveDatabase.GetStarted, 1);
+  //      }
+   //     if (event.pickedUp.getEntityItem().isItemEqual((new ItemStack(Items.flint)))
+    //    ) {
+    //        event.player.addStat((StatBase) Hitech6AchieveDatabase.Flint, 2);
 
-        }
+   //     }
       //  if (event.pickedUp.getEntityItem().isItemEqual(OreDictionary.getOreName)
        // ) {
        //     event.player.addStat((StatBase) Hitech6AchieveDatabase.TinAlloy, 4);
 
      //   }
-    }
-}
+  //  }
+//}
 

@@ -10,8 +10,6 @@ buildscript {
             name = "sonatype"
             url = "https://oss.sonatype.org/content/repositories/snapshots/"
         }
-
-        }
         dependencies {
             classpath('com.anatawa12.forge:ForgeGradle:1.2-1.0.+') {
                 changing = true
@@ -19,6 +17,7 @@ buildscript {
         }
 
     }
+}
 
 
     apply plugin: 'forge'
@@ -38,6 +37,8 @@ buildscript {
 
     minecraft {
         version = '1.7.10-10.13.4.1614-1.7.10' // Версия Forge
+        //clientJvmArgs += ["-Dfml.coreMods.load=com.gtnewhorizon.gtnhmixins.IEarlyMixinLoader"]
+       // serverJvmArgs += ["-Dfml.coreMods.load=com.gtnewhorizon.gtnhmixins.IEarlyMixinLoader"]
     }
 
 
@@ -88,31 +89,60 @@ buildscript {
         }
     }
 dependencies {
-   // compileOnly name: 'GregTech6-Unofficial-dev'
+
+
     compileOnly name: 'GregTech6-Unofficial-dev'
-  //  compileOnly "com.github.ZhopaEnotaNaZabore:GregTech6-Unofficial:master-SNAPSHOT"
+    compileOnly name: 'GalaxySpace-1.7.10-1.2.15'
+    compileOnly name: 'GalacticraftCore-1.7-3.0.12.504-dev'
+    compileOnly name: 'Galacticraft-Planets-1.7-3.0.12.504-dev'
+    compileOnly name: 'MicdoodleCore-1.7-3.0.12.504-dev'
+  //  compileOnly name: '+unimixins-all-1.7.10-0.1.23'
+    compileOnly name: 'CraftTweaker-3'
+
+
+  //  compileOnly name: 'CodeChickenCore-1.1.13'
+   // compileOnly name: 'neiaddons-1.12.15.41-mc1.7.10'
+   // compileOnly name: 'NEIIntegration-MC1.7.10-1.1.2'
+   // compileOnly name: 'NotEnoughItems-2.4.13-GTNH'
+   // compileOnly name: 'CodeChickenLib-1.1.10'
+   // compileOnly name: 'CraftTweaker-3.2.13'
+  //  compileOnly name: 'MekanismClient-1.7.10-9.1.1.1031'
+   // compileOnly name: 'Thaumcraft-1.7.10-4.2.3.5'
+
+    //  compileOnly "com.github.ZhopaEnotaNaZabore:GregTech6-Unofficial:master-SNAPSHOT"
     compileOnly "codechicken:CodeChickenLib:1.7.10-1.1.3.140:dev"
     compileOnly "codechicken:CodeChickenCore:1.7.10-1.0.7.47:dev"
     compileOnly "codechicken:NotEnoughItems:1.7.10-1.0.5.120:dev"
+    //compileOnly 'org.spongepowered:mixin:0.7.11-SNAPSHOT'
+   // compileOnly "thaumcraft:Thaumcraft:1.7.10-4.2.3.5:dev"
 }
+dependencies {
+    compile 'org.ow2.asm:asm-debug-all:5.0.3'
 
+}
+jar {
+    manifest {
+        attributes(
+                'FMLCorePlugin': 'com.mod.htgt6.asm.HTGT6LoadingPlugin',
+                'FMLCorePluginContainsFMLMod': 'true'
 
-////        jar {
-    //        manifest {
-        //        attributes(
-                        // The path to your IFMLLoadingPlugin class
-           //             'FMLCorePlugin': 'com.mod.htgt6.BiomeLoadingPlugin',
+        )
+    }
 
-                        // Tells Forge to also look for @Mod annotations in this jar
-              //          'FMLCorePluginContainsFMLMod': 'true',
+    afterEvaluate {
 
-                        // Required to ensure the DummyModContainer is recognized
-                //        'ForceLoadAsMod': 'true',
+        tasks.withType(JavaExec) {
 
-                        // Optional: prevents Forge from trying to search for mods inside your coremod twice
-                //        'ModSide': 'CLIENT' // Or 'SERVER' or remove for both
-              //  )
-        //    }
-       // }
+            if (project.hasProperty("minecraft.clientArgs")) {
 
-  //  }
+                args project.property("minecraft.clientArgs").split(" ")
+            }
+
+            if (project.hasProperty("minecraft.jvmArgs")) {
+
+                jvmArgs project.property("minecraft.jvmArgs").split(" ")
+            }
+        }
+    }
+
+}

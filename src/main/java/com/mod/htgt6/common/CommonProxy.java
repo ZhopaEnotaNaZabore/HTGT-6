@@ -1,12 +1,16 @@
 package com.mod.htgt6.common;
 
-import com.mod.htgt6.common.achievements.Hitech6AchieveDatabase;
+import com.mod.htgt6.HTGT6;
+import com.mod.htgt6.common.GalaxyServer.Glise792.planets.Gliese792c.blocks.GlieseCwater;
+import com.mod.htgt6.common.GalaxyServer.Glise792.planets.Gliese792c.blocks.blocksGliese792C;
+import com.mod.htgt6.common.achievements.HiTecch6AchivementsNEW;
+import com.mod.htgt6.common.GalaxyServer.Glise792.planets.Gliese792b.blocks.B_database;
 import com.mod.htgt6.common.block.greg.technological.hulls.blockHullDatabase;
 import com.mod.htgt6.common.handler.*;
 import com.mod.htgt6.common.handler.biometweaks.biomeLukewarmOcean;
-
-import com.mod.htgt6.common.handler.recipe.AssemblerRecipes;
-import com.mod.htgt6.common.handler.worldgeneration.shipwerk.structurehandler.OceanStructureHandler;
+import com.mod.htgt6.common.handler.recipe.AssemblerRecipeHandler;
+import com.mod.htgt6.common.item.htgt6.modulesystem.Tmodules;
+ import com.mod.htgt6.common.handler.worldgeneration.shipwerk.structurehandler.OceanStructureHandler;
 import com.mod.htgt6.common.item.IC2.miscIC2;
 import com.mod.htgt6.common.item.greg.circuits.CiruitParts;
 import com.mod.htgt6.common.item.greg.materials.firecly.fireclys;
@@ -20,17 +24,31 @@ import com.mod.htgt6.common.item.htgt6.govnoebanoe.misscellouse;
 import com.mod.htgt6.common.item.htgt6.monocrystalls.crystalls;
 import com.mod.htgt6.common.item.htgt6.rocketcomputers.HiTech6RocketTerminals;
 import com.mod.htgt6.common.item.htgt6.weapons.HiTech6Weapons;
+
+
+
+
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.event.FMLServerStartingEvent;
+import cpw.mods.fml.relauncher.Side;
+import gregapi.api.Abstract_Proxy;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.common.MinecraftForge;
 
-public class CommonProxy {
+
+
+
+
+
+public class CommonProxy extends Abstract_Proxy {
     public void preInit(FMLPreInitializationEvent event) {
-        AssemblerRecipes.getInstance().registerRecipes();
+        //AssemblerRecipes.getInstance().registerRecipes();
+        AssemblerRecipeHandler.registerRecipes();
+        Tmodules.ModifiersAndTransformers();
         ModItems.register();
         ModBlocks.register();
         FluidDatabase.register();
@@ -48,12 +66,17 @@ public class CommonProxy {
         FluidsHTGT6.initialize();
         FluidItemsSub.InitFluidSubItems();
         blockHullDatabase.InitiHulls();
+        B_database.initGLiese792Bblocks();
+        blocksGliese792C.InitGlieseCblocks();
+        GlieseCwater.init();
+        registerPackets();
 
 
     }
 
     public void init(FMLInitializationEvent event) {
-        Hitech6AchieveDatabase.initialization();
+      //  Hitech6AchieveDatabase.initialization();
+        HiTecch6AchivementsNEW.initialization();
         BiomeGenBase LukewarmOcean = new biomeLukewarmOcean(120);
         BiomeDictionary.registerBiomeType(LukewarmOcean,
                 BiomeDictionary.Type.OCEAN,
@@ -63,11 +86,21 @@ public class CommonProxy {
         BiomeManager.addSpawnBiome(LukewarmOcean);
         BiomeManager.addBiome(BiomeManager.BiomeType.WARM, new BiomeManager.BiomeEntry(LukewarmOcean, 50));
         MinecraftForge.TERRAIN_GEN_BUS.register(new OceanStructureHandler());
+        AssemblerRecipeHandler.registerRecipes();
 
 
     }
     public void postInit(FMLPostInitializationEvent event) {
         recipes.registerRecipes();
-        AssemblerRecipes.getInstance().registerRecipes();
     }
-}
+
+    public void serverStarting(FMLServerStartingEvent event) {
+
+    }
+    private void registerPackets() {
+        // Only register the Server handler here
+        // }
+    }
+    }
+
+

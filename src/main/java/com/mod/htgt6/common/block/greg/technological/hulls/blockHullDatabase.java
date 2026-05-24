@@ -5,6 +5,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
 
 public class blockHullDatabase {
+    public static Block hullULV;
     public static Block HullEV;
     public static Block HullIV;
     public static Block HullLUV;
@@ -29,6 +30,7 @@ public class blockHullDatabase {
         HullUV.setBlockName("HullUV");
         HullPUV.setBlockName("HullPUV");
         HullMAX.setBlockName("HullMAX");
+        hullULV.setBlockName("hullULV");
 
 
 
@@ -44,8 +46,10 @@ public class blockHullDatabase {
         HullUV.setBlockTextureName(HTGT6.MOD_ID+":HullUV");
         HullPUV.setBlockTextureName(HTGT6.MOD_ID+":HullPUV");
         HullMAX.setBlockTextureName(HTGT6.MOD_ID+":HullMAX");
+        hullULV.setBlockTextureName(HTGT6.MOD_ID+":hullUlv");
 
         //REGISTER
+        GameRegistry.registerBlock(hullULV, "ULVhull");
         GameRegistry.registerBlock(HullEV, "HullEV");
         GameRegistry.registerBlock(HullIV, "HullIV");
         GameRegistry.registerBlock(HullLUV, "HullLUV");
@@ -64,6 +68,7 @@ public class blockHullDatabase {
         HullUV = new blockHullStatbase();
         HullPUV = new blockHullStatbase();
         HullMAX = new blockHullStatbase();
+        hullULV =  new blockHullStatbase();
 
 
     }

@@ -66,7 +66,9 @@ Output Fluid: water;hexafluorosilicicacid;
 	at gregapi.api.Abstract_Mod.onModPostInit(Abstract_Mod.java:273)
 	at gregtech.GT6_Main.onPostLoad(GT6_Main.java:765)
 GT_Mod: Doing IC2-Classic Things.
+GT_Mod: Doing Galacticraft Recipes.
+GT_Mod: Doing Galacticraft Planets Recipes.
+GT_Mod: Doing Galaxy Space Recipes.
 GT_Mod: Replacing Vanilla alike Recipes.
 GT_Mod: ========================
-GT_API: Remapping ItemStackMaps due to ID Map change. Those damn Items should have a consistent Hashcode, but noooo, ofcourse they break Basic Code Conventions! Thanks Forge and Mojang!
 GT_API: Remapping ItemStackMaps due to ID Map change. Those damn Items should have a consistent Hashcode, but noooo, ofcourse they break Basic Code Conventions! Thanks Forge and Mojang!

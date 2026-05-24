@@ -1,5 +1,63 @@
 itemGroup.HTGT6=HTGT6_Core
 
+
+
+# ==========================================
+# TRANSFORMER MODULES
+# ==========================================
+
+item.LowLevelTransformer.name=Трансформатор Низкого Уровня
+item.MediumLevelTransformer.name=Трансформатор Среднего Уровня
+item.HighLevelTransformer.name=Трансформатор Высокого Уровня
+item.UltimateLevelTransformer.name=Ультимативный Трансформатор
+item.OmegaTransformer.name=Омега Трансформатор
+
+# ==========================================
+# TIER MODULES
+# ==========================================
+
+item.TierModuleMV.name=Модификатор тира машины MV
+item.TierModuleHV.name=Модификатор тира машины  HV
+item.TierModuleEV.name=Модификатор тира машины  EV
+item.TierModuleIV.name=Модификатор тира машины  IV
+item.TierModuleLuV.name=Модификатор тира машины  LuV
+item.TierModuleZPM.name=Модификатор тира машины  ZPM
+item.TierModuleUV.name=Модификатор тира машины  UV
+item.TierModulePUV1.name=Модификатор тира машины PUV
+item.TierModuleUX.name=Модификатор тира машины  UX
+item.TierModuleOLV.name=Модификатор тира машины  OLV
+item.TierModuleOMV.name=Модификатор тира машины  OMV
+item.TierModuleOHV.name=Модификатор тира машины  OHV
+item.TierModuleOEV.name=Модификатор тира машины  OEV
+item.TierModuleOIV.name=Модификатор тира машины  OIV
+item.TierModuleMAX.name=Модификатор тира машины  MAX
+
+
+
+
+
+
+//GC
+solarsystem.sirius_system=Звездная система Сириус
+star.sirius_star=Сириус A
+star.sirius_star.description=Белый карлик
+star.sirius_star.temperature=9,940 K
+star.sirius_star.brightness=25.4 L
+star.sirius_star.type=Класификация (Class A)
+solarsystem.Gliese792_system=Звездная система Глизе-792
+star.Gliese792_star=Глизе 792
+star.Gliese792_star.description=A distant star system located within the Milky Way. It serves as the primary light source for the surrounding celestial bodies.
+star.Gliese792_star.temperature=3,500 K
+star.Gliese792_star.brightness=0.05 L
+star.Gliese792_star.type=Красный Карлик (Class M)
+planet.gliese_792_b=Глизе-792b
+planet.gliese_792_b.description=A rocky super-earth orbiting within the habitable zone of Gliese 792.
+tile.Gliese792Surface.name=Каиенная порода Глизе_792b
+
+
+
+
+
 //Dusts
 item.PlutoDust.name=Пыль каменной породы плутона
 item.VelaADust.name=Пыль оледенелой породы Велы А
@@ -124,18 +182,30 @@ item.NovaCrystallDust.name= Кристальная пыль "Nova"
 
 
 //achieve
-achievement.Welcome_to_the_HiTech6=Добро пожаловать на HiTech6!
-achievement.Welcome_to_the_HiTech6.desc=Все начинают свой путь с грязи, и кончают его за пределами звезд!
-achievement.Pick_Up_flint=Кремень, Серьезно?
-achievement.Pick_Up_flint.desc=Получите первый кремень для ваших инструментов.
-achievement.First_Storage=Первый ящик для барахла
-achievement.First_Storage.desc=Создайте свой первый сундук для вашего кремния и грязи.
-achievement.Get_Clay=Глиномес!
-achievement.Get_Clay.desc=Добудьте глину чтобы с неё лепить изделия!
-achievement.HeyYo_EV_TIER=Т4 ExtremeVoltage!
-achievement.HeyYo_EV_TIER.desc=Пройдя сквозь ад и лунные просторы, вам стал доступен EV тир!
-achievement.Craft_Knife=Холодное оружие и кухонный ножик
-achievement.Craft_Knife.desc=Создайте ваш первый ножик с подручных средств, пригодиться для охоты, собирательства и промышленности.
+achievement.advancement.HiTech6.Get_Started=Добро пожаловать на HiTech6!
+achievement.advancement.HiTech6.Get_Started.desc=Рыться в грязи, искать золото и мечтать о звездах!
+
+achievement.advancement.HiTech6.Flint=Не порежся!
+achievement.advancement.HiTech6.Flint.desc=Кусок кремния очень острый, интересно, что с него можно сделать?
+
+achievement.advancement.HiTech6.FirstStorage=Ящик для барахла
+achievement.advancement.HiTech6.FirstStorage.desc=Ну наконецто, хлам на складе.
+
+achievement.advancement.HiTech6.clay=Глиномес
+achievement.advancement.HiTech6.clay.desc=Пора месить глину.
+
+achievement.advancement.HiTech6.EVTIER=2048 вольт в голову
+achievement.advancement.HiTech6.EVTIER.desc=ExtemeVoltage!
+
+achievement.advancement.HiTech6.Knife=Кухонный ножик
+achievement.advancement.HiTech6.Knife.desc=Создайте свой первый ножик, только вены им себе не режьте.
+
+achievement.advancement.HiTech6.ULVtier=Начало индустриальный революции
+achievement.advancement.HiTech6.ULVtier.desc=Всего лишь корпус машины, самый говняцкий ULV тира, но без него вам ничего не поделать, ирония? шутка судьбы?.
+
+achievement.advancement.HiTech6.Rock=Камушки булыжники
+achievement.advancement.HiTech6.Rock.desc=It's literally just a rock. What did you expect?
+
 
 
 //TILE
