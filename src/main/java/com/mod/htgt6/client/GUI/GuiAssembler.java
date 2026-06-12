@@ -3,14 +3,11 @@ package com.mod.htgt6.client.GUI;
 import codechicken.nei.api.API;
 import codechicken.nei.recipe.DefaultOverlayHandler;
 import com.mod.htgt6.common.TE.TileEntityAssembler;
-import com.mod.htgt6.common.handler.recipe.ASrecipeHandler;
+import com.mod.htgt6.common.handler.recipe.assembler.ASrecipeHandler;
 import com.mod.htgt6.common.inventory.ContainerAssembler;
 
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.inventory.GuiContainer;
-import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.nbt.NBTTagList;
 import net.minecraft.util.ResourceLocation;
 
 import org.lwjgl.opengl.GL11;

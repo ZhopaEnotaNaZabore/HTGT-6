@@ -39,26 +39,15 @@ public class ContainerAssembler extends Container {
         }
 
         // Output
-        addSlotToContainer(
-                new SlotFurnace(playerInv.player, te, 9, 106, 26)
-        );
+        addSlotToContainer(new SlotFurnace(playerInv.player, te, 9, 106, 26));
 
         // Fluid
-        addSlotToContainer(
-                new SlotFluidContainer(te, 10, 54, 63)
-        );
+        addSlotToContainer(new SlotFluidContainer(te, 10, 54, 63));
 
         // Tier Modifier
-        addSlotToContainer(
-             //   new SlotTierModifier(te, 11, 65, 62)
-                new SlotTierModifier(te, te, 11, 84, 63)
-        );
-
+        addSlotToContainer(new SlotTierModifier(te, te, 11, 84, 63, 12));
         // Transformer Module
-        addSlotToContainer(
-               // new SlotTransformerModule(te, 12, 80, 62)
-                new SlotTransformerModule(te, te, 12, 102, 63)
-        );
+        addSlotToContainer(new SlotTransformerModule(te, te, 12, 102, 63));
 
         // Battery
         addSlotToContainer(

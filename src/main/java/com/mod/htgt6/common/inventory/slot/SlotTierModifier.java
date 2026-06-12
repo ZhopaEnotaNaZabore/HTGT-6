@@ -1,13 +1,6 @@
 package com.mod.htgt6.common.inventory.slot;
 
-// ==========================================
-// SlotTierModifier.java
-// ==========================================
-
-
-import com.mod.htgt6.common.TE.TileEntityAssembler;
 import com.mod.htgt6.common.item.htgt6.modulesystem.Tmodules;
-
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.Item;
@@ -15,144 +8,92 @@ import net.minecraft.item.ItemStack;
 
 public class SlotTierModifier extends Slot {
 
-    private final TileEntityAssembler tile;
-
-    private static final int TRANSFORMER_SLOT = 12;
+    private final IInventory tile;
+    private final int transformerSlot;
 
     public SlotTierModifier(
             IInventory inventory,
-            TileEntityAssembler tile,
+            IInventory tile,
             int slot,
             int x,
-            int y
+            int y,
+            int transformerSlot
     ) {
-
-        super(
-                inventory,
-                slot,
-                x,
-                y
-        );
+        super(inventory, slot, x, y);
 
         this.tile = tile;
+        this.transformerSlot = transformerSlot;
     }
 
     @Override
-    public boolean isItemValid(
-            ItemStack stack
-    ) {
+    public boolean isItemValid(ItemStack stack) {
 
         if (stack == null)
             return false;
 
         ItemStack transformer =
-                tile.getStackInSlot(
-                        TRANSFORMER_SLOT
-                );
+                tile.getStackInSlot(transformerSlot);
 
         if (transformer == null)
             return false;
 
-        String transformerName =
-                transformer.getUnlocalizedName()
-                        .toLowerCase();
+        Item item = stack.getItem();
 
-        Item item =
-                stack.getItem();
+        int moduleTier = getModuleTier(item);
 
-        int moduleTier = 0;
-
-        if (item == Tmodules.TierModuleMV)
-            moduleTier = 2;
-
-        else if (item == Tmodules.TierModuleHV)
-            moduleTier = 3;
-
-        else if (item == Tmodules.TierModuleEV)
-            moduleTier = 4;
-
-        else if (item == Tmodules.TierModuleIV)
-            moduleTier = 5;
-
-        else if (item == Tmodules.TierModuleLuV)
-            moduleTier = 6;
-
-        else if (item == Tmodules.TierModuleZPM)
-            moduleTier = 7;
-
-        else if (item == Tmodules.TierModuleUV)
-            moduleTier = 8;
-
-        else if (item == Tmodules.TierModulePUV1)
-            moduleTier = 9;
-
-        else if (item == Tmodules.TierModuleUX)
-            moduleTier = 10;
-
-        else if (item == Tmodules.TierModuleOLV)
-            moduleTier = 11;
-
-        else if (item == Tmodules.TierModuleOMV)
-            moduleTier = 12;
-
-        else if (item == Tmodules.TierModuleOHV)
-            moduleTier = 13;
-
-        else if (item == Tmodules.TierModuleOEV)
-            moduleTier = 14;
-
-        else if (item == Tmodules.TierModuleOIV)
-            moduleTier = 15;
-
-        else if (item == Tmodules.TierModuleMAX)
-            moduleTier = 16;
-
-        else
+        if (moduleTier == 0)
             return false;
 
-        int maxTier = 0;
-
-        if (transformerName.contains(
-                "lowleveltransformer"
-        )) {
-
-            maxTier = 4;
-        }
-
-        else if (transformerName.contains(
-                "mediumleveltransformer"
-        )) {
-
-            maxTier = 8;
-        }
-
-        else if (transformerName.contains(
-                "highleveltransformer"
-        )) {
-
-            maxTier = 12;
-        }
-
-        else if (transformerName.contains(
-                "ultimateleveltransformer"
-        )) {
-
-            maxTier = 15;
-        }
-
-        else if (transformerName.contains(
-                "omegatransformer"
-        )) {
-
-            maxTier = 16;
-        }
+        int maxTier = getTransformerTier(transformer);
 
         return moduleTier <= maxTier;
     }
 
+    private int getModuleTier(Item item) {
+
+        if (item == Tmodules.TierModuleMV) return 2;
+        if (item == Tmodules.TierModuleHV) return 3;
+        if (item == Tmodules.TierModuleEV) return 4;
+        if (item == Tmodules.TierModuleIV) return 5;
+        if (item == Tmodules.TierModuleLuV) return 6;
+        if (item == Tmodules.TierModuleZPM) return 7;
+        if (item == Tmodules.TierModuleUV) return 8;
+        if (item == Tmodules.TierModulePUV1) return 9;
+        if (item == Tmodules.TierModuleUX) return 10;
+        if (item == Tmodules.TierModuleOLV) return 11;
+        if (item == Tmodules.TierModuleOMV) return 12;
+        if (item == Tmodules.TierModuleOHV) return 13;
+        if (item == Tmodules.TierModuleOEV) return 14;
+        if (item == Tmodules.TierModuleOIV) return 15;
+        if (item == Tmodules.TierModuleMAX) return 16;
+
+        return 0;
+    }
+
+    private int getTransformerTier(ItemStack transformer) {
+
+        Item item = transformer.getItem();
+
+        if (item == Tmodules.LowLevelTransformer)
+            return 4;
+
+        if (item == Tmodules.MediumLevelTransformer)
+            return 8;
+
+        if (item == Tmodules.HighLevelTransformer)
+            return 12;
+
+        if (item == Tmodules.UltimateLevelTransformer)
+            return 15;
+
+        if (item == Tmodules.OmegaTransformer)
+            return 16;
+
+        return 0;
+    }
+
     @Override
     public int getSlotStackLimit() {
-
         return 1;
     }
 }

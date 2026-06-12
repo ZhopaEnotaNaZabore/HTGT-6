@@ -1,14 +1,9 @@
 package com.mod.htgt6.common.inventory.slot;
 
-// ==========================================
-// SlotTransformerModule.java
-// ==========================================
 
-
-
+import com.mod.htgt6.common.TE.TESuperMasicCompressor;
 import com.mod.htgt6.common.TE.TileEntityAssembler;
 import com.mod.htgt6.common.item.htgt6.modulesystem.Tmodules;
-
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.Item;
@@ -16,47 +11,45 @@ import net.minecraft.item.ItemStack;
 
 public class SlotTransformerModule extends Slot {
 
-    private final TileEntityAssembler tile;
+    private final IInventory tile;
 
     public SlotTransformerModule(
             IInventory inventory,
-            TileEntityAssembler tile,
+            IInventory tile,
             int slot,
             int x,
-            int y
-    ) {
+            int y) {
 
-        super(
-                inventory,
-                slot,
-                x,
-                y
-        );
-
+        super(inventory, slot, x, y);
         this.tile = tile;
     }
 
     @Override
-    public boolean isItemValid(
-            ItemStack stack
-    ) {
+    public boolean isItemValid(ItemStack stack) {
 
         if (stack == null)
             return false;
 
-        Item item =
-                stack.getItem();
+        Item item = stack.getItem();
 
-        return item == Tmodules.LowLevelTransformer
-                || item == Tmodules.MediumLevelTransformer
-                || item == Tmodules.HighLevelTransformer
-                || item == Tmodules.UltimateLevelTransformer
-                || item == Tmodules.OmegaTransformer;
-    }
+        if (tile instanceof TESuperMasicCompressor) {
 
-    @Override
-    public int getSlotStackLimit() {
+            return item == Tmodules.LowLevelTransformer
+                    || item == Tmodules.MediumLevelTransformer
+                    || item == Tmodules.HighLevelTransformer
+                    || item == Tmodules.UltimateLevelTransformer
+                    || item == Tmodules.OmegaTransformer;
+        }
 
-        return 1;
+        if (tile instanceof TileEntityAssembler) {
+
+            return item == Tmodules.LowLevelTransformer
+                    || item == Tmodules.MediumLevelTransformer
+                    || item == Tmodules.HighLevelTransformer
+                    || item == Tmodules.UltimateLevelTransformer
+                    || item == Tmodules.OmegaTransformer;
+        }
+
+        return false;
     }
 }

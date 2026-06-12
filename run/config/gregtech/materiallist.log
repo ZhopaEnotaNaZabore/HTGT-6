@@ -622,7 +622,6 @@
  8101: Soulsand
  8102: SluiceSand
  8103: PlatinumGroupSludge
- 8104: RedSand
  8200: Ashes
  8201: DarkAshes
  8202: VolcanicAshes
@@ -645,7 +644,7 @@
  8219: Bone
  8220: Gunpowder
  8221: Wood
- 8222: WoodTreated
+ 8222: WoodSealed
  8223: LiveRoot
  8224: WoodRubber
  8225: Ceramic
@@ -762,7 +761,7 @@
  8336: Charcoal
  8337: Lignite
  8338: Monazite
- 8340: Nikolite
+ 8339: Teslatite
  8340: Nikolite
  8341: Glowstone
  8342: Firestone
@@ -782,7 +781,7 @@
  8356: InfusedEntropy
  8357: InfusedOrder
  8358: InfusedBalance
- 8340: Nikolite
+ 8359: Electrotine
  8360: Peat
  8361: PeatBituminous
  8362: Anthracite
@@ -891,7 +890,7 @@
  8507: GraniteRed
  8508: GraniteBlack
  8509: Redrock
- 8500: Stone
+ 8510: Gravel
  8511: Diorite
  8512: SpaceStone
  8513: MoonStone
@@ -922,8 +921,8 @@
  8622: AluminiumAlloy
  8630: Steel
  8631: BlackSteel
- 8632: BlueSteel
- 8633: RedSteel
+ 8632: RedSteel
+ 8633: BlueSteel
  8634: DamascusSteel
  8635: Tungstensteel
  8636: StainlessSteel
@@ -1015,7 +1014,7 @@
  8735: GaiaSpirit
  8736: Endium
  8737: NikolineAlloy
- 8737: NikolineAlloy
+ 8738: TeslatineAlloy
  8739: Mauftrium
  8740: Elvorium
  8741: NiflheimPower
@@ -1215,7 +1214,6 @@
  9226: HexoriumGreen
  9228: HexoriumBlue
  9239: HexoriumWhite
- 9243: ClayBrick
  9300: Oak
  9301: Birch
  9302: Spruce
@@ -1325,7 +1323,6 @@
  9406: WoodTainted
  9407: WoodBleached
  9408: Foxfirewood
- 9409: BlueSpruce
  9700: MeatRaw
  9701: MeatCooked
  9702: Wheat

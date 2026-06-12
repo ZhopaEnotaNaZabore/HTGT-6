@@ -1,0 +1,93 @@
+---- Minecraft Crash Report ----
+// Uh... Did I do that?
+
+Time: 11.06.26 19:08
+Description: Exception ticking world
+
+java.lang.NoSuchMethodError: net.minecraft.block.BlockStaticLiquid.func_149688_o()Lnet/minecraft/block/material/Material;
+	at gregtech.asm.transformers.minecraft.Replacements.BlockStaticLiquid_updateTick(Replacements.java:36)
+	at net.minecraft.block.BlockStaticLiquid.updateTick(BlockStaticLiquid.java)
+	at net.minecraft.world.WorldServer.func_147456_g(WorldServer.java:408)
+	at net.minecraft.world.WorldServer.tick(WorldServer.java:191)
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:692)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:614)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:118)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:485)
+	at net.minecraft.server.MinecraftServer$2.run(MinecraftServer.java:752)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at gregtech.asm.transformers.minecraft.Replacements.BlockStaticLiquid_updateTick(Replacements.java:36)
+	at net.minecraft.block.BlockStaticLiquid.updateTick(BlockStaticLiquid.java)
+	at net.minecraft.world.WorldServer.func_147456_g(WorldServer.java:408)
+	at net.minecraft.world.WorldServer.tick(WorldServer.java:191)
+
+-- Affected level --
+Details:
+	Level name: Новый мир
+	All players: 1 total; [GCEntityPlayerMP['Player625'/102, l='Новый мир', x=9,50, y=70,00, z=41,50]]
+	Chunk stats: ServerChunkCache: 1240 Drop: 0
+	Level seed: -2697570682798375992
+	Level generator: ID 00 - default, ver 1. Features enabled: true
+	Level generator options: 
+	Level spawn location: World: (8,64,34), Chunk: (at 8,4,2 in 0,2; contains blocks 0,0,32 to 15,255,47), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,0,0 to 511,255,511)
+	Level time: 3 game time, 3 day time
+	Level dimension: 0
+	Level storage version: 0x04ABD - Anvil
+	Level weather: Rain time: 55845 (now: false), thunder time: 140488 (now: false)
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: true
+Stacktrace:
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:692)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:614)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:118)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:485)
+	at net.minecraft.server.MinecraftServer$2.run(MinecraftServer.java:752)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.7.10
+	Operating System: Windows 11 (amd64) version 10.0
+	Java Version: 1.8.0_452, BellSoft
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), BellSoft
+	Memory: 640116088 bytes (610 MB) / 1728577536 bytes (1648 MB) up to 3750756352 bytes (3577 MB)
+	JVM Flags: 0 total; 
+	AABB Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	IntCache: cache: 1, tcache: 1, allocated: 12, tallocated: 94
+	FML: MCP v9.05 FML v7.10.99.99 Minecraft Forge 10.13.4.1614 26 mods loaded, 26 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+	UCHIJAAAA	mcp{9.05} [Minecraft Coder Pack] (minecraft.jar) 
+	UCHIJAAAA	FML{7.10.99.99} [Forge Mod Loader] (forgeSrc-1.7.10-10.13.4.1614-1.7.10.jar) 
+	UCHIJAAAA	Forge{10.13.4.1614} [Minecraft Forge] (forgeSrc-1.7.10-10.13.4.1614-1.7.10.jar) 
+	UCHIJAAAA	Micdoodlecore{} [Micdoodle8 Core] (minecraft.jar) 
+	UCHIJAAAA	CodeChickenCore{1.4.7} [CodeChicken Core] (minecraft.jar) 
+	UCHIJAAAA	NotEnoughItems{2.8.19-GTNH} [NotEnoughItems] (NotEnoughItems-2.8.19-GTNH.jar) 
+	UCHIJAAAA	GT_ASM{6.14.01} [Greg-ASM®] (minecraft.jar) 
+	UCHIJAAAA	MineTweaker3{3.2.13} [MineTweaker 3] (CraftTweaker-3.jar) 
+	UCHIJAAAA	gregapi{GT6-MC1710} [Greg-API] (GregTech6-Unofficial-dev.jar) 
+	UCHIJAAAA	IC2{2.2.999} [Industrial Craft Classic] (IC2Classic-1.7.10-1.2.5 (1).jar) 
+	UCHIJAAAA	GalacticraftCore{3.0.12} [Galacticraft Core] (GalacticraftCore-1.7-3.0.12.504-dev.jar) 
+	UCHIJAAAA	GalacticraftMars{3.0.12} [Galacticraft Planets] (Galacticraft-Planets-1.7-3.0.12.504-dev.jar) 
+	UCHIJAAAA	GalaxySpace{1.2.15 Pre-Final} [GalaxySpace] (GalaxySpace-1.7.10-1.2.15.jar) 
+	UCHIJAAAA	IC2-Classic-Spmod{0.0.0.0} [IC2 Classic Detection Helper] (IC2Classic-1.7.10-1.2.5 (1).jar) 
+	UCHIJAAAA	NEIAddons{1.17.0} [NEI Addons] (NEIAddons-1.17.0.jar) 
+	UCHIJAAAA	NEIAddons|Botany{1.17.0} [NEI Addons: Botany] (NEIAddons-1.17.0.jar) 
+	UCHIJAAAA	NEIAddons|Developer{1.17.0} [NEI Addons: Developer Tools] (NEIAddons-1.17.0.jar) 
+	UCHIJAAAA	NEIAddons|ExNihilo{1.17.0} [NEI Addons: Ex Nihilo] (NEIAddons-1.17.0.jar) 
+	UCHIJAAAA	NEIAddons|CraftingTables{1.17.0} [NEI Addons: Crafting Tables] (NEIAddons-1.17.0.jar) 
+	UCHIJAAAA	NEIAddons|Forestry{1.17.0} [NEI Addons: Forestry] (NEIAddons-1.17.0.jar) 
+	UCHIJAAAA	NEIAddons|AppEng{1.17.0} [NEI Addons: Applied Energistics 2] (NEIAddons-1.17.0.jar) 
+	UCHIJAAAA	neiintegration{1.5.0} [NEIIntegration] (NEIIntegration-1.5.0.jar) 
+	UCHIJAAAA	gregapi_post{GT6-MC1710} [Greg-API-Post] (GregTech6-Unofficial-dev.jar) 
+	UCHIJAAAA	gregtech{GT6-MC1710} [GregTech 6 Unofficial] (GregTech6-Unofficial-dev.jar) 
+	UCHIJAAAA	HTGT6{1.0.4} [HTGT6] (HiTech6_V_1.0.4_Build_.jar) 
+	UCHIJAAAA	MultiWorld{1.2.7} [Multi World] (Multiworld-1.7.2-v-1.2.7.jar) 
+	GL info: ~~ERROR~~ RuntimeException: No OpenGL context found in the current thread.
+	Profiler Position: N/A (disabled)
+	Vec3 Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	Player Count: 1 / 8; [GCEntityPlayerMP['Player625'/102, l='Новый мир', x=9,50, y=70,00, z=41,50]]
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'fml,forge'

@@ -23,6 +23,8 @@ public class BlockAssembler extends Block implements ITileEntityProvider {
     @SideOnly(Side.CLIENT)
     private IIcon iconTop;
 
+
+
     public BlockAssembler() {
         super(Material.iron);
         setBlockName("assembler");

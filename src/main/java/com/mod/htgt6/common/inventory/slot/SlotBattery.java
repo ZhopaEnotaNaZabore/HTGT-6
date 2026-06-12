@@ -16,11 +16,21 @@ public class SlotBattery extends Slot {
         super(inv, id, x, y);
     }
 
+  //  @Override
+   // public boolean isItemValid(ItemStack stack) {
+
+    //    if (stack == null) return false;
+
+    //    return stack.getItem() instanceof IElectricItem;
+  //  }
+
     @Override
     public boolean isItemValid(ItemStack stack) {
 
-        if (stack == null) return false;
+        if (stack == null)
+            return false;
 
-        return stack.getItem() instanceof IElectricItem;
+        return stack.getItem() instanceof IElectricItem
+                || gregapi.util.ST.item(stack) instanceof gregapi.item.IItemEnergy;
     }
 }

@@ -91,6 +91,9 @@ tile.assembler.name=Станок Автоматической Сборки
 item.Govno.name=Кучка еще теплого аппетитного говница
 //Tile
 tile.EternalBlock.name=X-RAY блок
+item.prospectorScanner.name=Универсальный ГеоПроспектор 
+item.bulkProspectorScanner.name=Сканнер для георазведки
+tile.superMasicCompressor.name=Компрессор для  Сверхплотного сжатия
 
 //Composites
 item.CompositeT1.name=Композитный сплав Т1
@@ -205,6 +208,13 @@ achievement.advancement.HiTech6.ULVtier.desc=Всего лишь корпус м
 
 achievement.advancement.HiTech6.Rock=Камушки булыжники
 achievement.advancement.HiTech6.Rock.desc=It's literally just a rock. What did you expect?
+
+achievement.advancement.Hitech6.Iron=Стиль, блеск и мода
+achievement.advancement.Hitech6.Iron.desc=Получите первый слиток железо, литый с любовью и полированный до блеска слезами и кровью.
+
+achievement.advancement.Hitech6.Tin_Ally=Сплав головного мозга!
+achievement.advancement.Hitech6.Tin_Ally.desc=На самом деле вам понадобиться этого до заплавления мозга много...
+
 
 
 

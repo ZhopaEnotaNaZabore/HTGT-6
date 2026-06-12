@@ -37,7 +37,7 @@ public class HiTecch6AchivementsNEW {
     public static int adjY = 0;
 
     // Classic Achievements (References are safely kept intact)
-    public static Achievement GetStarted, Flint, FirstStorage, Clay, KnifeC, EVTIER, Rock, TierULV, TinAlloy;
+    public static Achievement GetStarted, Flint, FirstStorage, Clay, KnifeC, EVTIER, Rock, TierULV, TinAlloy, Iron;
     public static AchievementPage HiTech6;
 
     public static void initialization() {
@@ -46,7 +46,8 @@ public class HiTecch6AchivementsNEW {
         System.out.println("HiTech6Achivements Loaded.");
 
         // Register achievements using the dynamic registration method
-        TinAlloy =  registerAchievement("advancement.Hitech6.Tin_Ally", 16, 16, OP.ingot.dat(MT.TinAlloy).getStack(1), "", false);
+        Iron = registerAchievement("advancement.Hitech6.Iron", 16, 17, OP.ingot.dat(MT.Iron).getStack(1),  "", false);
+        TinAlloy =  registerAchievement("advancement.Hitech6.Tin_Ally", 16, 16, OP.ingot.dat(MT.TinAlloy).getStack(1), "", true);
         GetStarted = registerAchievement("advancement.HiTech6.Get_Started", 0, 1, new ItemStack(Blocks.dirt), "", false);
         Flint = registerAchievement("advancement.HiTech6.Flint", 1, 2, new ItemStack(Items.flint), "advancement.HiTech6.Get_Started", false);
         FirstStorage = registerAchievement("advancement.HiTech6.FirstStorage", 2, 3, new ItemStack(Blocks.chest), "advancement.HiTech6.Flint", false);
@@ -57,9 +58,9 @@ public class HiTecch6AchivementsNEW {
         ItemStack knifeStack = CS.ToolsGT.sMetaTool.getToolWithStats(34, null, null);
         KnifeC = registerAchievement("advancement.HiTech6.Knife", 22, 22, knifeStack, "advancement.HiTech6.Knife", false);
 
-        TierULV = registerAchievement("advancement.HiTech6.ULVtier", 21, 20, new ItemStack(blockHullDatabase.hullULV), null, false);
+        TierULV = registerAchievement("advancement.HiTech6.ULVtier", 21, 20, new ItemStack(blockHullDatabase.hullULV), null, true);
 
-        ItemStack rockStack = MT.Stone.mDictionaryBook;
+        ItemStack rockStack =OP.rockGt.mat(MT.Komatiite, 1);
         Rock = registerAchievement("advancement.HiTech6.Rock", 21, 21, rockStack, "advancement.HiTech6.Rock", false);
 
         // Map collection directly to page array dynamically following Loader logic
@@ -155,12 +156,15 @@ public class HiTecch6AchivementsNEW {
             if (inv.hasItemStack(OP.ingot.dat(MT.TinAlloy).getStack(1))) {
                 this.issueAchievement(player, "advancement.Hitech6.Tin_Ally");
             }
-
-
+            if (inv.hasItemStack(OP.rockGt.mat(MT.Komatiite, 1))) {
+                this.issueAchievement(player, "advancement.HiTech6.Rock");
+            }
+            if (inv.hasItemStack(OP.ingot.mat(MT.Iron, 1))) {
+                this.issueAchievement(player, "advancement.Hitech6.Iron");
 
         }
-}
-}
+}}}
+
 
 
 

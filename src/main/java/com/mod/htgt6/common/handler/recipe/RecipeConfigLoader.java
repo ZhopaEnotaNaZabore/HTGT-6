@@ -1,5 +1,7 @@
 package com.mod.htgt6.common.handler.recipe;
 
+import com.mod.htgt6.common.handler.recipe.assembler.AssemblerRecipeHandler;
+import com.mod.htgt6.common.handler.recipe.compressor.CompressorRecipeHandler;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -15,7 +17,43 @@ public class RecipeConfigLoader {
     // ==========================================
     // LOAD RECIPES
     // ==========================================
+    public static void loadCompressorRecipes(File file) {
+        try {
 
+            if (!file.exists()) {
+                createDefaultCompressor(file);
+            }
+
+            BufferedReader reader =
+                    new BufferedReader(new FileReader(file));
+
+            String line;
+
+            while ((line = reader.readLine()) != null) {
+
+                line = line.trim();
+
+                if (line.isEmpty() || line.startsWith("#"))
+                    continue;
+
+                parseCompressorRecipe(line);
+            }
+
+            reader.close();
+
+            System.out.println(
+                    "[HTGT6] Compressor recipes loaded."
+            );
+
+        } catch (Exception e) {
+
+            System.out.println(
+                    "[HTGT6] Failed loading compressor recipes."
+            );
+
+            e.printStackTrace();
+        }
+    }
     public static void loadAssemblerRecipes(
             File file
     ) {
@@ -71,15 +109,63 @@ public class RecipeConfigLoader {
     // ==========================================
     // PARSE RECIPE
     // ==========================================
+    private static void parseCompressorRecipe(String line) {
 
+        try {
+
+            String[] split = line.split(";");
+
+            ItemStack output =
+                    parseStack(split[0]);
+
+            String[] inputStrings =
+                    split[1].split(",");
+
+            ItemStack[] inputs =
+                    new ItemStack[3];
+
+            for (int i = 0; i < inputStrings.length && i < 3; i++) {
+
+                if (!inputStrings[i].trim().equalsIgnoreCase("null")) {
+
+                    inputs[i] =
+                            parseStack(inputStrings[i].trim());
+                }
+            }
+
+            int duration =
+                    Integer.parseInt(split[2].trim());
+
+            int eut =
+                    Integer.parseInt(split[3].trim());
+
+            int tier =
+                    Integer.parseInt(split[4].trim());
+
+            CompressorRecipeHandler.addRecipe(
+                    inputs,
+                    output,
+                    duration,
+                    eut,
+                    tier
+            );
+
+        } catch (Exception e) {
+
+            System.out.println(
+                    "[HTGT6] Failed compressor recipe: "
+                            + line
+            );
+
+            e.printStackTrace();
+        }
+    }
     private static void parseRecipe(
             String line
     ) {
 
         try {
 
-            // FORMAT:
-            // output;inputs;duration;eut;tier
 
             String[] split =
                     line.split(";");
@@ -280,5 +366,33 @@ public class RecipeConfigLoader {
         System.out.println(
                 "[HTGT6] Created default assembler recipe config."
         );
+    }
+    private static void createDefaultCompressor(
+            File file
+    ) throws IOException {
+
+        file.getParentFile().mkdirs();
+
+        PrintWriter pw =
+                new PrintWriter(file);
+
+        pw.println("# =====================================");
+        pw.println("# HTGT6 Compressor Recipes");
+        pw.println("# FORMAT:");
+        pw.println("# output;inputs;duration;eut;tier");
+        pw.println("# =====================================");
+        pw.println("# INPUT FORMAT:");
+        pw.println("# modid:item*amount");
+        pw.println("# =====================================");
+
+        pw.println(
+                "minecraft:diamond*1;"
+                        + "minecraft:coal*1,minecraft:coal*1,minecraft:coal*1;"
+                        + "200;"
+                        + "32;"
+                        + "2"
+        );
+
+        pw.close();
     }
 }

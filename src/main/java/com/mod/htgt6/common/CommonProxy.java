@@ -1,6 +1,5 @@
 package com.mod.htgt6.common;
 
-import com.mod.htgt6.HTGT6;
 import com.mod.htgt6.common.GalaxyServer.Glise792.planets.Gliese792c.blocks.GlieseCwater;
 import com.mod.htgt6.common.GalaxyServer.Glise792.planets.Gliese792c.blocks.blocksGliese792C;
 import com.mod.htgt6.common.achievements.HiTecch6AchivementsNEW;
@@ -8,7 +7,8 @@ import com.mod.htgt6.common.GalaxyServer.Glise792.planets.Gliese792b.blocks.B_da
 import com.mod.htgt6.common.block.greg.technological.hulls.blockHullDatabase;
 import com.mod.htgt6.common.handler.*;
 import com.mod.htgt6.common.handler.biometweaks.biomeLukewarmOcean;
-import com.mod.htgt6.common.handler.recipe.AssemblerRecipeHandler;
+import com.mod.htgt6.common.handler.recipe.assembler.AssemblerRecipeHandler;
+import com.mod.htgt6.common.handler.recipe.compressor.CompressorRecipeHandler;
 import com.mod.htgt6.common.item.htgt6.modulesystem.Tmodules;
  import com.mod.htgt6.common.handler.worldgeneration.shipwerk.structurehandler.OceanStructureHandler;
 import com.mod.htgt6.common.item.IC2.miscIC2;
@@ -26,14 +26,15 @@ import com.mod.htgt6.common.item.htgt6.rocketcomputers.HiTech6RocketTerminals;
 import com.mod.htgt6.common.item.htgt6.weapons.HiTech6Weapons;
 
 
-
-
+import com.mod.htgt6.common.prospector.ItemGT6BulkScanner;
+import com.mod.htgt6.common.prospector.ItemGT6Scanner;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
-import cpw.mods.fml.relauncher.Side;
+
 import gregapi.api.Abstract_Proxy;
+import net.minecraft.item.Item;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeManager;
@@ -46,8 +47,8 @@ import net.minecraftforge.common.MinecraftForge;
 
 public class CommonProxy extends Abstract_Proxy {
     public void preInit(FMLPreInitializationEvent event) {
-        //AssemblerRecipes.getInstance().registerRecipes();
         AssemblerRecipeHandler.registerRecipes();
+        CompressorRecipeHandler.registerSMCrecipes();
         Tmodules.ModifiersAndTransformers();
         ModItems.register();
         ModBlocks.register();
@@ -70,12 +71,15 @@ public class CommonProxy extends Abstract_Proxy {
         blocksGliese792C.InitGlieseCblocks();
         GlieseCwater.init();
         registerPackets();
+        prospectorScanner = new ItemGT6Scanner();
+        bulkprospector = new ItemGT6BulkScanner();
 
 
     }
+    public static Item prospectorScanner;
+    public static Item bulkprospector;
 
     public void init(FMLInitializationEvent event) {
-      //  Hitech6AchieveDatabase.initialization();
         HiTecch6AchivementsNEW.initialization();
         BiomeGenBase LukewarmOcean = new biomeLukewarmOcean(120);
         BiomeDictionary.registerBiomeType(LukewarmOcean,
@@ -98,8 +102,7 @@ public class CommonProxy extends Abstract_Proxy {
 
     }
     private void registerPackets() {
-        // Only register the Server handler here
-        // }
+
     }
     }
 

@@ -1,18 +1,8 @@
 package com.mod.htgt6.common.MT;
 
-import com.mod.htgt6.common.handler.recipe.AssemblerRecipeHandler;
+import com.mod.htgt6.common.handler.recipe.assembler.AssemblerRecipeHandler;
 
 import minetweaker.MineTweakerAPI;
-import minetweaker.api.item.IIngredient;
-import minetweaker.api.item.IItemStack;
-import minetweaker.mc1710.item.MCItemStack;
-
-import net.minecraft.item.ItemStack;
-
-import com.mod.htgt6.common.handler.recipe.AssemblerRecipeHandler;
-
-import minetweaker.MineTweakerAPI;
-
 import minetweaker.api.item.IIngredient;
 import minetweaker.api.item.IItemStack;
 

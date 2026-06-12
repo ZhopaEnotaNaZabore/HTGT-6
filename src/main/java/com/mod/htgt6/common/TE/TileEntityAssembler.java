@@ -1,7 +1,7 @@
 package com.mod.htgt6.common.TE;
 
 
-import com.mod.htgt6.common.handler.recipe.AssemblerRecipeHandler;
+import com.mod.htgt6.common.handler.recipe.assembler.AssemblerRecipeHandler;
 import com.mod.htgt6.common.item.htgt6.modulesystem.Tmodules;
 
 import cpw.mods.fml.common.Optional;
@@ -203,7 +203,9 @@ public class TileEntityAssembler
 
             markDirty();
         }
+
     }
+
 
     // ==========================================
     // IC2 LOAD
