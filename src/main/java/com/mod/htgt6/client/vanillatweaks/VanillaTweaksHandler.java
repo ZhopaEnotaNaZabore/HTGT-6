@@ -1,5 +1,6 @@
 package com.mod.htgt6.client.vanillatweaks;
 
+import com.mod.htgt6.client.vanillatweaks.WSUI.GuiModernWorldSelect;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiMainMenu;

@@ -28,6 +28,8 @@ import com.mod.htgt6.common.item.htgt6.weapons.HiTech6Weapons;
 
 import com.mod.htgt6.common.prospector.ItemGT6BulkScanner;
 import com.mod.htgt6.common.prospector.ItemGT6Scanner;
+import com.mod.htgt6.server.utils.ServerLagDebugger;
+import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
@@ -73,6 +75,7 @@ public class CommonProxy extends Abstract_Proxy {
         registerPackets();
         prospectorScanner = new ItemGT6Scanner();
         bulkprospector = new ItemGT6BulkScanner();
+        com.mod.htgt6.common.TE.mechanics.ConfigureGasFuels.initFuels();
 
 
     }
@@ -98,12 +101,9 @@ public class CommonProxy extends Abstract_Proxy {
         recipes.registerRecipes();
     }
 
-    public void serverStarting(FMLServerStartingEvent event) {
 
-    }
-    private void registerPackets() {
-
-    }
+    private void registerPackets() {}
+    public void registerNEI() {}
     }
 
 

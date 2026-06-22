@@ -93,7 +93,7 @@ item.Govno.name=Кучка еще теплого аппетитного говн
 tile.EternalBlock.name=X-RAY блок
 item.prospectorScanner.name=Универсальный ГеоПроспектор 
 item.bulkProspectorScanner.name=Сканнер для георазведки
-tile.superMasicCompressor.name=Компрессор для  Сверхплотного сжатия
+tile.superMasicCompressor.name=Прессовочная машина сверхмассивного сжатия
 
 //Composites
 item.CompositeT1.name=Композитный сплав Т1

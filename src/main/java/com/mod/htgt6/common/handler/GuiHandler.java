@@ -1,17 +1,16 @@
 package com.mod.htgt6.common.handler;
 
-import com.mod.htgt6.client.GUI.GuiAssembler;
+import com.mod.htgt6.client.GUI.*;
 
-import com.mod.htgt6.client.GUI.GuiBulkScanner;
-import com.mod.htgt6.client.GUI.GuiScanner;
-import com.mod.htgt6.client.GUI.GuiSuperMasicCompressor;
 import com.mod.htgt6.common.TE.TESuperMasicCompressor;
 import com.mod.htgt6.common.TE.TileEntityAssembler;
+import com.mod.htgt6.common.TE.UniversalGasTurbineTE;
 import com.mod.htgt6.common.inventory.ContainerAssembler;
 
 
 import com.mod.htgt6.common.inventory.ContainerScanner;
 import com.mod.htgt6.common.inventory.ContainerSuperMasicCompressor;
+import com.mod.htgt6.common.inventory.ContainerUniversalGasTurbine;
 import cpw.mods.fml.common.network.IGuiHandler;
 
 
@@ -27,6 +26,7 @@ public class GuiHandler implements IGuiHandler {
     public static final int SUPER_MASIC_COMPRESSOR_ID = 1;
     public static final int SCANNER_GUI_ID = 2;
     public static final int BULK_SCANNER_GUI_ID = 3;
+    public static final int UNIVERSAL_GAS_TURBINE_ID = 4;
 
     @Override
     public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
@@ -44,6 +44,11 @@ public class GuiHandler implements IGuiHandler {
         }
         if (ID == SCANNER_GUI_ID || ID == BULK_SCANNER_GUI_ID) {
             return new ContainerScanner(player.inventory);
+        }
+        if (ID == UNIVERSAL_GAS_TURBINE_ID) {
+            if (te instanceof UniversalGasTurbineTE) {
+                return new ContainerUniversalGasTurbine(player.inventory, (UniversalGasTurbineTE) te);
+            }
         }
 
 
@@ -70,6 +75,11 @@ public class GuiHandler implements IGuiHandler {
         }
         if (ID == BULK_SCANNER_GUI_ID) {
             return new GuiBulkScanner(player);
+        }
+        if (ID == UNIVERSAL_GAS_TURBINE_ID) {
+            if (te instanceof UniversalGasTurbineTE) {
+                return new GuiUniversalGasTurbine(new ContainerUniversalGasTurbine(player.inventory, (UniversalGasTurbineTE) te), (UniversalGasTurbineTE) te);
+            }
         }
 
             return null;

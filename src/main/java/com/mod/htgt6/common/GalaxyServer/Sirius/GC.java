@@ -20,7 +20,7 @@ public class GC {
 
     private static void registerSolarSystem() {
         solarSystemSirius = new SolarSystem("sirius_system", "milkyWay");
-        solarSystemSirius.setMapPosition(new Vector3(12.5, -1.2000000476837158, 0.0));
+        solarSystemSirius.setMapPosition(new Vector3(14.5, -1.2000000476837158, 0.0));
         starSiriusA = new Star("sirius_star");
         starSiriusA.setParentSolarSystem(solarSystemSirius);
         starSiriusA.setRelativeSize(1.5F);

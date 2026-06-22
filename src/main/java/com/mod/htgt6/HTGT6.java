@@ -6,6 +6,7 @@ import com.mod.htgt6.common.GalaxyServer.Glise792.sysGliese792;
 import com.mod.htgt6.common.GalaxyServer.Sirius.GC;
 import com.mod.htgt6.common.TE.TESuperMasicCompressor;
 import com.mod.htgt6.common.TE.TileEntityAssembler;
+import com.mod.htgt6.common.TE.UniversalGasTurbineTE;
 import com.mod.htgt6.common.handler.GuiHandler;
 
 
@@ -15,6 +16,7 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -22,6 +24,8 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import minetweaker.MineTweakerAPI;
 import net.minecraftforge.common.MinecraftForge;
+
+import java.beans.EventHandler;
 
 
 @Mod(modid = HTGT6.MOD_ID, version = "1.0.4",
@@ -51,11 +55,13 @@ public class HTGT6 {
 
 
 
+
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
         NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
         GameRegistry.registerTileEntity(TileEntityAssembler.class, "TileEntityAssembler");
         GameRegistry.registerTileEntity(TESuperMasicCompressor.class, "TileEntitySMCompressor");
+        GameRegistry.registerTileEntity(UniversalGasTurbineTE.class, "UniversalGasTurbineTE");
         GC.init(event);
         sysGliese792.init(event);
         proxy.init(event);
@@ -68,5 +74,6 @@ public class HTGT6 {
 
 
         proxy.postInit(event);
+        proxy.registerNEI();
    }
 }

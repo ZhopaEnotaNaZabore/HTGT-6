@@ -18,10 +18,4 @@ mods.htgt6.Assembler.addRecipe(
     <gregapi:gt.integrated_circuit:21>*0
 );
 
-mods.htgt6.SMCompressor.addRecipe(
- <minecraft:coal>*1,
-    2048,
-     2048,
-     4,
-     <HTGT6:INFIcoil> * 64
-);
+mods.htgt6.SMCompressor.addRecipe( <minecraft:coal>*1, 2048, 2048,    4,  <HTGT6:INFIcoil> * 64);

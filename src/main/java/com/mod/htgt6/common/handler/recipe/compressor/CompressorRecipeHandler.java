@@ -1,17 +1,18 @@
 package com.mod.htgt6.common.handler.recipe.compressor;
 
+import galaxyspace.systems.SolarSystem.planets.overworld.items.ItemCompressedPlates;
 import gregapi.GT_API;
 import gregapi.config.ConfigCategories;
 import gregapi.data.MT;
 import gregapi.data.OP;
+import gregapi.item.ItemIntegratedCircuit;
 import gregapi.util.ST;
 import net.minecraft.item.ItemStack;
 import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
-import static gregapi.data.AM.Lead;
-import static gregapi.data.AM.Mt;
+import static gregapi.data.AM.*;
 
 public class CompressorRecipeHandler {
 
@@ -101,25 +102,66 @@ public class CompressorRecipeHandler {
 
 
   public static void registerSMCrecipes() {
+        //LV recipes
+      addRecipe(new ItemStack[] {OP.plate.mat(MT.Lead, 9)}, OP.plateDense.mat(MT.Lead, 1), 1600, 32, 1);
+      addRecipe( new ItemStack[] {OP.plate.mat(MT.Iron, 9)}, OP.plateDense.mat(MT.Iron, 1), 1600, 32, 1);
+      addRecipe( new ItemStack[] {OP.plate.mat(MT.Copper, 9)}, OP.plateDense.mat(MT.Copper, 1), 1600, 32, 1);
+      addRecipe( new ItemStack[] {OP.plate.mat(MT.AnnealedCopper, 9)}, OP.plateDense.mat(MT.AnnealedCopper, 1), 1600, 32, 1);
+      addRecipe( new ItemStack[] {OP.plate.mat(MT.Gold, 9)}, OP.plateDense.mat(MT.Gold, 1), 1600, 32, 1);
+      addRecipe( new ItemStack[] {OP.plate.mat(MT.Bronze, 9)}, OP.plateDense.mat(MT.Bronze, 1), 1600, 32, 1);
+      addRecipe( new ItemStack[] {OP.plate.mat(MT.Aluminium, 9)}, OP.plateDense.mat(MT.Aluminium, 1), 1600, 32, 1);
+      addRecipe( new ItemStack[] {OP.plate.mat(MT.Brass, 9)}, OP.plateDense.mat(MT.Brass, 1), 1600, 32, 1);
+      addRecipe( new ItemStack[] {OP.plate.mat(MT.Steel, 9)}, OP.plateDense.mat(MT.Steel, 1), 1600, 32, 1);
+      addRecipe( new ItemStack[] {OP.plate.mat(MT.TinAlloy, 9)}, OP.plateDense.mat(MT.TinAlloy, 1), 1600, 32, 1);
+      addRecipe( new ItemStack[] {OP.plate.mat(MT.Sn, 9)}, OP.plateDense.mat(MT.Sn, 1), 1600, 32, 1);
+      addRecipe( new ItemStack[] {OP.plate.mat(MT.Arsenic, 9)}, OP.plateDense.mat(MT.Arsenic, 1), 1600, 32, 1);
+      addRecipe( new ItemStack[] {OP.plate.mat(MT.SolderingAlloy, 9)}, OP.plateDense.mat(MT.SolderingAlloy, 1), 1600, 32, 1);
+      addRecipe( new ItemStack[] {OP.plate.mat(MT.Sb, 9)}, OP.plateDense.mat(MT.Sb, 1), 1600, 32, 1);
+      addRecipe( new ItemStack[] {OP.plate.mat(MT.Silver, 9)}, OP.plateDense.mat(MT.Silver, 1), 1600, 32, 1);
+      addRecipe( new ItemStack[] {OP.plate.mat(MT.BatteryAlloy, 9)}, OP.plateDense.mat(MT.BatteryAlloy, 1), 1600, 32, 1);
+      addRecipe( new ItemStack[] {OP.plate.mat(MT.Chromium, 9)}, OP.plateDense.mat(MT.Chromium, 1), 1600, 32, 1);
+      addRecipe( new ItemStack[] {OP.plate.mat(MT.Nickel, 9)}, OP.plateDense.mat(MT.Nickel, 1), 1600, 32, 1);
+      addRecipe( new ItemStack[] {OP.plate.mat(MT.Plastic, 9)}, OP.plateDense.mat(MT.Plastic, 1), 1600, 32, 1);
+      addRecipe( new ItemStack[] {OP.plate.mat(MT.Constantan, 9)}, OP.plateDense.mat(MT.Constantan, 1), 1600, 32, 1);
 
-      addRecipe(
-              new ItemStack[]{
-                      new ItemStack(net.minecraft.init.Blocks.cobblestone, 9)
-              },
-              new ItemStack(net.minecraft.init.Items.diamond, 1),
-              200,
-              32,
-              1
-      );
-      addRecipe(
-              new ItemStack[] {
-                      OP.plate.mat(MT.Lead, 9)
-              },
-              OP.plateDense.mat(MT.Lead, 1),
-              200,
-              32,
-              1
-      );
+
+
+      //MV
+      addRecipe( new ItemStack[] {OP.plate.mat(MT.AluminiumBrass, 9)}, OP.plateDense.mat(MT.AluminiumBrass, 1), 1600, 128, 2);
+      addRecipe( new ItemStack[] {OP.plate.mat(MT.Cobalt, 9)}, OP.plateDense.mat(MT.Cobalt, 1), 1600, 128, 2);
+      addRecipe( new ItemStack[] {OP.plate.mat(MT.VanadiumSteel, 9)}, OP.plateDense.mat(MT.VanadiumSteel, 1), 1600, 128, 2);
+      addRecipe( new ItemStack[] {OP.plate.mat(MT.V, 9)}, OP.plateDense.mat(MT.V, 1), 1600, 128, 2);
+      addRecipe( new ItemStack[] {OP.plate.mat(MT.Electrum, 9)}, OP.plateDense.mat(MT.Electrum, 1), 1600, 128, 2);
+      addRecipe( new ItemStack[] {OP.plate.mat(MT.BlueAlloy, 9)}, OP.plateDense.mat(MT.BlueAlloy, 1), 1600, 128, 2);
+      addRecipe( new ItemStack[] {OP.plate.mat(MT.Electrotine, 9)}, OP.plateDense.mat(MT.Electrotine, 1), 1600, 128, 2);
+      addRecipe( new ItemStack[] {OP.plate.mat(MT.Kanthal, 9)}, OP.plateDense.mat(MT.Kanthal, 1), 1600, 128, 2);
+
+      //HV
+      addRecipe( new ItemStack[] {OP.plate.mat(MT.StainlessSteel, 9)}, OP.plateDense.mat(MT.StainlessSteel, 1), 1600, 512, 3);
+      addRecipe( new ItemStack[] {OP.plate.mat(MT.Nichrome, 9)}, OP.plateDense.mat(MT.Nichrome, 1), 1600, 512, 3);
+      addRecipe( new ItemStack[] {OP.plate.mat(MT.Titanium, 9)}, OP.plateDense.mat(MT.Titanium, 1), 1600, 512, 3);
+      addRecipe( new ItemStack[] {OP.plate.mat(MT.Ultimet, 9)}, OP.plateDense.mat(MT.Ultimet, 1), 1600, 512, 3);
+      addRecipe( new ItemStack[] {OP.plate.mat(MT.Trinium, 9)}, OP.plateDense.mat(MT.Trinium, 1), 1600, 512, 3);
+      addRecipe( new ItemStack[] {OP.plate.mat(MT.Platinum, 9)}, OP.plateDense.mat(MT.Platinum, 1), 1600, 512, 3);
+      addRecipe( new ItemStack[] {OP.plate.mat(MT.Palladium, 9)}, OP.plateDense.mat(MT.Palladium, 1), 1600, 512, 3);
+      addRecipe( new ItemStack[] {OP.plate.mat(MT.Ta, 9)}, OP.plateDense.mat(MT.Ta, 1), 1600, 512, 3);
+
+      //EV
+      addRecipe( new ItemStack[] {OP.plate.mat(MT.Tungsten, 9)}, OP.plateDense.mat(MT.Tungsten, 1), 1600, 2048, 4);
+      addRecipe( new ItemStack[] {OP.plate.mat(MT.TungstenSteel, 9)}, OP.plateDense.mat(MT.TungstenSteel, 1), 1600, 2048, 4);
+      addRecipe( new ItemStack[] {OP.plate.mat(MT.TungstenCarbide, 9)}, OP.plateDense.mat(MT.TungstenCarbide, 1), 1600, 2048, 4);
+
+
+      //IV
+      addRecipe( new ItemStack[] {OP.plate.mat(MT.Osmium, 9)}, OP.plateDense.mat(MT.Osmium, 1), 1600, 2048, 4);
+      addRecipe( new ItemStack[] {OP.plate.mat(MT.Iridium, 9)}, OP.plateDense.mat(MT.Iridium, 1), 1600, 2048, 4);
+      addRecipe( new ItemStack[] {OP.plate.mat(MT.Iritanium, 9)}, OP.plateDense.mat(MT.Iritanium, 1), 1600, 2048, 4);
+
+//GALACTICRAFT
+
+
+
+
 
     }
 

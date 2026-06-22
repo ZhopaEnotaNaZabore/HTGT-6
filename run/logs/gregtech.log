@@ -15,10 +15,10 @@ GT_Mod: Increasing general amount of Loot in Dungeon Chests and alike
 GT_Mod: Nerfing Vanilla Tool Durability
 GT_Mod: PreInit-Phase finished!
 GT_Mod: =======================
-GT_DL_Thread: Current Version = '6.15.08'; Recent Version = '6.17.06'; Majorly Outdated = No
 GT_API: ===================
 GT_API: Init-Phase started!
 GT_API: If the Loading Bar somehow Freezes at this Point, then you definetly ran out of Memory or permgenspace, look at the other Logs to confirm it.
+GT_DL_Thread: Current Version = '6.15.08'; Recent Version = '6.17.06'; Majorly Outdated = No
 GT_API: Init-Phase finished!
 GT_API: ====================
 GT_API_POST: ===================
@@ -58,3 +58,4 @@ GT_Client: Setting up and loading Icon Register for Items
 GT_API: Remapping ItemStackMaps due to ID Map change. Those damn Items should have a consistent Hashcode, but noooo, ofcourse they break Basic Code Conventions! Thanks Forge and Mojang!
 GT_Server: Loaded Special Save Files
 GT_API: Cleaning up all OreDict Crafting Recipes, which have an empty List in them, since they are never meeting any Condition.
+GT_Server: Saved Special Save Files

@@ -21,19 +21,18 @@ public class ModBlocks {
     private static final PCcube P_CCUBE = new PCcube();
     private static final BlockAssembler BLOCK_ASSEMBLER = new BlockAssembler();
     private static final BlockSuperMasicCompressor BLOCK_SUPER_MASIC_COMPRESSOR = new BlockSuperMasicCompressor();
+    private static final BlockUniversalGasTurbine BLOCK_UNIVERSAL_GAS_TURBINE = new BlockUniversalGasTurbine();
 
     public static void register() {
 
         //регистр TileEntity
-       // GameRegistry.registerTileEntity(FurnTE.class, HTGT6.MOD_ID + ":Furn");
-        //GameRegistry.registerBlock(HULL_ULV, "ULVhull");
         GameRegistry.registerTileEntity(TileEntityAssembler.class, "htgt6.Assembler");
-       // GameRegistry.registerBlock(BLOCK_ASSEMBLER, "assembler");
+
        GameRegistry.registerBlock(BLOCK_ASSEMBLER, ItemBlockAssembler.class, "assembler");
 
 
         //Регистр просто блоков
-
+        GameRegistry.registerBlock(BLOCK_UNIVERSAL_GAS_TURBINE, "GasTurbineTE");
         GameRegistry.registerBlock(HULL_LV, "HullLV");
         GameRegistry.registerBlock(HULL_MV, "hullMV");
         GameRegistry.registerBlock(HULL_HV, "hullHV");

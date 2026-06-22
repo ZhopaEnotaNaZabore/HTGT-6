@@ -1,0 +1,995 @@
+[20:22:47] [main/INFO]: Extra: []
+[20:22:47] [main/INFO]: Found and added coremod: galaxyspace.core.hooks.GSHooksLoader
+[20:22:47] [main/INFO]: Found and added coremod: gregtech.asm.GT_ASM
+[20:22:47] [main/INFO]: Found and added coremod: micdoodle8.mods.miccore.MicdoodlePlugin
+[20:22:47] [main/INFO]: Found and added coremod: com.mod.htgt6.asm.HTGT6LoadingPlugin
+[20:22:47] [main/INFO]: Running with arguments: [--userProperties, {}, --assetsDir, C:/Users/brawl/.gradle/caches/minecraft/assets, --assetIndex, 1.7.10, --accessToken, {REDACTED}, --version, 1.7.10, --tweakClass, cpw.mods.fml.common.launcher.FMLTweaker, --tweakClass, net.minecraftforge.gradle.tweakers.CoremodTweaker]
+[20:22:47] [main/INFO]: Loading tweak class name cpw.mods.fml.common.launcher.FMLTweaker
+[20:22:47] [main/INFO]: Using primary tweak class name cpw.mods.fml.common.launcher.FMLTweaker
+[20:22:47] [main/INFO]: Loading tweak class name net.minecraftforge.gradle.tweakers.CoremodTweaker
+[20:22:47] [main/INFO]: Calling tweak class cpw.mods.fml.common.launcher.FMLTweaker
+[20:22:47] [main/INFO]: Forge Mod Loader version 7.99.40.1614 for Minecraft 1.7.10 loading
+[20:22:47] [main/INFO]: Java is OpenJDK 64-Bit Server VM, version 1.8.0_452, running on Windows 11:amd64:10.0, installed at C:\Users\brawl\.jdks\liberica-full-1.8.0_452\jre
+[20:22:47] [main/INFO]: Managed to load a deobfuscated Minecraft name- we are in a deobfuscated environment. Skipping runtime deobfuscation
+[20:22:47] [main/INFO]: Found a command line coremod : galaxyspace.core.hooks.GSHooksLoader
+[20:22:47] [main/INFO]: [HOOKLIB]  Obfuscated: false
+[20:22:47] [main/WARN]: The coremod galaxyspace.core.hooks.GSHooksLoader does not have a MCVersion annotation, it may cause issues with this version of Minecraft
+[20:22:47] [main/INFO]: Found a command line coremod : micdoodle8.mods.miccore.MicdoodlePlugin
+[20:22:47] [main/WARN]: The coremod micdoodle8.mods.miccore.MicdoodlePlugin does not have a MCVersion annotation, it may cause issues with this version of Minecraft
+[20:22:47] [main/INFO]: [micdoodle8.mods.miccore.DepLoader$DepLoadInst:<init>:333]: MicdoodleCore searching for dependencies in mods file: C:\Users\brawl\Desktop\mods\HTGT-6\run\.\mods
+[20:22:47] [main/INFO]: Found a command line coremod : com.mod.htgt6.asm.HTGT6LoadingPlugin
+[20:22:47] [main/INFO]: Found a command line coremod : gregtech.asm.GT_ASM
+[20:22:47] [main/INFO]: Loading tweaker org.spongepowered.asm.launch.MixinTweaker from +unimixins-all-1.7.10-0.1.23.jar
+[20:22:48] [main/WARN]: The coremod cofh.asm.LoadingPlugin does not have a MCVersion annotation, it may cause issues with this version of Minecraft
+[20:22:48] [main/INFO]: Calling tweak class net.minecraftforge.gradle.tweakers.CoremodTweaker
+[20:22:48] [main/INFO]: Injecting location in coremod cpw.mods.fml.relauncher.FMLCorePlugin
+[20:22:48] [main/INFO]: Injecting location in coremod net.minecraftforge.classloading.FMLForgePlugin
+[20:22:48] [main/INFO]: Injecting location in coremod codechicken.core.asm.MCPDeobfuscationTransformer.LoadPlugin
+[20:22:48] [main/INFO]: Injecting location in coremod galaxyspace.core.hooks.GSHooksLoader
+[20:22:48] [main/INFO]: Injecting location in coremod micdoodle8.mods.miccore.MicdoodlePlugin
+[20:22:48] [main/INFO]: Injecting location in coremod com.mod.htgt6.asm.HTGT6LoadingPlugin
+[20:22:48] [main/INFO]: Injecting location in coremod gregtech.asm.GT_ASM
+[20:22:48] [main/INFO]: Injecting location in coremod codechicken.core.launch.CodeChickenCorePlugin
+[20:22:48] [main/INFO]: Injecting location in coremod cofh.asm.LoadingPlugin
+[20:22:48] [main/INFO]: Injecting location in coremod com.enderio.core.common.transform.EnderCorePlugin
+[20:22:48] [main/INFO]: Injecting location in coremod codechicken.nei.asm.NEICorePlugin
+[20:22:48] [main/INFO]: Loading tweak class name cpw.mods.fml.common.launcher.FMLInjectionAndSortingTweaker
+[20:22:48] [main/INFO]: Loading tweak class name org.spongepowered.asm.launch.MixinTweaker
+[20:22:48] [main/INFO]: SpongePowered MIXIN Subsystem Version=0.8.7 Source=file:/C:/Users/brawl/Desktop/mods/HTGT-6/run/mods/+unimixins-all-1.7.10-0.1.23.jar Service=LaunchWrapper Env=CLIENT
+[20:22:48] [main/DEBUG]: Instantiating coremod class AllCore
+[20:22:48] [main/INFO]: MixinBootstrap Initializing...
+[20:22:48] [main/INFO]: Compatibility level set to JAVA_8
+[20:22:49] [main/INFO]: Initializing GasStationCore
+[20:22:49] [main/DEBUG]: The coremod io.github.legacymoddingmc.unimixins.all.AllCore requested minecraft version 1.7.10 and minecraft is 1.7.10. It will be loaded.
+[20:22:49] [main/INFO]: Instantiating AllCore
+[20:22:49] [main/INFO]: Instantiating CompatCore
+[20:22:49] [main/INFO]: Instantiating MixinExtrasCore
+[20:22:49] [main/DEBUG]: Added access transformer class io.github.legacymoddingmc.unimixins.all.AllCore$CombinedAccessTransformer to enqueued access transformers
+[20:22:49] [main/DEBUG]: Enqueued coremod AllCore
+[20:22:49] [main/INFO]: Loading tweak class name cpw.mods.fml.common.launcher.FMLDeobfTweaker
+[20:22:49] [main/INFO]: Loading tweak class name net.minecraftforge.gradle.tweakers.AccessTransformerTweaker
+[20:22:49] [main/INFO]: Calling tweak class cpw.mods.fml.common.launcher.FMLInjectionAndSortingTweaker
+[20:22:49] [main/INFO]: Calling tweak class cpw.mods.fml.common.launcher.FMLInjectionAndSortingTweaker
+[20:22:49] [main/INFO]: Calling tweak class cpw.mods.fml.relauncher.CoreModManager$FMLPluginWrapper
+[20:22:49] [main/DEBUG]: Injecting coremod FMLCorePlugin {cpw.mods.fml.relauncher.FMLCorePlugin} class transformers
+[20:22:49] [main/TRACE]: Registering transformer cpw.mods.fml.common.asm.transformers.MarkerTransformer
+[20:22:49] [main/TRACE]: Registering transformer cpw.mods.fml.common.asm.transformers.SideTransformer
+[20:22:49] [main/TRACE]: Registering transformer cpw.mods.fml.common.asm.transformers.EventSubscriptionTransformer
+[20:22:49] [main/DEBUG]: Injection complete
+[20:22:49] [main/DEBUG]: Running coremod plugin for FMLCorePlugin {cpw.mods.fml.relauncher.FMLCorePlugin}
+[20:22:49] [main/DEBUG]: Running coremod plugin FMLCorePlugin
+[20:22:49] [main/ERROR]: The binary patch set is missing. Either you are in a development environment, or things are not going to work!
+[20:22:50] [main/ERROR]: FML appears to be missing any signature data. This is not a good thing
+[20:22:50] [main/DEBUG]: Coremod plugin class FMLCorePlugin run successfully
+[20:22:50] [main/INFO]: Calling tweak class cpw.mods.fml.relauncher.CoreModManager$FMLPluginWrapper
+[20:22:50] [main/DEBUG]: Injecting coremod FMLForgePlugin {net.minecraftforge.classloading.FMLForgePlugin} class transformers
+[20:22:50] [main/TRACE]: Registering transformer net.minecraftforge.classloading.FluidIdTransformer
+[20:22:50] [main/DEBUG]: Injection complete
+[20:22:50] [main/DEBUG]: Running coremod plugin for FMLForgePlugin {net.minecraftforge.classloading.FMLForgePlugin}
+[20:22:50] [main/DEBUG]: Running coremod plugin FMLForgePlugin
+[20:22:50] [main/DEBUG]: Coremod plugin class FMLForgePlugin run successfully
+[20:22:50] [main/INFO]: Calling tweak class cpw.mods.fml.relauncher.CoreModManager$FMLPluginWrapper
+[20:22:50] [main/DEBUG]: Injecting coremod CCCDeobfPlugin {codechicken.core.asm.MCPDeobfuscationTransformer$LoadPlugin} class transformers
+[20:22:50] [main/DEBUG]: Injection complete
+[20:22:50] [main/DEBUG]: Running coremod plugin for CCCDeobfPlugin {codechicken.core.asm.MCPDeobfuscationTransformer$LoadPlugin}
+[20:22:50] [main/DEBUG]: Running coremod plugin CCCDeobfPlugin
+[20:22:50] [main/DEBUG]: Coremod plugin class LoadPlugin run successfully
+[20:22:50] [main/INFO]: Calling tweak class cpw.mods.fml.relauncher.CoreModManager$FMLPluginWrapper
+[20:22:50] [main/DEBUG]: Injecting coremod GSHooksLoader {galaxyspace.core.hooks.GSHooksLoader} class transformers
+[20:22:50] [main/TRACE]: Registering transformer galaxyspace.core.hooklib.minecraft.PrimaryClassTransformer
+[20:22:50] [main/INFO]: [galaxyspace.core.hooklib.asm.HookLogger$SystemOutLogger:debug:20]: [DEBUG] Parsing hooks container galaxyspace.core.hooklib.minecraft.SecondaryTransformerHook
+[20:22:51] [main/DEBUG]: Injection complete
+[20:22:51] [main/DEBUG]: Running coremod plugin for GSHooksLoader {galaxyspace.core.hooks.GSHooksLoader}
+[20:22:51] [main/DEBUG]: Running coremod plugin GSHooksLoader
+[20:22:51] [main/INFO]: [galaxyspace.core.hooklib.asm.HookLogger$SystemOutLogger:debug:20]: [DEBUG] Parsing hooks container galaxyspace.core.hooks.GSHooksManager
+[20:22:51] [main/DEBUG]: Coremod plugin class GSHooksLoader run successfully
+[20:22:51] [main/INFO]: Calling tweak class cpw.mods.fml.relauncher.CoreModManager$FMLPluginWrapper
+[20:22:51] [main/DEBUG]: Injecting coremod MicdoodlePlugin {micdoodle8.mods.miccore.MicdoodlePlugin} class transformers
+[20:22:51] [main/INFO]: [micdoodle8.mods.miccore.MicdoodlePlugin:getASMTransformerClass:102]: Successfully Registered Transformer
+[20:22:51] [main/TRACE]: Registering transformer micdoodle8.mods.miccore.MicdoodleTransformer
+[20:22:51] [main/DEBUG]: Injection complete
+[20:22:51] [main/DEBUG]: Running coremod plugin for MicdoodlePlugin {micdoodle8.mods.miccore.MicdoodlePlugin}
+[20:22:51] [main/DEBUG]: Running coremod plugin MicdoodlePlugin
+[20:22:51] [main/INFO]: [micdoodle8.mods.miccore.MicdoodlePlugin:injectData:295]: [Micdoodle8Core]: Patching game...
+[20:22:51] [main/INFO]: [micdoodle8.mods.miccore.MicdoodlePlugin:injectData:295]: [Micdoodle8Core]: Patching game...
+[20:22:51] [main/DEBUG]: Coremod plugin class MicdoodlePlugin run successfully
+[20:22:51] [main/INFO]: Calling tweak class cpw.mods.fml.relauncher.CoreModManager$FMLPluginWrapper
+[20:22:51] [main/DEBUG]: Injecting coremod HTGT6BiomeASM {com.mod.htgt6.asm.HTGT6LoadingPlugin} class transformers
+[20:22:51] [main/TRACE]: Registering transformer com.mod.htgt6.asm.HTGT6Transformer
+[20:22:51] [main/DEBUG]: Injection complete
+[20:22:51] [main/DEBUG]: Running coremod plugin for HTGT6BiomeASM {com.mod.htgt6.asm.HTGT6LoadingPlugin}
+[20:22:51] [main/DEBUG]: Running coremod plugin HTGT6BiomeASM
+[20:22:51] [main/INFO]: [com.mod.htgt6.asm.HTGT6Config:load:33]: [HTGT6 ASM] enableBiomePatches=false
+[20:22:51] [main/DEBUG]: Coremod plugin class HTGT6LoadingPlugin run successfully
+[20:22:51] [main/INFO]: Calling tweak class cpw.mods.fml.relauncher.CoreModManager$FMLPluginWrapper
+[20:22:51] [main/DEBUG]: Injecting coremod CodeChickenCorePlugin {codechicken.core.launch.CodeChickenCorePlugin} class transformers
+[20:22:51] [main/TRACE]: Registering transformer codechicken.lib.asm.ClassHeirachyManager
+[20:22:51] [main/TRACE]: Registering transformer codechicken.core.asm.TweakTransformer
+[20:22:51] [main/TRACE]: Registering transformer codechicken.core.asm.DelegatedTransformer
+[20:22:51] [main/TRACE]: Registering transformer codechicken.core.asm.DefaultImplementationTransformer
+[20:22:51] [main/TRACE]: Registering transformer codechicken.lib.asm.RedirectorTransformer
+[20:22:51] [main/DEBUG]: Injection complete
+[20:22:51] [main/DEBUG]: Running coremod plugin for CodeChickenCorePlugin {codechicken.core.launch.CodeChickenCorePlugin}
+[20:22:51] [main/DEBUG]: Running coremod plugin CodeChickenCorePlugin
+[20:22:51] [main/DEBUG]: Coremod plugin class CodeChickenCorePlugin run successfully
+[20:22:51] [main/INFO]: Calling tweak class cpw.mods.fml.relauncher.CoreModManager$FMLPluginWrapper
+[20:22:51] [main/DEBUG]: Injecting coremod NEICorePlugin {codechicken.nei.asm.NEICorePlugin} class transformers
+[20:22:51] [main/TRACE]: Registering transformer codechicken.nei.asm.NEITransformer
+[20:22:51] [main/DEBUG]: Injection complete
+[20:22:51] [main/DEBUG]: Running coremod plugin for NEICorePlugin {codechicken.nei.asm.NEICorePlugin}
+[20:22:51] [main/DEBUG]: Running coremod plugin NEICorePlugin
+[20:22:51] [main/DEBUG]: Coremod plugin class NEICorePlugin run successfully
+[20:22:51] [main/INFO]: Calling tweak class org.spongepowered.asm.launch.MixinTweaker
+[20:22:51] [main/INFO]: Initialised Mixin FML Remapper Adapter with cpw.mods.fml.common.asm.transformers.deobf.FMLDeobfuscatingRemapper@5ec46cdd
+[20:22:51] [main/INFO]: Initialised Legacy FML Dev Remapper
+[20:22:51] [main/DEBUG]: Injecting coremod AllCore {io.github.legacymoddingmc.unimixins.all.AllCore} class transformers
+[20:22:51] [main/TRACE]: Registering transformer io.github.legacymoddingmc.unimixins.compat.asm.EnhanceCrashReportsTransformer
+[20:22:51] [main/DEBUG]: Injection complete
+[20:22:51] [main/DEBUG]: Running coremod plugin for AllCore {io.github.legacymoddingmc.unimixins.all.AllCore}
+[20:22:51] [main/DEBUG]: Running coremod plugin AllCore
+[20:22:52] [main/INFO]: Searching coremodList for IEarlyMixinLoaders
+[20:22:52] [main/INFO]: LoadedCoreMods [codechicken.core.asm.MCPDeobfuscationTransformer$LoadPlugin, com.enderio.core.common.transform.EnderCorePlugin, codechicken.nei.asm.NEICorePlugin, cpw.mods.fml.relauncher.FMLCorePlugin, org.spongepowered.asm.launch.MixinTweaker, micdoodle8.mods.miccore.MicdoodlePlugin, codechicken.core.launch.CodeChickenCorePlugin, com.mod.htgt6.asm.HTGT6LoadingPlugin, net.minecraftforge.classloading.FMLForgePlugin, codechicken.lib, io.github.legacymoddingmc.unimixins.all.AllCore, galaxyspace.core.hooks.GSHooksLoader, net.minecraftforge.gradle.tweakers.AccessTransformerTweaker, cpw.mods.fml.common.launcher.FMLDeobfTweaker, gregtech.asm.GT_ASM, cofh.asm.LoadingPlugin]
+[20:22:52] [main/DEBUG]: Coremod plugin class AllCore run successfully
+[20:22:52] [main/INFO]: Calling tweak class cpw.mods.fml.relauncher.CoreModManager$FMLPluginWrapper
+[20:22:52] [main/DEBUG]: Injecting coremod Greg-ASM® {gregtech.asm.GT_ASM} class transformers
+[20:22:52] [main/DEBUG]: Injection complete
+[20:22:52] [main/DEBUG]: Running coremod plugin for Greg-ASM® {gregtech.asm.GT_ASM}
+[20:22:52] [main/DEBUG]: Running coremod plugin Greg-ASM®
+[20:22:52] [main/TRACE]: Registering transformer gregtech.asm.transformers.CoFHLib_HashFix
+[20:22:52] [main/TRACE]: Registering transformer gregtech.asm.transformers.CoFHCore_CrashFix
+[20:22:52] [main/TRACE]: Registering transformer gregtech.asm.transformers.Minecraft_LavaFlammableFix
+[20:22:52] [main/TRACE]: Registering transformer gregtech.asm.transformers.Technomancy_ExtremelySlowLoadFix
+[20:22:52] [main/TRACE]: Registering transformer gregtech.asm.transformers.Thaumcraft_AspectLagFix
+[20:22:52] [main/DEBUG]: Coremod plugin class GT_ASM run successfully
+[20:22:52] [main/INFO]: Calling tweak class cpw.mods.fml.common.launcher.FMLDeobfTweaker
+[20:22:52] [main/DEBUG]: Loaded 57 rules from AccessTransformer config file fml_at.cfg
+[20:22:52] [main/DEBUG]: Loaded 89 rules from AccessTransformer config file forge_at.cfg
+[20:22:52] [main/DEBUG]: Loaded 30 rules from AccessTransformer config file micdoodlecore_at.deobf
+[20:22:52] [main/DEBUG]: Loaded 57 rules from AccessTransformer config file fml_at.cfg
+[20:22:52] [main/DEBUG]: Loaded 2 rules from AccessTransformer mod jar file C:\Users\brawl\Desktop\mods\HTGT-6\libs\gregtech_1.7.10-6.15.07-unofficial.jar!META-INF/gregtech_at.cfg
+
+[20:22:52] [main/DEBUG]: Loaded 4 rules from AccessTransformer mod jar file C:\Users\brawl\Desktop\mods\HTGT-6\run\mods\NEIIntegration-1.5.0.jar!META-INF/neiintegration_at.cfg
+
+[20:22:52] [main/DEBUG]: Loaded 4 rules from AccessTransformer mod jar file C:\Users\brawl\Desktop\mods\HTGT-6\run\mods\NEIAddons-1.17.0.jar!META-INF/neiaddons_at.cfg
+
+[20:22:52] [main/DEBUG]: Loaded 13 rules from AccessTransformer mod jar file C:\Users\brawl\Desktop\mods\HTGT-6\run\mods\NotEnoughItems-2.8.19-GTNH.jar!META-INF/nei_at.cfg
+
+[20:22:52] [main/DEBUG]: Validating minecraft
+[20:22:52] [main/INFO]: [galaxyspace.core.hooklib.asm.HookLogger$SystemOutLogger:debug:20]: [DEBUG] Injecting hooks into class cpw.mods.fml.common.Loader
+[20:22:52] [main/INFO]: [galaxyspace.core.hooklib.asm.HookLogger$SystemOutLogger:debug:20]: [DEBUG] Patching method cpw.mods.fml.common.Loader#injectData([Ljava/lang/Object;)
+[20:22:53] [main/INFO]: Calling tweak class cpw.mods.fml.relauncher.CoreModManager$FMLPluginWrapper
+[20:22:53] [main/INFO]: Calling tweak class net.minecraftforge.gradle.tweakers.AccessTransformerTweaker
+[20:22:53] [main/INFO]: Remapping AccessTransformer rules...
+[20:22:53] [main/INFO]: Calling tweak class cpw.mods.fml.relauncher.CoreModManager$FMLPluginWrapper
+[20:22:53] [main/INFO]: Loading tweak class name cpw.mods.fml.common.launcher.TerminalTweaker
+[20:22:53] [main/INFO]: Loading tweak class name org.spongepowered.asm.mixin.EnvironmentStateTweaker
+[20:22:53] [main/INFO]: Calling tweak class cpw.mods.fml.common.launcher.TerminalTweaker
+[20:22:53] [main/INFO]: Calling tweak class org.spongepowered.asm.mixin.EnvironmentStateTweaker
+[20:22:54] [main/INFO]: Launching wrapped minecraft {net.minecraft.client.main.Main}
+[20:22:55] [main/INFO]: [micdoodle8.mods.miccore.MicdoodleTransformer:printLog:1992]: Galacticraft successfully injected bytecode into: net/minecraft/entity/EntityLivingBase (1 / 1)
+[20:22:55] [main/INFO]: [micdoodle8.mods.miccore.MicdoodleTransformer:printLog:1992]: Galacticraft successfully injected bytecode into: net/minecraft/entity/Entity (1 / 1)
+[20:22:55] [main/INFO]: [micdoodle8.mods.miccore.MicdoodleTransformer:printLog:1992]: Galacticraft successfully injected bytecode into: net/minecraft/world/World (1 / 1)
+[20:22:55] [main/INFO]: [galaxyspace.core.hooklib.asm.HookLogger$SystemOutLogger:debug:20]: [DEBUG] Injecting hooks into class net.minecraft.world.World
+[20:22:55] [main/INFO]: [galaxyspace.core.hooklib.asm.HookLogger$SystemOutLogger:debug:20]: [DEBUG] Patching method net.minecraft.world.World#setBlock(IIILnet/minecraft/block/Block;II)
+[20:22:55] [main/INFO]: [micdoodle8.mods.miccore.MicdoodleTransformer:printLog:1992]: Galacticraft successfully injected bytecode into: net/minecraft/client/gui/GuiSleepMP (1 / 1)
+[20:22:56] [main/INFO]: Setting user: Player750
+[20:22:57] [main/INFO]: [micdoodle8.mods.miccore.MicdoodleTransformer:printLog:1992]: Galacticraft successfully injected bytecode into: net/minecraft/entity/item/EntityItem (1 / 1)
+[20:22:59] [main/INFO]: [micdoodle8.mods.miccore.MicdoodleTransformer:printLog:1992]: Galacticraft successfully injected bytecode into: net/minecraft/entity/projectile/EntityArrow (1 / 1)
+[20:22:59] [main/INFO]: Transforming Class [net.minecraft.entity.projectile.EntityArrow], Method [onUpdate]
+[20:22:59] [main/INFO]: Transforming net.minecraft.entity.projectile.EntityArrow Finished.
+[20:22:59] [main/INFO]: Transforming Class [net.minecraft.item.ItemStack], Method [getRarity]
+[20:22:59] [main/INFO]: Transforming net.minecraft.item.ItemStack Finished.
+[20:23:00] [main/INFO]: Transforming Class [net.minecraft.inventory.ContainerFurnace], Method [transferStackInSlot]
+[20:23:00] [main/INFO]: Transforming net.minecraft.inventory.ContainerFurnace Finished.
+[20:23:01] [Client thread/INFO]: LWJGL Version: 2.9.1
+[20:23:01] [Client thread/INFO]: [micdoodle8.mods.miccore.MicdoodleTransformer:printLog:1992]: Galacticraft successfully injected bytecode into: net/minecraftforge/client/ForgeHooksClient (1 / 1)
+[20:23:02] [Client thread/INFO]: Transforming FMLCommonHandler to add hook for enhancing crash reports
+[20:23:02] [Client thread/INFO]: [cpw.mods.fml.client.SplashProgress:start:188]: ---- Minecraft Crash Report ----
+// Hi. I'm Minecraft, and I'm a crashaholic.
+
+Time: 19.06.26 20:23
+Description: Loading screen debug info
+
+This is just a prompt for computer specs to be printed. THIS IS NOT A ERROR
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- System Details --
+Details:
+	Minecraft Version: 1.7.10
+	Operating System: Windows 11 (amd64) version 10.0
+	Java Version: 1.8.0_452, BellSoft
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), BellSoft
+	Memory: 475295704 bytes (453 MB) / 653262848 bytes (623 MB) up to 3750756352 bytes (3577 MB)
+	JVM Flags: 0 total; 
+	AABB Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	FML: 
+	GL info: ' Vendor: 'NVIDIA Corporation' Version: '4.6.0 NVIDIA 566.14' Renderer: 'NVIDIA GeForce RTX 4060 Laptop GPU/PCIe/SSE2'
+[20:23:02] [Client thread/INFO]: Attempting early MinecraftForge initialization
+[20:23:02] [Client thread/INFO]: MinecraftForge v10.13.4.1614 Initialized
+[20:23:02] [Client thread/INFO]: Replaced 183 ore recipies
+[20:23:02] [Client thread/INFO]: Completed early MinecraftForge initialization
+[20:23:02] [Client thread/INFO]: Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.5.0).
+[20:23:02] [Client thread/INFO]: Found 0 mods from the command line. Injecting into mod discoverer
+[20:23:02] [Client thread/INFO]: Searching C:\Users\brawl\Desktop\mods\HTGT-6\run\mods for mods
+[20:23:02] [Client thread/INFO]: Also searching C:\Users\brawl\Desktop\mods\HTGT-6\run\mods\1.7.10 for mods
+[20:23:06] [Client thread/INFO]: Forge Mod Loader has identified 39 mods to load
+[20:23:06] [Client thread/INFO]: Found mod(s) [HTGT6] containing declared API package cofh.api.energy (owned by CoFHAPI) without associated API reference
+[20:23:06] [Client thread/INFO]: Instantiating all ILateMixinLoader implemented classes...
+[20:23:06] [Client thread/INFO]: Searching ASMData for ILateMixinLoaders
+[20:23:06] [Client thread/INFO]: LiteLoader not present
+[20:23:06] [Client thread/INFO]: LoadedMods [HTGT6, CoFHCore, NotEnoughItems, gregapi, neiintegration, unimixins-compat, NEIAddons, Forge, gregapi_post, NEIAddons|Botany, CodeChickenCore, NEIAddons|Developer, MineTweaker3, endercore, IC2, mixinbooterlegacy, mcp, unimixins-mixin, IC2-Classic-Spmod, mixingasm, gtnhmixins, mixinextras, MultiWorld, FML, spongemixins, NEIAddons|Forestry, GalaxySpace, <CoFH ASM>, NEIAddons|ExNihilo, NEIAddons|CraftingTables, Micdoodlecore, NEIAddons|AppEng, unimixins, gasstation, gregtech, GT_ASM, GalacticraftCore, GalacticraftMars, EnderIO]
+[20:23:07] [Client thread/INFO]: Attempting connection with missing mods [mcp, FML, Forge, Micdoodlecore, CodeChickenCore, NotEnoughItems, GT_ASM, <CoFH ASM>, MineTweaker3, GalacticraftMars, GalacticraftCore, GalaxySpace, gregapi, gregapi_post, gregtech, HTGT6, unimixins, unimixins-mixin, unimixins-compat, mixingasm, spongemixins, mixinbooterlegacy, gasstation, gtnhmixins, mixinextras, CoFHCore, endercore, EnderIO, IC2, IC2-Classic-Spmod, MultiWorld, NEIAddons|Botany, NEIAddons|Developer, NEIAddons|ExNihilo, NEIAddons|CraftingTables, NEIAddons, NEIAddons|Forestry, NEIAddons|AppEng, neiintegration] at CLIENT
+[20:23:07] [Client thread/INFO]: Attempting connection with missing mods [mcp, FML, Forge, Micdoodlecore, CodeChickenCore, NotEnoughItems, GT_ASM, <CoFH ASM>, MineTweaker3, GalacticraftMars, GalacticraftCore, GalaxySpace, gregapi, gregapi_post, gregtech, HTGT6, unimixins, unimixins-mixin, unimixins-compat, mixingasm, spongemixins, mixinbooterlegacy, gasstation, gtnhmixins, mixinextras, CoFHCore, endercore, EnderIO, IC2, IC2-Classic-Spmod, MultiWorld, NEIAddons|Botany, NEIAddons|Developer, NEIAddons|ExNihilo, NEIAddons|CraftingTables, NEIAddons, NEIAddons|Forestry, NEIAddons|AppEng, neiintegration] at SERVER
+[20:23:07] [Client thread/INFO]: [micdoodle8.mods.miccore.MicdoodleTransformer:printLog:1992]: Galacticraft successfully injected bytecode into: net/minecraft/server/management/ServerConfigurationManager (4 / 4)
+[20:23:08] [Client thread/INFO]: Transforming Class [net.minecraft.world.WorldType], Method [hasVoidParticles]
+[20:23:08] [Client thread/INFO]: Transforming net.minecraft.world.WorldType Finished.
+[20:23:09] [Client thread/ERROR]: The mod IC2 is expecting signature de041f9f6187debbc77034a344134053277aa3b0 for source IC2Classic-1.7.10-1.2.5 (1).jar, however there is no signature matching that description
+[20:23:09] [Client thread/INFO]: [micdoodle8.mods.miccore.MicdoodleTransformer:printLog:1992]: Galacticraft successfully injected bytecode into: net/minecraft/client/renderer/entity/RendererLivingEntity (1 / 1)
+[20:23:09] [Client thread/INFO]: [micdoodle8.mods.miccore.MicdoodleTransformer:printLog:1992]: Galacticraft successfully injected bytecode into: net/minecraft/client/particle/EffectRenderer (1 / 1)
+[20:23:10] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:NotEnoughItems, FMLFileResourcePack:MineTweaker 3, FMLFileResourcePack:Galacticraft Planets, FMLFileResourcePack:Galacticraft Core, FMLFileResourcePack:GalaxySpace, FMLFileResourcePack:Greg-API, FMLFileResourcePack:Greg-API-Post, FMLFileResourcePack:GregTech 6 Unofficial, FMLFileResourcePack:HTGT6, FMLFileResourcePack:UniMixins, FMLFileResourcePack:UniMixins: Mixin (UniMix), FMLFileResourcePack:UniMixins: Compatibility, FMLFileResourcePack:UniMixins: Mixingasm, FMLFileResourcePack:UniMixins: SpongeMixins, FMLFileResourcePack:UniMixins: MixinBooterLegacy, FMLFileResourcePack:UniMixins: GasStation, FMLFileResourcePack:UniMixins: GTNHMixins, FMLFileResourcePack:UniMixins: MixinExtras, FMLFileResourcePack:CoFH Core, FMLFileResourcePack:EnderCore, FMLFileResourcePack:Ender IO, FMLFileResourcePack:IndustrialCraft 2 Classic, FMLFileResourcePack:IC2 Classic Detection Helper, FMLFileResourcePack:Multi World, FMLFileResourcePack:NEI Addons: Botany, FMLFileResourcePack:NEI Addons: Developer Tools, FMLFileResourcePack:NEI Addons: Ex Nihilo, FMLFileResourcePack:NEI Addons: Crafting Tables, FMLFileResourcePack:NEI Addons, FMLFileResourcePack:NEI Addons: Forestry, FMLFileResourcePack:NEI Addons: Applied Energistics 2, FMLFileResourcePack:NEIIntegration
+[20:23:10] [Client thread/INFO]: Processing ObjectHolder annotations
+[20:23:10] [Client thread/INFO]: Found 337 ObjectHolder annotations
+[20:23:10] [Client thread/INFO]: Identifying ItemStackHolder annotations
+[20:23:10] [Client thread/INFO]: Found 0 ItemStackHolder annotations
+[20:23:10] [Client thread/INFO]: Configured a dormant chunk cache size of 0
+[20:23:10] [Client thread/INFO]: Loading 'serialhandlers.cfg' file .\config\NEI\serialhandlers.cfg
+[20:23:10] [Client thread/INFO]: Loading 'hiddenitems.cfg' file .\config\NEI\hiddenitems.cfg
+[20:23:10] [Forge Version Check/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+[20:23:10] [Forge Version Check/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at com.google.gson.Gson.fromJson(Gson.java:815)
+[20:23:10] [Forge Version Check/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at com.google.gson.Gson.fromJson(Gson.java:768)
+[20:23:10] [Forge Version Check/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at com.google.gson.Gson.fromJson(Gson.java:717)
+[20:23:10] [Forge Version Check/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at com.google.gson.Gson.fromJson(Gson.java:689)
+[20:23:10] [Forge Version Check/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at net.minecraftforge.common.ForgeVersion$1.run(ForgeVersion.java:94)
+[20:23:10] [Forge Version Check/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+[20:23:10] [Forge Version Check/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at com.google.gson.stream.JsonReader.beginObject(JsonReader.java:374)
+[20:23:10] [Forge Version Check/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter.read(MapTypeAdapterFactory.java:183)
+[20:23:10] [Forge Version Check/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter.read(MapTypeAdapterFactory.java:145)
+[20:23:10] [Forge Version Check/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at com.google.gson.Gson.fromJson(Gson.java:803)
+[20:23:10] [Forge Version Check/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	... 4 more
+[20:23:10] [Client thread/INFO]: Loading 'heighthackhandlers.cfg' file .\config\NEI\heighthackhandlers.cfg
+[20:23:10] [Client thread/INFO]: Loading 'hiddenhandlers.cfg' file .\config\NEI\hiddenhandlers.cfg
+[20:23:10] [Client thread/INFO]: Loading 'enableautofocus.cfg' file .\config\NEI\enableautofocus.cfg
+[20:23:10] [Client thread/INFO]: Loading 'guicraftablesblacklist.cfg' file .\config\NEI\guicraftablesblacklist.cfg
+[20:23:10] [Client thread/INFO]: Loading 'guidfilters.cfg' file .\config\NEI\guidfilters.cfg
+[20:23:12] [Client thread/INFO]: Config loaded from C:\Users\brawl\Desktop\mods\HTGT-6\run\.\config\IC2.cfg
+[20:23:12] [Client thread/INFO]: Using 32 audio sources.
+[20:23:13] [Client thread/INFO]: Try Loading SubModul: Nei SubModul
+[20:23:13] [Client thread/INFO]: Loaded SubModul: Nei SubModul
+[20:23:13] [Client thread/INFO]: Try Loading SubModul: Crafting Guide Submodul
+[20:23:13] [Client thread/INFO]: Could not Load SubModul: Crafting Guide Submodul
+[20:23:13] [Client thread/INFO]: Try Loading SubModul: Baubles Modul
+[20:23:13] [Client thread/INFO]: Could not Load SubModul: Baubles Modul
+[20:23:13] [Client thread/INFO]: Try Loading SubModul: Tinkers Construct
+[20:23:13] [Client thread/INFO]: Could not Load SubModul: Tinkers Construct
+[20:23:13] [Client thread/INFO]: Try Loading SubModul: Applied Energistics 2
+[20:23:13] [Client thread/INFO]: Could not Load SubModul: Applied Energistics 2
+[20:23:13] [Client thread/INFO]: Try Loading SubModul: Not Enough Resources
+[20:23:13] [Client thread/INFO]: Could not Load SubModul: Not Enough Resources
+[20:23:13] [Client thread/INFO]: Try Loading SubModul: Thaumcraft
+[20:23:13] [Client thread/INFO]: Could not Load SubModul: Thaumcraft
+[20:23:13] [Client thread/INFO]: Try Loading SubModul: BuildCraft
+[20:23:13] [Client thread/INFO]: Could not Load SubModul: BuildCraft
+[20:23:13] [Client thread/INFO]: Try Loading SubModul: Wrench
+[20:23:13] [Client thread/INFO]: Loaded SubModul: Wrench
+[20:23:13] [Client thread/INFO]: Try Loading SubModul: RF Plugin
+[20:23:13] [Client thread/INFO]: Loaded SubModul: RF Plugin
+[20:23:13] [Client thread/INFO]: Try Loading SubModul: Project E
+[20:23:13] [Client thread/INFO]: Could not Load SubModul: Project E
+[20:23:13] [Client thread/INFO]: Try Loading SubModul: Waila Modul
+[20:23:13] [Client thread/INFO]: Could not Load SubModul: Waila Modul
+[20:23:13] [Client thread/INFO]: [micdoodle8.mods.miccore.MicdoodleTransformer:printLog:1992]: Galacticraft successfully injected bytecode into: net/minecraft/client/renderer/EntityRenderer (5 / 5)
+[20:23:15] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: java.io.FileNotFoundException: https://raw.githubusercontent.com/BlesseNtumble/GalaxySpace/master/capes/capes.txt
+[20:23:15] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1913)
+[20:23:15] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at sun.net.www.protocol.http.HttpURLConnection.access$200(HttpURLConnection.java:92)
+[20:23:15] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at sun.net.www.protocol.http.HttpURLConnection$9.run(HttpURLConnection.java:1507)
+[20:23:15] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at sun.net.www.protocol.http.HttpURLConnection$9.run(HttpURLConnection.java:1505)
+[20:23:15] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at java.security.AccessController.doPrivileged(Native Method)
+[20:23:15] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at java.security.AccessController.doPrivilegedWithCombiner(AccessController.java:784)
+[20:23:15] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1504)
+[20:23:15] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(HttpsURLConnectionImpl.java:268)
+[20:23:15] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at galaxyspace.core.proxy.ClientProxy.updateCapeList(ClientProxy.java:509)
+[20:23:15] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at galaxyspace.core.proxy.ClientProxy.setupCapes(ClientProxy.java:465)
+[20:23:15] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at galaxyspace.core.proxy.ClientProxy.preload(ClientProxy.java:175)
+[20:23:15] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at galaxyspace.GalaxySpace.preInit(GalaxySpace.java:173)
+[20:23:15] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[20:23:15] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+[20:23:15] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[20:23:15] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at java.lang.reflect.Method.invoke(Method.java:498)
+[20:23:15] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at cpw.mods.fml.common.FMLModContainer.handleModStateEvent(FMLModContainer.java:532)
+[20:23:15] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at sun.reflect.GeneratedMethodAccessor3.invoke(Unknown Source)
+[20:23:15] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[20:23:15] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at java.lang.reflect.Method.invoke(Method.java:498)
+[20:23:15] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at com.google.common.eventbus.EventSubscriber.handleEvent(EventSubscriber.java:74)
+[20:23:15] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at com.google.common.eventbus.SynchronizedEventSubscriber.handleEvent(SynchronizedEventSubscriber.java:47)
+[20:23:15] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at com.google.common.eventbus.EventBus.dispatch(EventBus.java:322)
+[20:23:15] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at com.google.common.eventbus.EventBus.dispatchQueuedEvents(EventBus.java:304)
+[20:23:15] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at com.google.common.eventbus.EventBus.post(EventBus.java:275)
+[20:23:15] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at cpw.mods.fml.common.LoadController.sendEventToModContainer(LoadController.java:212)
+[20:23:15] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at cpw.mods.fml.common.LoadController.propogateStateMessage(LoadController.java:190)
+[20:23:15] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[20:23:15] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+[20:23:15] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[20:23:15] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at java.lang.reflect.Method.invoke(Method.java:498)
+[20:23:15] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at com.google.common.eventbus.EventSubscriber.handleEvent(EventSubscriber.java:74)
+[20:23:15] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at com.google.common.eventbus.SynchronizedEventSubscriber.handleEvent(SynchronizedEventSubscriber.java:47)
+[20:23:15] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at com.google.common.eventbus.EventBus.dispatch(EventBus.java:322)
+[20:23:15] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at com.google.common.eventbus.EventBus.dispatchQueuedEvents(EventBus.java:304)
+[20:23:15] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at com.google.common.eventbus.EventBus.post(EventBus.java:275)
+[20:23:15] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at cpw.mods.fml.common.LoadController.distributeStateMessage(LoadController.java:119)
+[20:23:15] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at cpw.mods.fml.common.Loader.preinitializeMods(Loader.java:556)
+[20:23:15] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at cpw.mods.fml.client.FMLClientHandler.beginMinecraftLoading(FMLClientHandler.java:243)
+[20:23:15] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at net.minecraft.client.Minecraft.startGame(Minecraft.java:522)
+[20:23:15] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at net.minecraft.client.Minecraft.run(Minecraft.java:942)
+[20:23:15] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at net.minecraft.client.main.Main.main(Main.java:164)
+[20:23:15] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[20:23:15] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+[20:23:15] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[20:23:15] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at java.lang.reflect.Method.invoke(Method.java:498)
+[20:23:15] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+[20:23:15] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+[20:23:15] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at net.minecraftforge.gradle.GradleStartCommon.launch(Unknown Source)
+[20:23:15] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at GradleStart.main(Unknown Source)
+[20:23:15] [Client thread/INFO]: Registering Default Templates.
+[20:23:15] [Client thread/INFO]: Registering default generators
+[20:23:15] [Client thread/INFO]: Complete
+[20:23:15] [Client thread/INFO]: Attempting to initialize texture error message interceptor.
+[20:23:16] [Client thread/INFO]: XP Juice registered by Ender IO.
+[20:23:16] [Client thread/WARN]: Could not find Build Craft Wrench definition. Wrench integration with other mods may fail
+[20:23:16] [Client thread/INFO]: Required mod Botany is not installed, dependent features will be unavailable
+[20:23:16] [Client thread/ERROR]: Requirements unmet, Botany Addon not loading
+[20:23:16] [Client thread/INFO]: Required mod exnihilo is not installed, dependent features will be unavailable
+[20:23:16] [Client thread/ERROR]: Requirements unmet, Ex Nihilo Addon not loading
+[20:23:16] [Client thread/INFO]: Required mod Forestry is not installed, dependent features will be unavailable
+[20:23:16] [Client thread/ERROR]: Requirements unmet, Forestry Addon not loading
+[20:23:16] [Client thread/INFO]: Required mod appliedenergistics2 is not installed, dependent features will be unavailable
+[20:23:16] [Client thread/ERROR]: Requirements unmet, Applied Energistics 2 Addon not loading
+[20:23:16] [Client thread/INFO]: Starting NEI Integration
+[20:23:16] [Client thread/INFO]: Loading configuration files
+[20:23:17] [Client thread/WARN]: A mod has attempted to assign Block com.mod.htgt6.common.GalaxyServer.Glise792.planets.Gliese792c.blocks.blockFluidflowGliese792c@45f6c4a9 to the Fluid 'gliesecwater' but this Fluid has already been linked to the Block com.mod.htgt6.common.GalaxyServer.Glise792.planets.Gliese792c.blocks.blockFluidStillGliese792c@7fc25642. You may have duplicate Fluid Blocks as a result. It *may* be possible to configure your mods to avoid this.
+[20:23:17] [Client thread/INFO]: Applying holder lookups
+[20:23:17] [Client thread/INFO]: Holder lookups applied
+[20:23:17] [Client thread/INFO]: Injecting itemstacks
+[20:23:17] [Client thread/INFO]: Itemstack injection complete
+[20:23:17] [Sound Library Loader/INFO]: [paulscode.sound.SoundSystemLogger:message:69]: 
+[20:23:17] [Sound Library Loader/INFO]: [paulscode.sound.SoundSystemLogger:message:69]: Starting up SoundSystem...
+[20:23:17] [Thread-9/INFO]: [paulscode.sound.SoundSystemLogger:message:69]: Initializing LWJGL OpenAL
+[20:23:17] [Thread-9/INFO]: [paulscode.sound.SoundSystemLogger:message:69]:     (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+[20:23:18] [Client thread/INFO]: [micdoodle8.mods.miccore.MicdoodleTransformer:printLog:1992]: Galacticraft successfully injected bytecode into: net/minecraft/client/renderer/ItemRenderer (1 / 1)
+[20:23:18] [Thread-9/INFO]: [paulscode.sound.SoundSystemLogger:message:69]: OpenAL initialized.
+[20:23:18] [Client thread/INFO]: Created: 16x16 textures/blocks-atlas
+[20:23:18] [Client thread/INFO]: Removed 0 missing texture stacktraces. Tada!
+[20:23:18] [Client thread/INFO]: Created: 16x16 textures/items-atlas
+[20:23:18] [Client thread/INFO]: Removed 0 missing texture stacktraces. Tada!
+[20:23:18] [Sound Library Loader/INFO]: [paulscode.sound.SoundSystemLogger:message:69]: 
+[20:23:18] [Sound Library Loader/INFO]: Sound engine started
+[20:23:23] [Client thread/INFO]: [Handlers] Registering handler AutoSmeltHandler to busses: [FORGE, FML]
+[20:23:23] [Client thread/INFO]: Transforming Class [cpw.mods.fml.client.GuiScrollingList], Method [func_73863_a]
+[20:23:23] [Client thread/INFO]: Transforming cpw.mods.fml.client.GuiScrollingList Finished.
+[20:23:23] [Client thread/INFO]: Transforming Class [cpw.mods.fml.client.GuiSlotModList], Method [drawBackground]
+[20:23:23] [Client thread/INFO]: Transforming cpw.mods.fml.client.GuiSlotModList Finished.
+[20:23:23] [Client thread/INFO]: [Handlers] Registering handler EventHandlerGui to busses: [FORGE, FML]
+[20:23:23] [Client thread/INFO]: [Handlers] Registering handler RightClickCropHandler to busses: [FORGE, FML]
+[20:23:23] [Client thread/INFO]: [Handlers] Registering handler XPBoostHandler to busses: [FORGE, FML]
+[20:23:23] [Client thread/INFO]: [Handlers] Registering handler ClientHandler to busses: [FORGE, FML]
+[20:23:23] [Client thread/INFO]: [Handlers] Registering handler EnchantTooltipHandler to busses: [FORGE, FML]
+[20:23:23] [Client thread/INFO]: [Handlers] Registering handler OreDictTooltipHandler to busses: [FORGE, FML]
+[20:23:23] [Client thread/INFO]: [Handlers] Registering handler EnderIOController to busses: [FORGE, FML]
+[20:23:23] [Client thread/INFO]: [Handlers] Registering handler SpecialTooltipHandler to busses: [FORGE, FML]
+[20:23:23] [Client thread/INFO]: [Handlers] Registering handler FireworkHandler to busses: [FORGE, FML]
+[20:23:23] [Client thread/INFO]: [Handlers] Registering handler Scheduler to busses: [FORGE, FML]
+[20:23:23] [Client thread/INFO]: Sending dummy event to all mods
+[20:23:23] [Client thread/INFO]: Reloading ingame configs for modid: endercore
+[20:23:23] [Client thread/INFO]: Updating config...
+[20:23:23] [Client thread/INFO]: [micdoodle8.mods.miccore.MicdoodleTransformer:printLog:1992]: Galacticraft successfully injected bytecode into: net/minecraft/client/multiplayer/PlayerControllerMP (2 / 2)
+[20:23:23] [Client thread/INFO]: Loading NEI Addons
+[20:23:23] [Client thread/INFO]: Developer Tools Addon disabled - skipping
+[20:23:23] [Client thread/INFO]: Loading Crafting Tables Addon...
+[20:23:23] [Client thread/INFO]: Required mod EE3 is not installed, dependent features will be unavailable
+[20:23:23] [Client thread/INFO]: Not registering EE3 Minium Stone
+[20:23:23] [Client thread/INFO]: Required mod BuildCraft|Factory is not installed, dependent features will be unavailable
+[20:23:23] [Client thread/INFO]: Not registering BC Autorcrafting Table
+[20:23:23] [Client thread/INFO]: Required mod powersuitaddons is not installed, dependent features will be unavailable
+[20:23:23] [Client thread/INFO]: Not registering MPSA In-Place Assembler
+[20:23:23] [Client thread/INFO]: Required mod ProjectE is not installed, dependent features will be unavailable
+[20:23:23] [Client thread/INFO]: Not registering ProjectE Philosopher Stone
+[20:23:23] [Client thread/INFO]: Required mod BiblioCraft is not installed, dependent features will be unavailable
+[20:23:23] [Client thread/INFO]: Not registering BiblioCraft Fancy Workbench
+[20:23:23] [Client thread/INFO]: Required mod RIO is not installed, dependent features will be unavailable
+[20:23:23] [Client thread/INFO]: Not registering RemoteIO Intelligent Workbench
+[20:23:23] [Client thread/INFO]: Required mod Railcraft is not installed, dependent features will be unavailable
+[20:23:23] [Client thread/INFO]: Not registering Railcraft Work Cart
+[20:23:23] [Client thread/INFO]: Required mod GalacticraftAmunRa is not installed, dependent features will be unavailable
+[20:23:23] [Client thread/INFO]: Not registering Amun-Ra Crafting Table
+[20:23:23] [Client thread/INFO]: [com.mod.htgt6.common.GalaxyServer.Sirius.GC:registerSolarSystem:30]: [HTGT6] Sirius System and Star registered via SolarSystem registry.
+[20:23:23] [Client thread/INFO]: [com.mod.htgt6.common.GalaxyServer.Glise792.sysGliese792:registerSolarSystem:60]: [HTGT6] Gliese 792 System and Planet 'b' registered.
+[20:23:23] [Client thread/INFO]: [com.mod.htgt6.common.achievements.HiTecch6AchivementsNEW:initialization:46]: HiTech6Achivements Loaded.
+[20:23:23] [Client thread/INFO]: Transforming Class [net.minecraft.enchantment.EnchantmentHelper], Method [buildEnchantmentList]
+[20:23:23] [Client thread/INFO]: Transforming net.minecraft.enchantment.EnchantmentHelper Finished.
+[20:23:23] [Client thread/INFO]: [com.mod.htgt6.client.ClientProxy:init:42]: [ClientProxy] Registered Cyan Fog Handler
+[20:23:25] [Client thread/INFO]: Message Failed
+[20:23:25] [Client thread/INFO]: Injecting itemstacks
+[20:23:25] [Client thread/INFO]: Itemstack injection complete
+[20:23:28] [Client thread/ERROR]: Failed to load 'untranslator.cfg' file nei:untranslator.cfg
+[20:23:28] [Client thread/INFO]: Loaded minor compatibility modules: none
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: java.lang.ClassNotFoundException: gregtech.common.blocks.GT_Block_Ores
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at net.minecraft.launchwrapper.LaunchClassLoader.findClass(LaunchClassLoader.java:191)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at java.lang.Class.forName0(Native Method)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at java.lang.Class.forName(Class.java:264)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at micdoodle8.mods.galacticraft.core.util.CompatibilityManager.checkForCompatibleMods(CompatibilityManager.java:37)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at micdoodle8.mods.galacticraft.core.GalacticraftCore.postInit(GalacticraftCore.java:518)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at java.lang.reflect.Method.invoke(Method.java:498)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at cpw.mods.fml.common.FMLModContainer.handleModStateEvent(FMLModContainer.java:532)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at sun.reflect.GeneratedMethodAccessor3.invoke(Unknown Source)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at java.lang.reflect.Method.invoke(Method.java:498)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at com.google.common.eventbus.EventSubscriber.handleEvent(EventSubscriber.java:74)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at com.google.common.eventbus.SynchronizedEventSubscriber.handleEvent(SynchronizedEventSubscriber.java:47)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at com.google.common.eventbus.EventBus.dispatch(EventBus.java:322)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at com.google.common.eventbus.EventBus.dispatchQueuedEvents(EventBus.java:304)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at com.google.common.eventbus.EventBus.post(EventBus.java:275)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at cpw.mods.fml.common.LoadController.sendEventToModContainer(LoadController.java:212)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at cpw.mods.fml.common.LoadController.propogateStateMessage(LoadController.java:190)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at java.lang.reflect.Method.invoke(Method.java:498)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at com.google.common.eventbus.EventSubscriber.handleEvent(EventSubscriber.java:74)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at com.google.common.eventbus.SynchronizedEventSubscriber.handleEvent(SynchronizedEventSubscriber.java:47)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at com.google.common.eventbus.EventBus.dispatch(EventBus.java:322)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at com.google.common.eventbus.EventBus.dispatchQueuedEvents(EventBus.java:304)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at com.google.common.eventbus.EventBus.post(EventBus.java:275)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at cpw.mods.fml.common.LoadController.distributeStateMessage(LoadController.java:119)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at cpw.mods.fml.common.Loader.initializeMods(Loader.java:742)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at cpw.mods.fml.client.FMLClientHandler.finishMinecraftLoading(FMLClientHandler.java:311)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at net.minecraft.client.Minecraft.startGame(Minecraft.java:597)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at net.minecraft.client.Minecraft.run(Minecraft.java:942)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at net.minecraft.client.main.Main.main(Main.java:164)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at java.lang.reflect.Method.invoke(Method.java:498)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at net.minecraftforge.gradle.GradleStartCommon.launch(Unknown Source)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at GradleStart.main(Unknown Source)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: Caused by: java.lang.NullPointerException
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: java.lang.NoSuchMethodException: ic2.core.block.wiring.TileEntityCable.onNeighborBlockChange()
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at java.lang.Class.getMethod(Class.java:1786)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at micdoodle8.mods.galacticraft.core.util.CompatibilityManager.checkForCompatibleMods(CompatibilityManager.java:59)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at micdoodle8.mods.galacticraft.core.GalacticraftCore.postInit(GalacticraftCore.java:518)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at java.lang.reflect.Method.invoke(Method.java:498)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at cpw.mods.fml.common.FMLModContainer.handleModStateEvent(FMLModContainer.java:532)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at sun.reflect.GeneratedMethodAccessor3.invoke(Unknown Source)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at java.lang.reflect.Method.invoke(Method.java:498)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at com.google.common.eventbus.EventSubscriber.handleEvent(EventSubscriber.java:74)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at com.google.common.eventbus.SynchronizedEventSubscriber.handleEvent(SynchronizedEventSubscriber.java:47)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at com.google.common.eventbus.EventBus.dispatch(EventBus.java:322)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at com.google.common.eventbus.EventBus.dispatchQueuedEvents(EventBus.java:304)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at com.google.common.eventbus.EventBus.post(EventBus.java:275)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at cpw.mods.fml.common.LoadController.sendEventToModContainer(LoadController.java:212)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at cpw.mods.fml.common.LoadController.propogateStateMessage(LoadController.java:190)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at java.lang.reflect.Method.invoke(Method.java:498)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at com.google.common.eventbus.EventSubscriber.handleEvent(EventSubscriber.java:74)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at com.google.common.eventbus.SynchronizedEventSubscriber.handleEvent(SynchronizedEventSubscriber.java:47)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at com.google.common.eventbus.EventBus.dispatch(EventBus.java:322)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at com.google.common.eventbus.EventBus.dispatchQueuedEvents(EventBus.java:304)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at com.google.common.eventbus.EventBus.post(EventBus.java:275)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at cpw.mods.fml.common.LoadController.distributeStateMessage(LoadController.java:119)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at cpw.mods.fml.common.Loader.initializeMods(Loader.java:742)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at cpw.mods.fml.client.FMLClientHandler.finishMinecraftLoading(FMLClientHandler.java:311)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at net.minecraft.client.Minecraft.startGame(Minecraft.java:597)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at net.minecraft.client.Minecraft.run(Minecraft.java:942)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at net.minecraft.client.main.Main.main(Main.java:164)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at java.lang.reflect.Method.invoke(Method.java:498)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at net.minecraftforge.gradle.GradleStartCommon.launch(Unknown Source)
+[20:23:28] [Client thread/INFO]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at GradleStart.main(Unknown Source)
+[20:23:28] [Client thread/INFO]: While registering space station recipe, found 1 type(s) of waferAdvanced
+[20:23:28] [Client thread/INFO]: While registering space station recipe, found 3 type(s) of ingotTin
+[20:23:29] [Client thread/INFO]: While registering space station recipe, found 2 type(s) of ingotTitanium
+[20:23:29] [Client thread/INFO]: While registering space station recipe, found 1 type(s) of waferModern
+[20:23:29] [Client thread/INFO]: While registering space station recipe, found 2 type(s) of ingotDesh
+[20:23:29] [Client thread/INFO]: While registering space station recipe, found 3 type(s) of ingotCopper
+[20:23:29] [Client thread/INFO]: Initialized MineTweaker Integration
+[20:23:29] [Client thread/INFO]: Loaded 18 grinding balls from SAG Mill config.
+[20:23:29] [Client thread/INFO]: Excluding 9 recipes from grinding balls bonus.
+[20:23:29] [Client thread/INFO]: Found 184 valid SAG Mill recipes in config.
+[20:23:29] [Client thread/WARN]: Not adding supplied recipe as a recipe already exists for the input: 1xtile.gcBlockCore.0@7
+[20:23:29] [Client thread/WARN]: Not adding supplied recipe as a recipe already exists for the input: 1xitem.basicItem@5
+[20:23:29] [Client thread/WARN]: Not adding supplied recipe as a recipe already exists for the input: 1xtile.gcBlockCore.0@11
+[20:23:29] [Client thread/WARN]: Not adding supplied recipe as a recipe already exists for the input: 1xtile.gcBlockCore.0@7
+[20:23:29] [Client thread/WARN]: Not adding supplied recipe as a recipe already exists for the input: 1xitem.basicItem@5
+[20:23:29] [Client thread/WARN]: Not adding supplied recipe as a recipe already exists for the input: 1xgt.meta.ore.broken.gc.asteroids.light@470
+[20:23:29] [Client thread/WARN]: Not adding supplied recipe as a recipe already exists for the input: 1xitem.itemIngotSilver@0
+[20:23:29] [Client thread/WARN]: Not adding supplied recipe as a recipe already exists for the input: 1xitem.itemIngotBronze@0
+[20:23:29] [Client thread/WARN]: Not adding supplied recipe as a recipe already exists for the input: 1xgt.meta.storage.ingot@470
+[20:23:29] [Client thread/WARN]: Not adding supplied recipe as a recipe already exists for the input: 1xtile.null@2
+[20:23:29] [Client thread/WARN]: Not adding supplied recipe as a recipe already exists for the input: 1xtile.sand@0
+[20:23:29] [Client thread/INFO]: Finished processing SAG Mill recipes. 173 recipes avaliable.
+[20:23:29] [Client thread/INFO]: Found 38 valid Alloy Smelter recipes in config.
+[20:23:29] [Client thread/INFO]: Created 6 synthetic recipes for 4xitem.netherquartz@0 => 1xtile.blockFusedQuartz@0
+[20:23:29] [Client thread/INFO]: Created 6 synthetic recipes for 1xtile.sand@0 => 1xtile.blockFusedQuartz@1
+[20:23:29] [Client thread/INFO]: Created 6 synthetic recipes for 1xtile.quartzBlock@0 => 1xtile.blockFusedQuartz@0
+[20:23:29] [Client thread/INFO]: Finished processing Alloy Smelter recipes. 56 recipes avaliable.
+[20:23:29] [Client thread/INFO]: AlloyRecipeManager: Vannila smelting in AlloySmelting enabled=true
+[20:23:29] [Client thread/INFO]: Found 7 valid Slice'N'Splice recipes in config.
+[20:23:29] [Client thread/INFO]: Finished processing Slice'N'Splice recipes. 7 recipes avaliable.
+[20:23:29] [Client thread/INFO]: Found 9 valid Vat recipes in config.
+[20:23:29] [Client thread/INFO]: Finished processing Vat recipes. 9 recipes avaliable.
+[20:23:29] [Client thread/WARN]: Could not find enchantment with name enchantment.enderzoo.witherArrow when parsing enchanter recipes.
+[20:23:29] [Client thread/WARN]: Could not find enchantment with name enchantment.enderzoo.witherWeapon when parsing enchanter recipes.
+[20:23:29] [Client thread/WARN]: Could not find enchantment with name enchantment.enderzoo.witherWeapon when parsing enchanter recipes.
+[20:23:29] [Client thread/WARN]: Could not find enchantment with name enchantment.repair when parsing enchanter recipes.
+[20:23:29] [Client thread/WARN]: Could not find enchantment with name enchantment.soul_stealer when parsing enchanter recipes.
+[20:23:29] [Client thread/ERROR]: Valid input found for enchantment enchant.cofh.holding not found.
+[20:23:29] [Client thread/INFO]: Loaded 28 recipes for Enchanter
+[20:23:29] [Client thread/INFO]: [com.mod.htgt6.common.handler.recipe.RecipeConfigLoader:parseRecipe:247]: [HTGT6] Loaded recipe for: Torch
+[20:23:29] [Client thread/INFO]: [com.mod.htgt6.common.handler.recipe.RecipeConfigLoader:loadAssemblerRecipes:95]: [HTGT6] Assembler recipes loaded.
+[20:23:29] [Client thread/INFO]: [com.mod.htgt6.client.nei.NEIHTGT6Config:registerManual:21]: [HTGT6] NEI Gas Turbine integration SUCCESSFULLY loaded via manual proxy hook.
+[20:23:29] [Client thread/INFO]: [com.mod.htgt6.common.handler.recipe.RecipeConfigLoader:loadCompressorRecipes:44]: [HTGT6] Compressor recipes loaded.
+[20:23:29] [Client thread/INFO]: [com.mod.htgt6.client.nei.NEIHTGT6Config:registerManual:21]: [HTGT6] NEI Gas Turbine integration SUCCESSFULLY loaded via manual proxy hook.
+[20:23:33] [Client thread/INFO]: Loading handler info from JAR
+[20:23:33] [Client thread/INFO]: Loaded codechicken.nei.recipe.BrewingRecipeHandler
+[20:23:33] [Client thread/INFO]: Loaded codechicken.nei.recipe.FireworkRecipeHandler
+[20:23:33] [Client thread/INFO]: Loaded codechicken.nei.recipe.FurnaceRecipeHandler
+[20:23:33] [Client thread/INFO]: Loaded codechicken.nei.recipe.ShapedRecipeHandler
+[20:23:33] [Client thread/INFO]: Loaded codechicken.nei.recipe.ShapelessRecipeHandler
+[20:23:33] [Client thread/INFO]: Loaded codechicken.nei.recipe.FuelRecipeHandler
+[20:23:33] [Client thread/INFO]: Loaded codechicken.nei.recipe.InformationHandler
+[20:23:33] [Client thread/INFO]: Loaded crazypants.enderio.nei.AlloySmelterRecipeHandler
+[20:23:33] [Client thread/INFO]: Loaded crazypants.enderio.nei.EnchanterRecipeHandler
+[20:23:33] [Client thread/INFO]: Loaded crazypants.enderio.nei.SagMillRecipeHandler
+[20:23:33] [Client thread/INFO]: Loaded crazypants.enderio.nei.SliceAndSpliceRecipeHandler
+[20:23:33] [Client thread/INFO]: Loaded crazypants.enderio.nei.SoulBinderRecipeHandler
+[20:23:33] [Client thread/INFO]: Loaded crazypants.enderio.nei.VatRecipeHandler
+[20:23:33] [Client thread/INFO]: Loaded galaxyspace.core.nei.rocket.RocketT1RecipeHandler
+[20:23:33] [Client thread/INFO]: Loaded micdoodle8.mods.galacticraft.core.nei.BuggyRecipeHandler
+[20:23:33] [Client thread/INFO]: Loaded micdoodle8.mods.galacticraft.core.nei.CircuitFabricatorRecipeHandler
+[20:23:33] [Client thread/INFO]: Loaded micdoodle8.mods.galacticraft.core.nei.ElectricIngotCompressorRecipeHandler
+[20:23:33] [Client thread/INFO]: Loaded micdoodle8.mods.galacticraft.core.nei.IngotCompressorRecipeHandler
+[20:23:33] [Client thread/INFO]: Loaded micdoodle8.mods.galacticraft.core.nei.RefineryRecipeHandler
+[20:23:33] [Client thread/INFO]: Loaded micdoodle8.mods.galacticraft.planets.asteroids.nei.AstroMinerRecipeHandler
+[20:23:33] [Client thread/INFO]: Loaded micdoodle8.mods.galacticraft.planets.mars.nei.CargoRocketRecipeHandler
+[20:23:33] [Client thread/INFO]: Loaded micdoodle8.mods.galacticraft.planets.mars.nei.GasLiquefierRecipeHandler
+[20:23:33] [Client thread/INFO]: Loaded micdoodle8.mods.galacticraft.planets.mars.nei.MethaneSynthesizerRecipeHandler
+[20:23:33] [Client thread/INFO]: Loaded galaxyspace.core.nei.rocket.RocketT2RecipeHandler
+[20:23:33] [Client thread/INFO]: Loaded galaxyspace.core.nei.rocket.RocketT3RecipeHandler
+[20:23:33] [Client thread/INFO]: Loaded galaxyspace.core.nei.AssemblyMachineRecipeHandler
+[20:23:33] [Client thread/INFO]: Loaded galaxyspace.core.nei.rocket.RocketT4RecipeHandler
+[20:23:33] [Client thread/INFO]: Loaded galaxyspace.core.nei.rocket.RocketT5RecipeHandler
+[20:23:33] [Client thread/INFO]: Loaded galaxyspace.core.nei.rocket.RocketT6RecipeHandler
+[20:23:33] [Client thread/INFO]: Couldn't find GalaxySpace - GalaxySpace:item.Tier7Rocket
+[20:23:33] [Client thread/INFO]: Loaded galaxyspace.core.nei.rocket.RocketT7RecipeHandler
+[20:23:33] [Client thread/INFO]: Couldn't find GalaxySpace - GalaxySpace:item.Tier8Rocket
+[20:23:33] [Client thread/INFO]: Loaded galaxyspace.core.nei.rocket.RocketT8RecipeHandler
+[20:23:33] [Client thread/INFO]: Couldn't find GregTech - gregtech:gt.blockores:85
+[20:23:33] [Client thread/INFO]: Loaded pers.gwyog.gtneioreplugin.plugin.gregtech5.PluginGT5SmallOreStat
+[20:23:33] [Client thread/INFO]: Couldn't find GregTech - gregtech:gt.blockores:386
+[20:23:33] [Client thread/INFO]: Loaded pers.gwyog.gtneioreplugin.plugin.gregtech5.PluginGT5VeinStat
+[20:23:33] [Client thread/INFO]: Couldn't find IndustrialCraft 2 - IC2:blockreactorvessel
+[20:23:33] [Client thread/INFO]: Loaded ic2.neiIntegration.core.recipehandler.AdvRecipeHandler
+[20:23:33] [Client thread/INFO]: Couldn't find IndustrialCraft 2 - IC2:blockreactorvessel
+[20:23:33] [Client thread/INFO]: Loaded ic2.neiIntegration.core.recipehandler.AdvShapelessRecipeHandler
+[20:23:33] [Client thread/INFO]: Couldn't find IndustrialCraft 2 - IC2:blockMachine3:1
+[20:23:33] [Client thread/INFO]: Loaded ic2.neiIntegration.core.recipehandler.BlastFurnaceRecipeHandler
+[20:23:33] [Client thread/INFO]: Couldn't find IndustrialCraft 2 - IC2:blockMachine3:2
+[20:23:33] [Client thread/INFO]: Loaded ic2.neiIntegration.core.recipehandler.BlockCutterRecipeHandler
+[20:23:33] [Client thread/INFO]: Loaded ic2.neiIntegration.core.recipehandler.CentrifugeRecipeHandler
+[20:23:33] [Client thread/INFO]: Loaded ic2.neiIntegration.core.recipehandler.CompressorRecipeHandler
+[20:23:33] [Client thread/INFO]: Loaded ic2.neiIntegration.core.recipehandler.ExtractorRecipeHandler
+[20:23:33] [Client thread/INFO]: Loaded ic2.neiIntegration.core.recipehandler.FluidCannerRecipeHandler
+[20:23:33] [Client thread/INFO]: Couldn't find IndustrialCraft 2 - IC2:blockMachine3:8
+[20:23:33] [Client thread/INFO]: Loaded ic2.neiIntegration.core.recipehandler.LatheRecipeHandler
+[20:23:33] [Client thread/INFO]: Loaded ic2.neiIntegration.core.recipehandler.MaceratorRecipeHandler
+[20:23:33] [Client thread/INFO]: Loaded ic2.neiIntegration.core.recipehandler.MetalFormerRecipeHandlerCutting
+[20:23:33] [Client thread/INFO]: Loaded ic2.neiIntegration.core.recipehandler.MetalFormerRecipeHandlerExtruding
+[20:23:33] [Client thread/INFO]: Loaded ic2.neiIntegration.core.recipehandler.MetalFormerRecipeHandlerRolling
+[20:23:33] [Client thread/INFO]: Loaded ic2.neiIntegration.core.recipehandler.OreWashingRecipeHandler
+[20:23:33] [Client thread/INFO]: Couldn't find IndustrialCraft 2 - IC2:itemScrapbox
+[20:23:33] [Client thread/INFO]: Loaded ic2.neiIntegration.core.recipehandler.ScrapboxRecipeHandler
+[20:23:33] [Client thread/INFO]: Loaded ic2.neiIntegration.core.recipehandler.SolidCannerRecipeHandler
+[20:23:33] [Client thread/INFO]: Loaded tonius.neiintegration.mods.mcforge.RecipeHandlerFluidRegistry
+[20:23:33] [Client thread/INFO]: Loaded tonius.neiintegration.mods.mcforge.RecipeHandlerOreDictionary
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.anvil
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.anvil.bend.big
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.anvil.bend.small
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.aquaticfarm
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.assembler
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.autoclave
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.bath
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.bedrockorelist
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.biolab
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.boxinator
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.bumblelyzer
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.bumblequeen
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.burnmixer
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.byproductlist
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.canner
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.catalyticcracking
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.centrifuge
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.clustermill
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.coagulator
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.cokeoven
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.compressor
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.crackingtower
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.cruciblealloying
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.cruciblesmelting
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.crusher
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.cryodistillationtower
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.cryomixer
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.crystallisationcrucible
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.cutter
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.debarker
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.distillationtower
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.distillery
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.drying
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.electrolyzer
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.extruder
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.fermenter
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.fluidsolidifier
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.freezer
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.fuels.burn
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.fuels.engine
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.fuels.fluidbed
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.fuels.gas
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.fuels.plasma
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.fuels.turbine
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.fusionreactor
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.generifier
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.heatmixer
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.implosioncompressor
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.incubator
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.injector
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.ionizer
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.juicer
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.laminator
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.lasercutter
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.laserengraver
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.lathe
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.lightning
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.loom
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.magneticseparator
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.maskaligner
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.massfab
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.mixer
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.mortar
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.nanofab
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.oilcleaner
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.particlecollider
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.plantalyzer
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.polarizer
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.press
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.printer
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.replicator
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.roaster
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.rollbender
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.rollformer
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.rollingmill
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.scannermolecular
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.scannervisuals
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.sharpener
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.shredder
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.sifter
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.slicer
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.sluice
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.smelter
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.squeezer
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.steamcracking
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.toolhead
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.unboxinator
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.welder
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.well
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.wiremill
+[20:23:33] [Client thread/INFO]: Loaded smelting
+[20:23:33] [Client thread/INFO]: Loaded gt.recipe.trees
+[20:23:33] [Client thread/INFO]: Sending NEIRegisterHandlerInfosEvent
+[20:23:33] [Client thread/INFO]: Loading NEI Plugins via ClassDiscoverer: 10
+[20:23:33] [Client thread/INFO]: Loading 'handlerordering.csv' file .\config\NEI\handlerordering.csv
+[20:23:33] [Client thread/INFO]: Item: Near-depleted Uranium Cell Has not stacksize 0
+[20:23:33] [Client thread/INFO]: Item: Near-depleted Uranium Cell Has not stacksize 0
+[20:23:33] [Client thread/INFO]: Item: Refined Iron Ingot Has not stacksize 0
+[20:23:33] [Client thread/INFO]: CoFH Core found 1 World Generation files present in C:\Users\brawl\Desktop\mods\HTGT-6\run\config\cofh\world/.
+[20:23:33] [Client thread/INFO]: Forge Mod Loader has successfully loaded 39 mods
+[20:23:33] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:NotEnoughItems, FMLFileResourcePack:MineTweaker 3, FMLFileResourcePack:Galacticraft Planets, FMLFileResourcePack:Galacticraft Core, FMLFileResourcePack:GalaxySpace, FMLFileResourcePack:Greg-API, FMLFileResourcePack:Greg-API-Post, FMLFileResourcePack:GregTech 6 Unofficial, FMLFileResourcePack:HTGT6, FMLFileResourcePack:UniMixins, FMLFileResourcePack:UniMixins: Mixin (UniMix), FMLFileResourcePack:UniMixins: Compatibility, FMLFileResourcePack:UniMixins: Mixingasm, FMLFileResourcePack:UniMixins: SpongeMixins, FMLFileResourcePack:UniMixins: MixinBooterLegacy, FMLFileResourcePack:UniMixins: GasStation, FMLFileResourcePack:UniMixins: GTNHMixins, FMLFileResourcePack:UniMixins: MixinExtras, FMLFileResourcePack:CoFH Core, FMLFileResourcePack:EnderCore, FMLFileResourcePack:Ender IO, FMLFileResourcePack:Industrial Craft Classic, FMLFileResourcePack:IC2 Classic Detection Helper, FMLFileResourcePack:Multi World, FMLFileResourcePack:NEI Addons: Botany, FMLFileResourcePack:NEI Addons: Developer Tools, FMLFileResourcePack:NEI Addons: Ex Nihilo, FMLFileResourcePack:NEI Addons: Crafting Tables, FMLFileResourcePack:NEI Addons, FMLFileResourcePack:NEI Addons: Forestry, FMLFileResourcePack:NEI Addons: Applied Energistics 2, FMLFileResourcePack:NEIIntegration
+[20:23:48] [Client thread/INFO]: Created: 8192x4096 textures/blocks-atlas
+[20:23:48] [Client thread/INFO]: Removed 0 missing texture stacktraces. Tada!
+[20:23:52] [Client thread/INFO]: Created: 8192x4096 textures/items-atlas
+[20:23:52] [Client thread/INFO]: Removed 0 missing texture stacktraces. Tada!
+[20:23:53] [Client thread/INFO]: [paulscode.sound.SoundSystemLogger:message:69]: 
+[20:23:53] [Client thread/INFO]: [paulscode.sound.SoundSystemLogger:message:69]: SoundSystem shutting down...
+[20:23:53] [Client thread/INFO]: [paulscode.sound.SoundSystemLogger:importantMessage:90]:     Author: Paul Lamb, www.paulscode.com
+[20:23:53] [Client thread/INFO]: [paulscode.sound.SoundSystemLogger:message:69]: 
+[20:23:53] [Sound Library Loader/INFO]: [paulscode.sound.SoundSystemLogger:message:69]: 
+[20:23:53] [Sound Library Loader/INFO]: [paulscode.sound.SoundSystemLogger:message:69]: Starting up SoundSystem...
+[20:23:53] [Thread-12/INFO]: [paulscode.sound.SoundSystemLogger:message:69]: Initializing LWJGL OpenAL
+[20:23:53] [Thread-12/INFO]: [paulscode.sound.SoundSystemLogger:message:69]:     (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+[20:23:53] [Thread-12/INFO]: [paulscode.sound.SoundSystemLogger:message:69]: OpenAL initialized.
+[20:23:53] [Client thread/ERROR]: Failed to load 'untranslator.cfg' file nei:untranslator.cfg
+[20:23:53] [Client thread/ERROR]: +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+[20:23:53] [Client thread/ERROR]: The following texture errors were found.
+[20:23:53] [Client thread/ERROR]: ==================================================
+[20:23:53] [Client thread/ERROR]:   DOMAIN minecraft
+[20:23:53] [Client thread/ERROR]: --------------------------------------------------
+[20:23:53] [Client thread/ERROR]:   domain minecraft is missing 1 texture
+[20:23:53] [Client thread/ERROR]:     domain minecraft has 3 locations:
+[20:23:53] [Client thread/ERROR]:       unknown resourcepack type net.minecraft.client.resources.DefaultResourcePack : Default
+[20:23:53] [Client thread/ERROR]:       mod FML resources at C:\Users\brawl\.gradle\caches\minecraft\net\minecraftforge\forge\1.7.10-10.13.4.1614-1.7.10\forgeSrc-1.7.10-10.13.4.1614-1.7.10.jar
+[20:23:53] [Client thread/ERROR]:       mod Forge resources at C:\Users\brawl\.gradle\caches\minecraft\net\minecraftforge\forge\1.7.10-10.13.4.1614-1.7.10\forgeSrc-1.7.10-10.13.4.1614-1.7.10.jar
+[20:23:53] [Client thread/ERROR]: -------------------------
+[20:23:53] [Client thread/ERROR]:     The missing resources for domain minecraft are:
+[20:23:53] [Client thread/ERROR]:       textures/items/MISSING_ICON_ITEM_4753_WoodPlate.png
+[20:23:53] [Client thread/ERROR]: -------------------------
+[20:23:53] [Client thread/ERROR]:     No other errors exist for domain minecraft
+[20:23:53] [Client thread/ERROR]: ==================================================
+[20:23:53] [Client thread/ERROR]: ==================================================
+[20:23:53] [Client thread/ERROR]:   DOMAIN galaxyspace
+[20:23:53] [Client thread/ERROR]: --------------------------------------------------
+[20:23:53] [Client thread/ERROR]:   domain galaxyspace is missing 1 texture
+[20:23:53] [Client thread/ERROR]:     domain galaxyspace has 1 location:
+[20:23:53] [Client thread/ERROR]:       mod GalaxySpace resources at C:\Users\brawl\Desktop\mods\HTGT-6\libs\GalaxySpace-1.7.10-1.2.15.jar
+[20:23:53] [Client thread/ERROR]: -------------------------
+[20:23:53] [Client thread/ERROR]:     The missing resources for domain galaxyspace are:
+[20:23:53] [Client thread/ERROR]:       textures/blocks/proximasystem/proxima_b/proxima_b_ice_surface.png
+[20:23:53] [Client thread/ERROR]: -------------------------
+[20:23:53] [Client thread/ERROR]:     No other errors exist for domain galaxyspace
+[20:23:53] [Client thread/ERROR]: ==================================================
+[20:23:53] [Client thread/ERROR]: ==================================================
+[20:23:53] [Client thread/ERROR]:   DOMAIN htgt6
+[20:23:53] [Client thread/ERROR]: --------------------------------------------------
+[20:23:53] [Client thread/ERROR]:   domain htgt6 is missing 13 textures
+[20:23:53] [Client thread/ERROR]:     domain htgt6 has 1 location:
+[20:23:53] [Client thread/ERROR]:       mod HTGT6 resources at C:\Users\brawl\Desktop\mods\HTGT-6\build\libs\HiTech6_V_1.0.4_Build_.jar
+[20:23:53] [Client thread/ERROR]: -------------------------
+[20:23:53] [Client thread/ERROR]:     The missing resources for domain htgt6 are:
+[20:23:53] [Client thread/ERROR]:       textures/items/itemQuantumPartLeggins.png
+[20:23:53] [Client thread/ERROR]:       textures/items/itemChipEnergycrystall.png
+[20:23:53] [Client thread/ERROR]:       textures/items/itemQuantumPartHelmet.png
+[20:23:53] [Client thread/ERROR]:       textures/items/itemChipDiamond.png
+[20:23:53] [Client thread/ERROR]:       textures/blocks/GlieseC_water_flow.png
+[20:23:53] [Client thread/ERROR]:       textures/items/itemChipLapatron.png
+[20:23:53] [Client thread/ERROR]:       textures/items/NovaCrystalDust.png
+[20:23:53] [Client thread/ERROR]:       textures/items/itemQuantumPartChestplate.png
+[20:23:53] [Client thread/ERROR]:       textures/items/itemChipGold.png
+[20:23:53] [Client thread/ERROR]:       textures/items/itemQuantumPartBoots.png
+[20:23:53] [Client thread/ERROR]:       textures/items/itemChipEmerald.png
+[20:23:53] [Client thread/ERROR]:       textures/items/RocketSchema1.png
+[20:23:53] [Client thread/ERROR]:       textures/items/NovaCrystalAlloyIngot.png
+[20:23:53] [Client thread/ERROR]: -------------------------
+[20:23:53] [Client thread/ERROR]:     No other errors exist for domain htgt6
+[20:23:53] [Client thread/ERROR]: ==================================================
+[20:23:53] [Client thread/ERROR]: ==================================================
+[20:23:53] [Client thread/ERROR]:   DOMAIN gregapi
+[20:23:53] [Client thread/ERROR]: --------------------------------------------------
+[20:23:53] [Client thread/ERROR]:   domain gregapi is missing 1 texture
+[20:23:53] [Client thread/ERROR]:     domain gregapi has 3 locations:
+[20:23:53] [Client thread/ERROR]:       mod gregapi resources at C:\Users\brawl\Desktop\mods\HTGT-6\libs\gregtech_1.7.10-6.15.07-unofficial.jar
+[20:23:53] [Client thread/ERROR]:       mod gregapi_post resources at C:\Users\brawl\Desktop\mods\HTGT-6\libs\gregtech_1.7.10-6.15.07-unofficial.jar
+[20:23:53] [Client thread/ERROR]:       mod gregtech resources at C:\Users\brawl\Desktop\mods\HTGT-6\libs\gregtech_1.7.10-6.15.07-unofficial.jar
+[20:23:53] [Client thread/ERROR]: -------------------------
+[20:23:53] [Client thread/ERROR]:     The missing resources for domain gregapi are:
+[20:23:53] [Client thread/ERROR]:       textures/blocks/overlays/characters/lp.png
+[20:23:53] [Client thread/ERROR]: -------------------------
+[20:23:53] [Client thread/ERROR]:     No other errors exist for domain gregapi
+[20:23:53] [Client thread/ERROR]: ==================================================
+[20:23:53] [Client thread/ERROR]: +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+[20:23:53] [Sound Library Loader/INFO]: [paulscode.sound.SoundSystemLogger:message:69]: 
+[20:23:53] [Sound Library Loader/INFO]: Sound engine started
+[20:23:54] [Client thread/INFO]: [com.mod.htgt6.client.vanillatweaks.VanillaTweaksHandler:onGuiOpen:32]: Replacing world selection GUI
+[20:23:56] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[20:23:56] [Server thread/INFO]: Generating keypair
+[20:23:56] [Server thread/INFO]: [minetweaker.mc1710.recipes.MCRecipeManager:applyAdditionsAndRemovals:716]: MineTweaker: Applying additions and removals
+[20:23:56] [Server thread/INFO]: [minetweaker.mc1710.recipes.MCRecipeManager$ActionBatchRemoveRecipe:apply:685]: Removing 0 recipes
+[20:23:56] [Server thread/INFO]: [minetweaker.runtime.MTTweaker:load:114]: Loading scripts
+[20:23:56] [Server thread/INFO]: [minetweaker.runtime.MTTweaker:load:162]: MineTweaker: Loading test.zs
+[20:23:56] [Server thread/INFO]: [com.mod.htgt6.common.MT.CTAssembler:<clinit>:19]: [HTGT6] CTAssembler loaded
+[20:23:56] [Server thread/INFO]: [com.mod.htgt6.common.MT.CTSMCompressor:<clinit>:17]: [HTGT6] CTSMC loaded
+[20:23:56] [Server thread/INFO]: [minetweaker.runtime.MTTweaker:load:162]: MineTweaker: Loading intermod
+[20:23:56] [Server thread/INFO]: [minetweaker.mc1710.recipes.MCRecipeManager:applyAdditionsAndRemovals:716]: MineTweaker: Applying additions and removals
+[20:23:56] [Server thread/INFO]: [minetweaker.mc1710.recipes.MCRecipeManager$ActionBatchRemoveRecipe:apply:685]: Removing 0 recipes
+[20:23:56] [Server thread/INFO]: Injecting existing block and item data into this server instance
+[20:23:56] [Server thread/INFO]: Applying holder lookups
+[20:23:56] [Server thread/INFO]: Holder lookups applied
+[20:23:56] [Server thread/INFO]: [micdoodle8.mods.miccore.MicdoodleTransformer:printResultsAndReset:1908]: Potential problem: Galacticraft did not complete injection of bytecode into: net/minecraft/world/gen/ChunkProviderServer (0 / 1)
+[20:23:57] [Server thread/INFO]: Loading dimension 0 (Новый мир) (net.minecraft.server.integrated.IntegratedServer@300ab225)
+[20:23:57] [Server thread/INFO]: Loading dimension 1 (Новый мир) (net.minecraft.server.integrated.IntegratedServer@300ab225)
+[20:23:57] [Server thread/INFO]: Loading dimension -1 (Новый мир) (net.minecraft.server.integrated.IntegratedServer@300ab225)
+[20:23:57] [Server thread/INFO]: Preparing start region for level 0
+[20:23:57] [Server thread/INFO]: Registered Dimension: -30
+[20:23:57] [Server thread/INFO]: Loading dimension -30 (Новый мир) (net.minecraft.server.integrated.IntegratedServer@300ab225)
+[20:23:57] [Server thread/INFO]: Registered Dimension: -1050
+[20:23:57] [Server thread/INFO]: [galaxyspace.core.world.worldengine.WE_WorldProvider:registerWorldChunkManager:19]: ////////////////////////////////////-
+[20:23:57] [Server thread/INFO]: [galaxyspace.core.world.worldengine.WE_WorldProvider:registerWorldChunkManager:20]: //#===============================//=* Version: 1.2.15 Pre-Final.
+[20:23:57] [Server thread/INFO]: [galaxyspace.core.world.worldengine.WE_WorldProvider:registerWorldChunkManager:21]: //#=-------| WorldEngine |-------=//=* By Vamig Aliev (vk.com/win_vista).
+[20:23:57] [Server thread/INFO]: [galaxyspace.core.world.worldengine.WE_WorldProvider:registerWorldChunkManager:22]: //#===============================//=* Part of VamigA_core (vk.com/vamiga).
+[20:23:57] [Server thread/INFO]: [galaxyspace.core.world.worldengine.WE_WorldProvider:registerWorldChunkManager:23]: ////////////////////////////////////-
+[20:23:57] [Server thread/INFO]: [galaxyspace.core.world.worldengine.WE_WorldProvider:registerWorldChunkManager:25]: WorldEngine: -Registering WorldEngine...
+[20:23:57] [Server thread/INFO]: [galaxyspace.core.world.worldengine.WE_WorldProvider:registerWorldChunkManager:27]: WorldEngine: -Registration completed successfully!
+[20:23:57] [Server thread/INFO]: [galaxyspace.core.world.worldengine.WE_WorldProvider:createChunkGenerator:32]: WorldEngine: -Starting WorldEngine...
+[20:23:57] [Server thread/INFO]: [galaxyspace.core.world.worldengine.WE_ChunkProvider:<init>:94]: WorldEngine: -Applying your WorldEngine settings...
+[20:23:57] [Server thread/INFO]: [galaxyspace.core.world.worldengine.WE_ChunkProvider:<init>:98]: WorldEngine: -WorldEngine is configured successfully!
+[20:23:57] [Server thread/INFO]: [galaxyspace.core.world.worldengine.WE_WorldProvider:createChunkGenerator:34]: WorldEngine: -WorldEngine started successfully!
+[20:23:57] [Server thread/INFO]: Loading dimension -1050 (Новый мир) (net.minecraft.server.integrated.IntegratedServer@300ab225)
+[20:23:57] [Server thread/INFO]: Registered Dimension: -1051
+[20:23:57] [Server thread/INFO]: [galaxyspace.core.world.worldengine.WE_WorldProvider:registerWorldChunkManager:19]: ////////////////////////////////////-
+[20:23:57] [Server thread/INFO]: [galaxyspace.core.world.worldengine.WE_WorldProvider:registerWorldChunkManager:20]: //#===============================//=* Version: 1.2.15 Pre-Final.
+[20:23:57] [Server thread/INFO]: [galaxyspace.core.world.worldengine.WE_WorldProvider:registerWorldChunkManager:21]: //#=-------| WorldEngine |-------=//=* By Vamig Aliev (vk.com/win_vista).
+[20:23:57] [Server thread/INFO]: [galaxyspace.core.world.worldengine.WE_WorldProvider:registerWorldChunkManager:22]: //#===============================//=* Part of VamigA_core (vk.com/vamiga).
+[20:23:57] [Server thread/INFO]: [galaxyspace.core.world.worldengine.WE_WorldProvider:registerWorldChunkManager:23]: ////////////////////////////////////-
+[20:23:57] [Server thread/INFO]: [galaxyspace.core.world.worldengine.WE_WorldProvider:registerWorldChunkManager:25]: WorldEngine: -Registering WorldEngine...
+[20:23:57] [Server thread/INFO]: [galaxyspace.core.world.worldengine.WE_WorldProvider:registerWorldChunkManager:27]: WorldEngine: -Registration completed successfully!
+[20:23:57] [Server thread/INFO]: [galaxyspace.core.world.worldengine.WE_WorldProvider:createChunkGenerator:32]: WorldEngine: -Starting WorldEngine...
+[20:23:57] [Server thread/INFO]: [galaxyspace.core.world.worldengine.WE_ChunkProvider:<init>:94]: WorldEngine: -Applying your WorldEngine settings...
+[20:23:57] [Server thread/INFO]: [galaxyspace.core.world.worldengine.WE_ChunkProvider:<init>:98]: WorldEngine: -WorldEngine is configured successfully!
+[20:23:57] [Server thread/INFO]: [galaxyspace.core.world.worldengine.WE_WorldProvider:createChunkGenerator:34]: WorldEngine: -WorldEngine started successfully!
+[20:23:57] [Server thread/INFO]: Loading dimension -1051 (Новый мир) (net.minecraft.server.integrated.IntegratedServer@300ab225)
+[20:23:57] [Server thread/INFO]: Registered Dimension: -1007
+[20:23:57] [Server thread/INFO]: Loading dimension -1007 (Новый мир) (net.minecraft.server.integrated.IntegratedServer@300ab225)
+[20:23:57] [Server thread/INFO]: Registered Dimension: -81
+[20:23:57] [Server thread/INFO]: Loading dimension -81 (Новый мир) (net.minecraft.server.integrated.IntegratedServer@300ab225)
+[20:23:57] [Server thread/INFO]: Registered Dimension: -888
+[20:23:57] [Server thread/INFO]: Loading dimension -888 (Новый мир) (net.minecraft.server.integrated.IntegratedServer@300ab225)
+[20:23:57] [Server thread/INFO]: Registered Dimension: -1009
+[20:23:57] [Server thread/INFO]: Loading dimension -1009 (Новый мир) (net.minecraft.server.integrated.IntegratedServer@300ab225)
+[20:23:57] [Server thread/INFO]: Registered Dimension: -29
+[20:23:57] [Server thread/INFO]: Loading dimension -29 (Новый мир) (net.minecraft.server.integrated.IntegratedServer@300ab225)
+[20:23:57] [Server thread/INFO]: Registered Dimension: -1005
+[20:23:57] [Server thread/INFO]: Loading dimension -1005 (Новый мир) (net.minecraft.server.integrated.IntegratedServer@300ab225)
+[20:23:57] [Server thread/INFO]: Registered Dimension: -1008
+[20:23:57] [Server thread/INFO]: Loading dimension -1008 (Новый мир) (net.minecraft.server.integrated.IntegratedServer@300ab225)
+[20:23:57] [Server thread/INFO]: Registered Dimension: -1025
+[20:23:57] [Server thread/INFO]: [galaxyspace.core.world.worldengine.WE_WorldProvider:registerWorldChunkManager:19]: ////////////////////////////////////-
+[20:23:57] [Server thread/INFO]: [galaxyspace.core.world.worldengine.WE_WorldProvider:registerWorldChunkManager:20]: //#===============================//=* Version: 1.2.15 Pre-Final.
+[20:23:57] [Server thread/INFO]: [galaxyspace.core.world.worldengine.WE_WorldProvider:registerWorldChunkManager:21]: //#=-------| WorldEngine |-------=//=* By Vamig Aliev (vk.com/win_vista).
+[20:23:57] [Server thread/INFO]: [galaxyspace.core.world.worldengine.WE_WorldProvider:registerWorldChunkManager:22]: //#===============================//=* Part of VamigA_core (vk.com/vamiga).
+[20:23:57] [Server thread/INFO]: [galaxyspace.core.world.worldengine.WE_WorldProvider:registerWorldChunkManager:23]: ////////////////////////////////////-
+[20:23:57] [Server thread/INFO]: [galaxyspace.core.world.worldengine.WE_WorldProvider:registerWorldChunkManager:25]: WorldEngine: -Registering WorldEngine...
+[20:23:57] [Server thread/INFO]: [galaxyspace.core.world.worldengine.WE_WorldProvider:registerWorldChunkManager:27]: WorldEngine: -Registration completed successfully!
+[20:23:57] [Server thread/INFO]: [galaxyspace.core.world.worldengine.WE_WorldProvider:createChunkGenerator:32]: WorldEngine: -Starting WorldEngine...
+[20:23:57] [Server thread/INFO]: [galaxyspace.core.world.worldengine.WE_ChunkProvider:<init>:94]: WorldEngine: -Applying your WorldEngine settings...
+[20:23:57] [Server thread/INFO]: [galaxyspace.core.world.worldengine.WE_ChunkProvider:<init>:98]: WorldEngine: -WorldEngine is configured successfully!
+[20:23:57] [Server thread/INFO]: [galaxyspace.core.world.worldengine.WE_WorldProvider:createChunkGenerator:34]: WorldEngine: -WorldEngine started successfully!
+[20:23:57] [Server thread/INFO]: Loading dimension -1025 (Новый мир) (net.minecraft.server.integrated.IntegratedServer@300ab225)
+[20:23:57] [Server thread/INFO]: Registered Dimension: -1006
+[20:23:57] [Server thread/INFO]: Loading dimension -1006 (Новый мир) (net.minecraft.server.integrated.IntegratedServer@300ab225)
+[20:23:57] [Server thread/INFO]: Registered Dimension: -1022
+[20:23:57] [Server thread/INFO]: Loading dimension -1022 (Новый мир) (net.minecraft.server.integrated.IntegratedServer@300ab225)
+[20:23:57] [Server thread/INFO]: Registered Dimension: -1017
+[20:23:57] [Server thread/INFO]: Loading dimension -1017 (Новый мир) (net.minecraft.server.integrated.IntegratedServer@300ab225)
+[20:23:57] [Server thread/INFO]: Registered Dimension: -1015
+[20:23:57] [Server thread/INFO]: Loading dimension -1015 (Новый мир) (net.minecraft.server.integrated.IntegratedServer@300ab225)
+[20:23:57] [Server thread/INFO]: Registered Dimension: -1016
+[20:23:57] [Server thread/INFO]: Loading dimension -1016 (Новый мир) (net.minecraft.server.integrated.IntegratedServer@300ab225)
+[20:23:57] [Server thread/INFO]: Registered Dimension: -1014
+[20:23:57] [Server thread/INFO]: Loading dimension -1014 (Новый мир) (net.minecraft.server.integrated.IntegratedServer@300ab225)
+[20:23:57] [Server thread/INFO]: Registered Dimension: -1024
+[20:23:57] [Server thread/INFO]: Loading dimension -1024 (Новый мир) (net.minecraft.server.integrated.IntegratedServer@300ab225)
+[20:23:57] [Server thread/INFO]: Registered Dimension: -28
+[20:23:57] [Server thread/INFO]: Loading dimension -28 (Новый мир) (net.minecraft.server.integrated.IntegratedServer@300ab225)
+[20:23:57] [Server thread/INFO]: Registered Dimension: -1018
+[20:23:57] [Server thread/INFO]: [galaxyspace.core.world.worldengine.WE_WorldProvider:registerWorldChunkManager:19]: ////////////////////////////////////-
+[20:23:57] [Server thread/INFO]: [galaxyspace.core.world.worldengine.WE_WorldProvider:registerWorldChunkManager:20]: //#===============================//=* Version: 1.2.15 Pre-Final.
+[20:23:57] [Server thread/INFO]: [galaxyspace.core.world.worldengine.WE_WorldProvider:registerWorldChunkManager:21]: //#=-------| WorldEngine |-------=//=* By Vamig Aliev (vk.com/win_vista).
+[20:23:57] [Server thread/INFO]: [galaxyspace.core.world.worldengine.WE_WorldProvider:registerWorldChunkManager:22]: //#===============================//=* Part of VamigA_core (vk.com/vamiga).
+[20:23:57] [Server thread/INFO]: [galaxyspace.core.world.worldengine.WE_WorldProvider:registerWorldChunkManager:23]: ////////////////////////////////////-
+[20:23:57] [Server thread/INFO]: [galaxyspace.core.world.worldengine.WE_WorldProvider:registerWorldChunkManager:25]: WorldEngine: -Registering WorldEngine...
+[20:23:57] [Server thread/INFO]: [galaxyspace.core.world.worldengine.WE_WorldProvider:registerWorldChunkManager:27]: WorldEngine: -Registration completed successfully!
+[20:23:57] [Server thread/INFO]: [galaxyspace.core.world.worldengine.WE_WorldProvider:createChunkGenerator:32]: WorldEngine: -Starting WorldEngine...
+[20:23:57] [Server thread/INFO]: [galaxyspace.core.world.worldengine.WE_ChunkProvider:<init>:94]: WorldEngine: -Applying your WorldEngine settings...
+[20:23:57] [Server thread/INFO]: [galaxyspace.core.world.worldengine.WE_ChunkProvider:<init>:98]: WorldEngine: -WorldEngine is configured successfully!
+[20:23:57] [Server thread/INFO]: [galaxyspace.core.world.worldengine.WE_WorldProvider:createChunkGenerator:34]: WorldEngine: -WorldEngine started successfully!
+[20:23:57] [Server thread/INFO]: Loading dimension -1018 (Новый мир) (net.minecraft.server.integrated.IntegratedServer@300ab225)
+[20:23:57] [Server thread/INFO]: Registered Dimension: -1021
+[20:23:57] [Server thread/INFO]: Loading dimension -1021 (Новый мир) (net.minecraft.server.integrated.IntegratedServer@300ab225)
+[20:23:57] [Thread-15/ERROR]: Galacticraft update check failed! Trying again in 15 seconds
+[20:23:58] [Server thread/INFO]: Transforming Class [net.minecraft.inventory.ContainerRepair], Method [updateRepairOutput]
+[20:23:58] [Server thread/INFO]: Transforming net.minecraft.inventory.ContainerRepair Finished.
+[20:23:58] [Client thread/INFO]: [micdoodle8.mods.miccore.MicdoodleTransformer:printLog:1992]: Galacticraft successfully injected bytecode into: net/minecraft/client/network/NetHandlerPlayClient (2 / 2)
+[20:23:58] [Server thread/INFO]: Changing view distance to 12, from 10
+[20:23:58] [Netty Client IO #0/INFO]: Server protocol version 2
+[20:23:58] [Netty IO #1/INFO]: Client protocol version 2
+[20:23:58] [Netty IO #1/INFO]: Client attempting to join with 39 mods : HTGT6@1.0.4,CoFHCore@1.7.10R3.1.4,NotEnoughItems@2.8.19-GTNH,gregapi@GT6-MC1710,neiintegration@1.5.0,unimixins-compat@0.1.23,NEIAddons@1.17.0,Forge@10.13.4.1614,gregapi_post@GT6-MC1710,NEIAddons|Botany@1.17.0,CodeChickenCore@1.4.7,NEIAddons|Developer@1.17.0,MineTweaker3@3.2.13,IC2@2.2.999,endercore@0.2.11,mixinbooterlegacy@1.2.1,mcp@9.05,IC2-Classic-Spmod@0.0.0.0,unimixins-mixin@0.1.23,mixingasm@0.3,gtnhmixins@2.2.0,mixinextras@0.1.23,MultiWorld@1.2.7,FML@7.10.99.99,NEIAddons|Forestry@1.17.0,spongemixins@2.0.1,GalaxySpace@1.2.15 Pre-Final,<CoFH ASM>@000,NEIAddons|ExNihilo@1.17.0,NEIAddons|CraftingTables@1.17.0,Micdoodlecore@,NEIAddons|AppEng@1.17.0,unimixins@0.1.23,gasstation@0.5.1,gregtech@GT6-MC1710,GT_ASM@6.14.01,GalacticraftCore@3.0.12,GalacticraftMars@3.0.12,EnderIO@2.3.1.47
+[20:23:58] [Netty IO #1/INFO]: Attempting connection with missing mods [] at CLIENT
+[20:23:58] [Netty Client IO #0/INFO]: Attempting connection with missing mods [] at SERVER
+[20:23:58] [Client thread/INFO]: [Client thread] Client side modded connection established
+[20:23:58] [Client thread/INFO]: Connected to new server, resetting commands
+[20:23:58] [Server thread/INFO]: [Server thread] Server side modded connection established
+[20:23:58] [Server thread/INFO]: Player750[local:E:bb452f96] logged in with entity id 278 at (1083.3396875773183, 1.2884449394741655, -140.7531700329068)
+[20:23:58] [Server thread/INFO]: Player750 joined the game
+[20:23:58] [Server thread/INFO]: Sending server configs to client for com.enderio.core.common.config.ConfigHandler
+[20:23:58] [Client thread/INFO]: Transforming Class [net.minecraft.inventory.ContainerRepair], Method [updateRepairOutput]
+[20:23:58] [Client thread/INFO]: Transforming net.minecraft.inventory.ContainerRepair Finished.
+[20:24:00] [Client thread/ERROR]: Failed to load 'untranslator.cfg' file nei:untranslator.cfg
+[20:24:00] [Client thread/INFO]: Loading 'informationpages.cfg' file .\config\NEI\informationpages.cfg
+[20:24:00] [NEI Plugin Loader/INFO]: Loading integration: Minecraft / Forge
+[20:24:00] [Client thread/INFO]: Received handshake from server
+[20:24:00] [Client thread/INFO]: Available server commands: 
+[20:24:00] [ForkJoinPool.commonPool-worker-1/INFO]: [com.mod.htgt6.client.nei.NEIHTGT6Config:registerManual:21]: [HTGT6] NEI Gas Turbine integration SUCCESSFULLY loaded via manual proxy hook.
+[20:24:00] [NEI Plugin Loader/INFO]: Loading catalyst info from JAR
+[20:24:00] [NEI Plugin Loader/INFO]: Loading 'collapsibleitems.cfg' file .\config\NEI\collapsibleitems.cfg
+[20:24:00] [NEI Plugin Loader/INFO]: Loading favorites from file .\saves\NEI\global\favorites.ini
+[20:24:00] [NEI Plugin Loader/INFO]: Loading 'handlers.patch' file .\config\NEI\handlers.patch
+[20:24:01] [Thread-16/ERROR]: Galacticraft update check failed! Trying again in 15 seconds
+[20:24:01] [NEI Item Loading/WARN]: NEI: Forced tag update with reason (isDamaged) for 1xitem.reactorCondensatorLap@0
+[20:24:01] [NEI Item Loading/WARN]: NEI: Forced tag update with reason (isDamaged) for 1xitem.reactorCondensator@0
+[20:24:01] [NEI Item Loading/WARN]: NEI: Forced tag update with reason (isDamaged) for 1xitem.reactorReflectorThick@0
+[20:24:01] [NEI Item Loading/WARN]: NEI: Forced tag update with reason (isDamaged) for 1xitem.reactorReflector@0
+[20:24:01] [NEI Item Loading/WARN]: NEI: Forced tag update with reason (isDamaged) for 1xitem.reactorVentDiamond@0
+[20:24:01] [NEI Item Loading/WARN]: NEI: Forced tag update with reason (isDamaged) for 1xitem.reactorVentGold@0
+[20:24:01] [NEI Item Loading/WARN]: NEI: Forced tag update with reason (isDamaged) for 1xitem.reactorVentCore@0
+[20:24:01] [NEI Item Loading/WARN]: NEI: Forced tag update with reason (isDamaged) for 1xitem.reactorVent@0
+[20:24:01] [NEI Item Loading/WARN]: NEI: Forced tag update with reason (isDamaged) for 1xitem.reactorHeatSwitchDiamond@0
+[20:24:01] [NEI Item Loading/WARN]: NEI: Forced tag update with reason (isDamaged) for 1xitem.reactorHeatSwitchSpread@0
+[20:24:01] [NEI Item Loading/WARN]: NEI: Forced tag update with reason (isDamaged) for 1xitem.reactorHeatSwitchCore@0
+[20:24:01] [NEI Item Loading/WARN]: NEI: Forced tag update with reason (isDamaged) for 1xitem.reactorCoolantSix@0
+[20:24:01] [NEI Item Loading/WARN]: NEI: Forced tag update with reason (isDamaged) for 1xitem.reactorCoolantTriple@0
+[20:24:01] [NEI Item Loading/WARN]: NEI: Forced tag update with reason (isDamaged) for 1xitem.reactorHeatSwitch@0
+[20:24:01] [NEI Item Loading/WARN]: NEI: Forced tag update with reason (isDamaged) for 1xitem.reactorCoolantSimple@0
+[20:24:01] [NEI Item Loading/WARN]: NEI: Forced tag update with reason (isDamaged) for 1xitem.itemFuelCan@0
+[20:24:01] [NEI Item Loading/WARN]: NEI: Forced tag update with reason (isDamaged) for 1xitem.reactorSteamVent@0
+[20:24:01] [NEI Item Loading/WARN]: NEI: Forced tag update with reason (isDamaged) for 1xitem.reactorSteamVentCore@0
+[20:24:01] [NEI Item Loading/WARN]: NEI: Forced tag update with reason (isDamaged) for 1xitem.reactorSteamVentGold@0
+[20:24:01] [NEI Item Loading/WARN]: NEI: Forced tag update with reason (isDamaged) for 1xitem.reactorSteamVentDiamond@0
+[20:24:01] [NEI Item Loading/WARN]: NEI: Forced tag update with reason (getDurabilityForDisplay) for 1xitem.itemMetaScanners@0
+[20:24:01] [NEI Item Loading/WARN]: NEI: Forced tag update with reason (getDurabilityForDisplay) for 1xitem.itemMetaScanners@1
+[20:24:01] [NEI Item Loading/WARN]: NEI: Forced tag update with reason (getDurabilityForDisplay) for 1xitem.itemMetaScanners@2
+[20:24:01] [NEI Item Loading/WARN]: NEI: Forced tag update with reason (getDurabilityForDisplay) for 1xitem.itemMetaScanners@3
+[20:24:01] [NEI Item Loading/WARN]: NEI: Forced tag update with reason (getDurabilityForDisplay) for 1xitem.itemMetaScanners@4
+[20:24:01] [NEI Item Loading/WARN]: NEI: Forced tag update with reason (getDurabilityForDisplay) for 1xitem.itemMetaScanners@5
+[20:24:01] [NEI Item Loading/WARN]: NEI: Forced tag update with reason (getDurabilityForDisplay) for 1xitem.itemMetaScanners@6
+[20:24:01] [NEI Item Loading/WARN]: NEI: Forced tag update with reason (getDurabilityForDisplay) for 1xitem.itemMetaScanners@7
+[20:24:01] [NEI Item Loading/WARN]: NEI: Forced tag update with reason (isDamaged) for 1xitem.itemEnrichedUraniumCells@0
+[20:24:01] [NEI Item Loading/WARN]: NEI: Forced tag update with reason (isDamaged) for 1xitem.itemEnrichedUraniumCells@1
+[20:24:01] [NEI Item Loading/WARN]: NEI: Forced tag update with reason (isDamaged) for 1xitem.itemEnrichedUraniumCells@2
+[20:24:01] [NEI Item Loading/WARN]: NEI: Forced tag update with reason (isDamaged) for 1xitem.itemEnrichedUraniumCells@3
+[20:24:01] [NEI Item Loading/WARN]: NEI: Forced tag update with reason (isDamaged) for 1xitem.itemEnrichedUraniumCells@4
+[20:24:01] [NEI Item Loading/WARN]: NEI: Forced tag update with reason (isDamaged) for 1xitem.itemEnrichedUraniumCells@5
+[20:24:01] [NEI Item Loading/WARN]: NEI: Forced tag update with reason (isDamaged) for 1xitem.itemEnrichedUraniumCells@6
+[20:24:01] [NEI Item Loading/WARN]: NEI: Forced tag update with reason (isDamaged) for 1xitem.itemEnrichedUraniumCells@7
+[20:24:01] [NEI Item Loading/WARN]: NEI: Forced tag update with reason (isDamaged) for 1xitem.itemEnrichedUraniumCells@8
+[20:24:01] [NEI Item Loading/WARN]: NEI: Forced tag update with reason (isDamaged) for 1xitem.itemEnrichedUraniumCells@9
+[20:24:01] [NEI Item Loading/WARN]: NEI: Forced tag update with reason (isDamaged) for 1xitem.itemEnrichedUraniumCells@10
+[20:24:01] [NEI Item Loading/WARN]: NEI: Forced tag update with reason (isDamaged) for 1xitem.itemEnrichedUraniumCells@11
+[20:24:01] [NEI Item Loading/WARN]: NEI: Forced tag update with reason (isDamaged) for 1xitem.itemEnrichedUraniumCells@12
+[20:24:01] [NEI Item Loading/WARN]: NEI: Forced tag update with reason (isDamaged) for 1xitem.itemEnrichedUraniumCells@13
+[20:24:01] [NEI Item Loading/WARN]: NEI: Forced tag update with reason (isDamaged) for 1xitem.itemEnrichedUraniumCells@14
+[20:24:01] [NEI Item Loading/WARN]: NEI: Forced tag update with reason (isDamaged) for 1xitem.itemDepletedEnrichedUraniumCells@0
+[20:24:01] [NEI Item Loading/WARN]: NEI: Forced tag update with reason (isDamaged) for 1xitem.itemDepletedEnrichedUraniumCells@1
+[20:24:01] [NEI Item Loading/WARN]: NEI: Forced tag update with reason (isDamaged) for 1xitem.itemDepletedEnrichedUraniumCells@2
+[20:24:01] [NEI Item Loading/WARN]: NEI: Forced tag update with reason (isDamaged) for 1xitem.itemDepletedEnrichedUraniumCells@3
+[20:24:01] [NEI Item Loading/WARN]: NEI: Forced tag update with reason (isDamaged) for 1xitem.itemDepletedEnrichedUraniumCells@4
+[20:24:01] [NEI Item Loading/WARN]: NEI: Forced tag update with reason (isDamaged) for 1xitem.itemElectricVent@0
+[20:24:01] [NEI Item Loading/WARN]: NEI: Forced tag update with reason (isDamaged) for 1xitem.itemElectricVent@1
+[20:24:01] [NEI Item Loading/WARN]: NEI: Forced tag update with reason (isDamaged) for 1xitem.itemElectricVent@2
+[20:24:01] [NEI Item Loading/WARN]: NEI: Forced tag update with reason (isDamaged) for 1xitem.itemElectricVent@3
+[20:24:02] [NEI Item Loading/WARN]: NEI: Forced tag update with reason (getDurabilityForDisplay) for 1xitem.prospectorScanner@0
+[20:24:02] [NEI Item Loading/WARN]: NEI: Forced tag update with reason (getDurabilityForDisplay) for 1xitem.bulkProspectorScanner@0
+[20:24:02] [NEI Item Loading/INFO]: Loading bookmarks from file .\saves\NEI\global\bookmarks.ini
+[20:24:12] [Thread-15/ERROR]: Galacticraft update check failed! Trying again in 15 seconds
+[20:24:16] [Thread-16/ERROR]: Galacticraft update check failed! Trying again in 15 seconds
+[20:24:17] [Client thread/INFO]: FindFuels took 14,47 ms
+[20:24:26] [Server thread/INFO]: [Player750: Given [Coal] * 1 to Player750]
+[20:24:27] [Client thread/INFO]: [CHAT] Given [Coal] * 1 to Player750
+[20:24:27] [Server thread/INFO]: [Player750: Given [Coal] * 1 to Player750]
+[20:24:27] [Client thread/INFO]: [CHAT] Given [Coal] * 1 to Player750
+[20:24:27] [Server thread/INFO]: [Player750: Given [Coal] * 1 to Player750]
+[20:24:27] [Client thread/INFO]: [CHAT] Given [Coal] * 1 to Player750

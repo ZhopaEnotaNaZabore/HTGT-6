@@ -92,15 +92,6 @@ public class AssemblerRecipeHandler {
     public static void registerRecipes() {
 
         // ======================================
-        // TORCHES
-        // ======================================
-        ItemStack[] torchInput = new ItemStack[9];
-        torchInput[0] = new ItemStack(Items.coal, 4);
-        torchInput[1] = new ItemStack(Items.stick, 4);
-        addRecipe(torchInput, new ItemStack(Blocks.torch, 16), 100, 8, 1
-        );
-
-        // ======================================
         // DISPENSER
         // ======================================
 

@@ -3,13 +3,13 @@ mouseSensitivity:0.5
 fov:1.0
 gamma:0.0
 saturation:0.0
-renderDistance:4
+renderDistance:12
 guiScale:3
 particles:0
 bobView:true
 anaglyph3d:false
 advancedOpengl:false
-maxFps:40
+maxFps:120
 fboEnable:true
 difficulty:2
 fancyGraphics:true
@@ -25,7 +25,7 @@ chatLinksPrompt:true
 chatOpacity:1.0
 snooperEnabled:true
 fullscreen:false
-enableVsync:false
+enableVsync:true
 hideServerAddress:false
 advancedItemTooltips:true
 pauseOnLostFocus:true
@@ -97,8 +97,19 @@ key_keybind.toggleboots.name:36
 key_[GC] Галактическая карта:50
 key_[GC] Открыть инвентарь космического корабля:33
 key_[GC] Переключить режим очков с сенсорами:37
-soundCategory_master:0.0
-soundCategory_music:1.0
+key_Переключить планер:34
+key_Звуколокатор:38
+key_Ночное зрение:25
+key_Очки откровения:19
+key_Шаг вверх:0
+key_Скорость:0
+key_Прыжок:0
+key_Режим ключа Yeta:21
+key_Переключить электромагнит:0
+key_key.cofh.empower:47
+key_key.cofh.multimode:46
+soundCategory_master:0.009933775
+soundCategory_music:0.0
 soundCategory_record:1.0
 soundCategory_weather:1.0
 soundCategory_block:1.0
