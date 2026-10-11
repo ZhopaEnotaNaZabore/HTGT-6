@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "htgt6:block/1_20_backport/stone_slab"
+    },
+    "type=double": {
+      "model": "htgt6:block/1_20_backport/stone"
+    },
+    "type=top": {
+      "model": "htgt6:block/1_20_backport/stone_slab_top"
+    }
+  }
+}

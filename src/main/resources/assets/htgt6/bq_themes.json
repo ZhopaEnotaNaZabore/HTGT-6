@@ -1,0 +1,1328 @@
+[
+  {
+    "themeID": "htgt6:kanna",
+    "themeName": "HiTech6 Kanna",
+    "themeParent": "betterquesting:dark",
+    "textures": {
+      "betterquesting:panel_main": {
+        "textureType": "betterquesting:texture_layered",
+        "layers": [
+          {
+            "textureType": "betterquesting:texture_color",
+            "color": {
+              "colorType": "betterquesting:color_static",
+              "color": "FF62432C"
+            },
+            "padding": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "textureType": "betterquesting:texture_color",
+            "color": {
+              "colorType": "betterquesting:color_static",
+              "color": "FF151413"
+            },
+            "padding": [
+              1,
+              1,
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      "betterquesting:panel_dark": {
+        "textureType": "betterquesting:texture_layered",
+        "layers": [
+          {
+            "textureType": "betterquesting:texture_color",
+            "color": {
+              "colorType": "betterquesting:color_static",
+              "color": "FF34302B"
+            },
+            "padding": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "textureType": "betterquesting:texture_color",
+            "color": {
+              "colorType": "betterquesting:color_static",
+              "color": "FF0D0D0D"
+            },
+            "padding": [
+              1,
+              1,
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      "betterquesting:panel_inner": {
+        "textureType": "betterquesting:texture_layered",
+        "layers": [
+          {
+            "textureType": "betterquesting:texture_color",
+            "color": {
+              "colorType": "betterquesting:color_static",
+              "color": "FF44382D"
+            },
+            "padding": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "textureType": "betterquesting:texture_color",
+            "color": {
+              "colorType": "betterquesting:color_static",
+              "color": "FF1D1A17"
+            },
+            "padding": [
+              1,
+              1,
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      "betterquesting:item_frame": {
+        "textureType": "betterquesting:texture_layered",
+        "layers": [
+          {
+            "textureType": "betterquesting:texture_color",
+            "color": {
+              "colorType": "betterquesting:color_static",
+              "color": "FF67503B"
+            },
+            "padding": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "textureType": "betterquesting:texture_color",
+            "color": {
+              "colorType": "betterquesting:color_static",
+              "color": "FF111110"
+            },
+            "padding": [
+              1,
+              1,
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      "betterquesting:aux_frame_0": {
+        "textureType": "betterquesting:texture_layered",
+        "layers": [
+          {
+            "textureType": "betterquesting:texture_color",
+            "color": {
+              "colorType": "betterquesting:color_static",
+              "color": "FF41392F"
+            },
+            "padding": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "textureType": "betterquesting:texture_color",
+            "color": {
+              "colorType": "betterquesting:color_static",
+              "color": "60171512"
+            },
+            "padding": [
+              1,
+              1,
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      "betterquesting:aux_frame_1": {
+        "textureType": "betterquesting:texture_layered",
+        "layers": [
+          {
+            "textureType": "betterquesting:texture_color",
+            "color": {
+              "colorType": "betterquesting:color_static",
+              "color": "FFFF9F43"
+            },
+            "padding": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "textureType": "betterquesting:texture_color",
+            "color": {
+              "colorType": "betterquesting:color_static",
+              "color": "FF302316"
+            },
+            "padding": [
+              1,
+              1,
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      "betterquesting:btn_normal_0": {
+        "textureType": "betterquesting:texture_layered",
+        "layers": [
+          {
+            "textureType": "betterquesting:texture_color",
+            "color": {
+              "colorType": "betterquesting:color_static",
+              "color": "FF393633"
+            },
+            "padding": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "textureType": "betterquesting:texture_color",
+            "color": {
+              "colorType": "betterquesting:color_static",
+              "color": "FF1A1918"
+            },
+            "padding": [
+              1,
+              1,
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      "betterquesting:btn_normal_1": {
+        "textureType": "betterquesting:texture_layered",
+        "layers": [
+          {
+            "textureType": "betterquesting:texture_color",
+            "color": {
+              "colorType": "betterquesting:color_static",
+              "color": "FF87603B"
+            },
+            "padding": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "textureType": "betterquesting:texture_color",
+            "color": {
+              "colorType": "betterquesting:color_static",
+              "color": "FF29221A"
+            },
+            "padding": [
+              1,
+              1,
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      "betterquesting:btn_normal_2": {
+        "textureType": "betterquesting:texture_layered",
+        "layers": [
+          {
+            "textureType": "betterquesting:texture_color",
+            "color": {
+              "colorType": "betterquesting:color_static",
+              "color": "FFFFAB55"
+            },
+            "padding": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "textureType": "betterquesting:texture_color",
+            "color": {
+              "colorType": "betterquesting:color_static",
+              "color": "FF49301B"
+            },
+            "padding": [
+              1,
+              1,
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      "betterquesting:btn_clean_0": {
+        "textureType": "betterquesting:texture_layered",
+        "layers": [
+          {
+            "textureType": "betterquesting:texture_color",
+            "color": {
+              "colorType": "betterquesting:color_static",
+              "color": "FF393633"
+            },
+            "padding": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "textureType": "betterquesting:texture_color",
+            "color": {
+              "colorType": "betterquesting:color_static",
+              "color": "FF1A1918"
+            },
+            "padding": [
+              1,
+              1,
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      "betterquesting:btn_clean_1": {
+        "textureType": "betterquesting:texture_layered",
+        "layers": [
+          {
+            "textureType": "betterquesting:texture_color",
+            "color": {
+              "colorType": "betterquesting:color_static",
+              "color": "FF87603B"
+            },
+            "padding": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "textureType": "betterquesting:texture_color",
+            "color": {
+              "colorType": "betterquesting:color_static",
+              "color": "FF29221A"
+            },
+            "padding": [
+              1,
+              1,
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      "betterquesting:btn_clean_2": {
+        "textureType": "betterquesting:texture_layered",
+        "layers": [
+          {
+            "textureType": "betterquesting:texture_color",
+            "color": {
+              "colorType": "betterquesting:color_static",
+              "color": "FFFFAB55"
+            },
+            "padding": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "textureType": "betterquesting:texture_color",
+            "color": {
+              "colorType": "betterquesting:color_static",
+              "color": "FF49301B"
+            },
+            "padding": [
+              1,
+              1,
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      "betterquesting:btn_alt_0": {
+        "textureType": "betterquesting:texture_layered",
+        "layers": [
+          {
+            "textureType": "betterquesting:texture_color",
+            "color": {
+              "colorType": "betterquesting:color_static",
+              "color": "FF393633"
+            },
+            "padding": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "textureType": "betterquesting:texture_color",
+            "color": {
+              "colorType": "betterquesting:color_static",
+              "color": "FF1A1918"
+            },
+            "padding": [
+              1,
+              1,
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      "betterquesting:btn_alt_1": {
+        "textureType": "betterquesting:texture_layered",
+        "layers": [
+          {
+            "textureType": "betterquesting:texture_color",
+            "color": {
+              "colorType": "betterquesting:color_static",
+              "color": "FF87603B"
+            },
+            "padding": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "textureType": "betterquesting:texture_color",
+            "color": {
+              "colorType": "betterquesting:color_static",
+              "color": "FF29221A"
+            },
+            "padding": [
+              1,
+              1,
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      "betterquesting:btn_alt_2": {
+        "textureType": "betterquesting:texture_layered",
+        "layers": [
+          {
+            "textureType": "betterquesting:texture_color",
+            "color": {
+              "colorType": "betterquesting:color_static",
+              "color": "FFFFAB55"
+            },
+            "padding": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "textureType": "betterquesting:texture_color",
+            "color": {
+              "colorType": "betterquesting:color_static",
+              "color": "FF49301B"
+            },
+            "padding": [
+              1,
+              1,
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      "betterquesting:text_box_0": {
+        "textureType": "betterquesting:texture_layered",
+        "layers": [
+          {
+            "textureType": "betterquesting:texture_color",
+            "color": {
+              "colorType": "betterquesting:color_static",
+              "color": "FF393633"
+            },
+            "padding": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "textureType": "betterquesting:texture_color",
+            "color": {
+              "colorType": "betterquesting:color_static",
+              "color": "FF1A1918"
+            },
+            "padding": [
+              1,
+              1,
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      "betterquesting:text_box_1": {
+        "textureType": "betterquesting:texture_layered",
+        "layers": [
+          {
+            "textureType": "betterquesting:texture_color",
+            "color": {
+              "colorType": "betterquesting:color_static",
+              "color": "FF87603B"
+            },
+            "padding": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "textureType": "betterquesting:texture_color",
+            "color": {
+              "colorType": "betterquesting:color_static",
+              "color": "FF29221A"
+            },
+            "padding": [
+              1,
+              1,
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      "betterquesting:text_box_2": {
+        "textureType": "betterquesting:texture_layered",
+        "layers": [
+          {
+            "textureType": "betterquesting:texture_color",
+            "color": {
+              "colorType": "betterquesting:color_static",
+              "color": "FFFFAB55"
+            },
+            "padding": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "textureType": "betterquesting:texture_color",
+            "color": {
+              "colorType": "betterquesting:color_static",
+              "color": "FF49301B"
+            },
+            "padding": [
+              1,
+              1,
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      "betterquesting:scroll_h_bg": {
+        "textureType": "betterquesting:texture_color",
+        "color": {
+          "colorType": "betterquesting:color_static",
+          "color": "FF10100F"
+        },
+        "padding": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "betterquesting:scroll_h_0": {
+        "textureType": "betterquesting:texture_layered",
+        "layers": [
+          {
+            "textureType": "betterquesting:texture_color",
+            "color": {
+              "colorType": "betterquesting:color_static",
+              "color": "FF45403A"
+            },
+            "padding": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "textureType": "betterquesting:texture_color",
+            "color": {
+              "colorType": "betterquesting:color_static",
+              "color": "FF292018"
+            },
+            "padding": [
+              1,
+              1,
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      "betterquesting:scroll_h_1": {
+        "textureType": "betterquesting:texture_layered",
+        "layers": [
+          {
+            "textureType": "betterquesting:texture_color",
+            "color": {
+              "colorType": "betterquesting:color_static",
+              "color": "FFAF783F"
+            },
+            "padding": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "textureType": "betterquesting:texture_color",
+            "color": {
+              "colorType": "betterquesting:color_static",
+              "color": "FF292018"
+            },
+            "padding": [
+              1,
+              1,
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      "betterquesting:scroll_h_2": {
+        "textureType": "betterquesting:texture_layered",
+        "layers": [
+          {
+            "textureType": "betterquesting:texture_color",
+            "color": {
+              "colorType": "betterquesting:color_static",
+              "color": "FFFFAD56"
+            },
+            "padding": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "textureType": "betterquesting:texture_color",
+            "color": {
+              "colorType": "betterquesting:color_static",
+              "color": "FF292018"
+            },
+            "padding": [
+              1,
+              1,
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      "betterquesting:meter_h_0": {
+        "textureType": "betterquesting:texture_layered",
+        "layers": [
+          {
+            "textureType": "betterquesting:texture_color",
+            "color": {
+              "colorType": "betterquesting:color_static",
+              "color": "FF514131"
+            },
+            "padding": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "textureType": "betterquesting:texture_color",
+            "color": {
+              "colorType": "betterquesting:color_static",
+              "color": "FF10100F"
+            },
+            "padding": [
+              1,
+              1,
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      "betterquesting:meter_h_1": {
+        "textureType": "betterquesting:texture_color",
+        "color": {
+          "colorType": "betterquesting:color_static",
+          "color": "FFEB963F"
+        },
+        "padding": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "betterquesting:scroll_v_bg": {
+        "textureType": "betterquesting:texture_color",
+        "color": {
+          "colorType": "betterquesting:color_static",
+          "color": "FF10100F"
+        },
+        "padding": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "betterquesting:scroll_v_0": {
+        "textureType": "betterquesting:texture_layered",
+        "layers": [
+          {
+            "textureType": "betterquesting:texture_color",
+            "color": {
+              "colorType": "betterquesting:color_static",
+              "color": "FF45403A"
+            },
+            "padding": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "textureType": "betterquesting:texture_color",
+            "color": {
+              "colorType": "betterquesting:color_static",
+              "color": "FF292018"
+            },
+            "padding": [
+              1,
+              1,
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      "betterquesting:scroll_v_1": {
+        "textureType": "betterquesting:texture_layered",
+        "layers": [
+          {
+            "textureType": "betterquesting:texture_color",
+            "color": {
+              "colorType": "betterquesting:color_static",
+              "color": "FFAF783F"
+            },
+            "padding": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "textureType": "betterquesting:texture_color",
+            "color": {
+              "colorType": "betterquesting:color_static",
+              "color": "FF292018"
+            },
+            "padding": [
+              1,
+              1,
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      "betterquesting:scroll_v_2": {
+        "textureType": "betterquesting:texture_layered",
+        "layers": [
+          {
+            "textureType": "betterquesting:texture_color",
+            "color": {
+              "colorType": "betterquesting:color_static",
+              "color": "FFFFAD56"
+            },
+            "padding": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "textureType": "betterquesting:texture_color",
+            "color": {
+              "colorType": "betterquesting:color_static",
+              "color": "FF292018"
+            },
+            "padding": [
+              1,
+              1,
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      "betterquesting:meter_v_0": {
+        "textureType": "betterquesting:texture_layered",
+        "layers": [
+          {
+            "textureType": "betterquesting:texture_color",
+            "color": {
+              "colorType": "betterquesting:color_static",
+              "color": "FF514131"
+            },
+            "padding": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "textureType": "betterquesting:texture_color",
+            "color": {
+              "colorType": "betterquesting:color_static",
+              "color": "FF10100F"
+            },
+            "padding": [
+              1,
+              1,
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      "betterquesting:meter_v_1": {
+        "textureType": "betterquesting:texture_color",
+        "color": {
+          "colorType": "betterquesting:color_static",
+          "color": "FFEB963F"
+        },
+        "padding": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "betterquesting:hotbar_0": {
+        "textureType": "betterquesting:texture_layered",
+        "layers": [
+          {
+            "textureType": "betterquesting:texture_color",
+            "color": {
+              "colorType": "betterquesting:color_static",
+              "color": "FF514131"
+            },
+            "padding": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "textureType": "betterquesting:texture_color",
+            "color": {
+              "colorType": "betterquesting:color_static",
+              "color": "FF161411"
+            },
+            "padding": [
+              1,
+              1,
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      "betterquesting:hotbar_1": {
+        "textureType": "betterquesting:texture_layered",
+        "layers": [
+          {
+            "textureType": "betterquesting:texture_color",
+            "color": {
+              "colorType": "betterquesting:color_static",
+              "color": "FFFFAB55"
+            },
+            "padding": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "textureType": "betterquesting:texture_color",
+            "color": {
+              "colorType": "betterquesting:color_static",
+              "color": "FF33261B"
+            },
+            "padding": [
+              1,
+              1,
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      "betterquesting:quest_norm_0": {
+        "textureType": "betterquesting:texture_sliced",
+        "atlas": "htgt6:textures/gui/quests/kanna_frames.png",
+        "bounds": [
+          0,
+          0,
+          24,
+          24
+        ],
+        "padding": [
+          4,
+          4,
+          4,
+          4
+        ],
+        "sliceMode": 2
+      },
+      "betterquesting:quest_norm_1": {
+        "textureType": "betterquesting:texture_sliced",
+        "atlas": "htgt6:textures/gui/quests/kanna_frames.png",
+        "bounds": [
+          0,
+          24,
+          24,
+          24
+        ],
+        "padding": [
+          4,
+          4,
+          4,
+          4
+        ],
+        "sliceMode": 2
+      },
+      "betterquesting:quest_norm_2": {
+        "textureType": "betterquesting:texture_sliced",
+        "atlas": "htgt6:textures/gui/quests/kanna_frames.png",
+        "bounds": [
+          0,
+          48,
+          24,
+          24
+        ],
+        "padding": [
+          4,
+          4,
+          4,
+          4
+        ],
+        "sliceMode": 2
+      },
+      "betterquesting:quest_norm_3": {
+        "textureType": "betterquesting:texture_sliced",
+        "atlas": "htgt6:textures/gui/quests/kanna_frames.png",
+        "bounds": [
+          0,
+          72,
+          24,
+          24
+        ],
+        "padding": [
+          4,
+          4,
+          4,
+          4
+        ],
+        "sliceMode": 2
+      },
+      "betterquesting:quest_norm_4": {
+        "textureType": "betterquesting:texture_sliced",
+        "atlas": "htgt6:textures/gui/quests/kanna_frames.png",
+        "bounds": [
+          0,
+          96,
+          24,
+          24
+        ],
+        "padding": [
+          4,
+          4,
+          4,
+          4
+        ],
+        "sliceMode": 2
+      },
+      "betterquesting:quest_main_0": {
+        "textureType": "betterquesting:texture_sliced",
+        "atlas": "htgt6:textures/gui/quests/kanna_frames.png",
+        "bounds": [
+          24,
+          0,
+          24,
+          24
+        ],
+        "padding": [
+          4,
+          4,
+          4,
+          4
+        ],
+        "sliceMode": 2
+      },
+      "betterquesting:quest_main_1": {
+        "textureType": "betterquesting:texture_sliced",
+        "atlas": "htgt6:textures/gui/quests/kanna_frames.png",
+        "bounds": [
+          24,
+          24,
+          24,
+          24
+        ],
+        "padding": [
+          4,
+          4,
+          4,
+          4
+        ],
+        "sliceMode": 2
+      },
+      "betterquesting:quest_main_2": {
+        "textureType": "betterquesting:texture_sliced",
+        "atlas": "htgt6:textures/gui/quests/kanna_frames.png",
+        "bounds": [
+          24,
+          48,
+          24,
+          24
+        ],
+        "padding": [
+          4,
+          4,
+          4,
+          4
+        ],
+        "sliceMode": 2
+      },
+      "betterquesting:quest_main_3": {
+        "textureType": "betterquesting:texture_sliced",
+        "atlas": "htgt6:textures/gui/quests/kanna_frames.png",
+        "bounds": [
+          24,
+          72,
+          24,
+          24
+        ],
+        "padding": [
+          4,
+          4,
+          4,
+          4
+        ],
+        "sliceMode": 2
+      },
+      "betterquesting:quest_main_4": {
+        "textureType": "betterquesting:texture_sliced",
+        "atlas": "htgt6:textures/gui/quests/kanna_frames.png",
+        "bounds": [
+          24,
+          96,
+          24,
+          24
+        ],
+        "padding": [
+          4,
+          4,
+          4,
+          4
+        ],
+        "sliceMode": 2
+      },
+      "betterquesting:quest_aux_0": {
+        "textureType": "betterquesting:texture_sliced",
+        "atlas": "htgt6:textures/gui/quests/kanna_frames.png",
+        "bounds": [
+          48,
+          0,
+          24,
+          24
+        ],
+        "padding": [
+          4,
+          4,
+          4,
+          4
+        ],
+        "sliceMode": 2
+      },
+      "betterquesting:quest_aux_1": {
+        "textureType": "betterquesting:texture_sliced",
+        "atlas": "htgt6:textures/gui/quests/kanna_frames.png",
+        "bounds": [
+          48,
+          24,
+          24,
+          24
+        ],
+        "padding": [
+          4,
+          4,
+          4,
+          4
+        ],
+        "sliceMode": 2
+      },
+      "betterquesting:quest_aux_2": {
+        "textureType": "betterquesting:texture_sliced",
+        "atlas": "htgt6:textures/gui/quests/kanna_frames.png",
+        "bounds": [
+          48,
+          48,
+          24,
+          24
+        ],
+        "padding": [
+          4,
+          4,
+          4,
+          4
+        ],
+        "sliceMode": 2
+      },
+      "betterquesting:quest_aux_3": {
+        "textureType": "betterquesting:texture_sliced",
+        "atlas": "htgt6:textures/gui/quests/kanna_frames.png",
+        "bounds": [
+          48,
+          72,
+          24,
+          24
+        ],
+        "padding": [
+          4,
+          4,
+          4,
+          4
+        ],
+        "sliceMode": 2
+      },
+      "betterquesting:quest_aux_4": {
+        "textureType": "betterquesting:texture_sliced",
+        "atlas": "htgt6:textures/gui/quests/kanna_frames.png",
+        "bounds": [
+          48,
+          96,
+          24,
+          24
+        ],
+        "padding": [
+          4,
+          4,
+          4,
+          4
+        ],
+        "sliceMode": 2
+      }
+    },
+    "colors": {
+      "betterquesting:text_header": {
+        "colorType": "betterquesting:color_static",
+        "color": "FFFFBC75"
+      },
+      "betterquesting:text_main": {
+        "colorType": "betterquesting:color_static",
+        "color": "FFEEE7DE"
+      },
+      "betterquesting:text_aux_0": {
+        "colorType": "betterquesting:color_static",
+        "color": "FFEEE7DE"
+      },
+      "betterquesting:text_aux_1": {
+        "colorType": "betterquesting:color_static",
+        "color": "FFC7B8A5"
+      },
+      "betterquesting:text_highlight": {
+        "colorType": "betterquesting:color_static",
+        "color": "FFFFC47D"
+      },
+      "betterquesting:text_watermark": {
+        "colorType": "betterquesting:color_static",
+        "color": "FF958675"
+      },
+      "betterquesting:item_highlight": {
+        "colorType": "betterquesting:color_static",
+        "color": "50FFAC56"
+      },
+      "betterquesting:gui_divider": {
+        "colorType": "betterquesting:color_static",
+        "color": "FF765130"
+      },
+      "betterquesting:update_notice": {
+        "colorType": "betterquesting:color_static",
+        "color": "FFFFD38A"
+      },
+      "betterquesting:grid_major": {
+        "colorType": "betterquesting:color_static",
+        "color": "FF483629"
+      },
+      "betterquesting:grid_minor": {
+        "colorType": "betterquesting:color_static",
+        "color": "FF29241F"
+      },
+      "betterquesting:btn_disabled": {
+        "colorType": "betterquesting:color_static",
+        "color": "FF8F867D"
+      },
+      "betterquesting:btn_idle": {
+        "colorType": "betterquesting:color_static",
+        "color": "FFEEE7DE"
+      },
+      "betterquesting:btn_hover": {
+        "colorType": "betterquesting:color_static",
+        "color": "FFFFE4BE"
+      },
+      "betterquesting:quest_line_implicit_mixin": {
+        "colorType": "betterquesting:color_static",
+        "color": "00000000"
+      },
+      "betterquesting:quest_line_locked": {
+        "colorType": "betterquesting:color_static",
+        "color": "FF6E6257"
+      },
+      "betterquesting:quest_icon_locked": {
+        "colorType": "betterquesting:color_static",
+        "color": "FF6E6257"
+      },
+      "betterquesting:quest_line_unlocked": {
+        "colorType": "betterquesting:color_static",
+        "color": "FFEBA050"
+      },
+      "betterquesting:quest_icon_unlocked": {
+        "colorType": "betterquesting:color_static",
+        "color": "FFEBA050"
+      },
+      "betterquesting:quest_line_pending": {
+        "colorType": "betterquesting:color_static",
+        "color": "FFFFE5A4"
+      },
+      "betterquesting:quest_icon_pending": {
+        "colorType": "betterquesting:color_static",
+        "color": "FFFFE5A4"
+      },
+      "betterquesting:quest_line_complete": {
+        "colorType": "betterquesting:color_static",
+        "color": "FF8BC694"
+      },
+      "betterquesting:quest_icon_complete": {
+        "colorType": "betterquesting:color_static",
+        "color": "FF8BC694"
+      },
+      "betterquesting:quest_line_repeatable": {
+        "colorType": "betterquesting:color_static",
+        "color": "FFD5ACEE"
+      },
+      "betterquesting:quest_icon_repeatable": {
+        "colorType": "betterquesting:color_static",
+        "color": "FFD5ACEE"
+      }
+    },
+    "lines": {
+      "betterquesting:gui_divider": {
+        "lineType": "betterquesting:line_simple",
+        "stippleScale": 1,
+        "stippleMask": "1111111111111111"
+      },
+      "betterquesting:grid_major": {
+        "lineType": "betterquesting:line_simple",
+        "stippleScale": 1,
+        "stippleMask": "1111111111111111"
+      },
+      "betterquesting:grid_minor": {
+        "lineType": "betterquesting:line_simple",
+        "stippleScale": 1,
+        "stippleMask": "1111000011110000"
+      },
+      "betterquesting:quest_locked": {
+        "lineType": "betterquesting:line_simple",
+        "stippleScale": 1,
+        "stippleMask": "1111000011110000"
+      },
+      "betterquesting:quest_unlocked": {
+        "lineType": "betterquesting:line_simple",
+        "stippleScale": 1,
+        "stippleMask": "1111111111111111"
+      },
+      "betterquesting:quest_pending": {
+        "lineType": "betterquesting:line_simple",
+        "stippleScale": 1,
+        "stippleMask": "1111111111111111"
+      },
+      "betterquesting:quest_complete": {
+        "lineType": "betterquesting:line_simple",
+        "stippleScale": 1,
+        "stippleMask": "1111111111111111"
+      },
+      "betterquesting:quest_repeatable": {
+        "lineType": "betterquesting:line_simple",
+        "stippleScale": 1,
+        "stippleMask": "1111000011110000"
+      }
+    }
+  }
+]

@@ -11,7 +11,7 @@ buildscript {
             url = "https://oss.sonatype.org/content/repositories/snapshots/"
         }
         dependencies {
-            classpath('com.anatawa12.forge:ForgeGradle:1.2-1.0.+') {
+            classpath('com.anatawa12.forge:ForgeGradle:1.2-1.1.1') {
                 changing = true
             }
         }
@@ -20,129 +20,2057 @@ buildscript {
 }
 
 
-    apply plugin: 'forge'
-    apply plugin: 'idea'
+apply plugin: 'forge'
+apply plugin: 'idea'
 
-    targetCompatibility = sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = sourceCompatibility = JavaVersion.VERSION_1_8
 
-    archivesBaseName = "HiTech6_V_1.0.4_Build_"
+archivesBaseName = project.hasProperty("artifactSuffix")
+        ? "HiTech6_V_1.0.4_Build_" + project.property("artifactSuffix")
+        : "HiTech6_V_1.0.4_Build_"
 
 /* Вспомогательные конфиги для IDEA */
-    idea {
-        module {
-            inheritOutputDirs = true // Складываем *.class и assets в одну директорию, из разных Forge читать не будет
-            excludeDirs += file('./run') // Исключаем директории из индексации
+idea {
+    module {
+        inheritOutputDirs = true // Складываем *.class и assets в одну директорию, из разных Forge читать не будет
+        excludeDirs += file('./run') // Исключаем директории из индексации
+    }
+}
+
+minecraft {
+    version = '1.7.10-10.13.4.1614-1.7.10' // Версия Forge
+
+}
+
+// The copied final pack contains production/SRG mods. It must be launched with
+// the obfuscated Minecraft jar, not ForgeGradle's MCP/deobfuscated runtime.
+def packClientRoot = file('Modpack/HTGT6_104')
+def packClientLibraries = fileTree(dir: new File(packClientRoot, 'libraries'),
+        include: '**/*.jar', exclude: 'com/mojang/authlib/**')
+def packClientAuthlib = fileTree(
+        dir: new File(gradle.gradleUserHomeDir,
+                'caches/modules-2/files-2.1/com.mojang/authlib/1.5.16'),
+        include: '**/authlib-1.5.16.jar')
+def packClientNatives = new File(gradle.gradleUserHomeDir,
+        'caches/minecraft/net/minecraft/minecraft_natives/1.7.10')
+def packClientAssets = new File(gradle.gradleUserHomeDir, 'caches/minecraft/assets')
+def packClientForgeJar = new File(packClientRoot,
+        'libraries/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/'
+                + 'forge-1.7.10-10.13.4.1614-1.7.10.jar')
+
+def configurePackClient = { clientTask ->
+    // This launcher uses an obfuscated production Minecraft jar, therefore it
+    // must never replace the reobfuscated mod artifact with the plain jar just
+    // before launch.
+    clientTask.dependsOn tasks.reobf
+    clientTask.workingDir file('run')
+    clientTask.main = 'net.minecraft.launchwrapper.Launch'
+    clientTask.classpath = files(
+            new File(packClientRoot, 'minecraft.jar'),
+            tasks.jar.archivePath,
+            packClientAuthlib,
+            packClientLibraries,
+            fileTree(dir: 'libs', include: '*.jar'))
+    clientTask.setJvmArgs([
+            '-Xmx4G',
+            '-Dlog4j2.disableJmx=true',
+            "-Dlog4j.configurationFile=jar:${packClientForgeJar.toURI().toASCIIString()}!/log4j2.xml",
+            "-Djava.library.path=${packClientNatives.absolutePath}"
+    ])
+    clientTask.setArgs([
+            '--username', 'HiTech6Dev',
+            '--version', '1.7.10',
+            '--gameDir', '.',
+            '--assetsDir', packClientAssets.absolutePath,
+            '--assetIndex', '1.7.10',
+            '--accessToken', '0',
+            '--userProperties', '{}',
+            '--tweakClass', 'cpw.mods.fml.common.launcher.FMLTweaker'
+    ])
+    clientTask.doFirst {
+        if (!new File(packClientRoot, 'minecraft.jar').isFile()) {
+            throw new GradleException('ModPack runtime is missing Modpack/HTGT6_104/minecraft.jar')
+        }
+        if (packClientAuthlib.files.size() != 1) {
+            throw new GradleException('Expected one vanilla authlib 1.5.16 in the local Gradle cache')
+        }
+        if (!packClientNatives.isDirectory() || !packClientAssets.isDirectory()) {
+            throw new GradleException('Run setupDecompWorkspace before runClient')
+        }
+        if (!packClientForgeJar.isFile()) {
+            throw new GradleException('ModPack Forge runtime/log4j2 configuration is missing')
         }
     }
+}
 
-    minecraft {
-        version = '1.7.10-10.13.4.1614-1.7.10' // Версия Forge
-        //clientJvmArgs += ["-Dfml.coreMods.load=com.gtnewhorizon.gtnhmixins.IEarlyMixinLoader"]
-       // serverJvmArgs += ["-Dfml.coreMods.load=com.gtnewhorizon.gtnhmixins.IEarlyMixinLoader"]
-    }
+// Diagnostic launcher for comparing against the assembled production pack.
+// The normal runClient task is intentionally left under ForgeGradle control.
+task runPackClient(type: JavaExec)
+configurePackClient(tasks.runPackClient)
 
-
-    tasks.withType(JavaCompile) {
-        options.encoding = 'UTF-8'
-    }
-
-    processResources {
-        inputs.property "version", project.version
-        inputs.property "mcversion", project.minecraft.version
-
-        from(sourceSets.main.resources.srcDirs) {
-            include 'mcmod.info'
-            expand 'version': project.version, 'mcversion': project.minecraft.version
-        }
-
-        from(sourceSets.main.resources.srcDirs) {
-            exclude 'mcmod.info'
+// ResourceLoader 1.3 detects the ForgeGradle deobfuscated environment and
+// reads the matching SRG -> MCP tables from ../mcp relative to run/. Keep the
+// files generated from ForgeGradle's own 1.7.10 workspace cache so runClient
+// remains a normal GradleStart launch with the same mappings as forgeSrc.
+def forgeGradleMcpConf = new File(gradle.gradleUserHomeDir,
+        'caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/unpacked/conf')
+task syncRunMcpMappings(type: Copy) {
+    from forgeGradleMcpConf
+    into file('mcp')
+    include 'fields.csv', 'methods.csv'
+    doFirst {
+        if (!new File(forgeGradleMcpConf, 'fields.csv').isFile()
+                || !new File(forgeGradleMcpConf, 'methods.csv').isFile()) {
+            throw new GradleException('ForgeGradle MCP mappings are missing; run setupDecompWorkspace first')
         }
     }
+}
+tasks.runClient.dependsOn syncRunMcpMappings
+def forgeGradleSrgsDir = new File(gradle.gradleUserHomeDir,
+        'caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/srgs')
+def runClientSrgToMcp = new File(forgeGradleSrgsDir, 'srg-mcp.srg')
+tasks.runClient.jvmArgs "-Dhtgt6.devMcpMappings=${runClientSrgToMcp.absolutePath}"
+tasks.runClient.jvmArgs '-Dmixin.env.remapRefMap=true'
+tasks.runClient.jvmArgs "-Dmixin.env.refMapRemappingFile=${runClientSrgToMcp.absolutePath}"
+// HTGT6 intentionally keeps its ASM and runtime hooks in one transformer.
+// Disable eager JVM verification in the development launcher so Minecraft
+// parameter types are not resolved before the pack's EARLY mixins are ready.
+tasks.runClient.jvmArgs '-noverify'
+// Preserve Unicode startup artwork in Log4j output on Windows DEV runs.
+tasks.runClient.jvmArgs '-Dfile.encoding=UTF-8'
+tasks.runServer.jvmArgs '-Dfile.encoding=UTF-8'
+// The complete pack needs substantially more headroom than ForgeGradle's
+// default heap during mod discovery, texture stitching and world loading.
+tasks.runClient.minHeapSize = '2G'
+tasks.runClient.maxHeapSize = '8G'
+
+// ForgeGradle 1.2 places flatDir compile-only libraries on GradleStart's Java
+// classpath. Release/SRG libraries loaded there bypass LaunchClassLoader, so
+// remap only those copies into build/ and substitute them on runClient's
+// classpath. Source jars in libs and all jars in run/mods remain untouched.
+def runClientReleaseLibraries = files(
+        'libs/CodeChickenCore-1.4.7.jar',
+        'libs/CraftTweaker-3.jar',
+        'libs/GalaxySpace-1.7.10-1.2.15.jar',
+        'libs/gregtech_1.7.10-6.15.08-HiTech6_Edition.jar',
+        'libs/gtnhlib-0.7.0.jar',
+        'libs/modularui-2.0.8-1.7.10.jar',
+        'libs/NotEnoughItems-2.8.19-GTNH.jar')
+def forgeSrcJar = new File(gradle.gradleUserHomeDir,
+        'caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/'
+                + 'forgeSrc-1.7.10-10.13.4.1614-1.7.10.jar')
+
+// A running Windows client holds these jars open. Never delete its library
+// directory: changed inputs get a new cache directory, unchanged outputs are
+// reused even when Gradle's task history was invalidated by build.gradle edits.
+def sha256File = { File sourceFile ->
+    if (!sourceFile.isFile()) return 'missing'
+    def digest = java.security.MessageDigest.getInstance('SHA-256')
+    sourceFile.withInputStream { stream ->
+        byte[] buffer = new byte[65536]
+        int count
+        while ((count = stream.read(buffer)) != -1) digest.update(buffer, 0, count)
+    }
+    digest.digest().encodeHex().toString()
+}
+def remapCacheVersion = 'srg-mcp-filtered-v1'
+def remapCacheInputs = runClientReleaseLibraries.files.sort { it.name } + [runClientSrgToMcp, forgeSrcJar]
+def remapCacheKey = java.security.MessageDigest.getInstance('SHA-256')
+        .digest((remapCacheVersion + '\n' + remapCacheInputs.collect {
+            it.name + ':' + sha256File(it)
+        }.join('\n')).getBytes('UTF-8')).encodeHex().toString()
+def runClientDeobfLibrariesDir = file("${buildDir}/runClient/remapped/${remapCacheKey}")
+
+task deobfuscateRunClientLibraries {
+    dependsOn genSrgs
+    inputs.files runClientReleaseLibraries
+    inputs.file runClientSrgToMcp
+    inputs.file forgeSrcJar
+    inputs.property 'remapCacheVersion', remapCacheVersion
+    // This is a shared runtime cache, not a disposable task output. Gradle
+    // otherwise removes it as stale when IDEA and CLI use different histories.
+    // The checksum check below replaces Gradle's output-directory tracking.
+    doLast {
+        runClientDeobfLibrariesDir.parentFile.mkdirs()
+        def cacheLockFile = new RandomAccessFile(new File(runClientDeobfLibrariesDir.parentFile,
+                remapCacheKey + '.lock'), 'rw')
+        def cacheLock = cacheLockFile.channel.lock()
+        try {
+        runClientDeobfLibrariesDir.mkdirs()
+        def checksumFile = new File(runClientDeobfLibrariesDir, 'checksums.properties')
+        def checksums = new Properties()
+        if (checksumFile.isFile()) checksumFile.withInputStream { checksums.load(it) }
+        def pending = runClientReleaseLibraries.files.sort { it.name }.findAll { inputFile ->
+            def outputFile = new File(runClientDeobfLibrariesDir, inputFile.name)
+            !outputFile.isFile() || checksums.getProperty(inputFile.name) != sha256File(outputFile)
+        }
+        if (pending.isEmpty()) {
+            logger.lifecycle('Reusing verified runClient libraries (no files replaced)')
+            return
+        }
+        def minecraftJar = net.md_5.specialsource.Jar.init(forgeSrcJar)
+        pending.each { inputFile ->
+            def mapping = new net.md_5.specialsource.JarMapping()
+            mapping.loadMappings(runClientSrgToMcp)
+            def inputJar = net.md_5.specialsource.Jar.init(inputFile)
+            def inheritance = new net.md_5.specialsource.provider.JointProvider()
+            inheritance.add(new net.md_5.specialsource.provider.JarProvider(inputJar))
+            inheritance.add(new net.md_5.specialsource.provider.JarProvider(minecraftJar))
+            mapping.setFallbackInheritanceProvider(inheritance)
+            def remapper = new net.md_5.specialsource.JarRemapper(null, mapping, null)
+            remapper.setCopyEmptyDirectories(false)
+            def outputFile = new File(runClientDeobfLibrariesDir, inputFile.name)
+            def remappedFile = new File(runClientDeobfLibrariesDir, inputFile.name + '.remapped')
+            def packedFile = new File(runClientDeobfLibrariesDir, inputFile.name + '.packed')
+            remapper.remapJar(inputJar, remappedFile)
+
+            // Forge 1.7.10's ASM 5 attempts to inspect every class in a mod jar
+            // and cannot parse modern multi-release (Java 9+) class files.
+            // Remapping invalidates jar signatures as well, so omit both from
+            // these generated development-only copies.
+            ant.zip(destfile: packedFile) {
+                zipfileset(src: remappedFile,
+                        excludes: 'META-INF/versions/**,META-INF/*.SF,META-INF/*.RSA,META-INF/*.DSA')
+            }
+            java.nio.file.Files.move(packedFile.toPath(), outputFile.toPath(),
+                    java.nio.file.StandardCopyOption.REPLACE_EXISTING)
+            checksums.setProperty(inputFile.name, sha256File(outputFile))
+            checksumFile.withOutputStream { checksums.store(it, remapCacheVersion) }
+            project.delete remappedFile
+        }
+        } finally {
+            cacheLock.release()
+            cacheLockFile.close()
+        }
+    }
+}
+tasks.runClient.dependsOn deobfuscateRunClientLibraries
+
+// Coremods that also contain runtime hooks must be defined by
+// LaunchClassLoader. ForgeGradle normally puts the project jar on the Java
+// application classpath, which makes its ASM classes resolve Minecraft types
+// before early mixins (notably Angelica) are ready. Keep the standard
+// GradleStart launch, but expose the current build as an ordinary mod jar.
+def runClientCurrentMod = file('run/mods/HTGT6-current-dev.jar')
+task syncCurrentModForRunClient(type: Copy) {
+    dependsOn jar
+    from tasks.jar.archivePath
+    into runClientCurrentMod.parentFile
+    rename { runClientCurrentMod.name }
+}
+tasks.runClient.dependsOn syncCurrentModForRunClient
+
+afterEvaluate {
+    // ForgeGradle appends flatDir dependencies late, so filter only after the
+    // standard runClient classpath has been fully configured.
+    def releaseLibraryPaths = runClientReleaseLibraries.files.collect {
+        it.canonicalFile
+    } as Set
+    def standardRunClientClasspath = tasks.runClient.classpath
+    tasks.runClient.classpath = standardRunClientClasspath
+            .filter {
+                (!releaseLibraryPaths.contains(it.canonicalFile)) &&
+                        (it.canonicalFile != tasks.jar.archivePath.canonicalFile)
+            }
+            .plus(fileTree(dir: runClientDeobfLibrariesDir, include: '*.jar'))
+}
+
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+processResources {
+    inputs.property "version", project.version
+    inputs.property "mcversion", project.minecraft.version
+
+    from(sourceSets.main.resources.srcDirs) {
+        include 'mcmod.info'
+        expand 'version': project.version, 'mcversion': project.minecraft.version
+    }
+
+    from(sourceSets.main.resources.srcDirs) {
+        exclude 'mcmod.info'
+    }
+
+    from(rootDir) {
+        include 'LICENSE', 'THIRD_PARTY_NOTICES.md'
+        into 'META-INF/htgt6'
+    }
+    from('src/api/java/uristqwerty/LICENSE.txt') {
+        into 'META-INF/htgt6/licenses'
+        rename { 'Uristqwerty-MIT.txt' }
+    }
+}
 
 /* Dev версия мода без обфускации MC */
-    task devJar(type: Jar) {
-        classifier = 'dev'
-        manifest = jar.manifest
-        from sourceSets.main.output
+// Official audio exists only in the verified external cache, including IDE runs.
+def officialSoundManifest = file('src/main/resources/htgt6-external-sounds.json')
+def officialSoundData = new groovy.json.JsonSlurper().parse(officialSoundManifest)
+def officialSoundEntries = officialSoundData.entries
+def lodestoneSoundImports116 = officialSoundData.officialIndex116
+def officialSoundPaths = officialSoundEntries.collect { it.resource as String }.toSet()
+if (lodestoneSoundImports116 != null) officialSoundPaths.addAll(lodestoneSoundImports116.entries.collect { it.resource as String })
+def excludeOfficialSound = { details -> officialSoundPaths.contains(details.path) ||
+        details.path.startsWith('assets/htgt6/sounds/') && details.path.endsWith('.ogg') }
+task verifyExternalSoundManifest {
+    inputs.file officialSoundManifest
+    inputs.files fileTree('src/main/resources/assets/htgt6/sounds') { include '**/*.ogg' }
+    doLast {
+        if (!fileTree('src/main/resources/assets/htgt6/sounds') { include '**/*.ogg' }.isEmpty())
+            throw new GradleException('Backport sounds must use the external cloud manifest, never bundled OGG files')
+        def seen = new HashSet()
+        def pinnedSizes = [:]
+        officialSoundEntries.each { entry ->
+            if (!(entry.resource ==~ /assets\/[a-z0-9_]+\/sounds\/[a-zA-Z0-9_.\/-]+\.ogg/) ||
+                    entry.resource.contains('..') || entry.resource.contains('//') ||
+                    !(entry.sha1 ==~ /[0-9a-f]{40}/) || (entry.size as long) <= 0 ||
+                    (entry.size as long) > 32L * 1024 * 1024 || !seen.add(entry.resource))
+                throw new GradleException('Invalid external sound manifest entry: ' + entry.resource)
+            if (pinnedSizes.containsKey(entry.sha1) && pinnedSizes[entry.sha1] != entry.size)
+                throw new GradleException('Conflicting external sound sizes: ' + entry.sha1)
+            pinnedSizes[entry.sha1] = entry.size
+            def source = file('src/main/resources/' + entry.resource)
+            if (source.exists()) throw new GradleException('External sound accidentally rebundled in source: ' + entry.resource)
+        }
+        if (lodestoneSoundImports116 != null) {
+            def spec = lodestoneSoundImports116
+            if (spec.id != '8' || spec.sha1 != '117379a04a44c80fc5a5806f2e676ca4ac81f5ce' ||
+                    (spec.size as long) != 416952L || spec.url != 'https://piston-meta.mojang.com/v1/packages/117379a04a44c80fc5a5806f2e676ca4ac81f5ce/8.json')
+                throw new GradleException('Untrusted lodestone sound index')
+            if (spec.entries.size() > 64) throw new GradleException('Too many lodestone sound imports')
+            spec.entries.each { entry ->
+                if (!(entry.resource ==~ /assets\/htgt6\/sounds\/[a-zA-Z0-9_.\/-]+\.ogg/) ||
+                        entry.resource.contains('..') || entry.resource.contains('//') || !seen.add(entry.resource) ||
+                        entry.officialResource != 'minecraft/' + entry.resource.substring('assets/htgt6/'.length()))
+                    throw new GradleException('Invalid lodestone sound import: ' + entry.resource)
+                if (file('src/main/resources/' + entry.resource).exists())
+                    throw new GradleException('Imported sound accidentally rebundled: ' + entry.resource)
+            }
+        }
     }
+}
+jar {
+    dependsOn verifyExternalSoundManifest
+    exclude excludeOfficialSound
+    // Do not ship stale 0.2 allowlists left in incremental build output.
+    exclude 'META-INF/htgt6-watcher*.properties'
+    exclude 'com/mod/htgt6/watcher/WatcherTransformers.class'
+}
+task devJar(type: Jar) {
+    dependsOn verifyExternalSoundManifest
+    exclude excludeOfficialSound
+    exclude 'META-INF/htgt6-watcher*.properties'
+    exclude 'com/mod/htgt6/watcher/WatcherTransformers.class'
+    classifier = 'dev'
+    manifest = jar.manifest
+    from sourceSets.main.output
+}
 
-    artifacts {
-        archives devJar
+// runClient/IDE's jar task produces MCP bytecode and can replace build/libs.
+// Keep the distributable in a separate directory, after SRG reobfuscation.
+task releaseMod(type: Copy) {
+    group = 'build'
+    description = 'Build and verify the production mod for Forge/Crucible clients and servers.'
+    dependsOn reobf
+    from { tasks.jar.archivePath }
+    into file("${buildDir}/release")
+    doFirst {
+        def zip = new java.util.zip.ZipFile(tasks.jar.archivePath)
+        try {
+            def entry = zip.getEntry('com/mod/htgt6/asm/HTGT6Transformer.class')
+            if (entry == null) throw new GradleException('Release is missing HTGT6Transformer')
+            def node = new org.objectweb.asm.tree.ClassNode()
+            zip.getInputStream(entry).withCloseable { stream ->
+                new org.objectweb.asm.ClassReader(stream).accept(node, 0)
+            }
+            int registryCalls = 0
+            node.methods.each { method ->
+                method.instructions.toArray().each { instruction ->
+                    if (instruction instanceof org.objectweb.asm.tree.MethodInsnNode
+                            && instruction.owner == 'net/minecraft/world/biome/BiomeGenBase') {
+                        if (instruction.name == 'getBiomeGenArray')
+                            throw new GradleException('MCP/dev bytecode in release: BiomeGenBase.getBiomeGenArray. Run reobf before distributing.')
+                        if (instruction.name == 'func_150565_n') registryCalls++
+                    }
+                    if (instruction instanceof org.objectweb.asm.tree.FieldInsnNode
+                            && instruction.owner == 'net/minecraft/world/biome/BiomeGenBase'
+                            && instruction.name in ['biomeID', 'ocean'])
+                        throw new GradleException('MCP/dev biome field in release: ' + instruction.name)
+                }
+            }
+            if (registryCalls < 4) throw new GradleException('Production biome registry hooks missing: ' + registryCalls)
+            logger.lifecycle('Verified production biome hooks: {} SRG registry calls', registryCalls)
+            def armorEntry = zip.getEntry('com/mod/htgt6/minecraft1202/Module/Gameplay/Combat/CombatDamage120.class')
+            if (armorEntry == null) throw new GradleException('Release is missing CombatDamage120')
+            def armorNode = new org.objectweb.asm.tree.ClassNode()
+            zip.getInputStream(armorEntry).withCloseable { stream ->
+                new org.objectweb.asm.ClassReader(stream).accept(armorNode, 0)
+            }
+            [')F', 'Z)F'].each { suffix ->
+                def descriptor = '(Lnet/minecraft/entity/EntityLivingBase;[Lnet/minecraft/item/ItemStack;Lnet/minecraft/util/DamageSource;D' + suffix
+                if (!armorNode.methods.any { method -> method.name == 'ApplyArmor' && method.desc == descriptor &&
+                        (method.access & (org.objectweb.asm.Opcodes.ACC_PUBLIC | org.objectweb.asm.Opcodes.ACC_STATIC)) ==
+                        (org.objectweb.asm.Opcodes.ACC_PUBLIC | org.objectweb.asm.Opcodes.ACC_STATIC) })
+                    throw new GradleException('Stale/incompatible combat class in release: missing public static ApplyArmor' + descriptor)
+            }
+            logger.lifecycle('Verified Forge and hybrid-server ApplyArmor overloads in production JAR')
+            if (java.util.Collections.list(zip.entries()).any { it.name.startsWith('assets/htgt6/sounds/') && it.name.endsWith('.ogg') })
+                throw new GradleException('Backport audio must be downloaded from the cloud, not bundled in release')
+        } finally { zip.close() }
     }
+}
 
-    repositories {
-        flatDir {dirs "libs"}
-        mavenCentral()
-       maven {
-            name = "jitpack"
-            url = "https://jitpack.io"
-        }
-        maven {
-            name = "sonatype"
-            url = "https://oss.sonatype.org/content/repositories/snapshots/"
-        }
-        //// CodeChickenLib is in the Forge maven
-        maven {
-            name = "chickenbones"
-            url = "http://chickenbones.net/maven/"
-        }
+// Resource-only packaging check: no compilation or reobfuscation of parallel work.
+task externalSoundPackagingFixture(type: Jar) {
+    dependsOn verifyExternalSoundManifest
+    destinationDir = file("${buildDir}/sounds178")
+    archiveName = 'resource-selection-fixture.jar'
+    from 'src/main/resources'
+    include '**/*.ogg', '**/sounds.json', 'htgt6-external-sounds.json'
+    exclude excludeOfficialSound
+    doLast {
+        def zip = new java.util.zip.ZipFile(archivePath)
+        try {
+            officialSoundPaths.each { path ->
+                if (zip.getEntry(path) != null) throw new GradleException('Official audio still bundled: ' + path)
+            }
+            if (zip.getEntry('htgt6-external-sounds.json') == null ||
+                zip.getEntry('assets/htgt6/sounds.json') == null)
+                throw new GradleException('Required manifest/definitions omitted')
+            if (java.util.Collections.list(zip.entries()).any { it.name.startsWith('assets/htgt6/sounds/') && it.name.endsWith('.ogg') })
+                throw new GradleException('Bundled Backport audio found')
+            def remaining = java.util.Collections.list(zip.entries()).count { it.name.endsWith('.ogg') }
+            if (remaining != 11) throw new GradleException('Unexpected unrelated AmunRa sound count: ' + remaining)
+            println "External sound packaging passed: ${officialSoundPaths.size()} cloud entries, zero Backport OGG files"
+        } finally { zip.close() }
     }
+}
+
+task compileBannerPreview(type: JavaCompile) {
+    source = files('src/main/java/com/mod/htgt6/asm/ASMStartupBanner.java')
+    classpath = sourceSets.main.compileClasspath
+    destinationDir = file("${buildDir}/banner-preview/classes")
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+    options.encoding = 'UTF-8'
+}
+
+task previewBanner(type: JavaExec) {
+    group = 'verification'
+    description = 'Print the HiTech6 banner through Log4j without starting Minecraft.'
+    dependsOn compileBannerPreview
+    main = 'com.mod.htgt6.asm.ASMStartupBanner'
+    classpath = files(compileBannerPreview.destinationDir, 'src/main/resources') + sourceSets.main.compileClasspath
+    jvmArgs '-Dfile.encoding=UTF-8'
+    systemProperty 'log4j.configurationFile', file('design/banner-log4j2.xml').toURI().toString()
+    maxHeapSize = '128m'
+}
+
+task verifyTreasureMap120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Data.Aquatic.TreasureMapContractFixture120'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+task verifyAquaticFutura120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Data.Shared.AquaticFuturaStructureFixture120'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+task verifyAquaticEntities120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Data.Aquatic.AquaticEntityContractFixture120'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+task verifyAquaticCompletion120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Data.Aquatic.AquaticCompletionContractFixture120'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+task verifyAquaticClient120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Client.Shared.AquaticClientContractFixture120'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+task verifyBountifulParity120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Data.Bountiful.BountifulParityFixtures120'
+    classpath = sourceSets.main.runtimeClasspath
+    args file('run/config/etfuturum/blocksitems.cfg').absolutePath,
+            file('Modpack/HTGT6_104/config/etfuturum/blocksitems.cfg').absolutePath,
+            file('tools/decompile1202/reference/client.jar').absolutePath
+}
+task verifyBountifulMechanics120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Data.Bountiful.BountifulMechanicsFixture120'
+    classpath = sourceSets.main.runtimeClasspath
+}
+check.dependsOn verifyBountifulMechanics120
+task verifyChorusTeleport120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Data.Combat.ChorusTeleportFixture120'
+    classpath = sourceSets.main.runtimeClasspath
+}
+check.dependsOn verifyChorusTeleport120
+task verifyCombatMaintenance120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Data.Combat.CombatMaintenanceFixture120'
+    classpath = sourceSets.main.runtimeClasspath
+}
+check.dependsOn verifyCombatMaintenance120
+task verifyCombatEntities120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Data.Combat.CombatEntitiesFixture120'
+    classpath = sourceSets.main.runtimeClasspath
+}
+check.dependsOn verifyCombatEntities120
+task verifyBountifulRegistry120(dependsOn: verifyBountifulParity120)
+task verifyBountifulRecipes120(dependsOn: verifyBountifulParity120)
+task verifyBountifulWorldgen120(dependsOn: verifyBountifulParity120)
+task verifyBountifulEntities120(dependsOn: verifyBountifulParity120)
+task verifyBountifulClient120(dependsOn: verifyBountifulParity120)
+task verifyBountifulMonument120(dependsOn: verifyBountifulParity120)
+task verifyBountifulCompatibility120(dependsOn: verifyBountifulParity120)
+
+task verifyShieldMechanics120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Data.Combat.ShieldMechanicsFixture120'
+    classpath = sourceSets.main.runtimeClasspath
+    args file('src/main/resources').absolutePath,
+            file('tools/decompile1202/reference/client.jar').absolutePath
+}
+
+task verifyGroundContent120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Data.Modern.GroundContentFixture120'
+    classpath = sourceSets.main.runtimeClasspath
+}
+task verifyBoatPaddles120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Data.Combat.BoatPaddleFixture120'
+    classpath = sourceSets.main.runtimeClasspath
+}
+check.dependsOn verifyBoatPaddles120
+check.dependsOn verifyGroundContent120
+
+task verifyShulkerBoxAnimation112(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Data.Exploration.ShulkerBoxAnimationFixture112'
+    classpath = sourceSets.main.runtimeClasspath
+    args file('src/main/resources').absolutePath, file('tools/decompile1202/reference/client.jar').absolutePath
+}
+check.dependsOn verifyShulkerBoxAnimation112
+
+task verifyPoiAttachment120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Data.VillageAndPillage.PoiAttachmentFixture120'
+    classpath = sourceSets.main.runtimeClasspath
+    args file('src/main/resources').absolutePath, file('tools/decompile1202/reference/client.jar').absolutePath
+}
+check.dependsOn verifyPoiAttachment120
+
+task verifyShulkerAnimation120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Data.Combat.ShulkerAnimationFixture120'
+    classpath = sourceSets.main.runtimeClasspath
+}
+check.dependsOn verifyShulkerAnimation120
+
+task verifyBrushingProgress120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Data.BrushingProgressFixture120'
+    classpath = sourceSets.main.runtimeClasspath
+}
+check.dependsOn verifyBrushingProgress120
+
+task verifyOffhandInventoryTweaks(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.asm.OffhandInventoryTweaksFixture'
+    classpath = sourceSets.main.runtimeClasspath
+    args file('Modpack/HTGT6_104/mods/InventoryTweaks-1.59-dev-152.jar').absolutePath
+}
+check.dependsOn verifyOffhandInventoryTweaks
+
+task verifyCombatParity120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Data.Combat.CombatParityFixture120'
+    classpath = sourceSets.main.runtimeClasspath
+    args file('src/main/resources').absolutePath,
+            file('tools/decompile1202/reference/client.jar').absolutePath
+}
+
+task verifyShieldServerApi120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Data.Combat.ShieldServerApiFixture120'
+    classpath = sourceSets.main.runtimeClasspath
+}
+check.dependsOn verifyShieldServerApi120
+
+task verifyFrostburnMechanics120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Data.Frostburn.FrostburnMechanicsFixture120'
+    classpath = sourceSets.main.runtimeClasspath
+}
+check.dependsOn verifyFrostburnMechanics120
+
+task verifyStructureBlock120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Data.Frostburn.StructureBlockFixture120'
+    classpath = sourceSets.main.runtimeClasspath
+}
+check.dependsOn verifyStructureBlock120
+
+task verifyFuturaBubbleColumns120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Data.Frostburn.FuturaBubbleColumnFixture120'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+task verifyFuturaStructures120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Data.Modern.FuturaStructureIntegrationFixtureRunner120'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+task verifyFuturaVillageSurface120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Data.Modern.FuturaVillageSurfaceFixture120'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+task verifyFuturaBiomeFeatures120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Data.Modern.FuturaBiomeFeatureWiringFixture120'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+task verifyFuturaBiomeDecorator120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Data.Modern.FuturaBiomeDecoratorFixture120'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+task verifyFuturaWorldgenParity120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Data.Modern.FuturaWorldgenParityFixture120'
+    classpath = sourceSets.main.runtimeClasspath
+    maxHeapSize = '512m'
+}
+
+task verifyFuturaSurface120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Data.Modern.FuturaSurfaceFixtures120'
+    classpath = sourceSets.main.runtimeClasspath
+    maxHeapSize = '512m'
+}
+
+check.dependsOn verifyFuturaWorldgenParity120, verifyFuturaSurface120, verifyFuturaBiomeDecorator120
+
+task verifyVillageNamesCompatibility120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Data.Modern.VillageNamesCompatibilityFixture120'
+    classpath = sourceSets.main.runtimeClasspath
+    args file('run/mods/VillageNames-1.7.10-4.4.13.jar').absolutePath
+}
+
+task verifyFuturaLushCaves120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Data.Modern.FuturaLushCavesFixtures120'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+task verifyFuturaDeepDark120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Data.Modern.FuturaDeepDarkFixtures120'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+task verifySculkFamily120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Data.Modern.SculkFamilyContractFixture120'
+    classpath = sourceSets.main.runtimeClasspath
+    args file('run/config/etfuturum/experiments.cfg').absolutePath,
+            file('Modpack/HTGT6_104/config/etfuturum/experiments.cfg').absolutePath
+}
+
+task verifyFuturaCaves120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Data.Modern.FuturaCaveBackportFixtures120'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+task verifyFuturaCaveDensity120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Data.Modern.CaveRuntimeFixtures120'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+task verifyFuturaCaveEntities120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Data.Modern.FuturaCaveEntityFixtures120'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+task verifyModernGoatEntity120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Data.Modern.ModernGoatEntityFixture120'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+task verifyModernAllayEntity120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Data.Modern.ModernAllayEntityFixture120'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+task verifyModernCamelEntity120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Data.Modern.ModernCamelEntityFixture120'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+task verifyModernParrotEntity120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Data.Modern.ModernParrotEntityFixture120'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+task verifyModernPandaEntity120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Data.Modern.ModernPandaEntityFixture120'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+task verifyIglooStructure120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Data.Combat.IglooStructureFixture120'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+task verifyWanderingTrader120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Data.Modern.WanderingTraderFixture120'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+task verifyFuturaHeightStorage120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Data.Modern.FuturaHeightStorageFixtures120'
+    classpath = sourceSets.main.runtimeClasspath
+    doFirst {
+        def dir = new File(gradle.gradleUserHomeDir,
+                'caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10')
+        args fileTree(dir: dir, include: 'forgeSrc-1.7.10-10.13.4.1614-1.7.10.jar').singleFile.absolutePath
+    }
+}
+
+task verifyFuturaGeneratorHeight120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Data.Modern.FuturaGeneratorHeightFixtures120'
+    classpath = sourceSets.main.runtimeClasspath
+    doFirst {
+        def dir = new File(gradle.gradleUserHomeDir,
+                'caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10')
+        args fileTree(dir: dir, include: 'forgeSrc-1.7.10-10.13.4.1614-1.7.10.jar').singleFile.absolutePath
+    }
+}
+
+task verifyAngelicaHeightASM120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.asm.AngelicaHeightASMFixture120'
+    classpath = sourceSets.main.runtimeClasspath
+    args file('run/mods/angelica-1.0.0-beta62.jar').absolutePath
+}
+
+task verifyNetworkAttributeASM120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.asm.NetworkAttributeASMFixture120'
+    classpath = sourceSets.main.runtimeClasspath
+    doFirst {
+        def dir = new File(gradle.gradleUserHomeDir,
+                'caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10')
+        args fileTree(dir: dir, include: 'forgeBin-1.7.10-10.13.4.1614-1.7.10.jar').singleFile.absolutePath
+    }
+}
+
+task verifyPotionIdASM120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.asm.PotionIdASMFixture120'
+    classpath = sourceSets.main.runtimeClasspath
+    doFirst {
+        def dir = new File(gradle.gradleUserHomeDir,
+                'caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10')
+        args fileTree(dir: dir, include: 'forgeSrc-1.7.10-10.13.4.1614-1.7.10.jar').singleFile.absolutePath
+    }
+}
+
+task auditLatestMineshaftSave120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Data.Modern.MineshaftSaveDataAudit120'
+    classpath = sourceSets.main.runtimeClasspath
+    args file('run/saves/DEV 1/data/Mineshaft.dat').absolutePath,
+            file('run/saves/DEV 1/data/SculkMineshaft.dat').absolutePath
+}
+
+task verifyBackportStrength120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Data.Shared.BackportStrengthFixture120'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+task verifyBackportStrippedWood120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Data.Modern.Backport120StrippedWoodResourceFixtures'
+    classpath = sourceSets.main.runtimeClasspath
+    args file('src/main/resources').absolutePath
+}
+
+task verifyMangroveFamily120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Data.Modern.MangroveFamilyContractFixture120'
+    classpath = sourceSets.main.runtimeClasspath
+    args file('src/main/resources').absolutePath
+}
+
+task verifyMossyCobblestoneFamily120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Data.Modern.MossyCobblestoneFamilyContractFixture120'
+    classpath = sourceSets.main.runtimeClasspath
+    args file('src/main/resources').absolutePath
+}
+
+task verifySmoothSandstoneFamily120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Data.Modern.SmoothSandstoneFamilyContractFixture120'
+    classpath = sourceSets.main.runtimeClasspath
+    args file('src/main/resources').absolutePath
+}
+
+task verifyBambooFamily120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Data.Modern.BambooFamilyContractFixture120'
+    classpath = sourceSets.main.runtimeClasspath
+    args file('src/main/resources').absolutePath
+}
+
+task verifyMemoryCleanerThreading120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.client.vanillatweaks.memory.MemoryCleanerThreadingFixture120'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+task verifyLockedMapASM120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.asm.LockedMapASMFixture120'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+// Keep the hybrid-server startup paths covered without requiring a local server install.
+task verifyCrucibleShield120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.asm.CrucibleShieldFixture120'
+    classpath = sourceSets.main.runtimeClasspath
+    maxHeapSize = '256m'
+}
+
+task verifyCruciblePearl120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.asm.CruciblePearlFixture120'
+    classpath = sourceSets.main.runtimeClasspath
+    maxHeapSize = '256m'
+}
+
+check.dependsOn verifyCrucibleShield120, verifyCruciblePearl120
+
+task verifyProductionASMRemap120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.asm.ProductionASMRemapFixture120'
+    classpath = sourceSets.main.runtimeClasspath
+    maxHeapSize = '256m'
+    args new File(forgeGradleMcpConf.parentFile, 'src/main/resources/deobfuscation_data-1.7.10.lzma'),
+            new File(packClientRoot, 'minecraft.jar'),
+            packClientForgeJar,
+            new File(gradle.gradleUserHomeDir,
+                    'caches/minecraft/net/minecraft/minecraft_server/1.7.10/minecraft_server-1.7.10.jar'),
+            new File(gradle.gradleUserHomeDir,
+                    'caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/forgeBin-1.7.10-10.13.4.1614-1.7.10.jar')
+}
+
+task verifyWorldSaveDirectory(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.asm.WorldSaveDirectoryFixture'
+    classpath = sourceSets.main.runtimeClasspath
+}
+check.dependsOn verifyWorldSaveDirectory
+
+task verifyChunkSectionLoadASM120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.asm.ChunkSectionLoadASMFixture120'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+task verifyGT6CauldronASM(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.common.GTHooks.MisscelouseGT6Hooks.GT6CauldronWashASMFixture'
+    classpath = sourceSets.main.runtimeClasspath
+    args fileTree(dir: 'libs', include: '*gregtech*.jar').singleFile.absolutePath
+}
+
+task verifyIC2CircuitOreDictionaryASM(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.asm.IC2CircuitOreDictionaryASMFixture'
+    classpath = sourceSets.main.runtimeClasspath
+    args packClientForgeJar.absolutePath
+}
+
+check.dependsOn verifyIC2CircuitOreDictionaryASM
+
+task verifyMachineAnimationSync(type: JavaExec) {
+    dependsOn classes, deobfuscateRunClientLibraries
+    main = 'com.mod.htgt6.common.chemical.MachineAnimationSyncFixture'
+    classpath = sourceSets.main.runtimeClasspath.filter {
+        !runClientReleaseLibraries.files.contains(it)
+    } + fileTree(dir: runClientDeobfLibrariesDir, include: '*.jar')
+}
+
+check.dependsOn verifyMachineAnimationSync
+
+task verifyFlotationChamber(type: JavaExec) {
+    dependsOn classes, deobfuscateRunClientLibraries
+    main = 'com.mod.htgt6.common.flotation.FlotationChamberFixture'
+    classpath = sourceSets.main.runtimeClasspath.filter {
+        !runClientReleaseLibraries.files.contains(it)
+    } + fileTree(dir: runClientDeobfLibrariesDir, include: '*.jar')
+    maxHeapSize = '256m'
+}
+
+task verifyPhantomRegression120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Data.Aquatic.PhantomRegressionFixture120'
+    classpath = sourceSets.main.runtimeClasspath
+}
+check.dependsOn verifyPhantomRegression120
+
+task verifyWardenRegression120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Data.Modern.WardenRegressionFixture120'
+    classpath = sourceSets.main.runtimeClasspath
+}
+check.dependsOn verifyWardenRegression120
+task compileWardenModelFixture120(type: JavaCompile) {
+    dependsOn classes
+    source = files('tools/WardenModelFixture120.java')
+    destinationDir = file("${buildDir}/fixtures/warden-model")
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+    options.encoding = 'UTF-8'
+    classpath = sourceSets.main.runtimeClasspath
+}
+task verifyWardenModel120(type: JavaExec) {
+    dependsOn compileWardenModelFixture120
+    main = 'com.mod.htgt6.minecraft1202.Module.Client.Modern.WardenModelFixture120'
+    classpath = files(compileWardenModelFixture120.destinationDir) + sourceSets.main.runtimeClasspath
+}
+check.dependsOn verifyWardenModel120
+check.dependsOn verifyFlotationChamber
+
+task compileCrusherOreImportFixture(type: JavaCompile) {
+    dependsOn classes, deobfuscateRunClientLibraries
+    source = files('tools/CrusherOreImportFixture.java')
+    destinationDir = file("${buildDir}/fixtures/crusher-import")
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+    options.encoding = 'UTF-8'
+    classpath = sourceSets.main.runtimeClasspath.filter {
+        !runClientReleaseLibraries.files.contains(it)
+    } + fileTree(dir: runClientDeobfLibrariesDir, include: '*.jar')
+}
+
+task verifyCrusherOreImport(type: JavaExec) {
+    dependsOn compileCrusherOreImportFixture
+    main = 'com.mod.htgt6.common.crusher.CrusherOreImportFixture'
+    classpath = files(compileCrusherOreImportFixture.destinationDir) + compileCrusherOreImportFixture.classpath
+}
+
+task compileGT6CircuitAssemblerEnergyFixture(type: JavaCompile) {
+    dependsOn classes, deobfuscateRunClientLibraries
+    source = files('tools/GT6CircuitAssemblerEnergyFixture.java', 'tools/GT6RecipeEnergyAuditFixture.java', 'tools/CrusherOreImportFixture.java', 'tools/teststubs/buildcraft/api/tiles/IHasWork.java')
+    destinationDir = file("${buildDir}/fixtures/circuit-energy")
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+    options.encoding = 'UTF-8'
+    classpath = sourceSets.main.runtimeClasspath.filter {
+        !runClientReleaseLibraries.files.contains(it)
+    } + fileTree(dir: runClientDeobfLibrariesDir, include: '*.jar') + files('Modpack/HTGT6_104/mods/appliedenergistics2-rv3-beta-6-client.jar')
+}
+
+task verifyGT6CircuitAssemblerEnergy(type: JavaExec) {
+    dependsOn compileGT6CircuitAssemblerEnergyFixture
+    main = 'com.mod.htgt6.common.electronics.GT6CircuitAssemblerEnergyFixture'
+    classpath = files(compileGT6CircuitAssemblerEnergyFixture.destinationDir) + compileGT6CircuitAssemblerEnergyFixture.classpath
+}
+
+task verifyGT6RecipeEnergy(type: JavaExec) {
+    dependsOn compileGT6CircuitAssemblerEnergyFixture
+    main = 'com.mod.htgt6.common.electronics.GT6RecipeEnergyAuditFixture'
+    classpath = files(compileGT6CircuitAssemblerEnergyFixture.destinationDir) + compileGT6CircuitAssemblerEnergyFixture.classpath
+}
+
+task compileQuestFluidDisplayFixture(type: JavaCompile) {
+    dependsOn classes, deobfuscateRunClientLibraries
+    source = files('tools/QuestFluidDisplayFixture.java', 'tools/CrusherOreImportFixture.java')
+    destinationDir = file("${buildDir}/fixtures/quest-fluids")
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+    options.encoding = 'UTF-8'
+    classpath = sourceSets.main.runtimeClasspath.filter {
+        !runClientReleaseLibraries.files.contains(it)
+    } + fileTree(dir: runClientDeobfLibrariesDir, include: '*.jar') + files('run/mods/BetterQuesting-3.7.15-GTNH.jar')
+}
+
+task verifyQuestFluidDisplay(type: JavaExec) {
+    dependsOn compileQuestFluidDisplayFixture
+    main = 'com.mod.htgt6.asm.QuestFluidDisplayFixture'
+    classpath = files(compileQuestFluidDisplayFixture.destinationDir) + compileQuestFluidDisplayFixture.classpath
+}
+
+task compileMachineTierCraftingFixture(type: JavaCompile) {
+    dependsOn classes, deobfuscateRunClientLibraries
+    source = files('tools/MachineTierCraftingFixture.java', 'tools/CrusherOreImportFixture.java')
+    destinationDir = file("${buildDir}/fixtures/machine-tiers")
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+    options.encoding = 'UTF-8'
+    classpath = sourceSets.main.runtimeClasspath.filter {
+        !runClientReleaseLibraries.files.contains(it)
+    } + fileTree(dir: runClientDeobfLibrariesDir, include: '*.jar')
+}
+
+task verifyMachineTierCrafting(type: JavaExec) {
+    dependsOn compileMachineTierCraftingFixture
+    main = 'com.mod.htgt6.common.handler.recipes.modpackgenerated.crafting3x3.MachineTierCraftingFixture'
+    classpath = files(compileMachineTierCraftingFixture.destinationDir) + compileMachineTierCraftingFixture.classpath
+}
+
+task verifyGT6WireStackSizeASM(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.common.GTHooks.MisscelouseGT6Hooks.GT6WireStackSizeASMFixture'
+    classpath = sourceSets.main.runtimeClasspath
+    args fileTree(dir: 'libs', include: '*gregtech*.jar').singleFile.absolutePath
+}
+
+task diagnoseSavedInventoryNBT(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.common.GTHooks.MisscelouseGT6Hooks.SavedInventoryNBTDiagnostic'
+    classpath = sourceSets.main.runtimeClasspath
+    if (project.hasProperty('playerDat')) args project.property('playerDat')
+}
+
+task verifyVillagePoi120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Data.VillageAndPillage.VillagePoiContractFixture120'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+task verifyPillagerOutpost120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Data.VillageAndPillage.PillagerOutpostFixture120'
+    classpath = sourceSets.main.runtimeClasspath
+    args file('src/main/resources').absolutePath,
+            file('tools/decompile1202/reference/client.jar').absolutePath
+}
+
+task verifyTrailRuins120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Data.Modern.TrailRuinsFixture120'
+    classpath = sourceSets.main.runtimeClasspath
+    args file('src/main/resources').absolutePath,
+            file('tools/decompile1202/reference/client.jar').absolutePath
+}
+task verifyNetherFossils120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Data.Modern.NetherFossilFixture120'
+    classpath = sourceSets.main.runtimeClasspath
+    args file('src/main/resources').absolutePath, file('tools/decompile1202/reference/client.jar').absolutePath
+}
+check.dependsOn verifyNetherFossils120
+
+task verifyWoodlandMansionLayout112(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Data.Exploration.WoodlandMansionLayoutFixture112'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+task verifyWoodlandMansionTemplates112(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Data.Exploration.WoodlandMansionTemplateFixture112'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+task verifyWoodlandMansionPlacement112(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Data.Exploration.WoodlandMansionPlacementFixture112'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+task verifyFindBiome120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Data.Shared.CommandFindBiomeFixtures120'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+task verifyMigrationContract(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.common.Migaration.MigrationContractFixture'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+check.dependsOn verifyTreasureMap120, verifyAquaticFutura120, verifyAquaticEntities120,
+        verifyAquaticClient120, verifyAquaticCompletion120, verifyFuturaLushCaves120, verifyFuturaDeepDark120, verifySculkFamily120, verifyFuturaCaves120,
+        verifyFuturaCaveDensity120, verifyFuturaCaveEntities120, verifyFuturaHeightStorage120,
+        verifyFuturaGeneratorHeight120, verifyAngelicaHeightASM120, verifyNetworkAttributeASM120, verifyShieldMechanics120, verifyCombatParity120,
+        verifyFuturaBubbleColumns120, verifyFuturaStructures120, verifyFuturaVillageSurface120,
+        verifyFuturaBiomeFeatures120, verifyBackportStrength120
+check.dependsOn verifyVillagePoi120, verifyModernGoatEntity120, verifyModernAllayEntity120, verifyModernCamelEntity120,
+        verifyModernParrotEntity120, verifyModernPandaEntity120, verifyIglooStructure120, verifyWanderingTrader120,
+        verifyPillagerOutpost120, verifyTrailRuins120
+check.dependsOn verifyWoodlandMansionLayout112, verifyWoodlandMansionTemplates112,
+        verifyWoodlandMansionPlacement112, verifyFindBiome120
+check.dependsOn verifyMigrationContract
+check.dependsOn verifyBountifulRegistry120, verifyBountifulRecipes120, verifyBountifulWorldgen120,
+        verifyBountifulEntities120, verifyBountifulClient120, verifyBountifulMonument120,
+        verifyBountifulCompatibility120
+check.dependsOn verifyBackportStrippedWood120
+check.dependsOn verifyMangroveFamily120
+check.dependsOn verifyMossyCobblestoneFamily120
+check.dependsOn verifySmoothSandstoneFamily120
+check.dependsOn verifyBambooFamily120
+check.dependsOn verifyGT6CauldronASM
+check.dependsOn verifyGT6WireStackSizeASM
+check.dependsOn verifyMemoryCleanerThreading120
+check.dependsOn verifyLockedMapASM120
+check.dependsOn verifyProductionASMRemap120
+check.dependsOn verifyChunkSectionLoadASM120
+check.dependsOn verifyPotionIdASM120
+
+artifacts {
+    archives devJar
+}
+
+repositories {
+    flatDir {dirs "libs"}
+    mavenCentral()
+    maven {
+        name = "jitpack"
+        url = "https://jitpack.io"
+    }
+    maven {
+        name = "sonatype"
+        url = "https://oss.sonatype.org/content/repositories/snapshots/"
+    }
+    //// CodeChickenLib is in the Forge maven
+    maven {
+        name = "chickenbones"
+        url = "http://chickenbones.net/maven/"
+    }
+}
+// ForgeGradle 1.2 otherwise selects Log4j 2.0-beta9 for runClient/runServer.
+// Use the same external, Log4Shell-fixed runtime as the assembled pack.
+// Do not shade logging classes into the mod or alter the user's Gradle cache.
+configurations.all {
+    exclude group: 'org.apache.logging.log4j', module: 'log4j-api'
+    exclude group: 'org.apache.logging.log4j', module: 'log4j-core'
+}
+def packLog4jRoot = 'Modpack/HTGT6_104/libraries/org/apache/logging/log4j'
 dependencies {
+    // makeStart compiles GradleStart against minecraftDeps, not compile.
+    // compile/runtime inherit this configuration, so all launch paths share it.
+    minecraftDeps files("${packLog4jRoot}/log4j-api/2.20.0/log4j-api-2.20.0.jar",
+            "${packLog4jRoot}/log4j-core/2.20.0/log4j-core-2.20.0.jar",
+            "${packLog4jRoot}/log4j-core/2.20.0/log4j-core-2.20.0-helpers-2.0-beta9.jar")
 
-
-    compileOnly name: 'gregtech_1.7.10-6.15.07-unofficial'
+    compile 'io.netty:netty-all:4.0.10.Final'
+    // Keep the exact HTGT6-edition artifact in the IDE/Gradle classpath.
+    compileOnly files('libs/gregtech_1.7.10-6.15.08-HiTech6_Edition.jar')
+    // GT6 connector/block base classes expose these optional API interfaces
+    // in their class hierarchy. They are supplied by the assembled modpack.
+    compileOnly files('Modpack/HTGT6_104/mods/appliedenergistics2-rv3-beta-6-client.jar')
     compileOnly name: 'GalaxySpace-1.7.10-1.2.15'
     compileOnly name: 'GalacticraftCore-1.7-3.0.12.504-dev'
     compileOnly name: 'Galacticraft-Planets-1.7-3.0.12.504-dev'
     compileOnly name: 'MicdoodleCore-1.7-3.0.12.504-dev'
-  //  compileOnly name: '+unimixins-all-1.7.10-0.1.23'
+
+    // Provided by the client/server modpack. Keep it external: this enables the
+    // ModularUI 2 API without shading or decompiling the library into HiTech6.
+    compileOnly name: 'modularui-2.0.8-1.7.10'
+    //  compileOnly name: '+unimixins-all-1.7.10-0.1.23'
     compileOnly name: 'CraftTweaker-3'
+    // Optional runtime integration: HTGT6 mirrors the final GT6 Crusher and
+    // Shredder maps into EnderIO's SAG Mill after all mods finish loading.
+    compileOnly files('run/mods/EnderIO-2.9.27.jar')
+    // Optional runtime integration for the IE 0.7.7 multiblock Crusher.
+    compileOnly files('run/mods/ImmersiveEngineering_mc1.7.10_0.7.7.jar')
+    // Optional developer-agent integration. BetterQuesting remains supplied by
+    // the modpack; HTGT6 only compiles against its public quest/edit API.
+    compileOnly files('run/mods/BetterQuesting-3.7.15-GTNH.jar')
+   // compileOnly name: 'NotEnoughItems-2.8.19-GTNH'
 
 
-  //  compileOnly name: 'CodeChickenCore-1.1.13'
-   // compileOnly name: 'neiaddons-1.12.15.41-mc1.7.10'
-   // compileOnly name: 'NEIIntegration-MC1.7.10-1.1.2'
-   // compileOnly name: 'NotEnoughItems-2.4.13-GTNH'
-   // compileOnly name: 'CodeChickenLib-1.1.10'
-   // compileOnly name: 'CraftTweaker-3.2.13'
-  //  compileOnly name: 'MekanismClient-1.7.10-9.1.1.1031'
-   // compileOnly name: 'Thaumcraft-1.7.10-4.2.3.5'
+
+    //  compileOnly name: 'CodeChickenCore-1.1.13'
+    // compileOnly name: 'neiaddons-1.12.15.41-mc1.7.10'
+    // compileOnly name: 'NEIIntegration-MC1.7.10-1.1.2'
+    // compileOnly name: 'NotEnoughItems-2.4.13-GTNH'
+    // compileOnly name: 'CodeChickenLib-1.1.10'
+    // compileOnly name: 'CraftTweaker-3.2.13'
+    //  compileOnly name: 'MekanismClient-1.7.10-9.1.1.1031'
+    // compileOnly name: 'Thaumcraft-1.7.10-4.2.3.5'
 
     //  compileOnly "com.github.ZhopaEnotaNaZabore:GregTech6-Unofficial:master-SNAPSHOT"
     compileOnly "codechicken:CodeChickenLib:1.7.10-1.1.3.140:dev"
     compileOnly "codechicken:CodeChickenCore:1.7.10-1.0.7.47:dev"
     compileOnly "codechicken:NotEnoughItems:1.7.10-1.0.5.120:dev"
     //compileOnly 'org.spongepowered:mixin:0.7.11-SNAPSHOT'
-   // compileOnly "thaumcraft:Thaumcraft:1.7.10-4.2.3.5:dev"
+    // compileOnly "thaumcraft:Thaumcraft:1.7.10-4.2.3.5:dev"
 }
 dependencies {
     compile 'org.ow2.asm:asm-debug-all:5.0.3'
 
 }
-jar {
-    manifest {
-        attributes(
-                'FMLCorePlugin': 'com.mod.htgt6.asm.HTGT6LoadingPlugin',
-                'FMLCorePluginContainsFMLMod': 'true'
 
-        )
-    }
-
-    afterEvaluate {
-
-        tasks.withType(JavaExec) {
-
-            if (project.hasProperty("minecraft.clientArgs")) {
-
-                args project.property("minecraft.clientArgs").split(" ")
-            }
-
-            if (project.hasProperty("minecraft.jvmArgs")) {
-
-                jvmArgs project.property("minecraft.jvmArgs").split(" ")
-            }
+// Amun-Ra is a child Forge mod compiled inside the HTGT6 artifact.  The source
+// set is deliberately separate so it has its own IDE module and dependencies,
+// while its legacy mod id remains unchanged for existing worlds.
+sourceSets {
+    main {
+        java {
+            exclude 'de/katzenpapst/amunra/**'
+            exclude 'dependencies/**'
         }
     }
-
+    amunra {
+        java.srcDir 'src/amunra/java'
+        resources.srcDir 'src/amunra/resources'
+        compileClasspath += sourceSets.main.compileClasspath
+        runtimeClasspath += sourceSets.main.runtimeClasspath
+    }
+    amunraOptionalApi {
+        java.srcDir 'src/amunra-optional-api/java'
+        compileClasspath += sourceSets.main.compileClasspath
+    }
 }
+
+configurations {
+    amunraCompile.extendsFrom compile
+}
+
+// AmunRa's EnderIO integration is optional at runtime, but the development
+// source needs the exact API versions used by the migration-test modpack.
+// Keep one runtime copy in run/mods instead of duplicating these jars in libs.
+dependencies {
+    amunraCompile files('run/mods/EnderIO-2.9.27.jar')
+    amunraCompile files('run/mods/endercore-0.4.8.jar')
+}
+
+compileAmunraJava {
+    classpath += sourceSets.main.output
+    classpath += sourceSets.amunraOptionalApi.output
+    dependsOn compileAmunraOptionalApiJava
+}
+
+task verifyAmunRaMachineMetaSafety(type: JavaExec) {
+    dependsOn amunraClasses
+    classpath = sourceSets.amunra.runtimeClasspath
+    main = 'de.katzenpapst.amunra.block.BlockMachineMetaSafetyFixture'
+}
+check.dependsOn verifyAmunRaMachineMetaSafety
+
+jar {
+    from sourceSets.amunra.output
+    manifest {
+        attributes (
+                'FMLCorePlugin': 'com.mod.htgt6.asm.HTGT6LoadingPlugin',
+                'FMLCorePluginContainsFMLMod': 'true'
+        )
+    }
+}
+
+
+task compileThermalCraftingFixture(type: JavaCompile) {
+    dependsOn classes, deobfuscateRunClientLibraries
+    source = files('tools/ThermalCraftingFixture.java', 'tools/CrusherOreImportFixture.java')
+    destinationDir = file("${buildDir}/fixtures/thermal")
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+    options.encoding = 'UTF-8'
+    classpath = sourceSets.main.runtimeClasspath.filter {
+        !runClientReleaseLibraries.files.contains(it)
+    } + fileTree(dir: runClientDeobfLibrariesDir, include: '*.jar')
+}
+task verifyThermalCrafting(type: JavaExec) {
+    dependsOn compileThermalCraftingFixture
+    main = 'com.mod.htgt6.common.handler.recipes.ThermalCraftingFixture'
+    classpath = files(compileThermalCraftingFixture.destinationDir) + compileThermalCraftingFixture.classpath
+}
+
+task compileOreHelperFixture(type: JavaCompile) {
+    dependsOn classes, deobfuscateRunClientLibraries
+    source = files('tools/OreHelperFixture.java', 'tools/CrusherOreImportFixture.java', 'tools/teststubs/buildcraft/api/tiles/IHasWork.java')
+    destinationDir = file("${buildDir}/fixtures/orehelper")
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+    options.encoding = 'UTF-8'
+    classpath = sourceSets.main.runtimeClasspath.filter {
+        !runClientReleaseLibraries.files.contains(it)
+    } + fileTree(dir: runClientDeobfLibrariesDir, include: '*.jar') + files('Modpack/HTGT6_104/mods/appliedenergistics2-rv3-beta-6-client.jar')
+}
+
+task verifyOreHelper(type: JavaExec) {
+    dependsOn compileOreHelperFixture
+    main = 'com.mod.htgt6.orehelper.OreHelperFixture'
+    classpath = files(compileOreHelperFixture.destinationDir) + compileOreHelperFixture.classpath
+}
+
+task compileFlotationRegistrationFixture(type: JavaCompile) {
+    dependsOn classes, deobfuscateRunClientLibraries
+    source = files('tools/FlotationRegistrationFixture.java', 'tools/CrusherOreImportFixture.java', 'tools/teststubs/buildcraft/api/tiles/IHasWork.java')
+    destinationDir = file("${buildDir}/fixtures/flotation-registration")
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+    options.encoding = 'UTF-8'
+    classpath = compileOreHelperFixture.classpath
+}
+
+task verifyFlotationRegistration(type: JavaExec) {
+    dependsOn compileFlotationRegistrationFixture
+    main = 'com.mod.htgt6.common.flotation.FlotationRegistrationFixture'
+    classpath = files(compileFlotationRegistrationFixture.destinationDir) + compileFlotationRegistrationFixture.classpath
+}
+check.dependsOn verifyFlotationRegistration
+
+task compileMultiblockRecipesFixture(type: JavaCompile) {
+    dependsOn classes, deobfuscateRunClientLibraries
+    source = files('tools/MultiblockRecipesFixture.java', 'tools/TurbineRotorRecipesFixture.java', 'tools/DeepOreProcessingFixture.java', 'tools/CrusherOreImportFixture.java', 'tools/teststubs/buildcraft/api/tiles/IHasWork.java')
+    destinationDir = file("${buildDir}/fixtures/multiblock-recipes")
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+    options.encoding = 'UTF-8'
+    classpath = compileOreHelperFixture.classpath
+}
+task verifyMultiblockRecipes(type: JavaExec) {
+    dependsOn compileMultiblockRecipesFixture
+    main = 'MultiblockRecipesFixture'
+    classpath = files(compileMultiblockRecipesFixture.destinationDir) + compileMultiblockRecipesFixture.classpath
+}
+check.dependsOn verifyMultiblockRecipes
+task verifyTurbineRotorRecipes(type: JavaExec) {
+    dependsOn compileMultiblockRecipesFixture
+    main = 'TurbineRotorRecipesFixture'
+    classpath = files(compileMultiblockRecipesFixture.destinationDir) + compileMultiblockRecipesFixture.classpath
+}
+check.dependsOn verifyTurbineRotorRecipes
+task verifyDeepOreProcessing(type: JavaExec) {
+    dependsOn compileMultiblockRecipesFixture
+    main = 'DeepOreProcessingFixture'
+    classpath = files(compileMultiblockRecipesFixture.destinationDir) + compileMultiblockRecipesFixture.classpath
+}
+check.dependsOn verifyDeepOreProcessing
+
+task compileNEIHoverFixture(type: JavaCompile) {
+    dependsOn classes, deobfuscateRunClientLibraries
+    source = files('tools/NEIHoverFixture.java', 'tools/CrusherOreImportFixture.java', 'tools/teststubs/buildcraft/api/tiles/IHasWork.java')
+    destinationDir = file("${buildDir}/fixtures/nei-hover")
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+    options.encoding = 'UTF-8'
+    classpath = compileOreHelperFixture.classpath
+}
+task verifyNEIHover(type: JavaExec) {
+    dependsOn compileNEIHoverFixture
+    main = 'NEIHoverFixture'
+    classpath = files(compileNEIHoverFixture.destinationDir) + compileNEIHoverFixture.classpath
+}
+check.dependsOn verifyNEIHover
+
+task verifyCombatPipeline120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Data.Combat.CombatPipelineFixture120'
+    classpath = sourceSets.main.runtimeClasspath
+}
+check.dependsOn verifyCombatPipeline120
+
+
+task verifySmithingRegression120(type: JavaExec) {
+    dependsOn classes
+    main = 'com.mod.htgt6.minecraft1202.Module.Data.VillageAndPillage.SmithingRegressionFixture120'
+    classpath = sourceSets.main.runtimeClasspath
+}
+check.dependsOn verifySmithingRegression120
+
+// Standalone raid fixtures exercise real legacy entities without shipping test classes in the mod.
+task compileRaidRegression120(type: JavaCompile) {
+    dependsOn classes
+    source = files('tools/Raid145Fixture.java', 'tools/Raid150Fixture.java', 'tools/Raid151Fixture.java',
+            'tools/Raid152Fixture.java', 'tools/Raid153Fixture.java', 'tools/Patrol135Fixture.java', 'tools/RaidLifecycleFixture120.java')
+    destinationDir = file("${buildDir}/fixtures/raid-regression120")
+    classpath = sourceSets.main.runtimeClasspath
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+    options.encoding = 'UTF-8'
+}
+task verifyRaidRegression120
+['Raid145Fixture','Raid150Fixture','Raid151Fixture','Raid152Fixture','Raid153Fixture','Patrol135Fixture','RaidLifecycleFixture120'].each { fixture ->
+    def run = tasks.create(name: "verify${fixture}", type: JavaExec) {
+        dependsOn compileRaidRegression120
+        classpath = files(compileRaidRegression120.destinationDir) + sourceSets.main.runtimeClasspath
+        main = 'com.mod.htgt6.minecraft1202.Module.Data.Bountiful.' + fixture
+    }
+    verifyRaidRegression120.dependsOn run
+}
+check.dependsOn verifyRaidRegression120
+
+task compileJsonItemModels114(type: JavaCompile) {
+    dependsOn classes
+    source = files('tools/JsonItemModels114Fixture.java','tools/Scaffolding167ModelFixture.java','tools/Campfire157ModelFixture.java')
+    destinationDir = file("${buildDir}/fixtures/json-items114")
+    classpath = sourceSets.main.runtimeClasspath
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+    options.encoding = 'UTF-8'
+}
+task verifyJsonItemModels114(type: JavaExec) {
+    dependsOn compileJsonItemModels114
+    classpath = files(compileJsonItemModels114.destinationDir) + sourceSets.main.runtimeClasspath
+    main = 'JsonItemModels114Fixture'
+}
+check.dependsOn verifyJsonItemModels114
+
+task compileJigsawStructureAudit120(type: JavaCompile) {
+    dependsOn classes
+    source = files('tools/JigsawStructureAudit120.java','tools/JigsawModuleFixture120.java')
+    destinationDir = file("${buildDir}/fixtures/jigsaw-audit120")
+    classpath = sourceSets.main.runtimeClasspath
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+    options.encoding = 'UTF-8'
+}
+task auditJigsawStructures120(type: JavaExec) {
+    dependsOn compileJigsawStructureAudit120
+    classpath = files(compileJigsawStructureAudit120.destinationDir) + sourceSets.main.runtimeClasspath
+    main = 'com.mod.htgt6.minecraft1202.Module.World.Modern.JigsawStructureAudit120'
+}
+check.dependsOn auditJigsawStructures120
+task verifyJigsawModule120(type: JavaExec) {
+    dependsOn compileJigsawStructureAudit120
+    classpath = files(compileJigsawStructureAudit120.destinationDir) + sourceSets.main.runtimeClasspath
+    main = 'com.mod.htgt6.minecraft1202.Module.World.Modern.JigsawModuleFixture120'
+}
+check.dependsOn verifyJigsawModule120
+
+task compileVillageContent114(type: JavaCompile) {
+    dependsOn classes
+    source = files('tools/VillageContent114Fixture.java')
+    destinationDir = file("${buildDir}/fixtures/village-content114")
+    classpath = sourceSets.main.runtimeClasspath
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+    options.encoding = 'UTF-8'
+}
+task verifyVillageContent114(type: JavaExec) {
+    dependsOn compileVillageContent114
+    classpath = files(compileVillageContent114.destinationDir) + sourceSets.main.runtimeClasspath
+    main = 'com.mod.htgt6.minecraft1202.Module.Gameplay.VillageAndPillage.VillageContent114Fixture'
+}
+check.dependsOn verifyVillageContent114
+
+task compileVillageFauna114(type: JavaCompile) {
+    dependsOn classes
+    source = files('tools/VillageFauna114Fixture.java')
+    destinationDir = file("${buildDir}/fixtures/village-fauna114")
+    classpath = sourceSets.main.runtimeClasspath
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+    options.encoding = 'UTF-8'
+}
+task verifyVillageFauna114(type: JavaExec) {
+    dependsOn compileVillageFauna114
+    classpath = files(compileVillageFauna114.destinationDir) + sourceSets.main.runtimeClasspath
+    main = 'VillageFauna114Fixture'
+}
+check.dependsOn verifyVillageFauna114
+
+// Acceptance regressions found by the independent 1.14 audit.
+task compileVillageFauna114Audit(type: JavaCompile) {
+    dependsOn compileVillageFauna114
+    source = files('tools/VillageFauna114Audit.java')
+    destinationDir = file("${buildDir}/fixtures/village-fauna114-audit")
+    classpath = verifyVillageFauna114.classpath
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+    options.encoding = 'UTF-8'
+}
+task auditVillageFauna114(type: JavaExec) {
+    dependsOn compileVillageFauna114Audit
+    classpath = files(compileVillageFauna114Audit.destinationDir) + verifyVillageFauna114.classpath
+    main = 'VillageFauna114Audit'
+}
+check.dependsOn auditVillageFauna114
+
+// Behavioral acceptance tests for the Buzzy Bees port, excluded from the release JAR.
+task compileBuzzyBees115(type: JavaCompile) {
+    dependsOn compileVillageFauna114
+    source = files('tools/BuzzyBees115Fixture.java')
+    destinationDir = file("${buildDir}/fixtures/buzzy115")
+    classpath = verifyVillageFauna114.classpath
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+    options.encoding = 'UTF-8'
+}
+task verifyBuzzyBees115(type: JavaExec) {
+    dependsOn compileBuzzyBees115
+    classpath = files(compileBuzzyBees115.destinationDir) + verifyVillageFauna114.classpath.filter { !it.name.toLowerCase().replaceAll('[^a-z0-9]', '').contains('etfuturum') }
+    main = 'BuzzyBees115Fixture'
+}
+check.dependsOn verifyBuzzyBees115
+
+// Capture actual crossbow geometry transforms without an OpenGL context.
+task compileCrossbowOrientation(type: JavaCompile) {
+    dependsOn classes
+    source = files('tools/CrossbowOrientationFixture.java', 'tools/Crossbow168Fixture.java')
+    destinationDir = file("${buildDir}/fixtures/crossbow-orientation")
+    classpath = sourceSets.main.runtimeClasspath
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+    options.encoding = 'UTF-8'
+}
+task verifyCrossbowOrientation(type: JavaExec) {
+    dependsOn compileCrossbowOrientation
+    classpath = files(compileCrossbowOrientation.destinationDir) + sourceSets.main.runtimeClasspath
+    main = 'CrossbowOrientationFixture'
+}
+task verifyCrossbowChargeFrames(type: JavaExec) {
+    dependsOn compileCrossbowOrientation
+    classpath = verifyCrossbowOrientation.classpath
+    main = 'Crossbow168Fixture'
+}
+check.dependsOn verifyCrossbowOrientation, verifyCrossbowChargeFrames
+
+// B116-05: this math fixture does not need a Minecraft classpath.
+task compileLodestoneMath116(type: JavaCompile) {
+    source = files('src/main/java/com/mod/htgt6/minecraft1202/Module/Gameplay/Modern/LodestoneMath116.java','tools/B11605MathFixture.java')
+    classpath = files()
+    destinationDir = file("$buildDir/b11605-math")
+    sourceCompatibility = '1.8'; targetCompatibility = '1.8'
+}
+task verifyLodestoneMath116(type: JavaExec) {
+    dependsOn compileLodestoneMath116
+    main = 'B11605MathFixture'
+    classpath = files(compileLodestoneMath116.destinationDir)
+}
+check.dependsOn verifyLodestoneMath116
+
+// B116-05: actual Forge runtime handlers; the separate math task needs no game runtime.
+task compileB11605Fixture(type: JavaCompile) {
+    dependsOn classes
+    source = files('tools/B11605Fixture.java', 'tools/B11605ClientFixture.java')
+    classpath = sourceSets.main.runtimeClasspath
+    destinationDir = file("$buildDir/b11605-fixture")
+    sourceCompatibility = '1.8'; targetCompatibility = '1.8'
+}
+task verifyLodestoneCompass116(type: JavaExec) {
+    dependsOn compileB11605Fixture
+    main = 'B11605Fixture'
+    classpath = files(compileB11605Fixture.destinationDir) + sourceSets.main.runtimeClasspath
+}
+check.dependsOn verifyLodestoneCompass116
+
+task verifyLodestoneClient116(type: JavaExec) {
+    dependsOn compileB11605Fixture
+    main = 'B11605ClientFixture'
+    classpath = files(compileB11605Fixture.destinationDir) + sourceSets.main.runtimeClasspath
+}
+check.dependsOn verifyLodestoneClient116
+
+task verifyLodestoneAssets116(type: Exec) {
+    commandLine((project.findProperty('b116Python') ?: 'python'), 'tools/verify_lodestone_resources116.py')
+}
+task compileLodestoneSoundIndex116(type: JavaCompile) {
+    source = files('src/main/java/com/mod/htgt6/client/sounds/OfficialSoundCache.java',
+        'src/main/java/com/mod/htgt6/client/sounds/OfficialSoundIndex116.java', 'tools/B11605SoundIndexFixture.java')
+    classpath = sourceSets.main.compileClasspath
+    destinationDir = file("$buildDir/lodestone-sound-fixture")
+    sourceCompatibility = '1.8'; targetCompatibility = '1.8'
+}
+task verifyLodestoneSoundIndex116(type: JavaExec) {
+    dependsOn compileLodestoneSoundIndex116
+    main = 'com.mod.htgt6.client.sounds.B11605SoundIndexFixture'
+    classpath = files(compileLodestoneSoundIndex116.destinationDir) + sourceSets.main.compileClasspath
+}
+check.dependsOn verifyLodestoneAssets116, verifyLodestoneSoundIndex116
+
+// B116-04: this math fixture does not need a Minecraft classpath.
+task compileTargetMath116(type: JavaCompile) {
+    source = files('src/main/java/com/mod/htgt6/minecraft1202/Module/Gameplay/Modern/TargetSignal116.java','tools/B11604MathFixture.java')
+    classpath = files()
+    destinationDir = file("$buildDir/b11604-math")
+    sourceCompatibility = '1.8'; targetCompatibility = '1.8'
+}
+task verifyTargetMath116(type: JavaExec) {
+    dependsOn compileTargetMath116
+    main = 'B11604MathFixture'
+    classpath = files(compileTargetMath116.destinationDir)
+}
+check.dependsOn verifyTargetMath116
+
+// B116-04: actual Forge runtime handlers; the separate math task needs no game runtime.
+task compileB11604Fixture(type: JavaCompile) {
+    dependsOn classes
+    source = files('tools/B11604Fixture.java')
+    classpath = sourceSets.main.runtimeClasspath
+    destinationDir = file("$buildDir/b11604-fixture")
+    sourceCompatibility = '1.8'; targetCompatibility = '1.8'
+}
+task verifyTargetBlock116(type: JavaExec) {
+    dependsOn compileB11604Fixture
+    main = 'B11604Fixture'
+    classpath = files(compileB11604Fixture.destinationDir) + sourceSets.main.runtimeClasspath
+}
+check.dependsOn verifyTargetBlock116
+
+// B116-03 exercises the real container, not a duplicate recipe implementation.
+task compileB11603Fixture(type: JavaCompile) {
+    dependsOn classes
+    source = files('tools/B11603Fixture.java')
+    classpath = sourceSets.main.runtimeClasspath
+    destinationDir = file("$buildDir/b11603-fixture")
+    sourceCompatibility = '1.8'; targetCompatibility = '1.8'
+}
+task verifySmithingContract116(type: JavaExec) {
+    dependsOn compileB11603Fixture
+    main = 'B11603Fixture'
+    classpath = files(compileB11603Fixture.destinationDir) + sourceSets.main.runtimeClasspath
+}
+check.dependsOn verifySmithingContract116
+
+// B116-02 behavioral fixture; no test classes are shipped in the mod.
+task compileB11602Fixture(type: JavaCompile) {
+    dependsOn classes
+    source = files('tools/B11602Fixture.java')
+    classpath = sourceSets.main.runtimeClasspath
+    destinationDir = file("$buildDir/b11602-fixture")
+    sourceCompatibility = '1.8'; targetCompatibility = '1.8'
+}
+task verifyNetheriteFireproof116(type: JavaExec) {
+    dependsOn compileB11602Fixture
+    main = 'B11602Fixture'
+    classpath = files(compileB11602Fixture.destinationDir) + sourceSets.main.runtimeClasspath
+}
+check.dependsOn verifyNetheriteFireproof116
+
+// B116-01: tests execute the real item and recipe contracts, outside the shipped jar.
+task compileB11601Fixture(type: JavaCompile) {
+    dependsOn classes
+    source = files('tools/B11601Fixture.java')
+    classpath = sourceSets.main.runtimeClasspath
+    destinationDir = file("$buildDir/b11601-fixture")
+    sourceCompatibility = '1.8'; targetCompatibility = '1.8'
+}
+task verifyNetheriteChain116(type: JavaExec) {
+    dependsOn compileB11601Fixture
+    main = 'B11601Fixture'
+    classpath = files(compileB11601Fixture.destinationDir) + sourceSets.main.runtimeClasspath
+}
+check.dependsOn verifyNetheriteChain116
+
+// Standalone fixtures need Forge's event transformer just as the game does.
+task compileBackport116FixtureLauncher(type: JavaCompile) {
+    dependsOn classes
+    source = files('tools/Backport116FixtureLauncher.java')
+    classpath = sourceSets.main.runtimeClasspath
+    destinationDir = file("$buildDir/backport116-launcher")
+    sourceCompatibility = '1.8'; targetCompatibility = '1.8'
+}
+[verifyNetheriteChain116, verifySmithingContract116, verifyLodestoneCompass116, verifyLodestoneClient116].each { fixture ->
+    def fixtureMain = fixture.main
+    fixture.dependsOn compileBackport116FixtureLauncher
+    fixture.classpath += files(compileBackport116FixtureLauncher.destinationDir)
+    fixture.main = 'Backport116FixtureLauncher'
+    fixture.args fixtureMain
+}
+
+// Nether utilities: real Forge event/ASM paths and existing 1.16 regressions.
+task compileB11606Fixture(type: JavaCompile) {
+    dependsOn compileB11605Fixture
+    source = files('tools/B11606Fixture.java')
+    classpath = sourceSets.main.runtimeClasspath + files(compileB11605Fixture.destinationDir)
+    destinationDir = file("$buildDir/b11606-fixture")
+    sourceCompatibility = '1.8'; targetCompatibility = '1.8'
+}
+task verifyNetherUtilities116(type: JavaExec) {
+    dependsOn compileB11606Fixture, compileBackport116FixtureLauncher
+    main = 'Backport116FixtureLauncher'
+    args 'B11606Fixture'
+    classpath = files(compileB11606Fixture.destinationDir, compileB11605Fixture.destinationDir, compileBackport116FixtureLauncher.destinationDir) + sourceSets.main.runtimeClasspath
+}
+check.dependsOn verifyNetherUtilities116
+
+task verifyNetherUtilityAssets116(type: Exec) {
+    commandLine((project.findProperty('b116Python') ?: 'python'), 'tools/verify_nether_utilities116.py')
+}
+check.dependsOn verifyNetherUtilityAssets116
+
+// Nether masonry, axis placement and stone redstone behavior.
+task compileB11609Fixture(type: JavaCompile) {
+    dependsOn compileB11605Fixture
+    source = files('tools/B11609Fixture.java', 'tools/B11609ClientFixture.java', 'tools/StairParityFixture120.java')
+    classpath = sourceSets.main.runtimeClasspath + files(compileB11605Fixture.destinationDir)
+    destinationDir = file("$buildDir/b11609-fixture")
+    sourceCompatibility = '1.8'; targetCompatibility = '1.8'
+}
+task verifyNetherMasonry116(type: JavaExec) {
+    dependsOn compileB11609Fixture, compileBackport116FixtureLauncher
+    main = 'Backport116FixtureLauncher'
+    args 'B11609Fixture'
+    classpath = files(compileB11609Fixture.destinationDir, compileB11605Fixture.destinationDir, compileBackport116FixtureLauncher.destinationDir) + sourceSets.main.runtimeClasspath
+}
+check.dependsOn verifyNetherMasonry116
+
+task verifyNetherMasonryClient116(type: JavaExec) {
+    dependsOn compileB11609Fixture
+    main = 'B11609ClientFixture'
+    classpath = files(compileB11609Fixture.destinationDir) + sourceSets.main.runtimeClasspath
+}
+check.dependsOn verifyNetherMasonryClient116
+task verifyStairParity120(type: JavaExec) {
+    dependsOn compileB11609Fixture
+    main = 'StairParityFixture120'
+    classpath = files(compileB11609Fixture.destinationDir) + sourceSets.main.runtimeClasspath
+}
+check.dependsOn verifyStairParity120
+
+// Waterlogged blackstone stairs/slabs, real vanilla corner ASM and survival transactions.
+task compileB11608Fixture(type: JavaCompile) {
+    dependsOn compileB11605Fixture
+    source = files('tools/B11608Fixture.java', 'tools/BlackstoneWall116Fixture.java')
+    classpath = sourceSets.main.runtimeClasspath + files(compileB11605Fixture.destinationDir)
+    destinationDir = file("$buildDir/b11608-fixture")
+    sourceCompatibility = '1.8'; targetCompatibility = '1.8'
+}
+task verifyBlackstoneShapes116(type: JavaExec) {
+    dependsOn compileB11608Fixture, compileBackport116FixtureLauncher
+    main = 'Backport116FixtureLauncher'
+    args 'B11608Fixture'
+    classpath = files(compileB11608Fixture.destinationDir, compileB11605Fixture.destinationDir, compileBackport116FixtureLauncher.destinationDir) + sourceSets.main.runtimeClasspath
+}
+check.dependsOn verifyBlackstoneShapes116
+
+// Mixed modern stone materials, all combinations and Forge crafting integration.
+task compileBlackstoneCrafting116Fixture(type: JavaCompile) {
+    dependsOn compileB11605Fixture
+    source = files('tools/BlackstoneCrafting116Fixture.java')
+    classpath = sourceSets.main.runtimeClasspath + files(compileB11605Fixture.destinationDir)
+    destinationDir = file("$buildDir/blackstone-crafting116-fixture")
+    sourceCompatibility = '1.8'; targetCompatibility = '1.8'
+}
+task verifyBlackstoneCrafting116(type: JavaExec) {
+    dependsOn compileBlackstoneCrafting116Fixture, compileBackport116FixtureLauncher
+    main = 'Backport116FixtureLauncher'
+    args 'BlackstoneCrafting116Fixture'
+    classpath = files(compileBlackstoneCrafting116Fixture.destinationDir, compileB11605Fixture.destinationDir, compileBackport116FixtureLauncher.destinationDir) + sourceSets.main.runtimeClasspath
+}
+check.dependsOn verifyBlackstoneCrafting116
+
+// Regression: Java 5 legacy StackMap must not receive compressed F_SAME frames.
+task compileEnchantmentFrames116Fixture(type: JavaCompile) {
+    dependsOn classes
+    source = files('tools/EnchantmentFrames116Fixture.java')
+    classpath = sourceSets.main.runtimeClasspath
+    destinationDir = file("$buildDir/enchantment-frames116-fixture")
+    sourceCompatibility = '1.8'; targetCompatibility = '1.8'
+}
+task verifyEnchantmentFrames116(type: JavaExec) {
+    dependsOn compileEnchantmentFrames116Fixture
+    main = 'EnchantmentFrames116Fixture'
+    classpath = files(compileEnchantmentFrames116Fixture.destinationDir) + sourceSets.main.runtimeClasspath
+}
+check.dependsOn verifyEnchantmentFrames116
+
+task compileCoFHEnchantment116Fixture(type: JavaCompile) {
+    dependsOn classes
+    source = files('tools/CoFHEnchantment116Fixture.java')
+    classpath = sourceSets.main.runtimeClasspath
+    destinationDir = file("$buildDir/cofh-enchantment116-fixture")
+    sourceCompatibility = '1.8'; targetCompatibility = '1.8'
+}
+task verifyCoFHEnchantment116(type: JavaExec) {
+    dependsOn compileCoFHEnchantment116Fixture
+    main = 'CoFHEnchantment116Fixture'
+    classpath = files(compileCoFHEnchantment116Fixture.destinationDir) + sourceSets.main.runtimeClasspath
+    args file('run/mods/CoFHCore-[1.7.10]3.1.4-329.jar').absolutePath
+    onlyIf { file('run/mods/CoFHCore-[1.7.10]3.1.4-329.jar').isFile() }
+}
+check.dependsOn verifyCoFHEnchantment116
+
+// Supply a reconstructed Crucible server jar with -PcrucibleServerJar=... .
+task compileNetherWood116Fixture(type: JavaCompile) {
+    dependsOn compileB11605Fixture
+    source = files('tools/NetherWood116Fixture.java')
+    classpath = sourceSets.main.runtimeClasspath + files(compileB11605Fixture.destinationDir)
+    destinationDir = file("$buildDir/netherwood116-fixture")
+}
+task verifyNetherWood116(type: JavaExec) {
+    dependsOn compileNetherWood116Fixture, compileBackport116FixtureLauncher
+    main = 'Backport116FixtureLauncher'
+    args 'NetherWood116Fixture'
+    classpath = files(compileNetherWood116Fixture.destinationDir, compileB11605Fixture.destinationDir, compileBackport116FixtureLauncher.destinationDir) + sourceSets.main.runtimeClasspath
+}
+check.dependsOn verifyNetherWood116
+
+task compileSoulCampfire116Fixture(type: JavaCompile) {
+    dependsOn compileNetherWood116Fixture
+    source = files('tools/SoulCampfire116Fixture.java')
+    classpath = sourceSets.main.runtimeClasspath + files(compileB11605Fixture.destinationDir, compileNetherWood116Fixture.destinationDir)
+    destinationDir = file("$buildDir/soulcampfire116-fixture")
+}
+task verifySoulCampfire116(type: JavaExec) {
+    dependsOn compileSoulCampfire116Fixture, compileBackport116FixtureLauncher
+    main = 'Backport116FixtureLauncher'
+    args 'SoulCampfire116Fixture'
+    classpath = files(compileSoulCampfire116Fixture.destinationDir, compileNetherWood116Fixture.destinationDir, compileB11605Fixture.destinationDir, compileBackport116FixtureLauncher.destinationDir) + sourceSets.main.runtimeClasspath
+}
+check.dependsOn verifySoulCampfire116
+
+task compileNetherVegetation116Fixture(type: JavaCompile) {
+    dependsOn compileB11605Fixture
+    source = files('tools/NetherVegetation116Fixture.java','tools/NetherAssets116Fixture.java')
+    classpath = sourceSets.main.runtimeClasspath + files(compileB11605Fixture.destinationDir)
+    destinationDir = file("$buildDir/nethervegetation116-fixture")
+}
+task verifyNetherVegetation116(type: JavaExec) {
+    dependsOn compileNetherVegetation116Fixture, compileBackport116FixtureLauncher
+    main = 'Backport116FixtureLauncher'
+    args 'NetherVegetation116Fixture'
+    classpath = files(compileNetherVegetation116Fixture.destinationDir, compileB11605Fixture.destinationDir, compileBackport116FixtureLauncher.destinationDir) + sourceSets.main.runtimeClasspath
+}
+check.dependsOn verifyNetherVegetation116
+
+task compilePiglinBrute116Fixture(type: JavaCompile) {
+    dependsOn compileB11605Fixture
+    source = files('tools/PiglinBrute116Fixture.java')
+    classpath = sourceSets.main.runtimeClasspath + files(compileB11605Fixture.destinationDir)
+    destinationDir = file("$buildDir/piglinbrute116-fixture")
+}
+task verifyPiglinBrute116(type: JavaExec) {
+    dependsOn compilePiglinBrute116Fixture, compileBackport116FixtureLauncher
+    main = 'Backport116FixtureLauncher'
+    args 'PiglinBrute116Fixture'
+    classpath = files(compilePiglinBrute116Fixture.destinationDir, compileB11605Fixture.destinationDir, compileBackport116FixtureLauncher.destinationDir) + sourceSets.main.runtimeClasspath
+}
+check.dependsOn verifyPiglinBrute116
+
+task compileHoglin116Fixture(type: JavaCompile) {
+    dependsOn compileB11605Fixture
+    source = files('tools/Hoglin116Fixture.java')
+    classpath = sourceSets.main.runtimeClasspath + files(compileB11605Fixture.destinationDir)
+    destinationDir = file("$buildDir/hoglin116-fixture")
+}
+task verifyHoglin116(type: JavaExec) {
+    dependsOn compileHoglin116Fixture, compileBackport116FixtureLauncher
+    main = 'Backport116FixtureLauncher'
+    args 'Hoglin116Fixture'
+    classpath = files(compileHoglin116Fixture.destinationDir, compileB11605Fixture.destinationDir, compileBackport116FixtureLauncher.destinationDir) + sourceSets.main.runtimeClasspath
+}
+check.dependsOn verifyHoglin116
+
+task compilePiglin116Fixture(type: JavaCompile) {
+    dependsOn compileB11605Fixture
+    source = files('tools/Piglin116Fixture.java')
+    classpath = sourceSets.main.runtimeClasspath + files(compileB11605Fixture.destinationDir)
+    destinationDir = file("$buildDir/piglin116-fixture")
+}
+task verifyPiglin116(type: JavaExec) {
+    dependsOn compilePiglin116Fixture, compileBackport116FixtureLauncher
+    main = 'Backport116FixtureLauncher'
+    args 'Piglin116Fixture'
+    classpath = files(compilePiglin116Fixture.destinationDir, compileB11605Fixture.destinationDir, compileBackport116FixtureLauncher.destinationDir) + sourceSets.main.runtimeClasspath
+}
+check.dependsOn verifyPiglin116
+
+task compileCrucibleAnchor116Fixture(type: JavaCompile) {
+    dependsOn classes
+    source = files('tools/CrucibleAnchor116Fixture.java')
+    classpath = sourceSets.main.runtimeClasspath
+    destinationDir = file("$buildDir/crucible-anchor116-fixture")
+    sourceCompatibility = '1.8'; targetCompatibility = '1.8'
+}
+task verifyCrucibleAnchor116(type: JavaExec) {
+    dependsOn compileCrucibleAnchor116Fixture
+    main = 'com.mod.htgt6.asm.CrucibleAnchor116Fixture'
+    classpath = files(compileCrucibleAnchor116Fixture.destinationDir) + sourceSets.main.runtimeClasspath
+    args file(project.findProperty('crucibleServerJar') ?: "$buildDir/server-crash-2026-10-09/reconstructed.jar").absolutePath
+}
+
+task compileChatCacheCleanupFixture(type: JavaCompile) {
+    dependsOn classes
+    source = files('tools/ChatCacheCleanupFixture.java')
+    classpath = sourceSets.main.runtimeClasspath
+    destinationDir = file("$buildDir/chat-cache-cleanup-fixture")
+    sourceCompatibility = '1.8'; targetCompatibility = '1.8'
+}
+task verifyChatCacheCleanup(type: JavaExec) {
+    dependsOn compileChatCacheCleanupFixture
+    main = 'com.mod.htgt6.client.vanillatweaks.CHAT.ChatCacheCleanupFixture'
+    classpath = files(compileChatCacheCleanupFixture.destinationDir) + sourceSets.main.runtimeClasspath
+}
+check.dependsOn verifyChatCacheCleanup
+
+task compileStrider116Fixture(type: JavaCompile) {
+    dependsOn compileB11605Fixture
+    source = files('tools/Strider116Fixture.java')
+    classpath = sourceSets.main.runtimeClasspath + files(compileB11605Fixture.destinationDir)
+    destinationDir = file("$buildDir/strider116-fixture")
+}
+task verifyStrider116(type: JavaExec) {
+    dependsOn compileStrider116Fixture, compileBackport116FixtureLauncher
+    main = 'Backport116FixtureLauncher'
+    args 'Strider116Fixture'
+    classpath = files(compileStrider116Fixture.destinationDir, compileB11605Fixture.destinationDir, compileBackport116FixtureLauncher.destinationDir) + sourceSets.main.runtimeClasspath
+}
+check.dependsOn verifyStrider116
+
+task compileNetherLoot116Fixture(type: JavaCompile) {
+    dependsOn compileB11605Fixture
+    source = files('tools/NetherLoot116Fixture.java')
+    classpath = sourceSets.main.runtimeClasspath + files(compileB11605Fixture.destinationDir)
+    destinationDir = file("$buildDir/netherloot116-fixture")
+}
+task verifyNetherLoot116(type: JavaExec) {
+    dependsOn compileNetherLoot116Fixture, compileBackport116FixtureLauncher
+    main = 'Backport116FixtureLauncher'
+    args 'NetherLoot116Fixture'
+    classpath = files(compileNetherLoot116Fixture.destinationDir, compileB11605Fixture.destinationDir, compileBackport116FixtureLauncher.destinationDir) + sourceSets.main.runtimeClasspath
+}
+check.dependsOn verifyNetherLoot116
+
+task compileOpenWater116Fixture(type: JavaCompile) {
+    dependsOn compileB11605Fixture
+    source = files('tools/OpenWater116Fixture.java')
+    classpath = sourceSets.main.runtimeClasspath + files(compileB11605Fixture.destinationDir)
+    destinationDir = file("$buildDir/openwater116-fixture")
+}
+task verifyOpenWater116(type: JavaExec) {
+    dependsOn compileOpenWater116Fixture, compileBackport116FixtureLauncher
+    main = 'Backport116FixtureLauncher'
+    args 'OpenWater116Fixture'
+    classpath = files(compileOpenWater116Fixture.destinationDir, compileB11605Fixture.destinationDir, compileBackport116FixtureLauncher.destinationDir) + sourceSets.main.runtimeClasspath
+}
+check.dependsOn verifyOpenWater116
+
+task compileZombified116Fixture(type: JavaCompile) {
+    dependsOn compileB11605Fixture
+    source = files('tools/Zombified116Fixture.java')
+    classpath = sourceSets.main.runtimeClasspath + files(compileB11605Fixture.destinationDir)
+    destinationDir = file("$buildDir/zombified116-fixture")
+}
+task verifyZombified116(type: JavaExec) {
+    dependsOn compileZombified116Fixture, compileBackport116FixtureLauncher
+    main = 'Backport116FixtureLauncher'
+    args 'Zombified116Fixture'
+    classpath = files(compileZombified116Fixture.destinationDir, compileB11605Fixture.destinationDir, compileBackport116FixtureLauncher.destinationDir) + sourceSets.main.runtimeClasspath
+}
+check.dependsOn verifyZombified116
+
+
+task compileLavaMixing116Fixture(type: JavaCompile) {
+    dependsOn compileB11605Fixture
+    source = files('tools/LavaMixing116Fixture.java')
+    classpath = sourceSets.main.runtimeClasspath + files(compileB11605Fixture.destinationDir)
+    destinationDir = file("$buildDir/lavamixing116-fixture")
+}
+task verifyLavaMixing116(type: JavaExec) {
+    dependsOn compileLavaMixing116Fixture, compileBackport116FixtureLauncher
+    main = 'Backport116FixtureLauncher'
+    args 'LavaMixing116Fixture'
+    classpath = files(compileLavaMixing116Fixture.destinationDir, compileB11605Fixture.destinationDir, compileBackport116FixtureLauncher.destinationDir) + sourceSets.main.runtimeClasspath
+}
+check.dependsOn verifyLavaMixing116
+
+
+task compileAnimalDispenser116Fixture(type: JavaCompile) {
+    dependsOn compileB11605Fixture
+    source = files('tools/AnimalDispenser116Fixture.java')
+    classpath = sourceSets.main.runtimeClasspath + files(compileB11605Fixture.destinationDir)
+    destinationDir = file("$buildDir/animaldispenser116-fixture")
+}
+task verifyAnimalDispenser116(type: JavaExec) {
+    dependsOn compileAnimalDispenser116Fixture, compileBackport116FixtureLauncher
+    main = 'Backport116FixtureLauncher'
+    args 'AnimalDispenser116Fixture'
+    classpath = files(compileAnimalDispenser116Fixture.destinationDir, compileB11605Fixture.destinationDir, compileBackport116FixtureLauncher.destinationDir) + sourceSets.main.runtimeClasspath
+}
+check.dependsOn verifyAnimalDispenser116
+
+
+task compileNativeWall116Fixture(type: JavaCompile) {
+    dependsOn compileB11605Fixture
+    source = files('tools/NativeWall116Fixture.java')
+    classpath = sourceSets.main.runtimeClasspath + files(compileB11605Fixture.destinationDir)
+    destinationDir = file("$buildDir/nativewall116-fixture")
+}
+task verifyNativeWall116(type: JavaExec) {
+    dependsOn compileNativeWall116Fixture, compileBackport116FixtureLauncher
+    main = 'Backport116FixtureLauncher'
+    args 'NativeWall116Fixture'
+    classpath = files(compileNativeWall116Fixture.destinationDir, compileB11605Fixture.destinationDir, compileBackport116FixtureLauncher.destinationDir) + sourceSets.main.runtimeClasspath
+}
+check.dependsOn verifyNativeWall116
+
+
+task compileFishingLoot116Fixture(type: JavaCompile) {
+    dependsOn compileB11605Fixture
+    source = files('tools/FishingLoot116Fixture.java')
+    classpath = sourceSets.main.runtimeClasspath + files(compileB11605Fixture.destinationDir)
+    destinationDir = file("$buildDir/fishingloot116-fixture")
+}
+task verifyFishingLoot116(type: JavaExec) {
+    dependsOn compileFishingLoot116Fixture, compileBackport116FixtureLauncher
+    main = 'Backport116FixtureLauncher'
+    args 'FishingLoot116Fixture'
+    classpath = files(compileFishingLoot116Fixture.destinationDir, compileB11605Fixture.destinationDir, compileBackport116FixtureLauncher.destinationDir) + sourceSets.main.runtimeClasspath
+}
+check.dependsOn verifyFishingLoot116
+
+
+task compileRedstoneWire116Fixture(type: JavaCompile) {
+    dependsOn compileB11605Fixture
+    source = files('tools/RedstoneWire116Fixture.java')
+    classpath = sourceSets.main.runtimeClasspath + files(compileB11605Fixture.destinationDir)
+    destinationDir = file("$buildDir/redstonewire116-fixture")
+}
+task verifyRedstoneWire116(type: JavaExec) {
+    dependsOn compileRedstoneWire116Fixture, compileBackport116FixtureLauncher
+    main = 'Backport116FixtureLauncher'
+    args 'RedstoneWire116Fixture'
+    classpath = files(compileRedstoneWire116Fixture.destinationDir, compileB11605Fixture.destinationDir, compileBackport116FixtureLauncher.destinationDir) + sourceSets.main.runtimeClasspath
+}
+check.dependsOn verifyRedstoneWire116
+
+
+task compileNeutralAnger116Fixture(type: JavaCompile) {
+    dependsOn compileB11605Fixture
+    source = files('tools/NeutralAnger116Fixture.java')
+    classpath = sourceSets.main.runtimeClasspath + files(compileB11605Fixture.destinationDir)
+    destinationDir = file("$buildDir/neutralanger116-fixture")
+}
+task verifyNeutralAnger116(type: JavaExec) {
+    dependsOn compileNeutralAnger116Fixture, compileBackport116FixtureLauncher
+    main = 'Backport116FixtureLauncher'
+    args 'NeutralAnger116Fixture'
+    classpath = files(compileNeutralAnger116Fixture.destinationDir, compileB11605Fixture.destinationDir, compileBackport116FixtureLauncher.destinationDir) + sourceSets.main.runtimeClasspath
+}
+check.dependsOn verifyNeutralAnger116

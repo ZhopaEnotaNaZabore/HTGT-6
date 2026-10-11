@@ -1,0 +1,31 @@
+// Opt-in Java 8 control-run diagnostics. Does not change the normal launch heap.
+allprojects {
+    afterEvaluate {
+        tasks.withType(JavaExec).matching {
+            it.name in ['runClient', 'runPackClient', 'runServer']
+        }.all { launchTask ->
+            def directory = new File(rootDir, 'build/control-memory')
+            def label = launchTask.name + '-' + System.currentTimeMillis()
+            launchTask.doFirst { directory.mkdirs() }
+            launchTask.jvmArgs '-XX:+PrintGCDetails', '-XX:+PrintGCDateStamps',
+                    '-XX:+UseGCLogFileRotation', '-XX:NumberOfGCLogFiles=3', '-XX:GCLogFileSize=8M',
+                    '-Xloggc:' + new File(directory, label + '-gc.log').absolutePath,
+                    '-XX:ErrorFile=' + new File(directory, label + '-hs_err_pid%p.log').absolutePath,
+                    '-XX:NativeMemoryTracking=summary'
+            // Heap dumps can be several GB: only enable with an explicit command-line property.
+            if (project.hasProperty('controlHeapDump')) {
+                launchTask.jvmArgs '-XX:+HeapDumpOnOutOfMemoryError',
+                        '-XX:HeapDumpPath=' + new File(directory, label + '-heap.hprof').absolutePath
+            }
+        }
+        tasks.create('verifyControlMemoryConfig') {
+            doLast {
+                def client = tasks.getByName('runClient')
+                assert client.jvmArgs.any { it.startsWith('-Xloggc:') }
+                assert client.jvmArgs.contains('-XX:NativeMemoryTracking=summary')
+                assert project.hasProperty('controlHeapDump') || !client.jvmArgs.contains('-XX:+HeapDumpOnOutOfMemoryError')
+                println 'Control memory configuration OK; GC logs bounded to 3 x 8 MB per launch; normal heap unchanged'
+            }
+        }
+    }
+}

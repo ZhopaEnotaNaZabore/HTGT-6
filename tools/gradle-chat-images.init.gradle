@@ -1,0 +1,20 @@
+allprojects {
+    buildDir = file('build/chat-images-isolated')
+    afterEvaluate {
+        task compileChatImagesFixture(type: JavaCompile) {
+            dependsOn compileJava
+            source = project.files(new File(project.projectDir, 'tools/ChatImagesFixture.java'))
+            classpath = sourceSets.main.runtimeClasspath
+            destinationDir = file("${buildDir}/fixture")
+            sourceCompatibility = '1.8'
+            targetCompatibility = '1.8'
+            options.encoding = 'UTF-8'
+        }
+        task verifyChatImages(type: JavaExec) {
+            dependsOn compileChatImagesFixture
+            main = 'com.mod.htgt6.client.vanillatweaks.CHAT.ChatImagesFixture'
+            classpath = files(compileChatImagesFixture.destinationDir) + sourceSets.main.runtimeClasspath
+            jvmArgs '-Djava.awt.headless=true'
+        }
+    }
+}

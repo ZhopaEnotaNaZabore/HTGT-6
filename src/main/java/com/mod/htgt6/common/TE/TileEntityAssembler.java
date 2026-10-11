@@ -1,423 +1,209 @@
 package com.mod.htgt6.common.TE;
 
-
-import com.mod.htgt6.common.handler.recipe.assembler.AssemblerRecipeHandler;
+import com.cleanroommc.modularui.api.IGuiHolder;
+import com.cleanroommc.modularui.api.drawable.IKey;
+import com.cleanroommc.modularui.drawable.GuiTextures;
+import com.cleanroommc.modularui.drawable.Rectangle;
+import com.cleanroommc.modularui.future.IItemHandlerModifiable;
+import com.cleanroommc.modularui.manager.GuiCreationContext;
+import com.cleanroommc.modularui.screen.ModularPanel;
+import com.cleanroommc.modularui.screen.ModularScreen;
+import com.cleanroommc.modularui.value.sync.FluidSlotSyncHandler;
+import com.cleanroommc.modularui.value.sync.GuiSyncManager;
+import com.cleanroommc.modularui.value.sync.SyncHandlers;
+import com.cleanroommc.modularui.widget.Widget;
+import com.cleanroommc.modularui.widgets.ButtonWidget;
+import com.cleanroommc.modularui.widgets.FluidSlot;
+import com.cleanroommc.modularui.widgets.ItemSlot;
+import com.cleanroommc.modularui.widgets.SlotGroupWidget;
+import com.cleanroommc.modularui.widgets.TextWidget;
+import com.cleanroommc.modularui.widgets.slot.ModularSlot;
+import com.mod.htgt6.api.hitech6.BaseMachines.TileEntityFluidMachine;
+import com.mod.htgt6.api.hitech6.RM.MachineRecipe;
+import com.mod.htgt6.HTGT6;
+import com.mod.htgt6.common.handler.recipe.RM.AssemblerRecipeHandler;
 import com.mod.htgt6.common.item.htgt6.modulesystem.Tmodules;
-
-import cpw.mods.fml.common.Optional;
-
-import ic2.api.energy.event.EnergyTileLoadEvent;
-import ic2.api.energy.event.EnergyTileUnloadEvent;
-import ic2.api.energy.tile.IEnergySink;
-
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.inventory.IInventory;
+import com.mod.htgt6.common.ui.MachineUiTheme;
+import com.mod.htgt6.common.ui.SingleblockUiText;
+import ic2.api.item.IElectricItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.nbt.NBTTagList;
-import net.minecraft.tileentity.TileEntity;
+import net.minecraftforge.fluids.FluidContainerRegistry;
+import net.minecraftforge.fluids.Fluid;
+import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.fluids.FluidStack;
+import net.minecraftforge.fluids.IFluidContainerItem;
 
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.common.util.ForgeDirection;
+/** Standalone assembler block backed by the shared FluidMachine API. */
+public class TileEntityAssembler extends TileEntityFluidMachine implements IGuiHolder {
 
-@Optional.Interface(
-        iface = "ic2.api.energy.tile.IEnergySink",
-        modid = "IC2"
-)
-public class TileEntityAssembler
-        extends TileEntity
-        implements IInventory, IEnergySink {
+    public static final int TOTAL_SLOTS = 20;
+    public static final int SLOT_OUTPUT = 9;
+    public static final int SLOT_FLUID = 10;
+    public static final int SLOT_MODULE = 11;
+    public static final int SLOT_TRANSFORMER = 12;
+    public static final int TANK_CAPACITY = 128000;
 
-    // ==========================================
-    // INVENTORY
-    // ==========================================
+    public MachineRecipe currentRecipe;
+    public long recipeEUt;
+    private int idleSearchDelay;
+    private ItemStack syncedRecipePreview;
+    private final IItemHandlerModifiable modularInventory = new AssemblerInventory(this);
+    private final IItemHandlerModifiable recipePreview = new RecipePreviewInventory(this);
 
-    public ItemStack[] inventory =
-            new ItemStack[20];
-
-    // ==========================================
-    // ENERGY
-    // ==========================================
-
-    public int energy = 0;
-
-    public int maxEnergy = 1100000000;
-
-    // ==========================================
-    // MACHINE
-    // ==========================================
-
-    public int machineTier = 1;
-
-    public boolean enabled = true;
-
-    // ==========================================
-    // RECIPE
-    // ==========================================
-
-    public AssemblerRecipeHandler.AssemblerRecipe currentRecipe;
-
-    public int recipeEUt = 0;
-
-    // ==========================================
-    // PROGRESS
-    // ==========================================
-
-    public int progress = 0;
-
-    public int maxProgress = 200;
-
-    // ==========================================
-    // IC2 ENERGY NET
-    // ==========================================
-
-    private boolean addedToEnergyNet =
-            false;
-
-    // ==========================================
-    // VOLTAGES
-    // ==========================================
-
-    public static final int[] VOLTAGES = {
-
-            32,
-            128,
-            512,
-            2048,
-            8192,
-            32768,
-            131072,
-            524288,
-            2097152,
-            8388608,
-            33554432,
-            134217728,
-            536870912,
-            Integer.MAX_VALUE
-    };
-
-    // ==========================================
-    // UPDATE
-    // ==========================================
+    public TileEntityAssembler() {
+        super(TOTAL_SLOTS, 1, TANK_CAPACITY);
+        // Preserve the capacity of worlds created before the API migration.
+        this.maxEnergy = 1_100_000_000L;
+    }
 
     @Override
-    public void updateEntity() {
+    public int getModuleSlot() {
+        return SLOT_MODULE;
+    }
 
-        super.updateEntity();
+    @Override
+    public int getTransformerSlot() {
+        return SLOT_TRANSFORMER;
+    }
 
-        updateMachineTier();
+    @Override
+    public int getFluidSlotStart() {
+        return SLOT_FLUID;
+    }
 
-        if (worldObj.isRemote)
+    @Override
+    public int getFluidSlotCount() {
+        return 1;
+    }
+
+    @Override
+    protected void processMachineLogic() {
+        drainFluidInputSlots();
+
+        if (currentRecipe != null || progress > 0) {
+            processActiveRecipe();
             return;
+        }
 
-        if (!enabled)
+        // Bound expensive full recipe scans while idle; active progress still updates every tick.
+        if (idleSearchDelay > 0) { idleSearchDelay--; return; }
+        idleSearchDelay = 4;
+        MachineRecipe matched = AssemblerRecipeHandler.INSTANCE.findRecipe(inventory, tanks);
+        if (matched == null || machineTier < matched.minTier) {
+            progress = 0;
+            recipeEUt = 0;
             return;
+        }
 
-        // ==========================================
-        // FIND RECIPE
-        // ==========================================
+        long startEUt = AssemblerRecipeHandler.getOverclockedEUt(matched, machineTier);
+        if (startEUt <= 0 || energy < startEUt) return;
 
-        currentRecipe =
-                AssemblerRecipeHandler.findRecipe(
-                        inventory
-                );
+        currentRecipe = matched;
+        maxProgress = AssemblerRecipeHandler.getOverclockedDuration(matched, machineTier);
+        recipeEUt = startEUt;
+        AssemblerRecipeHandler.INSTANCE.consumeInputs(matched, inventory);
+        consumeFluids(matched.fluidInputs);
+        energy -= startEUt;
+        progress = 1;
+        markDirty();
 
-        // ==========================================
-        // NO RECIPE
-        // ==========================================
+        if (progress >= maxProgress) finishActiveRecipe();
+    }
 
+    private void processActiveRecipe() {
+        // Old saves may contain progress without the new active-recipe tag.
+        // Inputs in those saves were not consumed, so resetting is lossless.
         if (currentRecipe == null) {
-
             progress = 0;
-
+            maxProgress = 200;
             recipeEUt = 0;
-
+            markDirty();
             return;
         }
-
-        // ==========================================
-        // TIER CHECK
-        // ==========================================
-
-        if (machineTier
-                < currentRecipe.tier) {
-
-            progress = 0;
-
-            recipeEUt = 0;
-
-            return;
+        if (!AssemblerRecipeHandler.INSTANCE.canOutput(inventory[SLOT_OUTPUT], currentRecipe.outputs[0])) return;
+        if (recipeEUt <= 0) {
+            recipeEUt = AssemblerRecipeHandler.getOverclockedEUt(currentRecipe, machineTier);
         }
-
-        // ==========================================
-        // OVERCLOCK
-        // ==========================================
-
-        maxProgress =
-                AssemblerRecipeHandler
-                        .getOverclockedDuration(
-                                currentRecipe,
-                                machineTier
-                        );
-
-        recipeEUt =
-                AssemblerRecipeHandler
-                        .getOverclockedEUt(
-                                currentRecipe,
-                                machineTier
-                        );
-
-        // ==========================================
-        // ENERGY CHECK
-        // ==========================================
-
-        if (energy < recipeEUt)
-            return;
-
-        // ==========================================
-        // USE ENERGY
-        // ==========================================
+        if (recipeEUt <= 0 || energy < recipeEUt) return;
 
         energy -= recipeEUt;
-
         progress++;
-
-        // ==========================================
-        // FINISH
-        // ==========================================
-
-        if (progress >= maxProgress) {
-
-            AssemblerRecipeHandler.consumeInputs(
-                    currentRecipe,
-                    inventory
-            );
-
-            AssemblerRecipeHandler.outputRecipe(
-                    currentRecipe,
-                    inventory
-            );
-
-            progress = 0;
-
-            markDirty();
-        }
-
+        markDirty();
+        if (progress >= maxProgress) finishActiveRecipe();
     }
 
-
-    // ==========================================
-    // IC2 LOAD
-    // ==========================================
-
-    @Override
-    public void validate() {
-
-        super.validate();
-
-        if (!worldObj.isRemote) {
-
-            MinecraftForge.EVENT_BUS.post(
-                    new EnergyTileLoadEvent(this)
-            );
-
-            addedToEnergyNet = true;
-        }
+    private void finishActiveRecipe() {
+        AssemblerRecipeHandler.INSTANCE.outputRecipe(currentRecipe, inventory);
+        currentRecipe = null;
+        idleSearchDelay = 0;
+        progress = 0;
+        recipeEUt = 0;
+        markDirty();
     }
 
-    // ==========================================
-    // IC2 UNLOAD
-    // ==========================================
-
-    @Override
-    public void invalidate() {
-
-        if (!worldObj.isRemote
-                && addedToEnergyNet) {
-
-            MinecraftForge.EVENT_BUS.post(
-                    new EnergyTileUnloadEvent(this)
-            );
+    private MachineRecipe findSavedRecipe(NBTTagCompound nbt) {
+        java.util.List<MachineRecipe> recipes = AssemblerRecipeHandler.INSTANCE.getRecipeList();
+        int index = nbt.hasKey("ActiveRecipeIndex") ? nbt.getInteger("ActiveRecipeIndex") : -1;
+        if (index >= 0 && index < recipes.size()) {
+            MachineRecipe recipe = recipes.get(index);
+            if (!nbt.hasKey("ActiveRecipeOutput")) return recipe;
+            ItemStack saved = ItemStack.loadItemStackFromNBT(nbt.getCompoundTag("ActiveRecipeOutput"));
+            if (saved != null && recipe.outputs[0].isItemEqual(saved)
+                    && ItemStack.areItemStackTagsEqual(recipe.outputs[0], saved)) return recipe;
         }
-
-        addedToEnergyNet = false;
-
-        super.invalidate();
-    }
-
-    // ==========================================
-    // ENERGY INPUT
-    // ==========================================
-
-    @Override
-    public double injectEnergy(
-            ForgeDirection direction,
-            double amount,
-            double voltage
-    ) {
-
-        if (!enabled)
-            return amount;
-
-        // ==========================================
-        // OVERVOLTAGE
-        // ==========================================
-
-        if (voltage > getMaxInputVoltage()) {
-
-            explodeMachine();
-
-            return 0;
+        if (nbt.hasKey("ActiveRecipeOutput")) {
+            ItemStack saved = ItemStack.loadItemStackFromNBT(nbt.getCompoundTag("ActiveRecipeOutput"));
+            for (MachineRecipe recipe : recipes) {
+                if (saved != null && recipe.outputs[0].isItemEqual(saved)
+                        && ItemStack.areItemStackTagsEqual(recipe.outputs[0], saved)) return recipe;
+            }
         }
-
-        int accepted =
-                (int)Math.min(
-                        amount,
-                        maxEnergy - energy
-                );
-
-        energy += accepted;
-
-        return amount - accepted;
+        return null;
     }
 
     @Override
-    public double getDemandedEnergy() {
+    public boolean isItemValidForSlot(int slot, ItemStack stack) {
+        if (slot == SLOT_OUTPUT) return false;
+        if (slot == SLOT_FLUID) {
+            return stack != null && (stack.getItem() instanceof IFluidContainerItem
+                    || FluidContainerRegistry.isContainer(stack));
+        }
+        if (slot == SLOT_MODULE) return isTierModule(stack);
+        if (slot == SLOT_TRANSFORMER) return isTransformerModule(stack);
+        if (slot == 13) return stack != null && stack.getItem() instanceof IElectricItem;
+        return slot >= 0 && slot < 9 && super.isItemValidForSlot(slot, stack);
+    }
 
-        return maxEnergy - energy;
+    private static boolean isTierModule(ItemStack stack) {
+        if (stack == null) return false;
+        Item item = stack.getItem();
+        return item == Tmodules.TierModuleMV || item == Tmodules.TierModuleHV
+                || item == Tmodules.TierModuleEV || item == Tmodules.TierModuleIV
+                || item == Tmodules.TierModuleLuV || item == Tmodules.TierModuleZPM
+                || item == Tmodules.TierModuleUV || item == Tmodules.TierModulePUV1
+                || item == Tmodules.TierModuleUX || item == Tmodules.TierModuleOLV
+                || item == Tmodules.TierModuleOMV || item == Tmodules.TierModuleOHV
+                || item == Tmodules.TierModuleOEV || item == Tmodules.TierModuleOIV
+                || item == Tmodules.TierModuleMAX;
+    }
+
+    private static boolean isTransformerModule(ItemStack stack) {
+        if (stack == null) return false;
+        Item item = stack.getItem();
+        return item == Tmodules.LowLevelTransformer || item == Tmodules.MediumLevelTransformer
+                || item == Tmodules.HighLevelTransformer || item == Tmodules.UltimateLevelTransformer
+                || item == Tmodules.OmegaTransformer;
     }
 
     @Override
-    public boolean acceptsEnergyFrom(
-            TileEntity emitter,
-            ForgeDirection side
-    ) {
-
-        return true;
+    public String getInventoryName() {
+        return "Assembler";
     }
-
-    @Override
-    public int getSinkTier() {
-
-        return machineTier;
-    }
-
-    // ==========================================
-    // MACHINE TIER
-    // ==========================================
-
-    private void updateMachineTier() {
-
-        machineTier = 1;
-
-        ItemStack transformer =
-                inventory[12];
-
-        ItemStack module =
-                inventory[11];
-
-        if (transformer == null)
-            return;
-
-        if (module == null)
-            return;
-
-        String transformerName =
-                transformer.getUnlocalizedName()
-                        .toLowerCase();
-
-        Item item =
-                module.getItem();
-
-        int moduleTier = 1;
-
-        if (item == Tmodules.TierModuleMV)
-            moduleTier = 2;
-
-        else if (item == Tmodules.TierModuleHV)
-            moduleTier = 3;
-
-        else if (item == Tmodules.TierModuleEV)
-            moduleTier = 4;
-
-        else if (item == Tmodules.TierModuleIV)
-            moduleTier = 5;
-
-        else if (item == Tmodules.TierModuleLuV)
-            moduleTier = 6;
-
-        else if (item == Tmodules.TierModuleZPM)
-            moduleTier = 7;
-
-        else if (item == Tmodules.TierModuleUV)
-            moduleTier = 8;
-
-        else if (item == Tmodules.TierModulePUV1)
-            moduleTier = 9;
-
-        else if (item == Tmodules.TierModuleUX)
-            moduleTier = 10;
-
-        else if (item == Tmodules.TierModuleOLV)
-            moduleTier = 11;
-
-        else if (item == Tmodules.TierModuleOMV)
-            moduleTier = 12;
-
-        else if (item == Tmodules.TierModuleOHV)
-            moduleTier = 13;
-
-        else if (item == Tmodules.TierModuleOEV)
-            moduleTier = 14;
-
-        else if (item == Tmodules.TierModuleOIV)
-            moduleTier = 15;
-
-        else if (item == Tmodules.TierModuleMAX)
-            moduleTier = 16;
-
-        int maxTier = 1;
-
-        if (transformerName.contains("lowleveltransformer")) {
-
-            maxTier = 4;
-
-        } else if (transformerName.contains("mediumleveltransformer")) {
-
-            maxTier = 6;
-
-        } else if (transformerName.contains("highleveltransformer")) {
-
-            maxTier = 8;
-
-        } else if (transformerName.contains("ultimateleveltransformer")) {
-
-            maxTier = 15;
-
-        } else if (transformerName.contains("omegatransformer")) {
-
-            maxTier = 16;
-        }
-
-        if (moduleTier <= maxTier) {
-
-            machineTier = moduleTier;
-
-        } else {
-
-            machineTier = 1;
-        }
-    }
-
-    // ==========================================
-    // TIER NAME
-    // ==========================================
 
     public String getTierName() {
-
         switch (machineTier) {
-
             case 2: return "MV";
             case 3: return "HV";
             case 4: return "EV";
@@ -433,19 +219,12 @@ public class TileEntityAssembler
             case 14: return "OEV";
             case 15: return "OIV";
             case 16: return "MAX";
+            default: return "LV";
         }
-
-        return "LV";
     }
 
-    // ==========================================
-    // TIER COLOR
-    // ==========================================
-
     public int getTierColor() {
-
         switch (machineTier) {
-
             case 2: return 0x00AAFF;
             case 3: return 0xFFFF00;
             case 4: return 0xFF8800;
@@ -453,326 +232,246 @@ public class TileEntityAssembler
             case 6: return 0xAA00FF;
             case 7: return 0xFF00FF;
             case 8: return 0x00FFFF;
+            default: return 0xAAAAAA;
+        }
+    }
+
+    @Override
+    public ModularScreen createScreen(GuiCreationContext context, ModularPanel panel) {
+        return new ModularScreen(panel);
+    }
+
+    @Override
+    public ModularPanel buildUI(GuiCreationContext context, GuiSyncManager syncManager, boolean isClient) {
+        com.mod.htgt6.common.network.MachineUiTransfers.bind(syncManager, this, isClient);
+        syncManager.registerSlotGroup("assembler", 14);
+        syncManager.registerSlotGroup("assembler_preview", 1);
+        syncManager.syncValue("assembler_energy", SyncHandlers.longNumber(() -> energy, value -> energy = value));
+        syncManager.syncValue("assembler_progress", SyncHandlers.intNumber(() -> progress, value -> progress = value));
+        syncManager.syncValue("assembler_max_progress", SyncHandlers.intNumber(() -> maxProgress, value -> maxProgress = value));
+        syncManager.syncValue("assembler_tier", SyncHandlers.intNumber(() -> machineTier, value -> machineTier = value));
+        syncManager.syncValue("assembler_enabled", SyncHandlers.bool(() -> enabled, value -> enabled = value));
+        FluidSlotSyncHandler tankSync = SyncHandlers.fluidSlot(tanks[0])
+                .canFillSlot(true).canDrainSlot(true);
+        syncManager.syncValue("assembler_tank", tankSync);
+
+        MachineUiTheme theme = MachineUiTheme.getActive();
+        ModularPanel panel = ModularPanel.defaultPanel("assembler", 240, 295)
+                .background(new Rectangle().setColor(theme.getPanelColor()));
+        addPanelFrame(panel, theme.getFrameColor());
+
+        panel.child(new TextWidget("ASSEMBLER").pos(13, 8).color(theme.getTitleColor()));
+        panel.child(createInfoButton().pos(178, 6));
+        if (isClient) {
+            panel.child(com.mod.htgt6.client.GUI.AssemblerModularUiButtons
+                    .createNeiButton(this).pos(196, 6));
         }
 
-        return 0xAAAAAA;
-    }
+        // Live production terminal requested for the PNG replacement.
+        Widget productionTerminal = new Widget().background(new Rectangle().setColor(theme.getTerminalColor()));
+        productionTerminal.pos(8, 24).size(224, 42);
+        panel.child(productionTerminal);
+        panel.child(createPreviewSlot().pos(14, 36));
+        panel.child(new TextWidget(IKey.dynamic(this::getPreviewName))
+                .pos(39, 31).size(187, 11).color(theme.getPrimaryColor()));
+        panel.child(new TextWidget(IKey.dynamic(this::getRemainingTimeText))
+                .pos(39, 48).size(187, 11).color(theme.getProductionColor()));
 
-    // ==========================================
-    // MAX INPUT
-    // ==========================================
-
-    public int getMaxInputVoltage() {
-
-        int index =
-                machineTier - 1;
-
-        if (index < 0)
-            index = 0;
-
-        if (index >= VOLTAGES.length)
-            index = VOLTAGES.length - 1;
-
-        return VOLTAGES[index];
-    }
-
-    // ==========================================
-    // EXPLOSION
-    // ==========================================
-
-    public void explodeMachine() {
-
-        if (worldObj == null)
-            return;
-
-        if (worldObj.isRemote)
-            return;
-
-        float power =
-                2F + (machineTier * 0.4F);
-
-        worldObj.createExplosion(
-                null,
-                xCoord + 0.5D,
-                yCoord + 0.5D,
-                zCoord + 0.5D,
-                power,
-                true
-        );
-
-        worldObj.setBlockToAir(
-                xCoord,
-                yCoord,
-                zCoord
-        );
-    }
-
-    // ==========================================
-    // INVENTORY
-    // ==========================================
-
-    @Override
-    public int getSizeInventory() {
-
-        return inventory.length;
-    }
-
-    @Override
-    public ItemStack getStackInSlot(int slot) {
-
-        return inventory[slot];
-    }
-
-    @Override
-    public ItemStack decrStackSize(
-            int slot,
-            int amount
-    ) {
-
-        if (inventory[slot] != null) {
-
-            ItemStack itemstack;
-
-            if (inventory[slot].stackSize <= amount) {
-
-                itemstack = inventory[slot];
-
-                inventory[slot] = null;
-
-                markDirty();
-
-                return itemstack;
+        // Slot geometry follows the old PNG: shaped 3x3 matrix, arrow, output,
+        // then fluid and machine upgrade controls on the right.
+        Widget machineArea = new Widget().background(new Rectangle().setColor(theme.getTerminalColor()));
+        machineArea.pos(8, 72).size(224, 82);
+        panel.child(machineArea);
+        panel.child(new TextWidget("INPUT MATRIX").pos(16, 78).color(theme.getLabelColor()));
+        for (int row = 0; row < 3; row++) {
+            for (int col = 0; col < 3; col++) {
+                int slot = row * 3 + col;
+                panel.child(createItemSlot(slot, true, true).pos(16 + col * 18, 94 + row * 18));
             }
+        }
+        panel.child(new TextWidget(IKey.str(">>")).pos(75, 113).color(theme.getProductionColor()));
+        panel.child(new TextWidget("OUTPUT").pos(92, 78).color(theme.getLabelColor()));
+        panel.child(createItemSlot(SLOT_OUTPUT, false, true).pos(101, 112));
 
-            itemstack =
-                    inventory[slot]
-                            .splitStack(amount);
+        panel.child(new TextWidget("TANK / MODIFIERS").pos(128, 78).color(theme.getLabelColor()));
+        if (isClient) {
+            com.mod.htgt6.client.GUI.AssemblerFluidSlot tank =
+                    new com.mod.htgt6.client.GUI.AssemblerFluidSlot(this);
+            tank.syncHandler("assembler_tank");
+            tank.background(GuiTextures.SLOT_DARK).pos(128, 92).size(26, 44);
+            panel.child(tank);
+        } else {
+            panel.child(new FluidSlot().syncHandler("assembler_tank").pos(128, 92).size(26, 44));
+        }
+        panel.child(createMachineSlot(SLOT_FLUID, "CANISTER").pos(158, 108));
+        panel.child(createMachineSlot(SLOT_MODULE, "TIER MODULE").pos(176, 108));
+        panel.child(createMachineSlot(SLOT_TRANSFORMER, "TRANSFORMER").pos(194, 108));
+        panel.child(createMachineSlot(13, "ENERGY ITEM").pos(212, 108));
+        panel.child(new TextWidget("CAN").pos(158, 132).color(theme.getLabelColor()));
+        panel.child(new TextWidget("T").pos(182, 132).color(theme.getPrimaryColor()));
+        panel.child(new TextWidget("TR").pos(197, 132).color(theme.getProductionColor()));
+        panel.child(new TextWidget("EU").pos(214, 132).color(theme.getEnergyColor()));
 
-            if (inventory[slot].stackSize <= 0) {
+        Widget statusTerminal = new Widget().background(new Rectangle().setColor(theme.getTerminalColor()));
+        statusTerminal.pos(8, 160).size(224, 38);
+        panel.child(statusTerminal);
+        panel.child(new TextWidget(IKey.dynamic(() -> "BUFFER: " + SingleblockUiText.number(energy) + " / " + SingleblockUiText.number(maxEnergy) + " EU"))
+                .pos(14, 168).size(212, 11).color(theme.getEnergyColor()));
+        panel.child(new TextWidget(IKey.dynamic(() -> (enabled ? "STATUS: ONLINE" : "STATUS: OFFLINE")
+                + "   TIER: " + getTierName()))
+                .pos(14, 183).size(212, 11).color(theme.getLabelColor()));
 
-                inventory[slot] = null;
+        panel.child(SlotGroupWidget.playerInventory().pos(39, 207));
+        return panel;
+    }
+
+    private String getPreviewName() {
+        ItemStack preview = getRecipePreview();
+        return preview == null ? "OUTPUT: IDLE" : SingleblockUiText.label("OUTPUT: " + preview.getDisplayName());
+    }
+
+    private String getRemainingTimeText() {
+        if (currentRecipe == null && progress <= 0) return "TIME LEFT: IDLE";
+        int remaining = Math.max(0, maxProgress - progress);
+        return String.format("TIME LEFT: %.1f s", remaining / 20.0D);
+    }
+
+    private ItemStack getRecipePreview() {
+        if (worldObj != null && worldObj.isRemote) return syncedRecipePreview;
+        return currentRecipe == null || currentRecipe.outputs.length == 0 ? null : currentRecipe.outputs[0];
+    }
+
+    private ItemSlot createPreviewSlot() {
+        ModularSlot slot = SyncHandlers.itemSlot(recipePreview, 0)
+                .slotGroup("assembler_preview").accessibility(false, false);
+        return new ItemSlot().slot(slot);
+    }
+
+    private ItemSlot createItemSlot(int index, boolean canPut, boolean canTake) {
+        ModularSlot slot = SyncHandlers.itemSlot(modularInventory, index)
+                .slotGroup("assembler").accessibility(canPut, canTake);
+        return new ItemSlot().slot(slot).background(GuiTextures.SLOT_DARK);
+    }
+
+    private ItemSlot createMachineSlot(int index, final String label) {
+        ItemSlot slot = createItemSlot(index, true, true);
+        slot.tooltip(t -> {
+            t.addLine(label);
+            if (index == SLOT_MODULE) t.addLine("Controls the machine recipe tier");
+            if (index == SLOT_TRANSFORMER) t.addLine("Unlocks the tier module range");
+        });
+        return slot;
+    }
+
+    private ButtonWidget<?> createInfoButton() {
+        ButtonWidget<?> button = new ButtonWidget();
+        button.size(12, 12).background(GuiTextures.BUTTON).overlay(IKey.str("i"));
+        button.tooltip(t -> {
+            t.setUpdateTooltipEveryTick(true);
+            t.addLine("Assembler diagnostics");
+            t.addLine(getRemainingTimeText());
+            t.addLine("Energy: " + energy + " / " + maxEnergy + " EU");
+            t.addLine("Input: " + getMaxInputVoltage() + " EU/t");
+            t.addLine("Tier: " + machineTier + " (" + getTierName() + ")");
+            t.addLine("Tank: " + tanks[0].getFluidAmount() + " / " + tanks[0].getCapacity() + " mB");
+        });
+        return button;
+    }
+
+    private static void addPanelFrame(ModularPanel panel, int color) {
+        frame(panel, color, 0, 0, 240, 1);
+        frame(panel, color, 0, 294, 240, 1);
+        frame(panel, color, 0, 0, 1, 295);
+        frame(panel, color, 239, 0, 1, 295);
+    }
+
+    private static void frame(ModularPanel panel, int color, int x, int y, int width, int height) {
+        Widget edge = new Widget().background(new Rectangle().setColor(color));
+        edge.pos(x, y).size(width, height);
+        panel.child(edge);
+    }
+
+    private static final class AssemblerInventory implements IItemHandlerModifiable {
+        private final TileEntityAssembler assembler;
+        private AssemblerInventory(TileEntityAssembler assembler) { this.assembler = assembler; }
+        @Override public int getSlots() { return 14; }
+        @Override public ItemStack getStackInSlot(int slot) {
+            return slot >= 0 && slot < getSlots() ? assembler.inventory[slot] : null;
+        }
+        @Override public int getSlotLimit(int slot) {
+            return slot == SLOT_MODULE || slot == SLOT_TRANSFORMER || slot == 13
+                    ? 1 : assembler.getInventoryStackLimit();
+        }
+        @Override public void setStackInSlot(int slot, ItemStack stack) {
+            if (slot >= 0 && slot < getSlots()) assembler.setInventorySlotContents(slot, stack);
+        }
+        @Override public boolean isItemValid(int slot, ItemStack stack) {
+            return slot >= 0 && slot < getSlots() && assembler.isItemValidForSlot(slot, stack);
+        }
+        @Override public ItemStack insertItem(int slot, ItemStack stack, boolean simulate) {
+            if (stack == null || !isItemValid(slot, stack)) return stack;
+            ItemStack current = getStackInSlot(slot);
+            if (current != null && (!current.isItemEqual(stack)
+                    || !ItemStack.areItemStackTagsEqual(current, stack))) return stack;
+            int limit = Math.min(getSlotLimit(slot), stack.getMaxStackSize()) - (current == null ? 0 : current.stackSize);
+            int moved = Math.min(stack.stackSize, Math.max(0, limit));
+            if (moved <= 0) return stack;
+            if (!simulate) {
+                if (current == null) {
+                    ItemStack inserted = stack.copy(); inserted.stackSize = moved;
+                    setStackInSlot(slot, inserted);
+                } else {
+                    current.stackSize += moved; assembler.markDirty();
+                }
             }
-
-            markDirty();
-
-            return itemstack;
+            if (moved == stack.stackSize) return null;
+            ItemStack remaining = stack.copy(); remaining.stackSize -= moved;
+            return remaining;
         }
-
-        return null;
-    }
-
-    @Override
-    public ItemStack getStackInSlotOnClosing(
-            int slot
-    ) {
-
-        if (inventory[slot] != null) {
-
-            ItemStack stack =
-                    inventory[slot];
-
-            inventory[slot] = null;
-
-            return stack;
+        @Override public ItemStack extractItem(int slot, int amount, boolean simulate) {
+            ItemStack current = getStackInSlot(slot);
+            if (current == null || amount <= 0) return null;
+            ItemStack result = current.copy(); result.stackSize = Math.min(amount, current.stackSize);
+            if (!simulate) {
+                current.stackSize -= result.stackSize;
+                if (current.stackSize <= 0) setStackInSlot(slot, null);
+                else assembler.markDirty();
+            }
+            return result;
         }
-
-        return null;
     }
 
-    @Override
-    public void setInventorySlotContents(
-            int slot,
-            ItemStack stack
-    ) {
-
-        inventory[slot] = stack;
-
-        if (stack != null
-                && stack.stackSize
-                > getInventoryStackLimit()) {
-
-            stack.stackSize =
-                    getInventoryStackLimit();
+    private static final class RecipePreviewInventory implements IItemHandlerModifiable {
+        private final TileEntityAssembler assembler;
+        private RecipePreviewInventory(TileEntityAssembler assembler) { this.assembler = assembler; }
+        @Override public int getSlots() { return 1; }
+        @Override public ItemStack getStackInSlot(int slot) { return slot == 0 ? assembler.getRecipePreview() : null; }
+        @Override public int getSlotLimit(int slot) { return 64; }
+        @Override public void setStackInSlot(int slot, ItemStack stack) {
+            if (slot == 0) assembler.syncedRecipePreview = stack == null ? null : stack.copy();
         }
-
-        markDirty();
+        @Override public boolean isItemValid(int slot, ItemStack stack) { return false; }
+        @Override public ItemStack insertItem(int slot, ItemStack stack, boolean simulate) { return stack; }
+        @Override public ItemStack extractItem(int slot, int amount, boolean simulate) { return null; }
     }
 
     @Override
-    public String getInventoryName() {
-
-        return "Assembler";
-    }
-
-    @Override
-    public boolean hasCustomInventoryName() {
-
-        return false;
-    }
-
-    @Override
-    public int getInventoryStackLimit() {
-
-        return 64;
-    }
-
-    @Override
-    public boolean isUseableByPlayer(
-            EntityPlayer player
-    ) {
-
-        return worldObj.getTileEntity(
-                xCoord,
-                yCoord,
-                zCoord
-        ) == this
-                && player.getDistanceSq(
-                xCoord + 0.5D,
-                yCoord + 0.5D,
-                zCoord + 0.5D
-        ) <= 64D;
-    }
-
-    @Override
-    public void openInventory() {
-
-    }
-
-    @Override
-    public void closeInventory() {
-
-    }
-
-    @Override
-    public boolean isItemValidForSlot(
-            int slot,
-            ItemStack stack
-    ) {
-
-        return true;
-    }
-
-    // ==========================================
-    // READ NBT
-    // ==========================================
-
-    @Override
-    public void readFromNBT(
-            NBTTagCompound nbt
-    ) {
-
+    public void readFromNBT(NBTTagCompound nbt) {
         super.readFromNBT(nbt);
-
-        energy =
-                nbt.getInteger("Energy");
-
-        machineTier =
-                nbt.getInteger("MachineTier");
-
-        enabled =
-                nbt.getBoolean("Enabled");
-
-        progress =
-                nbt.getInteger("Progress");
-
-        maxProgress =
-                nbt.getInteger("MaxProgress");
-
-        NBTTagList items =
-                nbt.getTagList(
-                        "Inventory",
-                        10
-                );
-
-        inventory =
-                new ItemStack[
-                        getSizeInventory()
-                        ];
-
-        for (int i = 0; i < items.tagCount(); i++) {
-
-            NBTTagCompound itemTag =
-                    items.getCompoundTagAt(i);
-
-            int slot =
-                    itemTag.getByte("Slot")
-                            & 255;
-
-            if (slot >= 0
-                    && slot < inventory.length) {
-
-                inventory[slot] =
-                        ItemStack.loadItemStackFromNBT(
-                                itemTag
-                        );
-            }
-        }
+        recipeEUt = nbt.hasKey("RecipeEUtLong") ? nbt.getLong("RecipeEUtLong") : nbt.getInteger("RecipeEUt");
+        currentRecipe = progress > 0 ? findSavedRecipe(nbt) : null;
     }
 
-    // ==========================================
-    // WRITE NBT
-    // ==========================================
-
     @Override
-    public void writeToNBT(
-            NBTTagCompound nbt
-    ) {
-
+    public void writeToNBT(NBTTagCompound nbt) {
         super.writeToNBT(nbt);
-
-        nbt.setInteger(
-                "Energy",
-                energy
-        );
-
-        nbt.setInteger(
-                "MachineTier",
-                machineTier
-        );
-
-        nbt.setBoolean(
-                "Enabled",
-                enabled
-        );
-
-        nbt.setInteger(
-                "Progress",
-                progress
-        );
-
-        nbt.setInteger(
-                "MaxProgress",
-                maxProgress
-        );
-
-        NBTTagList items =
-                new NBTTagList();
-
-        for (int i = 0; i < inventory.length; i++) {
-
-            if (inventory[i] != null) {
-
-                NBTTagCompound itemTag =
-                        new NBTTagCompound();
-
-                itemTag.setByte(
-                        "Slot",
-                        (byte)i
-                );
-
-                inventory[i].writeToNBT(
-                        itemTag
-                );
-
-                items.appendTag(
-                        itemTag
-                );
-            }
+        nbt.setLong("RecipeEUtLong", recipeEUt);
+        nbt.setInteger("RecipeEUt", (int) Math.min(Integer.MAX_VALUE, recipeEUt));
+        if (progress > 0 && currentRecipe != null) {
+            nbt.setInteger("ActiveRecipeIndex", AssemblerRecipeHandler.INSTANCE.getRecipeList().indexOf(currentRecipe));
+            NBTTagCompound recipeTag = new NBTTagCompound();
+            currentRecipe.outputs[0].writeToNBT(recipeTag);
+            nbt.setTag("ActiveRecipeOutput", recipeTag);
         }
-
-        nbt.setTag(
-                "Inventory",
-                items
-        );
     }
 }

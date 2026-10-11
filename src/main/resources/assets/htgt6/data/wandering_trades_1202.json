@@ -1,0 +1,496 @@
+{
+  "1": [
+    {
+      "item": "minecraft:sea_pickle",
+      "cost": 2,
+      "count": 1,
+      "maxUses": 5,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:slime_ball",
+      "cost": 4,
+      "count": 1,
+      "maxUses": 5,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:glowstone",
+      "cost": 2,
+      "count": 1,
+      "maxUses": 5,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:nautilus_shell",
+      "cost": 5,
+      "count": 1,
+      "maxUses": 5,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:fern",
+      "cost": 1,
+      "count": 1,
+      "maxUses": 12,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:sugar_cane",
+      "cost": 1,
+      "count": 1,
+      "maxUses": 8,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:pumpkin",
+      "cost": 1,
+      "count": 1,
+      "maxUses": 4,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:kelp",
+      "cost": 3,
+      "count": 1,
+      "maxUses": 12,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:cactus",
+      "cost": 3,
+      "count": 1,
+      "maxUses": 8,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:dandelion",
+      "cost": 1,
+      "count": 1,
+      "maxUses": 12,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:poppy",
+      "cost": 1,
+      "count": 1,
+      "maxUses": 12,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:blue_orchid",
+      "cost": 1,
+      "count": 1,
+      "maxUses": 8,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:allium",
+      "cost": 1,
+      "count": 1,
+      "maxUses": 12,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:azure_bluet",
+      "cost": 1,
+      "count": 1,
+      "maxUses": 12,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:red_tulip",
+      "cost": 1,
+      "count": 1,
+      "maxUses": 12,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:orange_tulip",
+      "cost": 1,
+      "count": 1,
+      "maxUses": 12,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:white_tulip",
+      "cost": 1,
+      "count": 1,
+      "maxUses": 12,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:pink_tulip",
+      "cost": 1,
+      "count": 1,
+      "maxUses": 12,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:oxeye_daisy",
+      "cost": 1,
+      "count": 1,
+      "maxUses": 12,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:cornflower",
+      "cost": 1,
+      "count": 1,
+      "maxUses": 12,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:lily_of_the_valley",
+      "cost": 1,
+      "count": 1,
+      "maxUses": 7,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:wheat_seeds",
+      "cost": 1,
+      "count": 1,
+      "maxUses": 12,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:beetroot_seeds",
+      "cost": 1,
+      "count": 1,
+      "maxUses": 12,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:pumpkin_seeds",
+      "cost": 1,
+      "count": 1,
+      "maxUses": 12,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:melon_seeds",
+      "cost": 1,
+      "count": 1,
+      "maxUses": 12,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:acacia_sapling",
+      "cost": 5,
+      "count": 1,
+      "maxUses": 8,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:birch_sapling",
+      "cost": 5,
+      "count": 1,
+      "maxUses": 8,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:dark_oak_sapling",
+      "cost": 5,
+      "count": 1,
+      "maxUses": 8,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:jungle_sapling",
+      "cost": 5,
+      "count": 1,
+      "maxUses": 8,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:oak_sapling",
+      "cost": 5,
+      "count": 1,
+      "maxUses": 8,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:spruce_sapling",
+      "cost": 5,
+      "count": 1,
+      "maxUses": 8,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:cherry_sapling",
+      "cost": 5,
+      "count": 1,
+      "maxUses": 8,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:mangrove_propagule",
+      "cost": 5,
+      "count": 1,
+      "maxUses": 8,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:red_dye",
+      "cost": 1,
+      "count": 3,
+      "maxUses": 12,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:white_dye",
+      "cost": 1,
+      "count": 3,
+      "maxUses": 12,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:blue_dye",
+      "cost": 1,
+      "count": 3,
+      "maxUses": 12,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:pink_dye",
+      "cost": 1,
+      "count": 3,
+      "maxUses": 12,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:black_dye",
+      "cost": 1,
+      "count": 3,
+      "maxUses": 12,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:green_dye",
+      "cost": 1,
+      "count": 3,
+      "maxUses": 12,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:light_gray_dye",
+      "cost": 1,
+      "count": 3,
+      "maxUses": 12,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:magenta_dye",
+      "cost": 1,
+      "count": 3,
+      "maxUses": 12,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:yellow_dye",
+      "cost": 1,
+      "count": 3,
+      "maxUses": 12,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:gray_dye",
+      "cost": 1,
+      "count": 3,
+      "maxUses": 12,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:purple_dye",
+      "cost": 1,
+      "count": 3,
+      "maxUses": 12,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:light_blue_dye",
+      "cost": 1,
+      "count": 3,
+      "maxUses": 12,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:lime_dye",
+      "cost": 1,
+      "count": 3,
+      "maxUses": 12,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:orange_dye",
+      "cost": 1,
+      "count": 3,
+      "maxUses": 12,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:brown_dye",
+      "cost": 1,
+      "count": 3,
+      "maxUses": 12,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:cyan_dye",
+      "cost": 1,
+      "count": 3,
+      "maxUses": 12,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:brain_coral_block",
+      "cost": 3,
+      "count": 1,
+      "maxUses": 8,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:bubble_coral_block",
+      "cost": 3,
+      "count": 1,
+      "maxUses": 8,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:fire_coral_block",
+      "cost": 3,
+      "count": 1,
+      "maxUses": 8,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:horn_coral_block",
+      "cost": 3,
+      "count": 1,
+      "maxUses": 8,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:tube_coral_block",
+      "cost": 3,
+      "count": 1,
+      "maxUses": 8,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:vine",
+      "cost": 1,
+      "count": 1,
+      "maxUses": 12,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:brown_mushroom",
+      "cost": 1,
+      "count": 1,
+      "maxUses": 12,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:red_mushroom",
+      "cost": 1,
+      "count": 1,
+      "maxUses": 12,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:lily_pad",
+      "cost": 1,
+      "count": 2,
+      "maxUses": 5,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:small_dripleaf",
+      "cost": 1,
+      "count": 2,
+      "maxUses": 5,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:sand",
+      "cost": 1,
+      "count": 8,
+      "maxUses": 8,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:red_sand",
+      "cost": 1,
+      "count": 4,
+      "maxUses": 6,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:pointed_dripstone",
+      "cost": 1,
+      "count": 2,
+      "maxUses": 5,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:rooted_dirt",
+      "cost": 1,
+      "count": 2,
+      "maxUses": 5,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:moss_block",
+      "cost": 1,
+      "count": 2,
+      "maxUses": 5,
+      "xp": 1
+    }
+  ],
+  "2": [
+    {
+      "item": "minecraft:tropical_fish_bucket",
+      "cost": 5,
+      "count": 1,
+      "maxUses": 4,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:pufferfish_bucket",
+      "cost": 5,
+      "count": 1,
+      "maxUses": 4,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:packed_ice",
+      "cost": 3,
+      "count": 1,
+      "maxUses": 6,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:blue_ice",
+      "cost": 6,
+      "count": 1,
+      "maxUses": 6,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:gunpowder",
+      "cost": 1,
+      "count": 1,
+      "maxUses": 8,
+      "xp": 1
+    },
+    {
+      "item": "minecraft:podzol",
+      "cost": 3,
+      "count": 3,
+      "maxUses": 6,
+      "xp": 1
+    }
+  ]
+}

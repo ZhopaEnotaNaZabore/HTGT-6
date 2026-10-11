@@ -1,0 +1,8 @@
+{
+  "parent": "htgt6:block/1_20_backport/nether116/inner_stairs",
+  "textures": {
+    "bottom": "htgt6:block/1_20_backport/polished_blackstone_bricks",
+    "side": "htgt6:block/1_20_backport/polished_blackstone_bricks",
+    "top": "htgt6:block/1_20_backport/polished_blackstone_bricks"
+  }
+}

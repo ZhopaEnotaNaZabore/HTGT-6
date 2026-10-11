@@ -1,99 +1,82 @@
 package com.mod.htgt6.common.item.htgt6.fluids;
 
-import com.mod.htgt6.HTGT6;
-import cpw.mods.fml.common.registry.GameRegistry;
-import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
-import net.minecraft.item.Item;
-
+import net.minecraft.init.Blocks;
+import net.minecraft.util.IIcon;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class FluidsHTGT6 {
-
+//Chemistry
     public static Fluid liqPlatinumSol;
     public static Fluid liqPalladConc;
-
     public static Fluid liqKSo4;
     public static Fluid liqRuCl;
     public static Fluid liqAcidicOsmium;
     public static Fluid liqKeF;
-///////////////////////////////////////
-    public static Block blockPlatinumSol;
-     public static Block blockPalladConc;
-     public static Block blockKSo4;
-     public static Block blockRuCl;
-     public static Block blockAcidicOsmium;
-     public static Block blockKeF;
+    public static Fluid BauxideSollution;
+    public static Fluid HeatedBauxideSollution;
 
-
-
+    ///Advanced fuels
+    public static Fluid EnrichedNitroFuel;
+    public static Fluid AdminFuel;
 
     public static void initialize() {
         FluidRegistration();
-        BlockFluidRegistration();
-        ItemRegistration();
     }
 
-    public static void FluidRegistration(){
-        liqPlatinumSol = new Fluid("Platiunum_sollution").setGaseous(false).setDensity(400).setViscosity(2500);
-        liqPalladConc = new Fluid("Palladium_sollution").setGaseous(false).setDensity(400).setViscosity(2500);
-        liqKSo4 = new Fluid("Potassium_Disuplhate").setGaseous(false).setDensity(400).setViscosity(2500);
-        liqRuCl = new Fluid("Ruthenium_Salt").setGaseous(false).setDensity(400).setViscosity(2500);
-        liqAcidicOsmium = new Fluid("Acidic_Osmium_sollution").setGaseous(false).setDensity(400).setViscosity(2500);
-        liqKeF = new Fluid("Trinium_Fluiride").setGaseous(false).setDensity(400).setViscosity(2500);
+    public static void FluidRegistration() {
+        AdminFuel =  registerColoredFluid( "ADMfluid", 400, 2500, 300, false, 0xFFFF00);
+        EnrichedNitroFuel =  registerColoredFluid( "EnrichedNitroFuel", 400, 2500, 300, false, 0xFFFF00);
+        liqPlatinumSol = registerColoredFluid("Platiunum_sollution", 400, 2500, 300, false, 0x00FFFF);
+        liqPalladConc = registerColoredFluid("Palladium_sollution", 400, 2500, 300, false, 0xE6E6FA);
+        liqKSo4 = registerColoredFluid("Potassium_Disuplhate", 400, 2500, 300, false, 0xFFFDD0);
+        liqRuCl = registerColoredFluid("Ruthenium_Salt", 400, 2500, 300, false, 0x8B0000);
+        liqAcidicOsmium = registerColoredFluid("Acidic_Osmium_sollution", 400, 2500, 300, false, 0xB0C4DE);
+        liqKeF = registerColoredFluid("Trinium_Fluiride", 400, 2500, 300, false, 0x7FFFD4);
 
-
-        FluidRegistry.registerFluid(liqKSo4);
-        FluidRegistry.registerFluid(liqAcidicOsmium);
-        FluidRegistry.registerFluid(liqKeF);
-        FluidRegistry.registerFluid(liqRuCl);
-        FluidRegistry.registerFluid(liqPlatinumSol);
-        FluidRegistry.registerFluid(liqPalladConc);
+        BauxideSollution = registerColoredFluid("BauxideSollution", 400, 2500, 300, false, 0xCD853F);
+        HeatedBauxideSollution = registerColoredFluid("HeatedBauxideSollution", 400, 2500, 450, false, 0xD2691E);
     }
-    private static Fluid registerFluid(String fluidName, int density, int viscosity, int temperature, boolean gaseous) {
-        Fluid returnFluid = FluidRegistry.getFluid(fluidName);
-        if (returnFluid == null)
-        {
-            FluidRegistry.registerFluid(new Fluid(fluidName).setDensity(density).setViscosity(viscosity).setTemperature(temperature).setGaseous(gaseous));
-            returnFluid = FluidRegistry.getFluid(fluidName);
+
+    private static Fluid registerColoredFluid(String fluidName, int density, int viscosity, int temperature, boolean gaseous, final int rgbColor) {
+        // Fluid lowercases registry names; the lookup itself is case-sensitive.
+        // Keep legacy names (including spelling) so saved tanks and quests remain compatible.
+        String registryName = fluidName.toLowerCase(java.util.Locale.ENGLISH);
+        Fluid returnFluid = FluidRegistry.getFluid(registryName);
+
+        if (returnFluid == null) {
+            Fluid newFluid = new Fluid(fluidName) {
+                @Override
+                public int getColor() {
+                    return rgbColor;
+                }
+
+                @Override
+                @SideOnly(Side.CLIENT)
+                public IIcon getStillIcon() {
+                    return Blocks.water.getIcon(0, 0);
+                }
+
+                @Override
+                @SideOnly(Side.CLIENT)
+                public IIcon getFlowingIcon() {
+                    return Blocks.water.getIcon(1, 0);
+                }
+            };
+
+            newFluid.setDensity(density)
+                    .setViscosity(viscosity)
+                    .setTemperature(temperature)
+                    .setGaseous(gaseous)
+                    .setUnlocalizedName(fluidName); // <-- ADD THIS LINE
+
+            FluidRegistry.registerFluid(newFluid);
+            returnFluid = FluidRegistry.getFluid(registryName);
         }
+
         return returnFluid;
-
     }
-    public static void BlockFluidRegistration() {
-        blockPlatinumSol = new blockFluidHTGT6(liqPlatinumSol, Material.water, false).setBlockName("PlatinumSollution");
-        blockPlatinumSol.setBlockTextureName(HTGT6.MOD_ID+":fluid2");
-
-        blockPalladConc = new blockFluidHTGT6(liqPalladConc, Material.water, false).setBlockName("PalladiumSollution");
-        blockPalladConc.setBlockTextureName(HTGT6.MOD_ID+":fluid3");
-
-        blockKSo4 = new blockFluidHTGT6(liqKSo4, Material.water, false).setBlockName("KalliumSuplhate");
-        blockKSo4.setBlockTextureName(HTGT6.MOD_ID+":fluid4");
-
-        blockRuCl = new blockFluidHTGT6(liqRuCl, Material.water, false).setBlockName("RutheniumSalt");
-        blockRuCl.setBlockTextureName(HTGT6.MOD_ID+":fluid5");
-
-        blockAcidicOsmium = new blockFluidHTGT6(liqAcidicOsmium, Material.water, false).setBlockName("AcidicOsmium");
-        blockAcidicOsmium.setBlockTextureName(HTGT6.MOD_ID+":fluid6");
-
-        blockKeF = new blockFluidHTGT6(liqKeF, Material.water, false).setBlockName("TriniumFluoirite");
-        blockKeF.setBlockTextureName(HTGT6.MOD_ID+":fluid7");
-
-
-
-
-        GameRegistry.registerBlock(blockKeF, "TriniumFluoirite");
-        GameRegistry.registerBlock(blockAcidicOsmium, "AcidicOsmium");
-        GameRegistry.registerBlock(blockRuCl, "RutheniumSalt");
-        GameRegistry.registerBlock(blockPalladConc, "PalladiumSollution");
-        GameRegistry.registerBlock(blockPlatinumSol, "PlatinumSollution");
-        GameRegistry.registerBlock(blockKSo4, "KalliumSuplhate");
-    }
-
-    public static void  ItemRegistration () {
-
-    }
-
 }
 

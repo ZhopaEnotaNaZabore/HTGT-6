@@ -1,0 +1,6 @@
+{
+  "parent": "htgt6:block/1_20_backport/template_wall_post",
+  "textures": {
+    "wall": "minecraft:block/stone_bricks"
+  }
+}

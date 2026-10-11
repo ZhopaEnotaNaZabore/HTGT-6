@@ -1,0 +1,15 @@
+{
+  "block/wooden_door/open1": "d2ba0797ca24fcf15d105c88899089e4af5cb9f4",
+  "block/wooden_door/open2": "21464f4cfb0163f9071d2a84d818bd5ac5b6eee6",
+  "block/wooden_door/close1": "6e0d43b064fb69f7b63e0704d99a38bb2ebc19e0",
+  "block/wooden_door/close2": "4cf6992a99518dfac836228cffbbc7e8344d969b",
+  "block/wooden_door/close3": "73a3bfcb37099c49ac22e6fa308ca14a6e4f8347",
+  "block/cherrywood_door/toggle1": "d4d026beefbd60dde82c3ac8aa3230abe1ace1fc",
+  "block/cherrywood_door/toggle2": "91e90c476138ab63fd578477dd95f76ac14934a2",
+  "block/cherrywood_door/toggle3": "cb4173aa39e5c90134e569f456831a33e724cb09",
+  "block/cherrywood_door/toggle4": "75c7b109405d04ff20e1f5750969b3899a590358",
+  "block/bamboo_wood_door/toggle1": "03a9d41d398c7f8f0314a856982c94901279474d",
+  "block/bamboo_wood_door/toggle2": "7efe23d9b72b22045a45104e64696dc26d7a0868",
+  "block/bamboo_wood_door/toggle3": "199192a54b00af0f694cd069ceecee9394660c44",
+  "block/bamboo_wood_door/toggle4": "c8118021f93a6fad75cbb84525d9c621aeaa0c0d"
+}

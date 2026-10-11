@@ -1,0 +1,7 @@
+{
+  "parent": "htgt6:block/1_20_backport/nether116/cube_column",
+  "textures": {
+    "end": "htgt6:block/1_20_backport/blackstone_top",
+    "side": "htgt6:block/1_20_backport/blackstone"
+  }
+}

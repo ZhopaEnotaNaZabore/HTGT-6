@@ -1,0 +1,6 @@
+{
+  "parent": "htgt6:village_items114/item/generated",
+  "textures": {
+    "layer0": "minecraft:item/black_dye"
+  }
+}

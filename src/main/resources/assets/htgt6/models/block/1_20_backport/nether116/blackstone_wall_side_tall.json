@@ -1,0 +1,6 @@
+{
+  "parent": "htgt6:block/1_20_backport/nether116/template_wall_side_tall",
+  "textures": {
+    "wall": "htgt6:block/1_20_backport/blackstone"
+  }
+}

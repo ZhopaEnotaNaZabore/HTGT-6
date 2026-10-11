@@ -1,0 +1,22 @@
+allprojects {
+    buildDir = file('build/chat-image-security-isolated')
+    afterEvaluate {
+        task compileIronChestFixture(type: JavaCompile) {
+            dependsOn compileJava
+            source = project.files(new File(project.projectDir, 'tools/IronChestMachineFixture.java'))
+            classpath = sourceSets.main.runtimeClasspath
+            destinationDir = file("${buildDir}/ironchest-fixture")
+            sourceCompatibility = '1.8'
+            targetCompatibility = '1.8'
+            options.encoding = 'UTF-8'
+        }
+        task verifyIronChest(type: JavaExec) {
+            dependsOn compileIronChestFixture, deobfuscateRunClientLibraries
+            main = 'IronChestMachineFixture'
+            // The fixture exercises GT6 APIs against MCP Minecraft classes, not the release SRG names.
+            classpath = files(compileIronChestFixture.destinationDir,
+                    "${buildDir}/runClient/libraries/gregtech_1.7.10-6.15.08-HiTech6_Edition.jar") + sourceSets.main.runtimeClasspath
+            jvmArgs '-Djava.awt.headless=true'
+        }
+    }
+}

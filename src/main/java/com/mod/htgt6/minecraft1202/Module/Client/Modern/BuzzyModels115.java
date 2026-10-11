@@ -1,0 +1,10 @@
+package com.mod.htgt6.minecraft1202.Module.Client.Modern;
+import com.mod.htgt6.client.model.json.JsonBlockModelLoader;import com.mod.htgt6.minecraft1202.Module.Registry.Modern.*;import com.mod.htgt6.minecraft1202.Module.Blocks.Modern.*;import net.minecraft.util.ResourceLocation;import net.minecraft.world.IBlockAccess;import net.minecraft.block.Block;import net.minecraft.item.Item;
+public final class BuzzyModels115 {
+ public static void init(){cpw.mods.fml.client.registry.RenderingRegistry.registerEntityRenderingHandler(net.minecraft.entity.monster.EntityIronGolem.class,new RenderGolem115());cpw.mods.fml.client.registry.RenderingRegistry.registerEntityRenderingHandler(com.mod.htgt6.minecraft1202.Module.Entity.Modern.EntityBee115.class,new RenderBee115());
+  JsonBlockModelLoader loader=JsonBlockModelLoader.install();JsonBlockModelLoader.TextureResolver textures=new JsonBlockModelLoader.TextureResolver(){public ResourceLocation resolve(String name){return new ResourceLocation("htgt6","buzzy115/"+name.substring(name.indexOf(':')+1));}};
+  Block[] blocks={BuzzyBees115.beeNest,BuzzyBees115.beehive,EtFVanillaGapContent120.honeyBlock,EtFVanillaGapContent120.honeycombBlock};String[] names={"bee_nest","beehive","honey_block","honeycomb_block"};
+  for(int i=0;i<blocks.length;i++){final boolean hive=i<2;loader.register(blocks[i],new ResourceLocation("htgt6","buzzy115/"+names[i]),new JsonBlockModelLoader.StateMapper(){public String variant(IBlockAccess w,int x,int y,int z,int meta){if(!hive)return "normal";TileEntityBeehive115 t=w==null?null:BlockBeehive115.tile(w,x,y,z);return "facing="+new String[]{"north","east","south","west"}[meta&3]+",honey_level="+(t==null?0:t.honey());}},textures);loader.registerItem(Item.getItemFromBlock(blocks[i]),new ResourceLocation("htgt6","buzzy115/item/"+names[i]),textures);}
+  loader.registerItem(EtFVanillaGapContent120.honeyBottle,new ResourceLocation("htgt6","buzzy115/item/honey_bottle"),textures);loader.registerItem(EtFVanillaGapContent120.honeycomb,new ResourceLocation("htgt6","buzzy115/item/honeycomb"),textures);
+ }
+}

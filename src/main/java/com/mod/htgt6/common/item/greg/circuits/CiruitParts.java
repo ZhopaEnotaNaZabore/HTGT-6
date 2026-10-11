@@ -16,16 +16,16 @@ public class CiruitParts extends Item {
     public static Item SimpleCircPlate;
 
     public static void CircuitPartsDatabase() {
-        GlassTube = register(new Item(), "GlassTube");
+        GlassTube = register(new com.mod.htgt6.common.item.htgt6.AtlasItem(), "GlassTube");
         GlassTube.setUnlocalizedName("GlassTube");
         GlassTube.setTextureName(HTGT6.MOD_ID+":GlassTube");
-        VacuumTube = register(new Item(), "vacuumtube");
+        VacuumTube = register(new com.mod.htgt6.common.item.htgt6.AtlasItem(), "vacuumtube");
         VacuumTube.setUnlocalizedName("vacuumtube");
         VacuumTube.setTextureName(HTGT6.MOD_ID+":vacuumtube");
-        SimpleResistor = register(new Item(), "Resistor");
+        SimpleResistor = register(new com.mod.htgt6.common.item.htgt6.AtlasItem(), "Resistor");
         SimpleResistor.setUnlocalizedName("simpleresistor");
         SimpleResistor.setTextureName(HTGT6.MOD_ID+":Resistor");
-        SimpleCircPlate = register(new Item(), "CircuitPlate");
+        SimpleCircPlate = register(new com.mod.htgt6.common.item.htgt6.AtlasItem(), "CircuitPlate");
         SimpleCircPlate.setUnlocalizedName("WoodCircuitPlate");
         SimpleCircPlate.setTextureName(HTGT6.MOD_ID+":Board");
         WoodPlate = register(new Item(), "WoodPlate");

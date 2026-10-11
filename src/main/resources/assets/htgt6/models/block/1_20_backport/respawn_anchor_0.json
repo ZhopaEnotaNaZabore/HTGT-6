@@ -1,0 +1,8 @@
+{
+  "parent": "htgt6:block/1_20_backport/cube_bottom_top",
+  "textures": {
+    "bottom": "htgt6:block/1_20_backport/respawn_anchor_bottom",
+    "side": "htgt6:block/1_20_backport/respawn_anchor_side0",
+    "top": "htgt6:block/1_20_backport/respawn_anchor_top_off"
+  }
+}

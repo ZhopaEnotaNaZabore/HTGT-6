@@ -2,9 +2,9 @@ package com.mod.htgt6.common.item.galaxy.alloys;
 
 import com.mod.htgt6.HTGT6;
 import com.mod.htgt6.common.handler.ModTab;
-import net.minecraft.item.Item;
+import com.mod.htgt6.common.item.htgt6.AtlasItem;
 
-public class CompositeT4 extends Item {
+public class CompositeT4 extends AtlasItem {
     public CompositeT4 () {
         setUnlocalizedName("CompositeT4");
         setMaxStackSize(64);

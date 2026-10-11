@@ -1,10 +1,10 @@
 package com.mod.htgt6.common.block.hitech6;
 
-import com.mod.htgt6.HTGT6;
 import com.mod.htgt6.common.TE.UniversalGasTurbineTE;
-import com.mod.htgt6.common.handler.GuiHandler;
+import com.cleanroommc.modularui.manager.GuiInfos;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import gregapi.data.CS;
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
@@ -41,8 +41,9 @@ public class BlockUniversalGasTurbine extends Block implements ITileEntityProvid
         if (!world.isRemote) {
             TileEntity te = world.getTileEntity(x, y, z);
             if (te instanceof UniversalGasTurbineTE) {
-                // Uses UNIVERSAL_GAS_TURBINE_ID (4) mapped in your GuiHandler
-                player.openGui(HTGT6.instance, GuiHandler.UNIVERSAL_GAS_TURBINE_ID, world, x, y, z);
+                // ModularUI owns the server container and client wrapper, including
+                // synchronized fluid interactions and native NEI compatibility.
+                GuiInfos.TILE_ENTITY.open(player, world, x, y, z);
             }
         }
         return true;
@@ -75,9 +76,9 @@ public class BlockUniversalGasTurbine extends Block implements ITileEntityProvid
     @SideOnly(Side.CLIENT)
     public void registerBlockIcons(IIconRegister iconRegister) {
         // assets/htgt6/textures/blocks/...
-        this.blockIcon = iconRegister.registerIcon("htgt6:assembler_side");
-        this.iconFront = iconRegister.registerIcon("htgt6:UGS_Front");
-        this.iconTop   = iconRegister.registerIcon("htgt6:assembler_top");
+        this.blockIcon = com.mod.htgt6.client.render.MachineAtlasSprites.register(iconRegister, "htgt6:assembler_side");
+        this.iconFront = com.mod.htgt6.client.render.MachineAtlasSprites.register(iconRegister, "htgt6:UGS_Front");
+        this.iconTop   = com.mod.htgt6.client.render.MachineAtlasSprites.register(iconRegister, "htgt6:assembler_top");
     }
 
     @Override

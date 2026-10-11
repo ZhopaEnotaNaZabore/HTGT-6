@@ -1,0 +1,6 @@
+{
+  "parent": "htgt6:block/1_20_backport/nether116/button_inventory",
+  "textures": {
+    "texture": "htgt6:block/1_20_backport/polished_blackstone"
+  }
+}

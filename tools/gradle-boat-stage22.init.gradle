@@ -1,0 +1,10 @@
+allprojects {
+    buildDir = new File(rootDir, 'build/boat-stage22')
+    afterEvaluate {
+        tasks.withType(JavaExec).matching { it.name.startsWith('verify') }.all {
+            minHeapSize = '32m'
+            maxHeapSize = '384m'
+            jvmArgs '-XX:CICompilerCount=2'
+        }
+    }
+}

@@ -1,12 +1,10 @@
 CoreMod for HiTech6 modpack.
-Right now not awaible to the donwload from the net.
 
-This mod maded for fill holes in the games where need additional items.
-For exapmle, you want to see Dusts for galacticraft stones or smt else.
-HiTech6 core will fill this holes.'
 
-Source code work only on IntelIdead community 2023 bcs of gradle 4.4.1.
-Newer versions of Intel idea dont support this gradle.
+THIS DOESNT WORK WITHOUT GMC LIB
 
-BuildGradle file is configured to work from MCMOD file, all about mod version and root folders here.
-
+License: see LICENSE (Russian authoritative text).
+Unauthorized forks, modifications and redistribution of project-owned materials
+are prohibited, subject to the exceptions in LICENSE. Written permissions are
+issued by Teysera or GMC within their rights and authority. Third-party materials
+retain their own licenses; see THIRD_PARTY_NOTICES.md.

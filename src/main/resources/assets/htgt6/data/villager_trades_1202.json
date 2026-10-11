@@ -1,0 +1,2926 @@
+{
+  "farmer": {
+    "1": [
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.WHEAT",
+          "20",
+          "16",
+          "2"
+        ]
+      },
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.POTATO",
+          "26",
+          "16",
+          "2"
+        ]
+      },
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.CARROT",
+          "22",
+          "16",
+          "2"
+        ]
+      },
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.BEETROOT",
+          "15",
+          "16",
+          "2"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Items.BREAD",
+          "1",
+          "6",
+          "16",
+          "1"
+        ]
+      }
+    ],
+    "2": [
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Blocks.PUMPKIN",
+          "6",
+          "12",
+          "10"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Items.PUMPKIN_PIE",
+          "1",
+          "4",
+          "5"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Items.APPLE",
+          "1",
+          "4",
+          "16",
+          "5"
+        ]
+      }
+    ],
+    "3": [
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Items.COOKIE",
+          "3",
+          "18",
+          "10"
+        ]
+      },
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Blocks.MELON",
+          "4",
+          "12",
+          "20"
+        ]
+      }
+    ],
+    "4": [
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.CAKE",
+          "1",
+          "1",
+          "12",
+          "15"
+        ]
+      },
+      {
+        "type": "SuspiciousStewForEmerald",
+        "args": [
+          "MobEffects.NIGHT_VISION",
+          "100",
+          "15"
+        ]
+      },
+      {
+        "type": "SuspiciousStewForEmerald",
+        "args": [
+          "MobEffects.JUMP",
+          "160",
+          "15"
+        ]
+      },
+      {
+        "type": "SuspiciousStewForEmerald",
+        "args": [
+          "MobEffects.WEAKNESS",
+          "140",
+          "15"
+        ]
+      },
+      {
+        "type": "SuspiciousStewForEmerald",
+        "args": [
+          "MobEffects.BLINDNESS",
+          "120",
+          "15"
+        ]
+      },
+      {
+        "type": "SuspiciousStewForEmerald",
+        "args": [
+          "MobEffects.POISON",
+          "280",
+          "15"
+        ]
+      },
+      {
+        "type": "SuspiciousStewForEmerald",
+        "args": [
+          "MobEffects.SATURATION",
+          "7",
+          "15"
+        ]
+      }
+    ],
+    "5": [
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Items.GOLDEN_CARROT",
+          "3",
+          "3",
+          "30"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Items.GLISTERING_MELON_SLICE",
+          "4",
+          "3",
+          "30"
+        ]
+      }
+    ]
+  },
+  "fisherman": {
+    "1": [
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.STRING",
+          "20",
+          "16",
+          "2"
+        ]
+      },
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.COAL",
+          "10",
+          "16",
+          "2"
+        ]
+      },
+      {
+        "type": "ItemsAndEmeraldsToItems",
+        "args": [
+          "(cpu)Items.COD",
+          "6",
+          "1",
+          "Items.COOKED_COD",
+          "6",
+          "16",
+          "1",
+          "0.05f"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Items.COD_BUCKET",
+          "3",
+          "1",
+          "16",
+          "1"
+        ]
+      }
+    ],
+    "2": [
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.COD",
+          "15",
+          "16",
+          "10"
+        ]
+      },
+      {
+        "type": "ItemsAndEmeraldsToItems",
+        "args": [
+          "(cpu)Items.SALMON",
+          "6",
+          "1",
+          "Items.COOKED_SALMON",
+          "6",
+          "16",
+          "5",
+          "0.05f"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Items.CAMPFIRE",
+          "2",
+          "1",
+          "5"
+        ]
+      }
+    ],
+    "3": [
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.SALMON",
+          "13",
+          "16",
+          "20"
+        ]
+      },
+      {
+        "type": "EnchantedItemForEmeralds",
+        "args": [
+          "Items.FISHING_ROD",
+          "3",
+          "3",
+          "10",
+          "0.2f"
+        ]
+      }
+    ],
+    "4": [
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.TROPICAL_FISH",
+          "6",
+          "12",
+          "30"
+        ]
+      }
+    ],
+    "5": [
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.PUFFERFISH",
+          "4",
+          "12",
+          "30"
+        ]
+      },
+      {
+        "type": "EmeraldsForVillagerTypeItem",
+        "args": [
+          "1",
+          "12",
+          "30",
+          "(Map<cbm, cja>)ImmutableMap.builder().put((Object)VillagerType.PLAINS, (Object)Items.OAK_BOAT).put((Object)VillagerType.TAIGA, (Object)Items.SPRUCE_BOAT).put((Object)VillagerType.SNOW, (Object)Items.SPRUCE_BOAT).put((Object)VillagerType.DESERT, (Object)Items.JUNGLE_BOAT).put((Object)VillagerType.JUNGLE, (Object)Items.JUNGLE_BOAT).put((Object)VillagerType.SAVANNA, (Object)Items.ACACIA_BOAT).put((Object)VillagerType.SWAMP, (Object)Items.DARK_OAK_BOAT).build()"
+        ]
+      }
+    ]
+  },
+  "shepherd": {
+    "1": [
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Blocks.WHITE_WOOL",
+          "18",
+          "16",
+          "2"
+        ]
+      },
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Blocks.BROWN_WOOL",
+          "18",
+          "16",
+          "2"
+        ]
+      },
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Blocks.BLACK_WOOL",
+          "18",
+          "16",
+          "2"
+        ]
+      },
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Blocks.GRAY_WOOL",
+          "18",
+          "16",
+          "2"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Items.SHEARS",
+          "2",
+          "1",
+          "1"
+        ]
+      }
+    ],
+    "2": [
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.WHITE_DYE",
+          "12",
+          "16",
+          "10"
+        ]
+      },
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.GRAY_DYE",
+          "12",
+          "16",
+          "10"
+        ]
+      },
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.BLACK_DYE",
+          "12",
+          "16",
+          "10"
+        ]
+      },
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.LIGHT_BLUE_DYE",
+          "12",
+          "16",
+          "10"
+        ]
+      },
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.LIME_DYE",
+          "12",
+          "16",
+          "10"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.WHITE_WOOL",
+          "1",
+          "1",
+          "16",
+          "5"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.ORANGE_WOOL",
+          "1",
+          "1",
+          "16",
+          "5"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.MAGENTA_WOOL",
+          "1",
+          "1",
+          "16",
+          "5"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.LIGHT_BLUE_WOOL",
+          "1",
+          "1",
+          "16",
+          "5"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.YELLOW_WOOL",
+          "1",
+          "1",
+          "16",
+          "5"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.LIME_WOOL",
+          "1",
+          "1",
+          "16",
+          "5"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.PINK_WOOL",
+          "1",
+          "1",
+          "16",
+          "5"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.GRAY_WOOL",
+          "1",
+          "1",
+          "16",
+          "5"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.LIGHT_GRAY_WOOL",
+          "1",
+          "1",
+          "16",
+          "5"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.CYAN_WOOL",
+          "1",
+          "1",
+          "16",
+          "5"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.PURPLE_WOOL",
+          "1",
+          "1",
+          "16",
+          "5"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.BLUE_WOOL",
+          "1",
+          "1",
+          "16",
+          "5"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.BROWN_WOOL",
+          "1",
+          "1",
+          "16",
+          "5"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.GREEN_WOOL",
+          "1",
+          "1",
+          "16",
+          "5"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.RED_WOOL",
+          "1",
+          "1",
+          "16",
+          "5"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.BLACK_WOOL",
+          "1",
+          "1",
+          "16",
+          "5"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.WHITE_CARPET",
+          "1",
+          "4",
+          "16",
+          "5"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.ORANGE_CARPET",
+          "1",
+          "4",
+          "16",
+          "5"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.MAGENTA_CARPET",
+          "1",
+          "4",
+          "16",
+          "5"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.LIGHT_BLUE_CARPET",
+          "1",
+          "4",
+          "16",
+          "5"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.YELLOW_CARPET",
+          "1",
+          "4",
+          "16",
+          "5"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.LIME_CARPET",
+          "1",
+          "4",
+          "16",
+          "5"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.PINK_CARPET",
+          "1",
+          "4",
+          "16",
+          "5"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.GRAY_CARPET",
+          "1",
+          "4",
+          "16",
+          "5"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.LIGHT_GRAY_CARPET",
+          "1",
+          "4",
+          "16",
+          "5"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.CYAN_CARPET",
+          "1",
+          "4",
+          "16",
+          "5"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.PURPLE_CARPET",
+          "1",
+          "4",
+          "16",
+          "5"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.BLUE_CARPET",
+          "1",
+          "4",
+          "16",
+          "5"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.BROWN_CARPET",
+          "1",
+          "4",
+          "16",
+          "5"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.GREEN_CARPET",
+          "1",
+          "4",
+          "16",
+          "5"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.RED_CARPET",
+          "1",
+          "4",
+          "16",
+          "5"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.BLACK_CARPET",
+          "1",
+          "4",
+          "16",
+          "5"
+        ]
+      }
+    ],
+    "3": [
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.YELLOW_DYE",
+          "12",
+          "16",
+          "20"
+        ]
+      },
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.LIGHT_GRAY_DYE",
+          "12",
+          "16",
+          "20"
+        ]
+      },
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.ORANGE_DYE",
+          "12",
+          "16",
+          "20"
+        ]
+      },
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.RED_DYE",
+          "12",
+          "16",
+          "20"
+        ]
+      },
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.PINK_DYE",
+          "12",
+          "16",
+          "20"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.WHITE_BED",
+          "3",
+          "1",
+          "12",
+          "10"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.YELLOW_BED",
+          "3",
+          "1",
+          "12",
+          "10"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.RED_BED",
+          "3",
+          "1",
+          "12",
+          "10"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.BLACK_BED",
+          "3",
+          "1",
+          "12",
+          "10"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.BLUE_BED",
+          "3",
+          "1",
+          "12",
+          "10"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.BROWN_BED",
+          "3",
+          "1",
+          "12",
+          "10"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.CYAN_BED",
+          "3",
+          "1",
+          "12",
+          "10"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.GRAY_BED",
+          "3",
+          "1",
+          "12",
+          "10"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.GREEN_BED",
+          "3",
+          "1",
+          "12",
+          "10"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.LIGHT_BLUE_BED",
+          "3",
+          "1",
+          "12",
+          "10"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.LIGHT_GRAY_BED",
+          "3",
+          "1",
+          "12",
+          "10"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.LIME_BED",
+          "3",
+          "1",
+          "12",
+          "10"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.MAGENTA_BED",
+          "3",
+          "1",
+          "12",
+          "10"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.ORANGE_BED",
+          "3",
+          "1",
+          "12",
+          "10"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.PINK_BED",
+          "3",
+          "1",
+          "12",
+          "10"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.PURPLE_BED",
+          "3",
+          "1",
+          "12",
+          "10"
+        ]
+      }
+    ],
+    "4": [
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.BROWN_DYE",
+          "12",
+          "16",
+          "30"
+        ]
+      },
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.PURPLE_DYE",
+          "12",
+          "16",
+          "30"
+        ]
+      },
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.BLUE_DYE",
+          "12",
+          "16",
+          "30"
+        ]
+      },
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.GREEN_DYE",
+          "12",
+          "16",
+          "30"
+        ]
+      },
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.MAGENTA_DYE",
+          "12",
+          "16",
+          "30"
+        ]
+      },
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.CYAN_DYE",
+          "12",
+          "16",
+          "30"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Items.WHITE_BANNER",
+          "3",
+          "1",
+          "12",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Items.BLUE_BANNER",
+          "3",
+          "1",
+          "12",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Items.LIGHT_BLUE_BANNER",
+          "3",
+          "1",
+          "12",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Items.RED_BANNER",
+          "3",
+          "1",
+          "12",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Items.PINK_BANNER",
+          "3",
+          "1",
+          "12",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Items.GREEN_BANNER",
+          "3",
+          "1",
+          "12",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Items.LIME_BANNER",
+          "3",
+          "1",
+          "12",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Items.GRAY_BANNER",
+          "3",
+          "1",
+          "12",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Items.BLACK_BANNER",
+          "3",
+          "1",
+          "12",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Items.PURPLE_BANNER",
+          "3",
+          "1",
+          "12",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Items.MAGENTA_BANNER",
+          "3",
+          "1",
+          "12",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Items.CYAN_BANNER",
+          "3",
+          "1",
+          "12",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Items.BROWN_BANNER",
+          "3",
+          "1",
+          "12",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Items.YELLOW_BANNER",
+          "3",
+          "1",
+          "12",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Items.ORANGE_BANNER",
+          "3",
+          "1",
+          "12",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Items.LIGHT_GRAY_BANNER",
+          "3",
+          "1",
+          "12",
+          "15"
+        ]
+      }
+    ],
+    "5": [
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Items.PAINTING",
+          "2",
+          "3",
+          "30"
+        ]
+      }
+    ]
+  },
+  "fletcher": {
+    "1": [
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.STICK",
+          "32",
+          "16",
+          "2"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Items.ARROW",
+          "1",
+          "16",
+          "1"
+        ]
+      },
+      {
+        "type": "ItemsAndEmeraldsToItems",
+        "args": [
+          "(cpu)Blocks.GRAVEL",
+          "10",
+          "1",
+          "Items.FLINT",
+          "10",
+          "12",
+          "1",
+          "0.05f"
+        ]
+      }
+    ],
+    "2": [
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.FLINT",
+          "26",
+          "12",
+          "10"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Items.BOW",
+          "2",
+          "1",
+          "5"
+        ]
+      }
+    ],
+    "3": [
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.STRING",
+          "14",
+          "16",
+          "20"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Items.CROSSBOW",
+          "3",
+          "1",
+          "10"
+        ]
+      }
+    ],
+    "4": [
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.FEATHER",
+          "24",
+          "16",
+          "30"
+        ]
+      },
+      {
+        "type": "EnchantedItemForEmeralds",
+        "args": [
+          "Items.BOW",
+          "2",
+          "3",
+          "15"
+        ]
+      }
+    ],
+    "5": [
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.TRIPWIRE_HOOK",
+          "8",
+          "12",
+          "30"
+        ]
+      },
+      {
+        "type": "EnchantedItemForEmeralds",
+        "args": [
+          "Items.CROSSBOW",
+          "3",
+          "3",
+          "15"
+        ]
+      },
+      {
+        "type": "TippedArrowForItemsAndEmeralds",
+        "args": [
+          "Items.ARROW",
+          "5",
+          "Items.TIPPED_ARROW",
+          "5",
+          "2",
+          "12",
+          "30"
+        ]
+      }
+    ]
+  },
+  "librarian": {
+    "1": [
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.PAPER",
+          "24",
+          "16",
+          "2"
+        ]
+      },
+      {
+        "type": "EnchantBookForEmeralds",
+        "args": [
+          "1"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.BOOKSHELF",
+          "9",
+          "1",
+          "12",
+          "1"
+        ]
+      }
+    ],
+    "2": [
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.BOOK",
+          "4",
+          "12",
+          "10"
+        ]
+      },
+      {
+        "type": "EnchantBookForEmeralds",
+        "args": [
+          "5"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Items.LANTERN",
+          "1",
+          "1",
+          "5"
+        ]
+      }
+    ],
+    "3": [
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.INK_SAC",
+          "5",
+          "12",
+          "20"
+        ]
+      },
+      {
+        "type": "EnchantBookForEmeralds",
+        "args": [
+          "10"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Items.GLASS",
+          "1",
+          "4",
+          "10"
+        ]
+      }
+    ],
+    "4": [
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.WRITABLE_BOOK",
+          "2",
+          "12",
+          "30"
+        ]
+      },
+      {
+        "type": "EnchantBookForEmeralds",
+        "args": [
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Items.CLOCK",
+          "5",
+          "1",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Items.COMPASS",
+          "4",
+          "1",
+          "15"
+        ]
+      }
+    ],
+    "5": [
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Items.NAME_TAG",
+          "20",
+          "1",
+          "30"
+        ]
+      }
+    ]
+  },
+  "cartographer": {
+    "1": [
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.PAPER",
+          "24",
+          "16",
+          "2"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Items.MAP",
+          "7",
+          "1",
+          "1"
+        ]
+      }
+    ],
+    "2": [
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.GLASS_PANE",
+          "11",
+          "16",
+          "10"
+        ]
+      },
+      {
+        "type": "TreasureMapForEmeralds",
+        "args": [
+          "13",
+          "aqd.d",
+          "\"filled_map.monument\"",
+          "ebt.a.j",
+          "12",
+          "5"
+        ]
+      }
+    ],
+    "3": [
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.COMPASS",
+          "1",
+          "12",
+          "20"
+        ]
+      },
+      {
+        "type": "TreasureMapForEmeralds",
+        "args": [
+          "14",
+          "aqd.c",
+          "\"filled_map.mansion\"",
+          "ebt.a.i",
+          "12",
+          "10"
+        ]
+      }
+    ],
+    "4": [
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Items.ITEM_FRAME",
+          "7",
+          "1",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Items.WHITE_BANNER",
+          "3",
+          "1",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Items.BLUE_BANNER",
+          "3",
+          "1",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Items.LIGHT_BLUE_BANNER",
+          "3",
+          "1",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Items.RED_BANNER",
+          "3",
+          "1",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Items.PINK_BANNER",
+          "3",
+          "1",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Items.GREEN_BANNER",
+          "3",
+          "1",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Items.LIME_BANNER",
+          "3",
+          "1",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Items.GRAY_BANNER",
+          "3",
+          "1",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Items.BLACK_BANNER",
+          "3",
+          "1",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Items.PURPLE_BANNER",
+          "3",
+          "1",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Items.MAGENTA_BANNER",
+          "3",
+          "1",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Items.CYAN_BANNER",
+          "3",
+          "1",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Items.BROWN_BANNER",
+          "3",
+          "1",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Items.YELLOW_BANNER",
+          "3",
+          "1",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Items.ORANGE_BANNER",
+          "3",
+          "1",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Items.LIGHT_GRAY_BANNER",
+          "3",
+          "1",
+          "15"
+        ]
+      }
+    ],
+    "5": [
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Items.GLOBE_BANNER_PATTERN",
+          "8",
+          "1",
+          "30"
+        ]
+      }
+    ]
+  },
+  "cleric": {
+    "1": [
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.ROTTEN_FLESH",
+          "32",
+          "16",
+          "2"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Items.REDSTONE",
+          "1",
+          "2",
+          "1"
+        ]
+      }
+    ],
+    "2": [
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.GOLD_INGOT",
+          "3",
+          "12",
+          "10"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Items.LAPIS_LAZULI",
+          "1",
+          "1",
+          "5"
+        ]
+      }
+    ],
+    "3": [
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.RABBIT_FOOT",
+          "2",
+          "12",
+          "20"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.GLOWSTONE",
+          "4",
+          "1",
+          "12",
+          "10"
+        ]
+      }
+    ],
+    "4": [
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.SCUTE",
+          "4",
+          "12",
+          "30"
+        ]
+      },
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.GLASS_BOTTLE",
+          "9",
+          "12",
+          "30"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Items.ENDER_PEARL",
+          "5",
+          "1",
+          "15"
+        ]
+      }
+    ],
+    "5": [
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.NETHER_WART",
+          "22",
+          "12",
+          "30"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Items.EXPERIENCE_BOTTLE",
+          "3",
+          "1",
+          "30"
+        ]
+      }
+    ]
+  },
+  "armorer": {
+    "1": [
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.COAL",
+          "15",
+          "16",
+          "2"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "new cjf(Items.IRON_LEGGINGS)",
+          "7",
+          "1",
+          "12",
+          "1",
+          "0.2f"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "new cjf(Items.IRON_BOOTS)",
+          "4",
+          "1",
+          "12",
+          "1",
+          "0.2f"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "new cjf(Items.IRON_HELMET)",
+          "5",
+          "1",
+          "12",
+          "1",
+          "0.2f"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "new cjf(Items.IRON_CHESTPLATE)",
+          "9",
+          "1",
+          "12",
+          "1",
+          "0.2f"
+        ]
+      }
+    ],
+    "2": [
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.IRON_INGOT",
+          "4",
+          "12",
+          "10"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "new cjf(Items.BELL)",
+          "36",
+          "1",
+          "12",
+          "5",
+          "0.2f"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "new cjf(Items.CHAINMAIL_BOOTS)",
+          "1",
+          "1",
+          "12",
+          "5",
+          "0.2f"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "new cjf(Items.CHAINMAIL_LEGGINGS)",
+          "3",
+          "1",
+          "12",
+          "5",
+          "0.2f"
+        ]
+      }
+    ],
+    "3": [
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.LAVA_BUCKET",
+          "1",
+          "12",
+          "20"
+        ]
+      },
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.DIAMOND",
+          "1",
+          "12",
+          "20"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "new cjf(Items.CHAINMAIL_HELMET)",
+          "1",
+          "1",
+          "12",
+          "10",
+          "0.2f"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "new cjf(Items.CHAINMAIL_CHESTPLATE)",
+          "4",
+          "1",
+          "12",
+          "10",
+          "0.2f"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "new cjf(Items.SHIELD)",
+          "5",
+          "1",
+          "12",
+          "10",
+          "0.2f"
+        ]
+      }
+    ],
+    "4": [
+      {
+        "type": "EnchantedItemForEmeralds",
+        "args": [
+          "Items.DIAMOND_LEGGINGS",
+          "14",
+          "3",
+          "15",
+          "0.2f"
+        ]
+      },
+      {
+        "type": "EnchantedItemForEmeralds",
+        "args": [
+          "Items.DIAMOND_BOOTS",
+          "8",
+          "3",
+          "15",
+          "0.2f"
+        ]
+      }
+    ],
+    "5": [
+      {
+        "type": "EnchantedItemForEmeralds",
+        "args": [
+          "Items.DIAMOND_HELMET",
+          "8",
+          "3",
+          "30",
+          "0.2f"
+        ]
+      },
+      {
+        "type": "EnchantedItemForEmeralds",
+        "args": [
+          "Items.DIAMOND_CHESTPLATE",
+          "16",
+          "3",
+          "30",
+          "0.2f"
+        ]
+      }
+    ]
+  },
+  "weaponsmith": {
+    "1": [
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.COAL",
+          "15",
+          "16",
+          "2"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "new cjf(Items.IRON_AXE)",
+          "3",
+          "1",
+          "12",
+          "1",
+          "0.2f"
+        ]
+      },
+      {
+        "type": "EnchantedItemForEmeralds",
+        "args": [
+          "Items.IRON_SWORD",
+          "2",
+          "3",
+          "1"
+        ]
+      }
+    ],
+    "2": [
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.IRON_INGOT",
+          "4",
+          "12",
+          "10"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "new cjf(Items.BELL)",
+          "36",
+          "1",
+          "12",
+          "5",
+          "0.2f"
+        ]
+      }
+    ],
+    "3": [
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.FLINT",
+          "24",
+          "12",
+          "20"
+        ]
+      }
+    ],
+    "4": [
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.DIAMOND",
+          "1",
+          "12",
+          "30"
+        ]
+      },
+      {
+        "type": "EnchantedItemForEmeralds",
+        "args": [
+          "Items.DIAMOND_AXE",
+          "12",
+          "3",
+          "15",
+          "0.2f"
+        ]
+      }
+    ],
+    "5": [
+      {
+        "type": "EnchantedItemForEmeralds",
+        "args": [
+          "Items.DIAMOND_SWORD",
+          "8",
+          "3",
+          "30",
+          "0.2f"
+        ]
+      }
+    ]
+  },
+  "toolsmith": {
+    "1": [
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.COAL",
+          "15",
+          "16",
+          "2"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "new cjf(Items.STONE_AXE)",
+          "1",
+          "1",
+          "12",
+          "1",
+          "0.2f"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "new cjf(Items.STONE_SHOVEL)",
+          "1",
+          "1",
+          "12",
+          "1",
+          "0.2f"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "new cjf(Items.STONE_PICKAXE)",
+          "1",
+          "1",
+          "12",
+          "1",
+          "0.2f"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "new cjf(Items.STONE_HOE)",
+          "1",
+          "1",
+          "12",
+          "1",
+          "0.2f"
+        ]
+      }
+    ],
+    "2": [
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.IRON_INGOT",
+          "4",
+          "12",
+          "10"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "new cjf(Items.BELL)",
+          "36",
+          "1",
+          "12",
+          "5",
+          "0.2f"
+        ]
+      }
+    ],
+    "3": [
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.FLINT",
+          "30",
+          "12",
+          "20"
+        ]
+      },
+      {
+        "type": "EnchantedItemForEmeralds",
+        "args": [
+          "Items.IRON_AXE",
+          "1",
+          "3",
+          "10",
+          "0.2f"
+        ]
+      },
+      {
+        "type": "EnchantedItemForEmeralds",
+        "args": [
+          "Items.IRON_SHOVEL",
+          "2",
+          "3",
+          "10",
+          "0.2f"
+        ]
+      },
+      {
+        "type": "EnchantedItemForEmeralds",
+        "args": [
+          "Items.IRON_PICKAXE",
+          "3",
+          "3",
+          "10",
+          "0.2f"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "new cjf(Items.DIAMOND_HOE)",
+          "4",
+          "1",
+          "3",
+          "10",
+          "0.2f"
+        ]
+      }
+    ],
+    "4": [
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.DIAMOND",
+          "1",
+          "12",
+          "30"
+        ]
+      },
+      {
+        "type": "EnchantedItemForEmeralds",
+        "args": [
+          "Items.DIAMOND_AXE",
+          "12",
+          "3",
+          "15",
+          "0.2f"
+        ]
+      },
+      {
+        "type": "EnchantedItemForEmeralds",
+        "args": [
+          "Items.DIAMOND_SHOVEL",
+          "5",
+          "3",
+          "15",
+          "0.2f"
+        ]
+      }
+    ],
+    "5": [
+      {
+        "type": "EnchantedItemForEmeralds",
+        "args": [
+          "Items.DIAMOND_PICKAXE",
+          "13",
+          "3",
+          "30",
+          "0.2f"
+        ]
+      }
+    ]
+  },
+  "butcher": {
+    "1": [
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.CHICKEN",
+          "14",
+          "16",
+          "2"
+        ]
+      },
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.PORKCHOP",
+          "7",
+          "16",
+          "2"
+        ]
+      },
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.RABBIT",
+          "4",
+          "16",
+          "2"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Items.RABBIT_STEW",
+          "1",
+          "1",
+          "1"
+        ]
+      }
+    ],
+    "2": [
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.COAL",
+          "15",
+          "16",
+          "2"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Items.COOKED_PORKCHOP",
+          "1",
+          "5",
+          "16",
+          "5"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Items.COOKED_CHICKEN",
+          "1",
+          "8",
+          "16",
+          "5"
+        ]
+      }
+    ],
+    "3": [
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.MUTTON",
+          "7",
+          "16",
+          "20"
+        ]
+      },
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.BEEF",
+          "10",
+          "16",
+          "20"
+        ]
+      }
+    ],
+    "4": [
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.DRIED_KELP_BLOCK",
+          "10",
+          "12",
+          "30"
+        ]
+      }
+    ],
+    "5": [
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.SWEET_BERRIES",
+          "10",
+          "12",
+          "30"
+        ]
+      }
+    ]
+  },
+  "leatherworker": {
+    "1": [
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.LEATHER",
+          "6",
+          "16",
+          "2"
+        ]
+      },
+      {
+        "type": "DyedArmorForEmeralds",
+        "args": [
+          "Items.LEATHER_LEGGINGS",
+          "3"
+        ]
+      },
+      {
+        "type": "DyedArmorForEmeralds",
+        "args": [
+          "Items.LEATHER_CHESTPLATE",
+          "7"
+        ]
+      }
+    ],
+    "2": [
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.FLINT",
+          "26",
+          "12",
+          "10"
+        ]
+      },
+      {
+        "type": "DyedArmorForEmeralds",
+        "args": [
+          "Items.LEATHER_HELMET",
+          "5",
+          "12",
+          "5"
+        ]
+      },
+      {
+        "type": "DyedArmorForEmeralds",
+        "args": [
+          "Items.LEATHER_BOOTS",
+          "4",
+          "12",
+          "5"
+        ]
+      }
+    ],
+    "3": [
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.RABBIT_HIDE",
+          "9",
+          "12",
+          "20"
+        ]
+      },
+      {
+        "type": "DyedArmorForEmeralds",
+        "args": [
+          "Items.LEATHER_CHESTPLATE",
+          "7"
+        ]
+      }
+    ],
+    "4": [
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.SCUTE",
+          "4",
+          "12",
+          "30"
+        ]
+      },
+      {
+        "type": "DyedArmorForEmeralds",
+        "args": [
+          "Items.LEATHER_HORSE_ARMOR",
+          "6",
+          "12",
+          "15"
+        ]
+      }
+    ],
+    "5": [
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "new cjf(Items.SADDLE)",
+          "6",
+          "1",
+          "12",
+          "30",
+          "0.2f"
+        ]
+      },
+      {
+        "type": "DyedArmorForEmeralds",
+        "args": [
+          "Items.LEATHER_HELMET",
+          "5",
+          "12",
+          "30"
+        ]
+      }
+    ]
+  },
+  "mason": {
+    "1": [
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.CLAY_BALL",
+          "10",
+          "16",
+          "2"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Items.BRICK",
+          "1",
+          "10",
+          "16",
+          "1"
+        ]
+      }
+    ],
+    "2": [
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Blocks.STONE",
+          "20",
+          "16",
+          "10"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.CHISELED_STONE_BRICKS",
+          "1",
+          "4",
+          "16",
+          "5"
+        ]
+      }
+    ],
+    "3": [
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Blocks.GRANITE",
+          "16",
+          "16",
+          "20"
+        ]
+      },
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Blocks.ANDESITE",
+          "16",
+          "16",
+          "20"
+        ]
+      },
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Blocks.DIORITE",
+          "16",
+          "16",
+          "20"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.DRIPSTONE_BLOCK",
+          "1",
+          "4",
+          "16",
+          "10"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.POLISHED_ANDESITE",
+          "1",
+          "4",
+          "16",
+          "10"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.POLISHED_DIORITE",
+          "1",
+          "4",
+          "16",
+          "10"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.POLISHED_GRANITE",
+          "1",
+          "4",
+          "16",
+          "10"
+        ]
+      }
+    ],
+    "4": [
+      {
+        "type": "EmeraldForItems",
+        "args": [
+          "Items.QUARTZ",
+          "12",
+          "12",
+          "30"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.ORANGE_TERRACOTTA",
+          "1",
+          "1",
+          "12",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.WHITE_TERRACOTTA",
+          "1",
+          "1",
+          "12",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.BLUE_TERRACOTTA",
+          "1",
+          "1",
+          "12",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.LIGHT_BLUE_TERRACOTTA",
+          "1",
+          "1",
+          "12",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.GRAY_TERRACOTTA",
+          "1",
+          "1",
+          "12",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.LIGHT_GRAY_TERRACOTTA",
+          "1",
+          "1",
+          "12",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.BLACK_TERRACOTTA",
+          "1",
+          "1",
+          "12",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.RED_TERRACOTTA",
+          "1",
+          "1",
+          "12",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.PINK_TERRACOTTA",
+          "1",
+          "1",
+          "12",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.MAGENTA_TERRACOTTA",
+          "1",
+          "1",
+          "12",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.LIME_TERRACOTTA",
+          "1",
+          "1",
+          "12",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.GREEN_TERRACOTTA",
+          "1",
+          "1",
+          "12",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.CYAN_TERRACOTTA",
+          "1",
+          "1",
+          "12",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.PURPLE_TERRACOTTA",
+          "1",
+          "1",
+          "12",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.YELLOW_TERRACOTTA",
+          "1",
+          "1",
+          "12",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.BROWN_TERRACOTTA",
+          "1",
+          "1",
+          "12",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.ORANGE_GLAZED_TERRACOTTA",
+          "1",
+          "1",
+          "12",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.WHITE_GLAZED_TERRACOTTA",
+          "1",
+          "1",
+          "12",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.BLUE_GLAZED_TERRACOTTA",
+          "1",
+          "1",
+          "12",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.LIGHT_BLUE_GLAZED_TERRACOTTA",
+          "1",
+          "1",
+          "12",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.GRAY_GLAZED_TERRACOTTA",
+          "1",
+          "1",
+          "12",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.LIGHT_GRAY_GLAZED_TERRACOTTA",
+          "1",
+          "1",
+          "12",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.BLACK_GLAZED_TERRACOTTA",
+          "1",
+          "1",
+          "12",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.RED_GLAZED_TERRACOTTA",
+          "1",
+          "1",
+          "12",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.PINK_GLAZED_TERRACOTTA",
+          "1",
+          "1",
+          "12",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.MAGENTA_GLAZED_TERRACOTTA",
+          "1",
+          "1",
+          "12",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.LIME_GLAZED_TERRACOTTA",
+          "1",
+          "1",
+          "12",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.GREEN_GLAZED_TERRACOTTA",
+          "1",
+          "1",
+          "12",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.CYAN_GLAZED_TERRACOTTA",
+          "1",
+          "1",
+          "12",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.PURPLE_GLAZED_TERRACOTTA",
+          "1",
+          "1",
+          "12",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.YELLOW_GLAZED_TERRACOTTA",
+          "1",
+          "1",
+          "12",
+          "15"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.BROWN_GLAZED_TERRACOTTA",
+          "1",
+          "1",
+          "12",
+          "15"
+        ]
+      }
+    ],
+    "5": [
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.QUARTZ_PILLAR",
+          "1",
+          "1",
+          "12",
+          "30"
+        ]
+      },
+      {
+        "type": "ItemsForEmeralds",
+        "args": [
+          "Blocks.QUARTZ_BLOCK",
+          "1",
+          "1",
+          "12",
+          "30"
+        ]
+      }
+    ]
+  }
+}

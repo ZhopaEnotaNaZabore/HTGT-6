@@ -1,0 +1,27 @@
+allprojects {
+    buildDir = file('build/chat-image-security-isolated')
+    afterEvaluate {
+        task compileChatImageSecurityFixture(type: JavaCompile) {
+            dependsOn compileJava
+            source = project.files(new File(project.projectDir, 'tools/ChatImageSecurityFixture.java'),
+                    new File(project.projectDir, 'tools/ChatImagesFixture.java'))
+            classpath = sourceSets.main.runtimeClasspath
+            destinationDir = file("${buildDir}/fixture")
+            sourceCompatibility = '1.8'
+            targetCompatibility = '1.8'
+            options.encoding = 'UTF-8'
+        }
+        task verifyChatImageSecurity(type: JavaExec) {
+            dependsOn compileChatImageSecurityFixture
+            main = 'com.mod.htgt6.client.vanillatweaks.CHAT.ChatImageSecurityFixture'
+            classpath = files(compileChatImageSecurityFixture.destinationDir) + sourceSets.main.runtimeClasspath
+            jvmArgs '-Djava.awt.headless=true'
+        }
+        task verifyChatImageRegression(type: JavaExec) {
+            dependsOn verifyChatImageSecurity
+            main = 'com.mod.htgt6.client.vanillatweaks.CHAT.ChatImagesFixture'
+            classpath = files(compileChatImageSecurityFixture.destinationDir) + sourceSets.main.runtimeClasspath
+            jvmArgs '-Djava.awt.headless=true'
+        }
+    }
+}

@@ -1,9 +1,10 @@
 package com.mod.htgt6.common.block.hitech6;
 
-import com.mod.htgt6.HTGT6;
+import com.cleanroommc.modularui.manager.GuiInfos;
 import com.mod.htgt6.common.TE.TESuperMasicCompressor;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import gregapi.data.CS;
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
@@ -19,7 +20,7 @@ import net.minecraft.world.World;
 public class BlockSuperMasicCompressor extends Block implements ITileEntityProvider {
 
     @SideOnly(Side.CLIENT) private IIcon iconFront;
-    @SideOnly(Side.CLIENT) private IIcon iconTop;
+    @SideOnly(Side.CLIENT) private IIcon iconSide;
 
     public BlockSuperMasicCompressor() {
         super(Material.iron);
@@ -28,16 +29,14 @@ public class BlockSuperMasicCompressor extends Block implements ITileEntityProvi
         setResistance(6.0F);
         setStepSound(soundTypeMetal);
         this.isBlockContainer = true;
+
     }
 
     @Override
     public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int side, float hitX, float hitY, float hitZ) {
-        if (!world.isRemote) {
-            TileEntity te = world.getTileEntity(x, y, z);
-            if (te instanceof TESuperMasicCompressor) {
-                // Ensure you register a dedicated GUI ID for the Compressor inside your GuiHandler (e.g., ID: 1)
-                player.openGui(HTGT6.instance, 1, world, x, y, z);
-            }
+        if (player.isSneaking()) return false;
+        if (!world.isRemote && world.getTileEntity(x, y, z) instanceof TESuperMasicCompressor) {
+            GuiInfos.TILE_ENTITY.open(player, world, x, y, z);
         }
         return true;
     }
@@ -59,18 +58,16 @@ public class BlockSuperMasicCompressor extends Block implements ITileEntityProvi
     @Override
     @SideOnly(Side.CLIENT)
     public void registerBlockIcons(IIconRegister iconRegister) {
-        this.blockIcon = iconRegister.registerIcon("htgt6:assembler_side");
-        this.iconFront = iconRegister.registerIcon("htgt6:compressor_front");
-        this.iconTop   = iconRegister.registerIcon("htgt6:assembler_top");
+        this.iconSide = iconRegister.registerIcon("htgt6:multiblock_v2_compressor_casing");
+        this.iconFront = iconRegister.registerIcon("htgt6:multiblock_v2_compressor_front");
+        this.blockIcon = iconSide;
     }
 
     @Override
     @SideOnly(Side.CLIENT)
     public IIcon getIcon(int side, int metadata) {
-        if (side == 1) return iconTop;
-        if (side == 0) return blockIcon;
         if (metadata == 0 && side == 3) return iconFront;
-        return side == metadata ? iconFront : blockIcon;
+        return side == metadata ? iconFront : iconSide;
     }
 
     @Override

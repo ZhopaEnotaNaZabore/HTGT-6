@@ -1,0 +1,19 @@
+allprojects {
+    buildDir = file('build/chat-image-security-isolated')
+    afterEvaluate {
+        task compileNetworkDebugFixture(type: JavaCompile) {
+            dependsOn compileJava
+            source = project.files(new File(project.projectDir, 'tools/NetworkDiagnosticsFixture.java'))
+            classpath = sourceSets.main.runtimeClasspath
+            destinationDir = file("${buildDir}/network-debug-fixture")
+            sourceCompatibility = '1.8'
+            targetCompatibility = '1.8'
+            options.encoding = 'UTF-8'
+        }
+        task verifyNetworkDebug(type: JavaExec) {
+            dependsOn compileNetworkDebugFixture
+            main = 'com.mod.htgt6.asm.NetworkDiagnosticsFixture'
+            classpath = files(compileNetworkDebugFixture.destinationDir) + sourceSets.main.runtimeClasspath
+        }
+    }
+}

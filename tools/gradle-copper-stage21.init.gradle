@@ -1,0 +1,3 @@
+allprojects {
+    buildDir = new File(rootDir, 'build/copper-stage21')
+}

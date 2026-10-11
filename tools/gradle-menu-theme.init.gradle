@@ -1,0 +1,25 @@
+allprojects {
+    buildDir = file('build/chat-image-security-isolated')
+    afterEvaluate {
+        task compileMenuThemeFixture(type: JavaCompile) {
+            dependsOn compileJava
+            source = project.files(new File(project.projectDir, 'tools/MenuThemeFixture.java'),
+                    new File(project.projectDir, 'tools/ServerBrowserFixture.java'))
+            classpath = sourceSets.main.runtimeClasspath
+            destinationDir = file("${buildDir}/menu-theme-fixture")
+            sourceCompatibility = '1.8'
+            targetCompatibility = '1.8'
+            options.encoding = 'UTF-8'
+        }
+        task verifyMenuTheme(type: JavaExec) {
+            dependsOn compileMenuThemeFixture
+            main = 'MenuThemeFixture'
+            classpath = files(compileMenuThemeFixture.destinationDir) + sourceSets.main.runtimeClasspath
+        }
+        task verifyServerBrowser(type: JavaExec) {
+            dependsOn compileMenuThemeFixture
+            main = 'ServerBrowserFixture'
+            classpath = files(compileMenuThemeFixture.destinationDir) + sourceSets.main.runtimeClasspath
+        }
+    }
+}

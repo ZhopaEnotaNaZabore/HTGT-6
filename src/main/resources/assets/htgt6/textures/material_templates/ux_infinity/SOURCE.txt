@@ -1,0 +1,3 @@
+UX component palette frames are derived from Avaritia's Infinity Ingot texture.
+Source: https://github.com/SpitefulFox/Avaritia/blob/master/src/main/resources/assets/avaritia/textures/items/resource_infinity_ingot.png
+The frames are stored separately so every source template remains at or below 64x64.

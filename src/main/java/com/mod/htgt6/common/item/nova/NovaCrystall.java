@@ -2,9 +2,9 @@ package com.mod.htgt6.common.item.nova;
 
 import com.mod.htgt6.HTGT6;
 import com.mod.htgt6.common.handler.ModTab;
-import net.minecraft.item.Item;
+import com.mod.htgt6.common.item.htgt6.AtlasItem;
 
-public class NovaCrystall extends Item {
+public class NovaCrystall extends AtlasItem {
     public NovaCrystall () {
         setUnlocalizedName("NovaCrystall");
         setTextureName(HTGT6.MOD_ID + ":NovaCrystall");

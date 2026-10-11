@@ -2,9 +2,9 @@ package com.mod.htgt6.common.item.greg.materials.arcanite;
 
 import com.mod.htgt6.HTGT6;
 import com.mod.htgt6.common.handler.ModTab;
-import net.minecraft.item.Item;
+import com.mod.htgt6.common.item.htgt6.AtlasItem;
 
-public class ingotArcanite extends Item {
+public class ingotArcanite extends AtlasItem {
     public ingotArcanite () {
         setUnlocalizedName("ingotArcanite");
         setMaxStackSize(64);

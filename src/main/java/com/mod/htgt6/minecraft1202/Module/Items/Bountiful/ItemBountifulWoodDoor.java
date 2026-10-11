@@ -1,0 +1,5 @@
+package com.mod.htgt6.minecraft1202.Module.Items.Bountiful;
+
+import com.mod.htgt6.minecraft1202.Module.Blocks.Bountiful.BlockBountifulWoodDoor;
+import net.minecraft.block.material.Material;import net.minecraft.creativetab.CreativeTabs;import net.minecraft.entity.player.EntityPlayer;import net.minecraft.item.Item;import net.minecraft.item.ItemDoor;import net.minecraft.item.ItemStack;import net.minecraft.util.MathHelper;import net.minecraft.world.World;
+public final class ItemBountifulWoodDoor extends Item {private final BlockBountifulWoodDoor door;public ItemBountifulWoodDoor(String wood,BlockBountifulWoodDoor door){this.door=door;setUnlocalizedName(wood+"_door");setTextureName("htgt6:bountiful/door_"+("big_oak".equals(wood)?"dark_oak":wood));setCreativeTab(CreativeTabs.tabRedstone);}@Override public boolean onItemUse(ItemStack stack,EntityPlayer player,World world,int x,int y,int z,int side,float hitX,float hitY,float hitZ){return com.mod.htgt6.minecraft1202.Module.Items.Modern.DoorPlacement120.use(door,stack,player,world,x,y,z,side,hitX,hitY,hitZ);}}

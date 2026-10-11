@@ -1,0 +1,17 @@
+allprojects {
+ buildDir = file('build/crusher-validation')
+ afterEvaluate {
+  task compilePlatinumGroupFixture(type: JavaCompile) {
+   dependsOn classes, deobfuscateRunClientLibraries
+   source = project.files(new File(project.projectDir, 'tools/PlatinumGroupFixture.java'), new File(project.projectDir, 'tools/CrusherOreImportFixture.java'))
+   destinationDir = file("${buildDir}/fixtures/pgm")
+   sourceCompatibility='1.8'; targetCompatibility='1.8'; options.encoding='UTF-8'
+   classpath=compileMachineTierCraftingFixture.classpath
+  }
+  task verifyPlatinumGroup(type: JavaExec) {
+   dependsOn compilePlatinumGroupFixture
+   main='com.mod.htgt6.common.handler.recipes.PlatinumGroupFixture'
+   classpath=files(compilePlatinumGroupFixture.destinationDir)+compilePlatinumGroupFixture.classpath
+  }
+ }
+}

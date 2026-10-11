@@ -1,0 +1,17 @@
+allprojects {
+ buildDir = file('build/crusher-validation')
+ afterEvaluate {
+  task compileMachineWrenchFixture(type: JavaCompile) {
+   dependsOn classes, deobfuscateRunClientLibraries
+   source = project.files(new File(project.projectDir, 'tools/MachineWrenchHarvestFixture.java'), new File(project.projectDir, 'tools/CrusherOreImportFixture.java'))
+   destinationDir = file("${buildDir}/fixtures/wrench")
+   sourceCompatibility='1.8'; targetCompatibility='1.8'; options.encoding='UTF-8'
+   classpath=compileMachineTierCraftingFixture.classpath
+  }
+  task verifyMachineWrench(type: JavaExec) {
+   dependsOn compileMachineWrenchFixture
+   main='MachineWrenchHarvestFixture'
+   classpath=files(compileMachineWrenchFixture.destinationDir)+compileMachineWrenchFixture.classpath
+  }
+ }
+}

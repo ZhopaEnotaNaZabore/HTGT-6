@@ -1,0 +1,53 @@
+allprojects {
+    buildDir = file('build/su-validation')
+    afterEvaluate {
+        def runtimeDir = file("${buildDir}/fixture-libs")
+        task remapSolSysFixtureLibraries {
+            doLast {
+                runtimeDir.mkdirs()
+                def loader = project.buildscript.classLoader
+                def jarType = loader.loadClass('net.md_5.specialsource.Jar')
+                def make = { String name, Object... args ->
+                    org.codehaus.groovy.runtime.InvokerHelper.invokeConstructorOf(
+                            loader.loadClass('net.md_5.specialsource.' + name), args)
+                }
+                def forgeDir = new File(gradle.gradleUserHomeDir,
+                        'caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10')
+                def mc = jarType.init(new File(forgeDir,
+                        'forgeSrc-1.7.10-10.13.4.1614-1.7.10.jar'))
+                ['GalacticraftCore-1.7-3.0.12.504-dev.jar', 'Galacticraft-Planets-1.7-3.0.12.504-dev.jar',
+                 'GalaxySpace-1.7.10-1.2.15.jar'].each { name ->
+                    def output = new File(runtimeDir, name)
+                    if (output.isFile()) return
+                    def input = jarType.init(project.file('libs/' + name))
+                    def mapping = make('JarMapping')
+                    mapping.loadMappings(new File(forgeDir, 'srgs/srg-mcp.srg'))
+                    def inheritance = make('provider.JointProvider')
+                    inheritance.add(make('provider.JarProvider', input))
+                    inheritance.add(make('provider.JarProvider', mc))
+                    mapping.setFallbackInheritanceProvider(inheritance)
+                    make('JarRemapper', null, mapping, null).remapJar(input, output)
+                }
+            }
+        }
+        task compileSolSysFixture(type: JavaCompile) {
+            dependsOn compileJava
+            source = project.files(new File(project.projectDir, 'tools/SolSysWorldFixture.java'))
+            destinationDir = file("${buildDir}/fixtures/solsys")
+            sourceCompatibility = '1.8'; targetCompatibility = '1.8'
+            options.encoding = 'UTF-8'
+            classpath = files(sourceSets.main.output.classesDirs) + fileTree('build/runClient/remapped') {
+                include '**/*.jar'
+            } + sourceSets.main.runtimeClasspath + files('src/main/resources')
+        }
+        task verifySolSys(type: JavaExec) {
+            dependsOn compileSolSysFixture, remapSolSysFixtureLibraries
+            main = 'SolSysWorldFixture'
+            classpath = files(compileSolSysFixture.destinationDir) + fileTree(runtimeDir) {
+                include '*.jar'
+            } + compileSolSysFixture.classpath
+            maxHeapSize = '1g'
+        }
+    }
+}
+

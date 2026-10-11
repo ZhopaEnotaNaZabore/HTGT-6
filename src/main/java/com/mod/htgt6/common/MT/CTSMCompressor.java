@@ -1,8 +1,8 @@
 package com.mod.htgt6.common.MT;
 
 
-import com.mod.htgt6.common.handler.recipe.assembler.AssemblerRecipeHandler;
-import com.mod.htgt6.common.handler.recipe.compressor.CompressorRecipeHandler;
+import com.mod.htgt6.common.handler.recipe.RM.CompressorRecipeHandler;
+import com.mod.htgt6.api.hitech6.RM.MachineRecipe;
 import minetweaker.MineTweakerAPI;
 import minetweaker.api.item.IIngredient;
 import minetweaker.api.item.IItemStack;
@@ -27,17 +27,7 @@ public class CTSMCompressor {
             int tier,
             IIngredient... inputs
     ) {
-        // Dynamically size the array, capping it at a maximum of 3 items
-        int size = Math.min(inputs.length, 3);
-        ItemStack[] recipeInputs = new ItemStack[size];
-
-        for (int i = 0; i < size; i++) {
-            if (inputs[i] == null) continue;
-
-            if (inputs[i] instanceof IItemStack) {
-                recipeInputs[i] = (ItemStack) ((IItemStack) inputs[i]).getInternal();
-            }
-        }
+        ItemStack[] recipeInputs = convertInputs(inputs);
 
         ItemStack out = (ItemStack) output.getInternal();
 
@@ -51,6 +41,26 @@ public class CTSMCompressor {
 
         MineTweakerAPI.logInfo("[HTGT6] Added SMC recipe for " + out.getDisplayName());
     }
+
+    @ZenMethod
+    public static void addImplosionRecipe(IItemStack output, int duration, int eut, int tier,
+                                          IIngredient... inputs) {
+        ItemStack out = (ItemStack) output.getInternal();
+        CompressorRecipeHandler.addImplosionRecipe(convertInputs(inputs), out, duration, eut, tier);
+        MineTweakerAPI.logInfo("[HTGT6] Added SMC implosion recipe for " + out.getDisplayName());
+    }
+
+    private static ItemStack[] convertInputs(IIngredient[] inputs) {
+        int size = Math.min(inputs == null ? 0 : inputs.length, 32);
+        ItemStack[] result = new ItemStack[size];
+        for (int i = 0; i < size; i++) {
+            if (inputs[i] instanceof IItemStack) {
+                ItemStack internal = (ItemStack) ((IItemStack) inputs[i]).getInternal();
+                result[i] = internal == null ? null : internal.copy();
+            }
+        }
+        return result;
+    }
     @ZenMethod
     public static void removeRecipe (
             IItemStack output
@@ -58,16 +68,15 @@ public class CTSMCompressor {
         ItemStack out =
                 (ItemStack) output.getInternal();
         for (int i =
-             CompressorRecipeHandler.recipes.size() - 1;
+             CompressorRecipeHandler.INSTANCE.getRecipeList().size() - 1;
              i >= 0;
              i--) {
 
-            CompressorRecipeHandler.CompressorRecipe r =
-                    CompressorRecipeHandler.recipes.get(i);
+            MachineRecipe r = CompressorRecipeHandler.INSTANCE.getRecipeList().get(i);
 
-            if (r.output.isItemEqual(out)) {
+            if (r.outputs.length > 0 && r.outputs[0].isItemEqual(out)) {
 
-                CompressorRecipeHandler.recipes.remove(i);
+                CompressorRecipeHandler.INSTANCE.getRecipeList().remove(i);
             }
         }
         MineTweakerAPI.logInfo(

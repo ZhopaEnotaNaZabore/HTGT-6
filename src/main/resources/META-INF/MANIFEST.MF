@@ -1,4 +1,3 @@
 Manifest-Version: 1.0
 FMLCorePlugin: com.mod.htgt6.asm.HTGT6LoadingPlugin
 FMLCorePluginContainsFMLMod: true
-

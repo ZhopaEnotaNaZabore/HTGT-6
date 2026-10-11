@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "charges=0": {
+      "model": "htgt6:block/1_20_backport/respawn_anchor_0"
+    },
+    "charges=1": {
+      "model": "htgt6:block/1_20_backport/respawn_anchor_1"
+    },
+    "charges=2": {
+      "model": "htgt6:block/1_20_backport/respawn_anchor_2"
+    },
+    "charges=3": {
+      "model": "htgt6:block/1_20_backport/respawn_anchor_3"
+    },
+    "charges=4": {
+      "model": "htgt6:block/1_20_backport/respawn_anchor_4"
+    }
+  }
+}

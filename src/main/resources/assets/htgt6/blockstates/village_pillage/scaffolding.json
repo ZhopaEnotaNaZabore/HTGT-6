@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "bottom=false": {
+      "model": "htgt6:block/village_pillage/scaffolding_stable"
+    },
+    "bottom=true": {
+      "model": "htgt6:block/village_pillage/scaffolding_unstable"
+    }
+  }
+}

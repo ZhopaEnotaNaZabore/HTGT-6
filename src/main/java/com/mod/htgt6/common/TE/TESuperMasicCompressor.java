@@ -1,274 +1,137 @@
 package com.mod.htgt6.common.TE;
 
-
-import com.mod.htgt6.common.handler.recipe.compressor.CompressorRecipeHandler;
-import com.mod.htgt6.common.item.htgt6.modulesystem.Tmodules;
-import cpw.mods.fml.common.Optional;
-import ic2.api.energy.event.EnergyTileLoadEvent;
-import ic2.api.energy.event.EnergyTileUnloadEvent;
-import ic2.api.energy.tile.IEnergySink;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.inventory.IInventory;
-import net.minecraft.item.Item;
+import com.mod.htgt6.api.hitech6.multiblock.GatewayType;
+import com.mod.htgt6.api.hitech6.multiblock.IMultiblockGateway;
+import com.mod.htgt6.api.hitech6.multiblock.MultiblockStructureDefinition;
+import com.mod.htgt6.common.chemical.MultiTileChemicalPlant;
+import com.mod.htgt6.common.handler.ModBlocks;
+import com.mod.htgt6.common.handler.recipe.RM.ChemicalPlantRecipeHandler.ChemicalPlantRecipe;
+import com.mod.htgt6.common.handler.recipe.RM.CompressorRecipeHandler;
+import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.common.util.ForgeDirection;
+import net.minecraft.util.StatCollector;
 
-@Optional.Interface(
-        iface = "ic2.api.energy.tile.IEnergySink",
-        modid = "IC2"
-)
-public class TESuperMasicCompressor extends TileEntity implements IInventory, IEnergySink {
+import java.util.List;
 
-    public ItemStack[] inventory = new ItemStack[20];
-    public int energy = 0;
-    public int maxEnergy = 1100000000;
-    public int machineTier = 1;
-    public boolean enabled = true;
+/** Legacy SMCompressor TileEntity ID, now the controller of an exact 5x5x5 multiblock. */
+public class TESuperMasicCompressor extends MultiTileChemicalPlant {
+    public static final int WIDTH = 5, HEIGHT = 5, DEPTH = 5;
+    public static final int ELEMENT_AIR = 0, ELEMENT_CONTROLLER = 1;
+    public static final int ELEMENT_FLEXIBLE_BASE = 2, ELEMENT_CASING = 3;
+    public static final int ELEMENT_GLASS = 4;
+    private static final int SAVE_VERSION = 2;
 
-    // Assumes an equivalent Compressor recipe system structure
-    public CompressorRecipeHandler.CompressorRecipe currentRecipe;
-    public int recipeEUt = 0;
-    public int progress = 0;
-    public int maxProgress = 200;
+    @Override public String getInventoryName() {
+        return StatCollector.translateToLocal("tile.superMasicCompressor.name");
+    }
 
-    private boolean addedToEnergyNet = false;
+    @Override @SuppressWarnings({ "rawtypes", "unchecked" })
+    protected List<ChemicalPlantRecipe> getMachineRecipes() {
+        // CompressionRecipe is a ChemicalPlantRecipe; keep the live map so addon recipes
+        // become available immediately without allocating a new list every machine tick.
+        return (List) CompressorRecipeHandler.INSTANCE.getRecipeList();
+    }
 
-    public static final int[] VOLTAGES = {
-            32, 128, 512, 2048, 8192, 32768, 131072, 524288,
-            2097152, 8388608, 33554432, 134217728, 536870912, Integer.MAX_VALUE
-    };
+    @Override protected String getPanelId() { return "super_massive_compressor"; }
+    @Override protected String getTitleKey() { return "tile.superMasicCompressor.name"; }
+    @Override protected ItemStack getControllerDisplayStack() {
+        return new ItemStack(ModBlocks.getSuperMassiveCompressorController(), 1, 0);
+    }
+    @Override protected String getStructureTooltipKey() { return "ui.htgt6.smc.nei_structure"; }
+    @Override protected String getRecipeOverlayId() { return "compressing_machine"; }
+    @Override protected String getRecipeTooltipKey() { return "ui.htgt6.smc.nei_recipes"; }
+    @Override protected String getUiKey(String suffix) { return "ui.htgt6.smc." + suffix; }
+    @Override protected Block resolveGatewayCasingBlock() { return SuperMassiveCompressorContent.casing; }
+    @Override protected int resolveGatewayCasingMetadata() { return 0; }
 
-    @Override
-    public void updateEntity() {
-        super.updateEntity();
-        updateMachineTier();
+    @Override protected MultiblockStructureDefinition createStructureDefinition() {
+        return MultiblockStructureDefinition.builder(-2, 2, 0, 4, 0, 4,
+                new MultiblockStructureDefinition.PositionMatcher() {
+                    @Override public MultiblockStructureDefinition.Match match(
+                            MultiblockStructureDefinition.Context context) {
+                        int element = getRequiredElement(context.u, context.y, context.v);
+                        if (element == ELEMENT_CASING && context.block == SuperMassiveCompressorContent.rib
+                                && com.mod.htgt6.common.multiblock.MultiblockTrimLayout.compressor(context.u,context.y,context.v))
+                            return MultiblockStructureDefinition.Match.valid("reinforced_rib");
+                        IMultiblockGateway gateway = context.getGateway();
+                        if (element == ELEMENT_CONTROLLER) {
+                            return result(context.block == ModBlocks.getSuperMassiveCompressorController(), "controller");
+                        }
+                        if (element == ELEMENT_FLEXIBLE_BASE) {
+                            return result(context.block == SuperMassiveCompressorContent.casing || gateway != null,
+                                    gateway == null ? "smc_casing" : "gateway." + gateway.getGatewayType().serializedName);
+                        }
+                        if (element == ELEMENT_CASING) {
+                            return result(context.block == SuperMassiveCompressorContent.casing, "smc_casing");
+                        }
+                        if (element == ELEMENT_GLASS) {
+                            return result(context.block == SuperMassiveCompressorContent.glass, "smc_glass");
+                        }
+                        return result(context.isAir(), "air");
+                    }
+                })
+                .gateway(GatewayType.ITEM_INPUT, 1, 10)
+                .gateway(GatewayType.ITEM_OUTPUT, 1, 10)
+                .gateway(GatewayType.FLUID_INPUT, 0, 10)
+                .gateway(GatewayType.FLUID_OUTPUT, 0, 10)
+                .gateway(GatewayType.ENERGY_INPUT, 1, 1)
+                .build();
+    }
 
-        if (worldObj.isRemote) return;
-        if (!enabled) return;
+    public static int getRequiredElement(int u, int y, int v) {
+        if (u == 0 && y == 0 && v == 0) return ELEMENT_CONTROLLER;
+        if (y == 0) return ELEMENT_FLEXIBLE_BASE;
+        if (y == HEIGHT - 1) return ELEMENT_CASING;
+        if (v == 0 && Math.abs(u) <= 1) return ELEMENT_GLASS;
+        return Math.abs(u) == 2 || v == 0 || v == DEPTH - 1 ? ELEMENT_CASING : ELEMENT_AIR;
+    }
 
-        // Scans slots 0, 1, 2 for compression combinations
-        currentRecipe = CompressorRecipeHandler.findRecipe(inventory);
+    private static MultiblockStructureDefinition.Match result(boolean valid, String key) {
+        return valid ? MultiblockStructureDefinition.Match.valid(key)
+                : MultiblockStructureDefinition.Match.invalid();
+    }
 
-        if (currentRecipe == null) {
-            progress = 0;
-            recipeEUt = 0;
-            return;
+    @Override public void readFromNBT(NBTTagCompound nbt) {
+        ItemStack[] legacy = nbt.hasKey("SMCMultiblockVersion") ? null : readLegacyInventory(nbt);
+        ItemStack completedLegacyOutput = null;
+        if (legacy != null && nbt.getInteger("Progress") > 0 && nbt.hasKey("ActiveRecipeOutput")) {
+            completedLegacyOutput = ItemStack.loadItemStackFromNBT(nbt.getCompoundTag("ActiveRecipeOutput"));
         }
-
-        if (machineTier < currentRecipe.tier) {
-            progress = 0;
-            recipeEUt = 0;
-            return;
-        }
-
-        maxProgress = CompressorRecipeHandler.getOverclockedDuration(currentRecipe, machineTier);
-        recipeEUt = CompressorRecipeHandler.getOverclockedEUt(currentRecipe, machineTier);
-
-        if (energy < recipeEUt) return;
-
-        energy -= recipeEUt;
-        progress++;
-
-        if (progress >= maxProgress) {
-            CompressorRecipeHandler.consumeInputs(currentRecipe, inventory);
-            CompressorRecipeHandler.outputRecipe(currentRecipe, inventory);
-            progress = 0;
-            markDirty();
-        }
-    }
-
-    @Override
-    public void validate() {
-        super.validate();
-        if (!worldObj.isRemote) {
-            MinecraftForge.EVENT_BUS.post(new EnergyTileLoadEvent(this));
-            addedToEnergyNet = true;
-        }
-    }
-
-    @Override
-    public void invalidate() {
-        if (!worldObj.isRemote && addedToEnergyNet) {
-            MinecraftForge.EVENT_BUS.post(new EnergyTileUnloadEvent(this));
-        }
-        addedToEnergyNet = false;
-        super.invalidate();
-    }
-
-    @Override
-    public double injectEnergy(ForgeDirection direction, double amount, double voltage) {
-        if (!enabled) return amount;
-
-        if (voltage > getMaxInputVoltage()) {
-            explodeMachine();
-            return 0;
-        }
-
-        int accepted = (int) Math.min(amount, maxEnergy - energy);
-        energy += accepted;
-        return amount - accepted;
-    }
-
-    @Override
-    public double getDemandedEnergy() { return maxEnergy - energy; }
-
-    @Override
-    public boolean acceptsEnergyFrom(TileEntity emitter, ForgeDirection side) { return true; }
-
-    @Override
-    public int getSinkTier() { return machineTier; }
-
-    private void updateMachineTier() {
-        machineTier = 1;
-        ItemStack transformer = inventory[6]; // Shifted to index 6
-        ItemStack module = inventory[5];      // Shifted to index 5
-
-        if (transformer == null || module == null) return;
-
-        String transformerName = transformer.getUnlocalizedName().toLowerCase();
-        Item item = module.getItem();
-        int moduleTier = 1;
-
-        if (item == Tmodules.TierModuleMV) moduleTier = 2;
-        else if (item == Tmodules.TierModuleHV) moduleTier = 3;
-        else if (item == Tmodules.TierModuleEV) moduleTier = 4;
-        else if (item == Tmodules.TierModuleIV) moduleTier = 5;
-        else if (item == Tmodules.TierModuleLuV) moduleTier = 6;
-        else if (item == Tmodules.TierModuleZPM) moduleTier = 7;
-        else if (item == Tmodules.TierModuleUV) moduleTier = 8;
-        else if (item == Tmodules.TierModulePUV1) moduleTier = 9;
-        else if (item == Tmodules.TierModuleUX) moduleTier = 10;
-        else if (item == Tmodules.TierModuleOLV) moduleTier = 11;
-        else if (item == Tmodules.TierModuleOMV) moduleTier = 12;
-        else if (item == Tmodules.TierModuleOHV) moduleTier = 13;
-        else if (item == Tmodules.TierModuleOEV) moduleTier = 14;
-        else if (item == Tmodules.TierModuleOIV) moduleTier = 15;
-        else if (item == Tmodules.TierModuleMAX) moduleTier = 16;
-
-        int maxTier = 1;
-        if (transformerName.contains("lowleveltransformer")) maxTier = 4;
-        else if (transformerName.contains("mediumleveltransformer")) maxTier = 6;
-        else if (transformerName.contains("highleveltransformer")) maxTier = 8;
-        else if (transformerName.contains("ultimateleveltransformer")) maxTier = 15;
-        else if (transformerName.contains("omegatransformer")) maxTier = 16;
-
-        if (moduleTier <= maxTier) {
-            machineTier = moduleTier;
-        } else {
-            machineTier = 1;
-        }
-    }
-
-    public int getMaxInputVoltage() {
-        int index = machineTier - 1;
-        if (index < 0) index = 0;
-        if (index >= VOLTAGES.length) index = VOLTAGES.length - 1;
-        return VOLTAGES[index];
-    }
-
-    public void explodeMachine() {
-        if (worldObj == null || worldObj.isRemote) return;
-        float power = 2F + (machineTier * 0.4F);
-        worldObj.createExplosion(null, xCoord + 0.5D, yCoord + 0.5D, zCoord + 0.5D, power, true);
-        worldObj.setBlockToAir(xCoord, yCoord, zCoord);
-    }
-
-    @Override public int getSizeInventory() { return inventory.length; }
-    @Override public ItemStack getStackInSlot(int slot) { return inventory[slot]; }
-
-    @Override
-    public ItemStack decrStackSize(int slot, int amount) {
-        if (inventory[slot] != null) {
-            ItemStack itemstack;
-            if (inventory[slot].stackSize <= amount) {
-                itemstack = inventory[slot];
-                inventory[slot] = null;
-                markDirty();
-                return itemstack;
-            }
-            itemstack = inventory[slot].splitStack(amount);
-            if (inventory[slot].stackSize <= 0) inventory[slot] = null;
-            markDirty();
-            return itemstack;
-        }
-        return null;
-    }
-
-    @Override
-    public ItemStack getStackInSlotOnClosing(int slot) {
-        if (inventory[slot] != null) {
-            ItemStack stack = inventory[slot];
-            inventory[slot] = null;
-            return stack;
-        }
-        return null;
-    }
-
-    @Override
-    public void setInventorySlotContents(int slot, ItemStack stack) {
-        inventory[slot] = stack;
-        if (stack != null && stack.stackSize > getInventoryStackLimit()) {
-            stack.stackSize = getInventoryStackLimit();
-        }
-        markDirty();
-    }
-
-    @Override public String getInventoryName() { return "Super Masic Compressor"; }
-    @Override public boolean hasCustomInventoryName() { return false; }
-    @Override public int getInventoryStackLimit() { return 64; }
-
-    @Override
-    public boolean isUseableByPlayer(EntityPlayer player) {
-        return worldObj.getTileEntity(xCoord, yCoord, zCoord) == this
-                && player.getDistanceSq(xCoord + 0.5D, yCoord + 0.5D, zCoord + 0.5D) <= 64D;
-    }
-
-    @Override public void openInventory() {}
-    @Override public void closeInventory() {}
-    @Override public boolean isItemValidForSlot(int slot, ItemStack stack) { return true; }
-
-    @Override
-    public void readFromNBT(NBTTagCompound nbt) {
         super.readFromNBT(nbt);
-        energy = nbt.getInteger("Energy");
-        machineTier = nbt.getInteger("MachineTier");
-        enabled = nbt.getBoolean("Enabled");
-        progress = nbt.getInteger("Progress");
-        maxProgress = nbt.getInteger("MaxProgress");
-
-        NBTTagList items = nbt.getTagList("Inventory", 10);
-        inventory = new ItemStack[getSizeInventory()];
-        for (int i = 0; i < items.tagCount(); i++) {
-            NBTTagCompound itemTag = items.getCompoundTagAt(i);
-            int slot = itemTag.getByte("Slot") & 255;
-            if (slot >= 0 && slot < inventory.length) {
-                inventory[slot] = ItemStack.loadItemStackFromNBT(itemTag);
-            }
-        }
+        if (legacy != null) migrateLegacyInventory(legacy, completedLegacyOutput);
     }
 
-    @Override
-    public void writeToNBT(NBTTagCompound nbt) {
+    @Override public void writeToNBT(NBTTagCompound nbt) {
         super.writeToNBT(nbt);
-        nbt.setInteger("Energy", energy);
-        nbt.setInteger("MachineTier", machineTier);
-        nbt.setBoolean("Enabled", enabled);
-        nbt.setInteger("Progress", progress);
-        nbt.setInteger("MaxProgress", maxProgress);
+        nbt.setInteger("SMCMultiblockVersion", SAVE_VERSION);
+    }
 
-        NBTTagList items = new NBTTagList();
-        for (int i = 0; i < inventory.length; i++) {
-            if (inventory[i] != null) {
-                NBTTagCompound itemTag = new NBTTagCompound();
-                itemTag.setByte("Slot", (byte) i);
-                inventory[i].writeToNBT(itemTag);
-                items.appendTag(itemTag);
-            }
+    private static ItemStack[] readLegacyInventory(NBTTagCompound nbt) {
+        ItemStack[] values = new ItemStack[20];
+        NBTTagList list = nbt.getTagList("Inventory", 10);
+        for (int i = 0; i < list.tagCount(); i++) {
+            NBTTagCompound entry = list.getCompoundTagAt(i);
+            int slot = entry.getByte("Slot") & 255;
+            if (slot < values.length) values[slot] = ItemStack.loadItemStackFromNBT(entry);
         }
-        nbt.setTag("Inventory", items);
+        return values;
+    }
+
+    private void migrateLegacyInventory(ItemStack[] old, ItemStack completedOutput) {
+        for (int i = 0; i < inventory.length; i++) inventory[i] = null;
+        inventory[SLOT_MODULE] = old[5];
+        inventory[SLOT_TRANSFORMER] = old[6];
+        int input = INPUT_SLOT_START;
+        for (int slot : new int[] { 0, 1, 2, 4, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 }) {
+            if (old[slot] != null && input < OUTPUT_SLOT_START) inventory[input++] = old[slot];
+        }
+        int output = OUTPUT_SLOT_START;
+        if (old[3] != null) inventory[output++] = old[3];
+        if (completedOutput != null && output < inventory.length) inventory[output] = completedOutput;
+        progress = 0;
+        maxProgress = 200;
+        markDirty();
     }
 }

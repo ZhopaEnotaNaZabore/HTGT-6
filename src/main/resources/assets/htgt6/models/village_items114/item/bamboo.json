@@ -1,0 +1,6 @@
+{
+  "parent": "htgt6:village_items114/item/handheld",
+  "textures": {
+    "layer0": "minecraft:item/bamboo"
+  }
+}

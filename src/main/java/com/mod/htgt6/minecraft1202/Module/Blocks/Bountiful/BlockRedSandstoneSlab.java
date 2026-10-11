@@ -1,0 +1,6 @@
+package com.mod.htgt6.minecraft1202.Module.Blocks.Bountiful;
+
+import com.mod.htgt6.minecraft1202.Module.Registry.Bountiful.BountifulContent;
+import com.mod.htgt6.minecraft1202.Module.Registry.Modern.Backport120Content;
+import net.minecraft.block.BlockSlab;import net.minecraft.item.Item;import net.minecraft.util.IIcon;
+public final class BlockRedSandstoneSlab extends BlockSlab {private IIcon side,top,bottom;public BlockRedSandstoneSlab(boolean full){super(full,net.minecraft.block.material.Material.rock);setBlockName(full?"double_red_sandstone_slab":"red_sandstone_slab");setHardness(2.0F);setResistance(Backport120Content.legacyResistance(6.0F));setStepSound(soundTypePiston);if(!full)setCreativeTab(net.minecraft.creativetab.CreativeTabs.tabBlock);}public String func_150002_b(int meta){return "tile.red_sandstone_slab";}@Override public void registerBlockIcons(net.minecraft.client.renderer.texture.IIconRegister register){side=register.registerIcon("htgt6:bountiful/red_sandstone_normal");top=register.registerIcon("htgt6:bountiful/red_sandstone_top");bottom=register.registerIcon("htgt6:bountiful/red_sandstone_bottom");blockIcon=side;}public IIcon getIcon(int face,int meta){return face==0?bottom:face==1?top:side;}public Item getItem(net.minecraft.world.World w,int x,int y,int z){return Item.getItemFromBlock(BountifulContent.redSandstoneSlab);} }

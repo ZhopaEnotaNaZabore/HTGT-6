@@ -1,0 +1,6 @@
+{
+  "parent": "htgt6:buzzy115/block/cube_all",
+  "textures": {
+    "all": "minecraft:block/honeycomb_block"
+  }
+}

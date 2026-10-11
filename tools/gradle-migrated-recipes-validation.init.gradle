@@ -1,0 +1,17 @@
+allprojects {
+ buildDir = file('build/crusher-validation')
+ afterEvaluate {
+  task compileMigratedPumpFixture(type: JavaCompile) {
+   dependsOn classes, deobfuscateRunClientLibraries
+   source = project.files('tools/MigratedPumpFixture.java', 'tools/CrusherOreImportFixture.java')
+   destinationDir = file("${buildDir}/fixtures/migrated-pump")
+   sourceCompatibility='1.8'; targetCompatibility='1.8'; options.encoding='UTF-8'
+   classpath=compileMachineTierCraftingFixture.classpath
+  }
+  task verifyMigratedPump(type: JavaExec) {
+   dependsOn compileMigratedPumpFixture
+   main='MigratedPumpFixture'
+   classpath=files(compileMigratedPumpFixture.destinationDir)+compileMigratedPumpFixture.classpath
+  }
+ }
+}

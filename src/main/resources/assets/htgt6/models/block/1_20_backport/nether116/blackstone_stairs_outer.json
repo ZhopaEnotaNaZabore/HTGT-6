@@ -1,0 +1,8 @@
+{
+  "parent": "htgt6:block/1_20_backport/nether116/outer_stairs",
+  "textures": {
+    "bottom": "htgt6:block/1_20_backport/blackstone_top",
+    "side": "htgt6:block/1_20_backport/blackstone",
+    "top": "htgt6:block/1_20_backport/blackstone_top"
+  }
+}

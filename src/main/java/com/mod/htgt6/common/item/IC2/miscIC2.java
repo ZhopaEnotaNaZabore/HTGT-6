@@ -10,10 +10,10 @@ public class miscIC2 extends Item {
     public static Item BronzeBatterHull;
 
     public static void IC2miscItems() {
-        BatteryHull = register(new Item(), "hullBattery");
+        BatteryHull = register(new com.mod.htgt6.common.item.htgt6.AtlasItem(), "hullBattery");
         BatteryHull.setUnlocalizedName("HullBatteryIC2");
         BatteryHull.setTextureName(HTGT6.MOD_ID+":HullBatteryIC2");
-        BronzeBatterHull = register(new Item(), "hullBattery2");
+        BronzeBatterHull = register(new com.mod.htgt6.common.item.htgt6.AtlasItem(), "hullBattery2");
         BronzeBatterHull.setUnlocalizedName("HullBatteryIC2_2");
         BronzeBatterHull.setTextureName(HTGT6.MOD_ID+":HullBatteryIC2_2");
 

@@ -1,0 +1,6 @@
+{
+  "parent": "htgt6:village_items114/block/orientable_with_bottom",
+  "textures": {
+    "bottom": "#top"
+  }
+}

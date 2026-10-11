@@ -49,20 +49,8 @@ public class CommandMemory extends CommandBase {
 
         switch (subCommand) {
             case "clear":
-                long beforeMemory = (Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory()) / (1024 * 1024);
-
-                // Triggers our updated safe live asset purge
                 MemoryCleaner.executeManualCleanup();
-
-                long afterMemory = (Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory()) / (1024 * 1024);
-                long bytesFreed = beforeMemory - afterMemory;
-
-                ChatManager.addMessage("§a[Memory] §7Aggressive runtime memory purging sequence complete.");
-                if (bytesFreed > 0) {
-                    ChatManager.addMessage("§a[Memory] §7Successfully purged: §b" + bytesFreed + " MB §7from JVM heap.");
-                } else {
-                    ChatManager.addMessage("§a[Memory] §7Heap usage is already at minimum limits. No garbage collected.");
-                }
+                ChatManager.addMessage("§a[Memory] §7Очистка кеша изображений HiTech6 поставлена в очередь. История чата сохранится.");
                 break;
 
             case "check":
@@ -84,8 +72,10 @@ public class CommandMemory extends CommandBase {
 
             case "shutdown":
             case "shuttdown":
-                ChatManager.addMessage("§c[Memory] Shutting down client application instantly...");
-                Minecraft.getMinecraft().shutdown();
+                Minecraft mc = Minecraft.getMinecraft();
+                if (!(mc.currentScreen instanceof GuiCloseConfirmation)) {
+                    mc.displayGuiScreen(new GuiCloseConfirmation(mc.currentScreen));
+                }
                 break;
 
             default:
@@ -96,7 +86,7 @@ public class CommandMemory extends CommandBase {
 
     private void sendHelpIndex() {
         ChatManager.addMessage("§b§l=== Client Memory Utility ===");
-        ChatManager.addMessage("§e/mem clear §7-Вручную очистить кишированный мусор");
+        ChatManager.addMessage("§e/mem clear §7-Очистить кеш изображений HiTech6 без принудительного GC");
         ChatManager.addMessage("§e/mem check §7-Посмотреть текущий статус памяти.");
         ChatManager.addMessage("§e/mem shutdown §7-Когда надоело играть вырубить нахрен игру и идти трогать траву");
         ChatManager.addMessage("§e/mem help §7-Пособие по CLU");

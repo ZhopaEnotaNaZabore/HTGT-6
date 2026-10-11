@@ -1,0 +1,15 @@
+allprojects {
+    afterEvaluate {
+        task inspectLog4jClasspath {
+            doLast {
+                ['runClient', 'runServer'].each { taskName ->
+                    def cp = tasks.getByName(taskName).classpath.files
+                    new File(project.projectDir, "tmp/log4j-${taskName}-classpath.txt").text = cp.collect { it.absolutePath }.join(File.pathSeparator)
+                    println taskName + ': ' + cp.findAll { it.name =~ /(?i)(log4j|netty)/ }
+                }
+                new File(project.projectDir, 'tmp/log4j-runtime-classpath.txt').text = sourceSets.main.runtimeClasspath.asPath
+                println 'runtime: ' + sourceSets.main.runtimeClasspath.files.findAll { it.name =~ /(?i)(log4j|netty)/ }
+            }
+        }
+    }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "htgt6:block/1_20_backport/cube_column",
+  "textures": {
+    "end": "minecraft:block/sandstone_top",
+    "side": "minecraft:block/cut_sandstone"
+  }
+}

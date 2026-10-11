@@ -1,0 +1,9 @@
+{
+  "parent": "htgt6:village_items114/block/orientable_with_bottom",
+  "textures": {
+    "bottom": "minecraft:block/loom_bottom",
+    "front": "minecraft:block/loom_front",
+    "side": "minecraft:block/loom_side",
+    "top": "minecraft:block/loom_top"
+  }
+}

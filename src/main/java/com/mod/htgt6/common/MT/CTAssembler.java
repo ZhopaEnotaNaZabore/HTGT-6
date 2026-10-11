@@ -1,6 +1,7 @@
 package com.mod.htgt6.common.MT;
 
-import com.mod.htgt6.common.handler.recipe.assembler.AssemblerRecipeHandler;
+import com.mod.htgt6.common.handler.recipe.RM.AssemblerRecipeHandler;
+import com.mod.htgt6.api.hitech6.RM.MachineRecipe;
 
 import minetweaker.MineTweakerAPI;
 import minetweaker.api.item.IIngredient;
@@ -83,16 +84,15 @@ public class CTAssembler {
                 (ItemStack) output.getInternal();
 
         for (int i =
-             AssemblerRecipeHandler.recipes.size() - 1;
+             AssemblerRecipeHandler.INSTANCE.getRecipeList().size() - 1;
              i >= 0;
              i--) {
 
-            AssemblerRecipeHandler.AssemblerRecipe r =
-                    AssemblerRecipeHandler.recipes.get(i);
+            MachineRecipe r = AssemblerRecipeHandler.INSTANCE.getRecipeList().get(i);
 
-            if (r.output.isItemEqual(out)) {
+            if (r.outputs.length > 0 && r.outputs[0].isItemEqual(out)) {
 
-                AssemblerRecipeHandler.recipes.remove(i);
+                AssemblerRecipeHandler.INSTANCE.getRecipeList().remove(i);
             }
         }
 

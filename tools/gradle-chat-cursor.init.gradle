@@ -1,0 +1,20 @@
+allprojects {
+    buildDir = file('build/chat-cursor-isolated')
+    afterEvaluate {
+        task compileChatCursorFixture(type: JavaCompile) {
+            dependsOn compileJava
+            source = project.files(new File(project.projectDir, 'tools/ChatCursorFixture.java'))
+            classpath = sourceSets.main.runtimeClasspath
+            destinationDir = file("${buildDir}/fixture")
+            sourceCompatibility = '1.8'
+            targetCompatibility = '1.8'
+            options.encoding = 'UTF-8'
+        }
+        task verifyChatCursor(type: JavaExec) {
+            dependsOn compileChatCursorFixture
+            main = 'com.mod.htgt6.client.vanillatweaks.CHAT.ChatCursorFixture'
+            classpath = files(compileChatCursorFixture.destinationDir) + sourceSets.main.runtimeClasspath
+            jvmArgs '-Djava.awt.headless=true'
+        }
+    }
+}

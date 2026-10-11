@@ -16,19 +16,17 @@ public class GuiWorldList extends GuiSlot {
             Minecraft mc,
             List<WorldEntry> worlds
     ) {
-        // Top cap: 52, Bottom cap: 70 from bottom, Slot Height: 72
         super(
                 mc,
                 parent.width,
                 parent.height,
-                52,
-                parent.height - 70,
-                72
+                48,
+                parent.height - 64,
+                36
         );
         this.parent = parent;
         this.worlds = worlds;
 
-        // Turn these off so we draw our own selection graphics inside the cards
         this.setShowSelectionBox(false);
         this.setHasListHeader(false, 0);
     }
@@ -58,7 +56,7 @@ public class GuiWorldList extends GuiSlot {
 
     @Override
     protected void drawBackground() {
-        // Left empty so GuiModernWorldSelect handles the core background
+        parent.drawDefaultBackground();
     }
 
     @Override
@@ -75,8 +73,7 @@ public class GuiWorldList extends GuiSlot {
             return;
         }
 
-        // Pass the card drawing straight to the parent screen using screen space coordinates
-        parent.drawWorldCard(
+        parent.drawWorldEntry(
                 worlds.get(index),
                 y,
                 isSelected(index)

@@ -1,0 +1,20 @@
+// Run: gradlew -I tools/village114-audit.gradle auditVillageFauna114 --offline --console plain
+allprojects {
+    afterEvaluate {
+        if (tasks.findByName("auditVillageFauna114") != null) return
+        task compileVillageFauna114Audit(type: JavaCompile) {
+            dependsOn compileVillageFauna114
+            source = project.files(new File(project.projectDir, 'tools/VillageFauna114Audit.java'))
+            destinationDir = new File(project.buildDir, 'fixtures/village-fauna114-audit')
+            classpath = verifyVillageFauna114.classpath
+            sourceCompatibility = '1.8'
+            targetCompatibility = '1.8'
+            options.encoding = 'UTF-8'
+        }
+        task auditVillageFauna114(type: JavaExec) {
+            dependsOn compileVillageFauna114Audit
+            classpath = project.files(compileVillageFauna114Audit.destinationDir) + verifyVillageFauna114.classpath
+            main = 'VillageFauna114Audit'
+        }
+    }
+}

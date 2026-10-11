@@ -1,0 +1,263 @@
+[
+  {
+    "id": "brick_wall_from_bricks_stonecutting",
+    "type": "minecraft:stonecutting",
+    "count": 1,
+    "ingredient": {
+      "item": "minecraft:bricks"
+    },
+    "result": "minecraft:brick_wall"
+  },
+  {
+    "id": "cut_red_sandstone_slab_from_cut_red_sandstone_stonecutting",
+    "type": "minecraft:stonecutting",
+    "count": 2,
+    "ingredient": {
+      "item": "minecraft:cut_red_sandstone"
+    },
+    "result": "minecraft:cut_red_sandstone_slab"
+  },
+  {
+    "id": "cut_red_sandstone_slab_from_red_sandstone_stonecutting",
+    "type": "minecraft:stonecutting",
+    "count": 2,
+    "ingredient": {
+      "item": "minecraft:red_sandstone"
+    },
+    "result": "minecraft:cut_red_sandstone_slab"
+  },
+  {
+    "id": "cut_sandstone_slab_from_cut_sandstone_stonecutting",
+    "type": "minecraft:stonecutting",
+    "count": 2,
+    "ingredient": {
+      "item": "minecraft:cut_sandstone"
+    },
+    "result": "minecraft:cut_sandstone_slab"
+  },
+  {
+    "id": "cut_sandstone_slab_from_sandstone_stonecutting",
+    "type": "minecraft:stonecutting",
+    "count": 2,
+    "ingredient": {
+      "item": "minecraft:sandstone"
+    },
+    "result": "minecraft:cut_sandstone_slab"
+  },
+  {
+    "id": "end_stone_brick_slab_from_end_stone_brick_stonecutting",
+    "type": "minecraft:stonecutting",
+    "count": 2,
+    "ingredient": {
+      "item": "minecraft:end_stone_bricks"
+    },
+    "result": "minecraft:end_stone_brick_slab"
+  },
+  {
+    "id": "end_stone_brick_slab_from_end_stone_stonecutting",
+    "type": "minecraft:stonecutting",
+    "count": 2,
+    "ingredient": {
+      "item": "minecraft:end_stone"
+    },
+    "result": "minecraft:end_stone_brick_slab"
+  },
+  {
+    "id": "end_stone_brick_stairs_from_end_stone_brick_stonecutting",
+    "type": "minecraft:stonecutting",
+    "count": 1,
+    "ingredient": {
+      "item": "minecraft:end_stone_bricks"
+    },
+    "result": "minecraft:end_stone_brick_stairs"
+  },
+  {
+    "id": "end_stone_brick_stairs_from_end_stone_stonecutting",
+    "type": "minecraft:stonecutting",
+    "count": 1,
+    "ingredient": {
+      "item": "minecraft:end_stone"
+    },
+    "result": "minecraft:end_stone_brick_stairs"
+  },
+  {
+    "id": "end_stone_brick_wall_from_end_stone_brick_stonecutting",
+    "type": "minecraft:stonecutting",
+    "count": 1,
+    "ingredient": {
+      "item": "minecraft:end_stone_bricks"
+    },
+    "result": "minecraft:end_stone_brick_wall"
+  },
+  {
+    "id": "end_stone_brick_wall_from_end_stone_stonecutting",
+    "type": "minecraft:stonecutting",
+    "count": 1,
+    "ingredient": {
+      "item": "minecraft:end_stone"
+    },
+    "result": "minecraft:end_stone_brick_wall"
+  },
+  {
+    "id": "mossy_stone_brick_slab_from_mossy_stone_brick_stonecutting",
+    "type": "minecraft:stonecutting",
+    "count": 2,
+    "ingredient": {
+      "item": "minecraft:mossy_stone_bricks"
+    },
+    "result": "minecraft:mossy_stone_brick_slab"
+  },
+  {
+    "id": "mossy_stone_brick_stairs_from_mossy_stone_brick_stonecutting",
+    "type": "minecraft:stonecutting",
+    "count": 1,
+    "ingredient": {
+      "item": "minecraft:mossy_stone_bricks"
+    },
+    "result": "minecraft:mossy_stone_brick_stairs"
+  },
+  {
+    "id": "mossy_stone_brick_wall_from_mossy_stone_brick_stonecutting",
+    "type": "minecraft:stonecutting",
+    "count": 1,
+    "ingredient": {
+      "item": "minecraft:mossy_stone_bricks"
+    },
+    "result": "minecraft:mossy_stone_brick_wall"
+  },
+  {
+    "id": "nether_brick_wall_from_nether_bricks_stonecutting",
+    "type": "minecraft:stonecutting",
+    "count": 1,
+    "ingredient": {
+      "item": "minecraft:nether_bricks"
+    },
+    "result": "minecraft:nether_brick_wall"
+  },
+  {
+    "id": "prismarine_wall_from_prismarine_stonecutting",
+    "type": "minecraft:stonecutting",
+    "count": 1,
+    "ingredient": {
+      "item": "minecraft:prismarine"
+    },
+    "result": "minecraft:prismarine_wall"
+  },
+  {
+    "id": "red_nether_brick_slab_from_red_nether_bricks_stonecutting",
+    "type": "minecraft:stonecutting",
+    "count": 2,
+    "ingredient": {
+      "item": "minecraft:red_nether_bricks"
+    },
+    "result": "minecraft:red_nether_brick_slab"
+  },
+  {
+    "id": "red_nether_brick_stairs_from_red_nether_bricks_stonecutting",
+    "type": "minecraft:stonecutting",
+    "count": 1,
+    "ingredient": {
+      "item": "minecraft:red_nether_bricks"
+    },
+    "result": "minecraft:red_nether_brick_stairs"
+  },
+  {
+    "id": "red_nether_brick_wall_from_red_nether_bricks_stonecutting",
+    "type": "minecraft:stonecutting",
+    "count": 1,
+    "ingredient": {
+      "item": "minecraft:red_nether_bricks"
+    },
+    "result": "minecraft:red_nether_brick_wall"
+  },
+  {
+    "id": "red_sandstone_wall_from_red_sandstone_stonecutting",
+    "type": "minecraft:stonecutting",
+    "count": 1,
+    "ingredient": {
+      "item": "minecraft:red_sandstone"
+    },
+    "result": "minecraft:red_sandstone_wall"
+  },
+  {
+    "id": "sandstone_wall_from_sandstone_stonecutting",
+    "type": "minecraft:stonecutting",
+    "count": 1,
+    "ingredient": {
+      "item": "minecraft:sandstone"
+    },
+    "result": "minecraft:sandstone_wall"
+  },
+  {
+    "id": "smooth_quartz_slab_from_smooth_quartz_stonecutting",
+    "type": "minecraft:stonecutting",
+    "count": 2,
+    "ingredient": {
+      "item": "minecraft:smooth_quartz"
+    },
+    "result": "minecraft:smooth_quartz_slab"
+  },
+  {
+    "id": "smooth_quartz_stairs_from_smooth_quartz_stonecutting",
+    "type": "minecraft:stonecutting",
+    "count": 1,
+    "ingredient": {
+      "item": "minecraft:smooth_quartz"
+    },
+    "result": "minecraft:smooth_quartz_stairs"
+  },
+  {
+    "id": "smooth_red_sandstone_slab_from_smooth_red_sandstone_stonecutting",
+    "type": "minecraft:stonecutting",
+    "count": 2,
+    "ingredient": {
+      "item": "minecraft:smooth_red_sandstone"
+    },
+    "result": "minecraft:smooth_red_sandstone_slab"
+  },
+  {
+    "id": "smooth_red_sandstone_stairs_from_smooth_red_sandstone_stonecutting",
+    "type": "minecraft:stonecutting",
+    "count": 1,
+    "ingredient": {
+      "item": "minecraft:smooth_red_sandstone"
+    },
+    "result": "minecraft:smooth_red_sandstone_stairs"
+  },
+  {
+    "id": "stone_brick_wall_from_stone_bricks_stonecutting",
+    "type": "minecraft:stonecutting",
+    "count": 1,
+    "ingredient": {
+      "item": "minecraft:stone_bricks"
+    },
+    "result": "minecraft:stone_brick_wall"
+  },
+  {
+    "id": "stone_brick_walls_from_stone_stonecutting",
+    "type": "minecraft:stonecutting",
+    "count": 1,
+    "ingredient": {
+      "item": "minecraft:stone"
+    },
+    "result": "minecraft:stone_brick_wall"
+  },
+  {
+    "id": "stone_slab_from_stone_stonecutting",
+    "type": "minecraft:stonecutting",
+    "count": 2,
+    "ingredient": {
+      "item": "minecraft:stone"
+    },
+    "result": "minecraft:stone_slab"
+  },
+  {
+    "id": "stone_stairs_from_stone_stonecutting",
+    "type": "minecraft:stonecutting",
+    "count": 1,
+    "ingredient": {
+      "item": "minecraft:stone"
+    },
+    "result": "minecraft:stone_stairs"
+  }
+]

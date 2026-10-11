@@ -1,0 +1,6 @@
+{
+  "parent": "htgt6:block/1_20_backport/nether116/cube_all",
+  "textures": {
+    "all": "htgt6:block/1_20_backport/polished_blackstone"
+  }
+}

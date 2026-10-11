@@ -1,6 +1,7 @@
 package com.mod.htgt6.common.item.htgt6.modulesystem;
 
 import com.mod.htgt6.HTGT6;
+import com.mod.htgt6.common.item.htgt6.AtlasItem;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -43,7 +44,7 @@ public class Tmodules extends Item {
     // ==========================================
     // DYNAMIC TRANSFORMER ITEM
     // ==========================================
-    public static class ItemTransformer extends Item {
+    public static class ItemTransformer extends AtlasItem {
         private final String supportedTiers;
 
         public ItemTransformer(String supportedTiers) {
@@ -55,14 +56,15 @@ public class Tmodules extends Item {
         public void addInformation(ItemStack itemStack, EntityPlayer player, List list, boolean advanced) {
             list.add("§l§aВставьте модуль в Е слот");
             list.add("§l§aЧтобы Использовать модуль модификатор тира");
-            list.add("§l§aПозволяет открыть доступ к " + supportedTiers + " тирам");
+            list.add("§l§aОткрывает тиры " + supportedTiers);
+            list.add("§l§aи все тиры ниже указанного диапазона");
         }
     }
 
     // ==========================================
     // DYNAMIC TIER ITEM MODULE
     // ==========================================
-    public static class ItemModule extends Item {
+    public static class ItemModule extends AtlasItem {
         private final String tierName;
         private final String euText;
         private final String transformerNeeded;
@@ -78,14 +80,18 @@ public class Tmodules extends Item {
             // Determine transformer requirement based on rules
             if (tierPower <= 2) {
                 // MV, HV, EV
+                this.transformerNeeded = "низкого уровня";
+                this.isDirectName = false;
+            } else if (tierPower <= 5) {
+                // IV, LuV, ZPM (EV is also covered by this transformer)
                 this.transformerNeeded = "среднего уровня";
                 this.isDirectName = false;
-            } else if (tierPower <= 6) {
-                // IV, LuV, ZPM, UV
+            } else if (tierPower <= 9) {
+                // UV, PUV1, UX, OLV
                 this.transformerNeeded = "высокого уровня";
                 this.isDirectName = false;
             } else if (tierPower <= 13) {
-                // PUV1, UX, OLV, OMV, OHV, OEV, OIV
+                // OMV, OHV, OEV, OIV
                 this.transformerNeeded = "Ультимативный трансформатор";
                 this.isDirectName = true;
             } else {
@@ -121,34 +127,34 @@ public class Tmodules extends Item {
     public static void ModifiersAndTransformers() {
 
         // --- TRANSFORMERS (With unique dynamic descriptions) ---
-        // Note: Keeping low transformer initialization just in case your registration depends on it.
-        LowLevelTransformer = register(new ItemTransformer(""), "LowLevelTransformer");
+        // First transformer: MV-EV, plus LV.
+        LowLevelTransformer = register(new ItemTransformer("MV-HV-EV"), "LowLevelTransformer");
         LowLevelTransformer.setUnlocalizedName("LowLevelTransformer");
         LowLevelTransformer.setTextureName(HTGT6.MOD_ID + ":LowLevelTransformer");
 
-        // Среднего уровня allows MV, HV, EV
-        MediumLevelTransformer = register(new ItemTransformer("MV, HV, EV"), "MediumLevelTransformer");
+        // Second transformer: EV-ZPM, plus all lower tiers.
+        MediumLevelTransformer = register(new ItemTransformer("EV-IV-LuV-ZPM"), "MediumLevelTransformer");
         MediumLevelTransformer.setUnlocalizedName("MediumLevelTransformer");
         MediumLevelTransformer.setTextureName(HTGT6.MOD_ID + ":MediumLevelTransformer");
 
-        // Высокого уровня allows IV, LuV, ZPM, UV
-        HighLevelTransformer = register(new ItemTransformer("IV, LuV, ZPM, UV"), "HighLevelTransformer");
+        // Third transformer: UV-OLV, plus all lower tiers.
+        HighLevelTransformer = register(new ItemTransformer("UV-PUV1-UX-OLV"), "HighLevelTransformer");
         HighLevelTransformer.setUnlocalizedName("HighLevelTransformer");
         HighLevelTransformer.setTextureName(HTGT6.MOD_ID + ":HighLevelTransformer");
 
-        // Ультимативный allows PUV1, UX, OLV, OMV, OHV, OEV, OIV
-        UltimateLevelTransformer = register(new ItemTransformer("PUV1, UX, OLV, OMV, OHV, OEV, OIV"), "UltimateLevelTransformer");
+        // Fourth transformer: OMV-OIV, plus all lower tiers.
+        UltimateLevelTransformer = register(new ItemTransformer("OMV-OHV-OEV-OIV"), "UltimateLevelTransformer");
         UltimateLevelTransformer.setUnlocalizedName("UltimateLevelTransformer");
         UltimateLevelTransformer.setTextureName(HTGT6.MOD_ID + ":UltimateLevelTransformer");
 
-        // Омега allows MAX only
+        // Omega transformer: MAX, plus every lower tier.
         OmegaTransformer = register(new ItemTransformer("MAX"), "OmegaTransformer");
         OmegaTransformer.setUnlocalizedName("OmegaTransformer");
         OmegaTransformer.setTextureName(HTGT6.MOD_ID + ":OmegaTransformer");
 
 
         // --- TIER MODULES ---
-        // Средний уровень (0-2) -> MV, HV, EV
+        // Tier modules retain their individual tier; transformer access is resolved centrally.
         TierModuleMV = register(new ItemModule("MV", 128, 0), "TierModuleMV");
         TierModuleMV.setUnlocalizedName("TierModuleMV");
         TierModuleMV.setTextureName(HTGT6.MOD_ID + ":TierModuleMV");

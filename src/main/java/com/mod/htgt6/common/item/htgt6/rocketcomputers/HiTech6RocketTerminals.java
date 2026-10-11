@@ -15,9 +15,9 @@ public class HiTech6RocketTerminals extends Item {
     public static void RocketComputers () {
 
         //REG
-        ComputerT1 = register(new Item(), "RocketTerminalT1");
-        itemMonitor = register(new Item(), "itemMonitor");
-        itemDisplay = register(new Item(), "itemDisplay");
+        ComputerT1 = register(new com.mod.htgt6.common.item.htgt6.AtlasItem(), "RocketTerminalT1");
+        itemMonitor = register(new com.mod.htgt6.common.item.htgt6.AtlasItem(), "itemMonitor");
+        itemDisplay = register(new com.mod.htgt6.common.item.htgt6.AtlasItem(), "itemDisplay");
 
         //NAME
         ComputerT1.setUnlocalizedName("RocketTerminalT1");

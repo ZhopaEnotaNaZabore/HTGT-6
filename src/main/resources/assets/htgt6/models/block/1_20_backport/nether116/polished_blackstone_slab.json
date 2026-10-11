@@ -1,0 +1,8 @@
+{
+  "parent": "htgt6:block/1_20_backport/nether116/slab",
+  "textures": {
+    "bottom": "htgt6:block/1_20_backport/polished_blackstone",
+    "side": "htgt6:block/1_20_backport/polished_blackstone",
+    "top": "htgt6:block/1_20_backport/polished_blackstone"
+  }
+}

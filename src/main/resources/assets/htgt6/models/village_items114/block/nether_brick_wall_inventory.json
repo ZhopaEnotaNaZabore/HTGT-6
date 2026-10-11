@@ -1,0 +1,6 @@
+{
+  "parent": "htgt6:village_items114/block/wall_inventory",
+  "textures": {
+    "wall": "minecraft:block/nether_bricks"
+  }
+}

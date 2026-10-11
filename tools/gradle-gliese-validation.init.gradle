@@ -1,0 +1,46 @@
+allprojects {
+    afterEvaluate {
+        task compileGalaxyCatalogFixture(type: JavaCompile) {
+            dependsOn compileJava
+            source = project.files(new File(project.projectDir, 'tools/GalaxyCatalogFixture.java'))
+            destinationDir = file("${buildDir}/fixtures/galaxy-catalog")
+            sourceCompatibility = '1.8'; targetCompatibility = '1.8'
+            options.encoding = 'UTF-8'
+            classpath = compileSolSysFixture.classpath
+        }
+        task verifyGalaxyCatalog(type: JavaExec) {
+            dependsOn compileGalaxyCatalogFixture, remapSolSysFixtureLibraries
+            main = 'GalaxyCatalogFixture'
+            workingDir = project.projectDir
+            classpath = files(compileGalaxyCatalogFixture.destinationDir) + fileTree("${buildDir}/fixture-libs") { include '*.jar' } + compileGalaxyCatalogFixture.classpath
+        }
+        task compileGlieseAquaticFixture(type: JavaCompile) {
+            dependsOn compileJava
+            source = project.files(new File(project.projectDir, 'tools/GlieseAquaticFixture.java'))
+            destinationDir = file("${buildDir}/fixtures/gliese-aquatic")
+            sourceCompatibility = '1.8'; targetCompatibility = '1.8'
+            options.encoding = 'UTF-8'
+            classpath = compileSolSysFixture.classpath
+        }
+        task verifyGlieseAquatic(type: JavaExec) {
+            dependsOn compileGlieseAquaticFixture, remapSolSysFixtureLibraries
+            main = 'GlieseAquaticFixture'
+            classpath = files(compileGlieseAquaticFixture.destinationDir) + fileTree("${buildDir}/fixture-libs") { include '*.jar' } + compileGlieseAquaticFixture.classpath
+            maxHeapSize = '512m'
+        }
+        task compileGlieseFixture(type: JavaCompile) {
+            dependsOn compileJava
+            source = project.files(new File(project.projectDir, 'tools/GlieseWorldFixture.java'))
+            destinationDir = file("${buildDir}/fixtures/gliese")
+            sourceCompatibility = '1.8'; targetCompatibility = '1.8'
+            options.encoding = 'UTF-8'
+            classpath = compileSolSysFixture.classpath
+        }
+        task verifyGliese(type: JavaExec) {
+            dependsOn compileGlieseFixture, remapSolSysFixtureLibraries, amunraClasses
+            main = 'GlieseWorldFixture'
+            classpath = files(compileGlieseFixture.destinationDir) + fileTree("${buildDir}/fixture-libs") { include '*.jar' } + compileGlieseFixture.classpath + sourceSets.amunra.output
+            maxHeapSize = '1g'
+        }
+    }
+}

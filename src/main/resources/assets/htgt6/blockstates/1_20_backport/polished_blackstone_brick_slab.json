@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "htgt6:block/1_20_backport/nether116/polished_blackstone_brick_slab"
+    },
+    "type=double": {
+      "model": "htgt6:block/1_20_backport/nether116/polished_blackstone_bricks"
+    },
+    "type=top": {
+      "model": "htgt6:block/1_20_backport/nether116/polished_blackstone_brick_slab_top"
+    }
+  }
+}

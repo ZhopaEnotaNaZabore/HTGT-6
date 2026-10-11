@@ -1,0 +1,6 @@
+{
+  "parent": "htgt6:block/1_20_backport/nether116/wall_inventory",
+  "textures": {
+    "wall": "htgt6:block/1_20_backport/blackstone"
+  }
+}

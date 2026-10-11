@@ -1,0 +1,6 @@
+{
+  "source": "Minecraft 1.20.2 client.jar/assets/minecraft/textures/map/map_background.png",
+  "target": "src/main/resources/assets/htgt6/textures/items/treasure_map/scroll_parchment.png",
+  "sha256": "4dfa50d4be9d1c18e9d6ca2fac0949473f4ced4a73acb23485d2a62863c7e04f",
+  "note": "Unmodified official parchment; UVs stay in opaque interior. Sealed 3D scroll itself is a Backport extension."
+}

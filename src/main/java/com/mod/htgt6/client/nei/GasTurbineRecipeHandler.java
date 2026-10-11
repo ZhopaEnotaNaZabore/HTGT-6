@@ -20,9 +20,10 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.fluids.FluidContainerRegistry;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
+import gregapi.data.FL;
 import org.lwjgl.opengl.GL11;
 
-public class GasTurbineRecipeHandler extends TemplateRecipeHandler {
+public class GasTurbineRecipeHandler extends MachineNEIRecipeHandler {
     private float rotorAngle = 0.0F;
 
     public GasTurbineRecipeHandler() {
@@ -33,7 +34,9 @@ public class GasTurbineRecipeHandler extends TemplateRecipeHandler {
     }
 
     public String getGuiTexture() {
-        return "htgt6:textures/gui/UniversalGasTurbine.png";
+        // The ModularUI machine screen has no legacy PNG backing.  The NEI
+        // card renders itself below, so use NEI's neutral texture as fallback.
+        return "nei:textures/gui/recipebg.png";
     }
 
     public void loadTransferRects() {
@@ -96,22 +99,29 @@ public class GasTurbineRecipeHandler extends TemplateRecipeHandler {
     public void drawBackground(int recipe) {
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
         GL11.glDisable(GL11.GL_TEXTURE_2D);
-        int xStart = 0;
-        int yStart = 0;
-        int xEnd = 166;
-        int yEnd = 65;
-        float r = 0.7764706F;
-        float g = 0.7764706F;
-        float b = 0.7764706F;
-        float alpha = 1.0F;
-        GL11.glColor4f(r, g, b, alpha);
+        // Compact, self-contained panel; it no longer borrows the obsolete
+        // in-world GUI texture.
+        GL11.glColor4f(0.11F, 0.13F, 0.16F, 1.0F);
         GL11.glBegin(GL11.GL_QUADS);
-        GL11.glVertex2i(xStart, yStart);
-        GL11.glVertex2i(xStart, yEnd);
-        GL11.glVertex2i(xEnd, yEnd);
-        GL11.glVertex2i(xEnd, yStart);
+        GL11.glVertex2i(0, 0);
+        GL11.glVertex2i(0, 68);
+        GL11.glVertex2i(166, 68);
+        GL11.glVertex2i(166, 0);
+        GL11.glEnd();
+
+        GL11.glColor4f(0.18F, 0.25F, 0.31F, 1.0F);
+        GL11.glBegin(GL11.GL_QUADS);
+        GL11.glVertex2i(1, 1);
+        GL11.glVertex2i(1, 14);
+        GL11.glVertex2i(165, 14);
+        GL11.glVertex2i(165, 1);
         GL11.glEnd();
         GL11.glEnable(GL11.GL_TEXTURE_2D);
+
+        // Vanilla slot frame keeps the fluid-display stack visually aligned
+        // with the GT-style virtual fluid slot used by the turbine GUI.
+        GuiDraw.changeTexture("textures/gui/container/inventory.png");
+        GuiDraw.drawTexturedModalRect(12, 18, 7, 6, 20, 20);
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
     }
 
@@ -122,7 +132,8 @@ public class GasTurbineRecipeHandler extends TemplateRecipeHandler {
             name = name.substring(0, 12) + "..";
         }
 
-        GuiDraw.drawString("Gas: " + name, 42, 8, 4210752, false);
+        GuiDraw.drawString("Universal Gas Turbine", 6, 4, 0xB7D9FF, false);
+        GuiDraw.drawString("Gas: " + name, 42, 20, 0xFFFFFF, false);
         int capacity = 1000;
         if (currentRecipe.fluidCellSlot != null && currentRecipe.fluidCellSlot.item != null) {
             ItemStack stack = currentRecipe.fluidCellSlot.item;
@@ -143,11 +154,9 @@ public class GasTurbineRecipeHandler extends TemplateRecipeHandler {
         DecimalFormat cleanFormatter = new DecimalFormat("#,###", symbols);
         String formattedTotalPower = cleanFormatter.format(totalPowerFromContainer);
         String formattedEuPerMb = cleanFormatter.format((long) currentRecipe.euPerMb);
-        GuiDraw.drawString(String.format("1 Slot (%dmB) =", capacity), 42, 20, 255, false);
-        GuiDraw.drawString(formattedTotalPower + " EU", 42, 31, 34816, false);
-        GuiDraw.drawString(formattedEuPerMb + " EU/mB", 42, 43, 11141375, false);
-        GuiDraw.changeTexture("textures/gui/container/inventory.png");
-        GuiDraw.drawTexturedModalRect(15, 19, 8, 7, 18, 18);
+        GuiDraw.drawString(String.format("Fuel unit: %d mB", capacity), 42, 32, 0xFFFF55, false);
+        GuiDraw.drawString(formattedTotalPower + " EU", 42, 43, 0x55FF55, false);
+        GuiDraw.drawString(formattedEuPerMb + " EU/mB", 42, 54, 0xFFAA55, false);
         if (Minecraft.getMinecraft().thePlayer != null) {
             this.rotorAngle += 2.0F;
             if (this.rotorAngle >= 360.0F) {
@@ -212,23 +221,9 @@ public class GasTurbineRecipeHandler extends TemplateRecipeHandler {
             this.fluidStack = fluidStack;
             this.euPerMb = euPerMb;
 
-            // Generate standard container item for this fluid (e.g. filled fluid cells/buckets)
-            ItemStack filledContainer = FluidContainerRegistry.fillFluidContainer(fluidStack, FluidContainerRegistry.EMPTY_BUCKET);
-            if (filledContainer == null) {
-                // Fallback approach if standard empty bucket didn't match anything
-                FluidContainerRegistry.FluidContainerData[] data = FluidContainerRegistry.getRegisteredFluidContainerData();
-                for (FluidContainerRegistry.FluidContainerData containerData : data) {
-                    if (containerData.fluid.getFluid() == fluidStack.getFluid()) {
-                        filledContainer = containerData.filledContainer;
-                        break;
-                    }
-                }
-            }
-
-            // Assign container item stack to your target coordinate layout matching your drawForeground matrix
-            if (filledContainer != null) {
-                this.fluidCellSlot = new PositionedStack(filledContainer, 16, 20);
-            }
+            // GT6's virtual display item works for every registered gas,
+            // including gases which do not have a bucket/cell container.
+            this.fluidCellSlot = new PositionedStack(FL.display(fluidStack, false, false), 14, 20);
         }
 
         @Override

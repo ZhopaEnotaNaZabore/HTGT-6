@@ -1,0 +1,12 @@
+allprojects {
+    buildDir = new File(rootDir, 'build/prestable62-package')
+    afterEvaluate {
+        tasks.reobf.doFirst {
+            copy {
+                from new File(rootDir, 'backups/PreStable-20260916-214822/HiTech6_V_1.0.4_PreStable-development-snapshot.jar')
+                into tasks.jar.destinationDir
+                rename { tasks.jar.archiveName }
+            }
+        }
+    }
+}

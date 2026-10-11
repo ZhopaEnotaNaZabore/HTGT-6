@@ -1,0 +1,2 @@
+package com.mod.htgt6.minecraft1202.Module.Gameplay.Bountiful;
+public final class EnchantmentBountifulDepthStrider extends net.minecraft.enchantment.Enchantment {public EnchantmentBountifulDepthStrider(int id){super(id,2,net.minecraft.enchantment.EnumEnchantmentType.armor_feet);setName("depthStrider");} @Override public int getMinLevel(){return 1;}@Override public int getMaxLevel(){return 3;}@Override public int getMinEnchantability(int level){return level*10;}@Override public int getMaxEnchantability(int level){return getMinEnchantability(level)+15;}}

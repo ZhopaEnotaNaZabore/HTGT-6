@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "htgt6:block/1_20_backport/nether116/polished_basalt",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "htgt6:block/1_20_backport/nether116/polished_basalt"
+    },
+    "axis=z": {
+      "model": "htgt6:block/1_20_backport/nether116/polished_basalt",
+      "x": 90
+    }
+  }
+}

@@ -11,10 +11,10 @@ public class fireclys extends Item {
 
     public static void Fireclys(
             ) {
-        UnfiredFireclyBrick = register(new Item(), "UnfFireclybrick");
+        UnfiredFireclyBrick = register(new com.mod.htgt6.common.item.htgt6.AtlasItem(), "UnfFireclybrick");
         UnfiredFireclyBrick.setUnlocalizedName("UnfFireClyBrick");
         UnfiredFireclyBrick.setTextureName(HTGT6.MOD_ID+":UnfFIreClyBrick");
-        FireclayBrick = register(new Item(), "FireclayBrick");
+        FireclayBrick = register(new com.mod.htgt6.common.item.htgt6.AtlasItem(), "FireclayBrick");
         FireclayBrick.setUnlocalizedName("FireClayBrick");
         FireclayBrick.setTextureName(HTGT6.MOD_ID+":FireClay");
 

@@ -11,10 +11,10 @@ public class sieves extends Item {
     public static Item advSieve;
 
     public static void Sieves() {
-        basicSieve = register(new Item(), "basicSieve");
+        basicSieve = register(new com.mod.htgt6.common.item.htgt6.AtlasItem(), "basicSieve");
         basicSieve.setUnlocalizedName("basicSieve");
         basicSieve.setTextureName(HTGT6.MOD_ID+":basicMesh");
-        advSieve = register(new Item(), "advSieve");
+        advSieve = register(new com.mod.htgt6.common.item.htgt6.AtlasItem(), "advSieve");
         advSieve.setUnlocalizedName("advSieve");
         advSieve.setTextureName(HTGT6.MOD_ID+":advancedMesh");
 

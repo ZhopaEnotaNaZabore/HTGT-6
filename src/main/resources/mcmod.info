@@ -1,4 +1,25 @@
-[{
+[
+{
+  "modid": "htgt6_watcher",
+  "name": "Watcher",
+  "description": "Session-relative code integrity monitoring. Startup mods, ASM and launcher agents are accepted.",
+  "mcversion": "${mcversion}",
+  "version": "0.3.0",
+  "authors": ["HTGT6 Team"],
+  "parent": "HTGT6",
+  "dependencies": ["HTGT6"]
+},
+{
+  "modid": "HiTech6_Ore_Helper",
+  "name": "HiTech6 Ore Helper",
+  "description": "Server-backed GT6 ore generation browser bundled in HiTech6.",
+  "mcversion": "${mcversion}",
+  "version": "1.0.0",
+  "authors": ["HTGT6 Team"],
+  "parent": "HTGT6",
+  "dependencies": ["HTGT6", "gregapi_post"]
+},
+{
   "modid": "HTGT6",
   "name": "HTGT6",
   "description": "For hitech6 modpack!!",
@@ -7,8 +28,31 @@
   "logoFile": "/items/logo.png",
   "url": "https://www.goodminecraft.com",
   "authors": "Teysera",
-  "credits": "Hryu",
+  "credits": "oodaaaaaaaaaaaa",
   "parent": "",
   "screenshots": [],
-  "dependencies": []
-}]
+  "dependencies": ["GregTech6_Unnofical_GMC", "GalaxySpace-ANY"]
+},
+{
+  "modid": "Minecraft_1.20.2",
+  "name": "Minecraft_1.20.2",
+  "description": "Minecraft gameplay/content backports and the Futura 1.20.2 world generator bundled in the HTGT6 JAR. ASM remains provided by HTGT6.",
+  "mcversion": "${mcversion}",
+  "version": "${version}",
+  "authors": ["HTGT6 Team"],
+  "parent": "HTGT6",
+  "screenshots": [],
+  "dependencies": ["HTGT6"]
+},
+{
+  "modid": "GalacticraftAmunRa",
+  "name": "Amun-Ra (HTGT6 child module)",
+  "description": "Amun-Ra is bundled in the HTGT6 JAR; its legacy mod id is retained for world compatibility.",
+  "mcversion": "${mcversion}",
+  "version": "0.4.8",
+  "authors": ["Pra"],
+  "parent": "HTGT6",
+  "screenshots": [],
+  "dependencies": ["GalacticraftCore", "GalacticraftMars"]
+}
+]

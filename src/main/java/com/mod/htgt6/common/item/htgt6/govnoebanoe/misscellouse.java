@@ -37,31 +37,31 @@ public class misscellouse extends Item {
 
     public static void GVN() {
         //sykablyat
-        boronGlassDust = register(new Item(), "BoronGlassDust1");
+        boronGlassDust = register(new com.mod.htgt6.common.item.htgt6.AtlasItem(), "BoronGlassDust1");
         boronGlassDust.setTextureName(HTGT6.MOD_ID+":BoronGlassDust1");
         boronGlassDust.setUnlocalizedName("BoronGlassDust1");
-        boronGlassPane = register(new Item(), "BoronGlassPane1");
+        boronGlassPane = register(new com.mod.htgt6.common.item.htgt6.AtlasItem(), "BoronGlassPane1");
         boronGlassPane.setTextureName(HTGT6.MOD_ID+":BoronGlassPane1");
         boronGlassPane.setUnlocalizedName("BoronGlassPane1");
 
         //REGISTER
-        itemCarbonHelmet = register(new Item(), "itemCarbonHelmet");
-        itemCarbonChestplate = register(new Item(), "itemCarbonChestplate");
-        itemCarbonleggins = register(new Item(), "itemCarbonleggins");
-        itemCarbonBoots = register(new Item(), "itemCarbonBoots");
-        itemNanoCrystall = register(new Item(), "itemNanoCrystall");
-        itemDustLapatron = register(new Item(), "itemDustLapatron");
+        itemCarbonHelmet = register(new com.mod.htgt6.common.item.htgt6.AtlasItem(), "itemCarbonHelmet");
+        itemCarbonChestplate = register(new com.mod.htgt6.common.item.htgt6.AtlasItem(), "itemCarbonChestplate");
+        itemCarbonleggins = register(new com.mod.htgt6.common.item.htgt6.AtlasItem(), "itemCarbonleggins");
+        itemCarbonBoots = register(new com.mod.htgt6.common.item.htgt6.AtlasItem(), "itemCarbonBoots");
+        itemNanoCrystall = register(new com.mod.htgt6.common.item.htgt6.AtlasItem(), "itemNanoCrystall");
+        itemDustLapatron = register(new com.mod.htgt6.common.item.htgt6.AtlasItem(), "itemDustLapatron");
         itemRawLapatron = register(new Item(), "itemRawLapatron");
-        itemQuantumPartHelmet = register(new Item(), "itemQuantumPartHelmet");
-        itemQuantumPartChestplate = register(new Item(), "itemQuantumPartChestplate");
-        itemQuantumPartLeggins = register(new Item(), "itemQuantumPartLeggins");
-        itemQuantumPartBoots = register(new Item(), "itemQuantumPartBoots");
-        itemQuantumCrystall = register(new Item(), "itemQuantumCrystall");
-        itemChipDiamond = register(new Item(), "itemChipDiamond");
-        itemChipGold = register(new Item(), "itemChipGold");
-        itemChipEmerald = register(new Item(), "itemChipEmerald");
-        itemChipEnergycrystall = register(new Item(), "itemChipEnergycrystall");
-        itemChipLapatron = register(new Item(), "itemChipLapatron");
+        itemQuantumPartHelmet = register(new com.mod.htgt6.common.item.htgt6.AtlasItem(), "itemQuantumPartHelmet");
+        itemQuantumPartChestplate = register(new com.mod.htgt6.common.item.htgt6.AtlasItem(), "itemQuantumPartChestplate");
+        itemQuantumPartLeggins = register(new com.mod.htgt6.common.item.htgt6.AtlasItem(), "itemQuantumPartLeggins");
+        itemQuantumPartBoots = register(new com.mod.htgt6.common.item.htgt6.AtlasItem(), "itemQuantumPartBoots");
+        itemQuantumCrystall = register(new com.mod.htgt6.common.item.htgt6.AtlasItem(), "itemQuantumCrystall");
+        itemChipDiamond = register(new com.mod.htgt6.common.item.htgt6.AtlasItem(), "itemChipDiamond");
+        itemChipGold = register(new com.mod.htgt6.common.item.htgt6.AtlasItem(), "itemChipGold");
+        itemChipEmerald = register(new com.mod.htgt6.common.item.htgt6.AtlasItem(), "itemChipEmerald");
+        itemChipEnergycrystall = register(new com.mod.htgt6.common.item.htgt6.AtlasItem(), "itemChipEnergycrystall");
+        itemChipLapatron = register(new com.mod.htgt6.common.item.htgt6.AtlasItem(), "itemChipLapatron");
 
         //NAME
         itemCarbonHelmet.setUnlocalizedName("itemCarbonHelmet");

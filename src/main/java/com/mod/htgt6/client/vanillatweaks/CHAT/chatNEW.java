@@ -1,356 +1,346 @@
 package com.mod.htgt6.client.vanillatweaks.CHAT;
 
-import net.minecraft.client.gui.GuiChat;
-import net.minecraft.client.gui.GuiButton;
-import net.minecraft.client.gui.GuiPlayerInfo;
-import net.minecraft.client.network.NetHandlerPlayClient;
-
-import net.minecraft.util.ChatComponentText;
-import net.minecraft.util.ResourceLocation;
-import org.lwjgl.input.Keyboard;
-import org.lwjgl.opengl.GL11;
+import com.mod.htgt6.client.vanillatweaks.CHAT.ChatRender.ChatFilter;
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import net.minecraft.client.gui.GuiButton;
+import net.minecraft.client.gui.GuiChat;
+import net.minecraft.client.gui.GuiPlayerInfo;
+import net.minecraft.client.gui.GuiScreen;
+import net.minecraft.client.network.NetHandlerPlayClient;
+import net.minecraft.network.play.client.C14PacketTabComplete;
+import net.minecraft.util.ResourceLocation;
+import org.lwjgl.opengl.GL11;
 
 public class chatNEW extends GuiChat {
-    private long lastEmojiSentTime = 0;
-    private static final long EMOJI_COOLDOWN_MS = 6000;
-
     private boolean isEmojiMenuOpen = false;
     private final int EMOJI_BUTTON_ID = 999;
-
-    // Custom non-private buffers to handle arrow-key chat history navigation safely
     private int customHistoryCursor = -1;
     private String customHistoryBuffer = "";
-
-    // Command/Player Suggestion Fields
+    /** Per-session command history, kept separately from ordinary chat messages. */
+    private static final List<String> COMMAND_HISTORY = new ArrayList<String>();
+    private static final int MAX_COMMAND_HISTORY = 100;
     private List<String> currentSuggestions = new ArrayList<String>();
     private int selectedSuggestionIndex = 0;
-
-    // Static list of common base commands to suggest
-    private static final List<String> BASE_COMMANDS = Arrays.asList(
-            "/help", "/gamemode 1", "/gamemode 0", "/tp", "/time", "/weather", "/spawn", "/home", "/msg", "/tell", "/w", "/op", "/deop", "/kick", "/day", "/night"
-,"/sun", "/rain", "/ban", "/invsee", "/gm", "/say", "/spawn", "/warp", "/warpset", "//set", "//replace", "//sel", "/wb", "/wb clear", "/wb set",
-    "/wb fill", "/wb fill stop", "/wb fill confirm", "/wab fill pause", "/tpa", "/tpyes", "/tpno", "/mute", "/ignore", "/world", "/mem help" );
+    private String lastSuggestionRequest = "";
 
     public chatNEW() {
-        super();
     }
 
     public chatNEW(String defaultText) {
         super(defaultText);
     }
 
-    @Override
     public void initGui() {
         super.initGui();
-        // Clear any vanilla buttons and add an emoji picker toggle button
         this.buttonList.clear();
-        this.buttonList.add(new GuiButton(EMOJI_BUTTON_ID, this.width - 60, this.height - 35, 50, 20, "Emoji 😊"));
+        this.inputField.width = this.width - 50;
+        this.buttonList.add(new GuiButton(999, this.width - 60, this.height - 35, 50, 20, "Emoji \ud83d\ude0a"));
+        this.buttonList.add(new GuiButton(998, this.width - 120, this.height - 35, 55, 20, "Titles \ud83d\udc51"));
 
-        // Chat always starts clean and empty now when opened!
-        updateCommandSuggestions();
+        // Replace the legacy large controls with compact input-edge buttons.
+        ((GuiButton) this.buttonList.get(0)).visible = false;
+        ((GuiButton) this.buttonList.get(1)).visible = false;
+        this.buttonList.add(new GuiButton(997, this.width - 46, this.height - 14, 20, 12, ":)"));
+        this.buttonList.add(new GuiButton(996, this.width - 24, this.height - 14, 20, 12, "T"));
+
+        // Add Leave Bed button if sleeping
+        if (this.mc.thePlayer != null && this.mc.thePlayer.isPlayerSleeping()) {
+            this.buttonList.add(new GuiButton(1, this.width / 2 - 100, this.height - 40, 200, 20, net.minecraft.client.resources.I18n.format("multiplayer.stopSleeping")));
+        }
+
+        this.updateCommandSuggestions();
     }
 
-    @Override
     public void onGuiClosed() {
         super.onGuiClosed();
-        // Wipe the input text completely so the last typed message is NOT saved
-        this.inputField.setText("");
-
-        // Reset the custom history cursor trackers
+        if (this.inputField != null) this.inputField.setText("");
         this.customHistoryCursor = -1;
         this.customHistoryBuffer = "";
     }
 
-
-
-
-    @Override
     protected void keyTyped(char typedChar, int keyCode) {
-        // 1. Handle Emoji menu closing via ESC
-        if (keyCode == Keyboard.KEY_ESCAPE && isEmojiMenuOpen) {
-            this.isEmojiMenuOpen = false;
+        if (keyCode == 15) {
+            if (!this.currentSuggestions.isEmpty()) {
+                this.autocompleteSelected();
+            } else {
+                this.requestServerSuggestions(true);
+            }
             return;
         }
 
-        // 2. Cooldown and Command logic for ENTER key
-        if (keyCode == Keyboard.KEY_RETURN) {
-            String currentText = this.inputField.getText();
-
-            // Check if it's a message containing one of our emojis
-            boolean containsEmoji = false;
-            for (String code : EmojiRegistry.getRegisteredEmojis().keySet()) {
-                if (currentText.contains(code)) {
-                    containsEmoji = true;
-                    break;
-                }
-            }
-
-            if (containsEmoji) {
-                long currentTime = System.currentTimeMillis();
-                if (currentTime - lastEmojiSentTime < EMOJI_COOLDOWN_MS) {
-                    // STOP: Notify player and return immediately to prevent sending
-                    this.mc.thePlayer.addChatMessage(new ChatComponentText("§cНе спамить!"));
-                    return;
-                }
-                lastEmojiSentTime = System.currentTimeMillis();
-            }
+        if (keyCode == 200) {
+            getSentHistory(-1);
+            return;
+        }
+        if (keyCode == 208) {
+            getSentHistory(1);
+            return;
         }
 
-        // 3. Handle Navigation (Tabs/Arrows) for suggestions
-        if (!currentSuggestions.isEmpty()) {
-            if (keyCode == Keyboard.KEY_TAB) {
-                autocompleteSelected();
-                return;
-            } else if (keyCode == Keyboard.KEY_UP) {
-                selectedSuggestionIndex = (selectedSuggestionIndex <= 0) ? currentSuggestions.size() - 1 : selectedSuggestionIndex - 1;
-                return;
-            } else if (keyCode == Keyboard.KEY_DOWN) {
-                selectedSuggestionIndex = (selectedSuggestionIndex >= currentSuggestions.size() - 1) ? 0 : selectedSuggestionIndex + 1;
-                return;
+        if (keyCode == 1) {
+            this.mc.displayGuiScreen((GuiScreen)null);
+        } else if (keyCode != 28 && keyCode != 156) {
+            this.inputField.textboxKeyTyped(typedChar, keyCode);
+            this.customHistoryCursor = -1;
+            this.updateCommandSuggestions();
+        } else {
+            String text = this.inputField.getText().trim();
+            if (!text.isEmpty() && this.mc.thePlayer != null) {
+                rememberCommand(text);
+                this.mc.thePlayer.sendChatMessage(text);
+                this.inputField.setText("");
+                this.currentSuggestions.clear();
             }
-        }
 
-        // 4. Process standard typing inputs only ONCE
-        super.keyTyped(typedChar, keyCode);
-
-        // 5. Update UI after input
-        updateCommandSuggestions();
-
-        // 6. Handle Chat History navigation if suggestions are inactive
-        if (currentSuggestions.isEmpty()) {
-            if (keyCode == Keyboard.KEY_UP) {
-                this.getSentHistory(-1);
-            } else if (keyCode == Keyboard.KEY_DOWN) {
-                this.getSentHistory(1);
-            }
         }
     }
 
-    /**
-     * Scans what the player is typing and generates real-time suggestions matching base commands or online player names
-     */
     private void updateCommandSuggestions() {
-        currentSuggestions.clear();
-        selectedSuggestionIndex = 0;
-
+        this.currentSuggestions.clear();
+        this.selectedSuggestionIndex = 0;
         String currentText = this.inputField.getText();
         if (currentText.isEmpty()) return;
 
         String[] words = currentText.split(" ", -1);
         String lastWord = words[words.length - 1];
-
-        if (currentText.startsWith("/") && words.length == 1) {
-            // Suggesting base commands
-            for (String cmd : BASE_COMMANDS) {
-                if (cmd.toLowerCase().startsWith(lastWord.toLowerCase()) && !cmd.equalsIgnoreCase(lastWord)) {
-                    currentSuggestions.add(cmd);
-                }
-            }
-        } else if (!lastWord.isEmpty()) {
-            // Suggesting online players currently loaded on the server
-            NetHandlerPlayClient netHandler = this.mc.thePlayer.sendQueue;
-            if (netHandler != null && netHandler.playerInfoList != null) {
-                for (Object obj : netHandler.playerInfoList) {
-                    if (obj instanceof GuiPlayerInfo) {
-                        String name = ((GuiPlayerInfo) obj).name;
-                        if (name.toLowerCase().startsWith(lastWord.toLowerCase()) && !name.equalsIgnoreCase(lastWord)) {
-                            currentSuggestions.add(name);
-                        }
-                    }
-                }
-            }
+        if (!lastWord.isEmpty() && !currentText.startsWith("/")) {
+            addOnlinePlayerSuggestions(lastWord);
         }
+        requestServerSuggestions(false);
     }
 
-    /**
-     * Completes the highlighted item into your active input bar textbox string
-     */
-    private void autocompleteSelected() {
-        if (currentSuggestions.isEmpty()) return;
+    /** Uses the actual server command registry through vanilla C14 tab-complete. */
+    private void requestServerSuggestions(boolean force) {
+        if (this.mc.thePlayer == null || this.mc.thePlayer.sendQueue == null || this.inputField == null) return;
+        String text = this.inputField.getText();
+        if (text.isEmpty() || (!force && text.equals(this.lastSuggestionRequest))) return;
+        this.lastSuggestionRequest = text;
+        this.mc.thePlayer.sendQueue.addToSendQueue(new C14PacketTabComplete(text));
+    }
 
-        String selected = currentSuggestions.get(selectedSuggestionIndex);
-        String currentText = this.inputField.getText();
-
-        int lastSpace = currentText.lastIndexOf(" ");
-        if (lastSpace == -1) {
-            this.inputField.setText(selected);
-        } else {
-            this.inputField.setText(currentText.substring(0, lastSpace + 1) + selected);
+    private void addOnlinePlayerSuggestions(String prefix) {
+        NetHandlerPlayClient netHandler = this.mc.thePlayer == null ? null : this.mc.thePlayer.sendQueue;
+        if (netHandler == null || netHandler.playerInfoList == null) return;
+        for (Object obj : netHandler.playerInfoList) {
+            if (obj instanceof GuiPlayerInfo) {
+                String name = ((GuiPlayerInfo) obj).name;
+                if (name.toLowerCase().startsWith(prefix.toLowerCase()) && !name.equalsIgnoreCase(prefix)) {
+                    this.currentSuggestions.add(name);
+                }
+            }
         }
-
-        updateCommandSuggestions();
     }
 
     @Override
+    public void func_146406_a(String[] suggestions) {
+        this.currentSuggestions.clear();
+        this.selectedSuggestionIndex = 0;
+        if (suggestions == null) return;
+        for (String suggestion : suggestions) {
+            if (suggestion != null && !suggestion.isEmpty() && !this.currentSuggestions.contains(suggestion)) {
+                this.currentSuggestions.add(suggestion);
+            }
+        }
+    }
+
+    private void autocompleteSelected() {
+        if (!this.currentSuggestions.isEmpty()) {
+            String selected = (String)this.currentSuggestions.get(this.selectedSuggestionIndex);
+            String currentText = this.inputField.getText();
+            int lastSpace = currentText.lastIndexOf(" ");
+            if (lastSpace == -1) {
+                this.inputField.setText(selected);
+            } else {
+                this.inputField.setText(currentText.substring(0, lastSpace + 1) + selected);
+            }
+
+            this.updateCommandSuggestions();
+        }
+    }
+
     public void drawScreen(int mouseX, int mouseY, float partialTicks) {
-        // 1. Draw Fancy Custom OpenGL Background instead of vanilla black translucent box
-        drawFancyBackground();
-
-        // 2. Allow GuiChat to draw its core text field safely
+        this.drawFancyBackground();
         super.drawScreen(mouseX, mouseY, partialTicks);
-
-        // 3. Draw Suggestion box if active
-        if (!currentSuggestions.isEmpty()) {
-            drawSuggestionsPopup();
+        if (!this.currentSuggestions.isEmpty()) {
+            this.drawSuggestionsPopup();
         }
 
-        // 4. Draw Emoji/Sticker selection panel if toggled open
-        if (isEmojiMenuOpen) {
-            drawEmojiSelectionMenu(mouseX, mouseY);
+        if (this.isEmojiMenuOpen) {
+            this.drawEmojiSelectionMenu(mouseX, mouseY);
         }
+
     }
 
     private void drawSuggestionsPopup() {
         int startX = 4;
         int boxBottomY = this.height - 16;
         int rowHeight = 12;
-        int maxVisible = Math.min(currentSuggestions.size(), 7);
-        int boxTopY = boxBottomY - (maxVisible * rowHeight) - 4;
+        int maxVisible = Math.min(this.currentSuggestions.size(), 7);
+        int boxTopY = boxBottomY - maxVisible * rowHeight - 4;
+        drawRect(startX, boxTopY, startX + 150, boxBottomY, -805306368);
 
-        // Render sleek popup background container
-        this.drawRect(startX, boxTopY, startX + 150, boxBottomY, 0xD0000000);
-
-        for (int i = 0; i < maxVisible; i++) {
-            int rowY = boxTopY + 2 + (i * rowHeight);
-            String suggestion = currentSuggestions.get(i);
-
-            if (i == selectedSuggestionIndex) {
-                this.drawRect(startX + 2, rowY, startX + 148, rowY + rowHeight, 0x60FFFFFF);
-                this.fontRendererObj.drawString("> " + suggestion, startX + 6, rowY + 2, 0xFFFF55); // Highlighted active selection
+        for(int i = 0; i < maxVisible; ++i) {
+            int rowY = boxTopY + 2 + i * rowHeight;
+            String suggestion = (String)this.currentSuggestions.get(i);
+            if (i == this.selectedSuggestionIndex) {
+                drawRect(startX + 2, rowY, startX + 148, rowY + rowHeight, 1627389951);
+                this.fontRendererObj.drawString("> " + suggestion, startX + 6, rowY + 2, 16777045);
             } else {
-                this.fontRendererObj.drawString(suggestion, startX + 6, rowY + 2, 0xAAAAAA); // Unselected list item
+                this.fontRendererObj.drawString(suggestion, startX + 6, rowY + 2, 11184810);
             }
         }
+
     }
 
     private void drawFancyBackground() {
         GL11.glPushMatrix();
-        GL11.glDisable(GL11.GL_TEXTURE_2D);
-        GL11.glEnable(GL11.GL_BLEND);
-        GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
-        GL11.glShadeModel(GL11.GL_SMOOTH);
-
-        // Deep dark, sleek colors for the text input bar at the bottom
-        int topColor = 0x800A0A14;    // Semi-transparent deep dark blue
-        int bottomColor = 0xE0020205; // Darker near the very bottom edge
-
-        // FIX: Changed 'this.height - 150' to 'this.height - 14' so it doesn't cover up the history log text
+        GL11.glDisable(3553);
+        GL11.glEnable(3042);
+        GL11.glBlendFunc(770, 771);
+        GL11.glShadeModel(7425);
+        int topColor = -2146825708;
+        int bottomColor = -536739323;
         this.drawGradientRect(2, this.height - 14, this.width - 2, this.height - 2, topColor, bottomColor);
-
-        GL11.glShadeModel(GL11.GL_FLAT);
-        GL11.glDisable(GL11.GL_BLEND);
-        GL11.glEnable(GL11.GL_TEXTURE_2D);
+        GL11.glShadeModel(7424);
+        GL11.glDisable(3042);
+        GL11.glEnable(3553);
         GL11.glPopMatrix();
     }
 
     private void drawEmojiSelectionMenu(int mouseX, int mouseY) {
         int menuX = this.width - 200;
         int menuY = this.height - 180;
-
-        // Draw background sheet panel
-        this.drawRect(menuX, menuY, this.width - 10, this.height - 40, 0xF005050A);
-        this.fontRendererObj.drawString("HiTech6 Stickers", menuX + 6, menuY + 6, 0x43B581); // Discord Green text
-
+        drawRect(menuX, menuY, this.width - 10, this.height - 40, -268106486);
+        this.fontRendererObj.drawString("HiTech6 Stickers", menuX + 6, menuY + 6, 4437377);
         int index = 0;
-        for (Map.Entry<String, ResourceLocation> entry : EmojiRegistry.getRegisteredEmojis().entrySet()) {
-            int gridX = menuX + 10 + ((index % 6) * 28);
-            int gridY = menuY + 22 + ((index / 6) * 28);
 
-            // Draw selection frame block
-            this.drawRect(gridX, gridY, gridX + 24, gridY + 24, 0x40FFFFFF);
-
-            // Draw the high resolution Discord icon texture inside the grid box
-            ChatEmojiRenderer.drawInlineEmoji(entry.getValue(), gridX + 4, gridY + 4, 16);
-            index++;
+        for(Iterator var6 = EmojiRegistry.getRegisteredEmojis().entrySet().iterator(); var6.hasNext(); ++index) {
+            Map.Entry<String, ResourceLocation> entry = (Map.Entry)var6.next();
+            int gridX = menuX + 10 + index % 6 * 28;
+            int gridY = menuY + 22 + index / 6 * 28;
+            drawRect(gridX, gridY, gridX + 24, gridY + 24, 1090519039);
+            ChatEmojiRenderer.drawInlineEmoji((ResourceLocation)entry.getValue(), gridX + 4, gridY + 4, 16);
         }
+
     }
 
-    @Override
     protected void actionPerformed(GuiButton button) {
-        if (button.id == EMOJI_BUTTON_ID) {
+        if (button.id == 999 || button.id == 997) {
             this.isEmojiMenuOpen = !this.isEmojiMenuOpen;
         }
+
+        if (button.id == 998 || button.id == 996) {
+            this.mc.displayGuiScreen(new GuiTitleSelection(this));
+        }
+
+        if (button.id == 1) {
+            if (this.mc.thePlayer != null && this.mc.thePlayer.sendQueue != null) {
+                this.mc.thePlayer.sendQueue.addToSendQueue(new net.minecraft.network.play.client.C0BPacketEntityAction(this.mc.thePlayer, 3));
+            }
+        }
+
     }
 
-    @Override
     protected void mouseClicked(int mouseX, int mouseY, int mouseButton) {
         try {
             super.mouseClicked(mouseX, mouseY, mouseButton);
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (Exception var11) {
+            var11.printStackTrace();
         }
 
-        // Handle clicking directly on options inside the suggestion box popup container
-        if (!currentSuggestions.isEmpty() && mouseButton == 0) {
-            int startX = 4;
-            int boxBottomY = this.height - 16;
-            int rowHeight = 12;
-            int maxVisible = Math.min(currentSuggestions.size(), 7);
-            int boxTopY = boxBottomY - (maxVisible * rowHeight) - 4;
+        if (mouseButton == 0 && mouseY >= ChatRender.tabsTopBounds && mouseY <= ChatRender.tabsBottomBounds) {
+            if (mouseX >= ChatRender.tabGlobalLeft && mouseX <= ChatRender.tabGlobalRight) {
+                ChatRender.currentFilter = ChatFilter.GLOBAL;
+                return;
+            }
 
-            if (mouseX >= startX && mouseX <= startX + 150 && mouseY >= boxTopY && mouseY <= boxBottomY) {
-                int clickedIndex = (mouseY - boxTopY - 2) / rowHeight;
-                if (clickedIndex >= 0 && clickedIndex < maxVisible) {
-                    this.selectedSuggestionIndex = clickedIndex;
-                    autocompleteSelected();
+            if (mouseX >= ChatRender.tabPlayersLeft && mouseX <= ChatRender.tabPlayersRight) {
+                ChatRender.currentFilter = ChatFilter.PLAYERS;
+                return;
+            }
+
+            if (mouseX >= ChatRender.tabSystemLeft && mouseX <= ChatRender.tabSystemRight) {
+                ChatRender.currentFilter = ChatFilter.SYSTEM;
+                return;
+            }
+        }
+
+        int menuX;
+        int menuY;
+        int index;
+        int gridX;
+        if (!this.currentSuggestions.isEmpty() && mouseButton == 0) {
+            menuX = 4;
+            menuY = this.height - 16;
+            index = 12;
+            int maxVisible = Math.min(this.currentSuggestions.size(), 7);
+            int boxTopY = menuY - maxVisible * index - 4;
+            if (mouseX >= menuX && mouseX <= menuX + 150 && mouseY >= boxTopY && mouseY <= menuY) {
+                gridX = (mouseY - boxTopY - 2) / index;
+                if (gridX >= 0 && gridX < maxVisible) {
+                    this.selectedSuggestionIndex = gridX;
+                    this.autocompleteSelected();
                     return;
                 }
             }
         }
 
-        // Handle emoji selections dynamically from the map bounds
-        if (isEmojiMenuOpen && mouseButton == 0) {
-            int menuX = this.width - 200;
-            int menuY = this.height - 180;
+        if (this.isEmojiMenuOpen && mouseButton == 0) {
+            menuX = this.width - 200;
+            menuY = this.height - 180;
+            index = 0;
 
-            int index = 0;
-            for (Map.Entry<String, ResourceLocation> entry : EmojiRegistry.getRegisteredEmojis().entrySet()) {
-                int gridX = menuX + 10 + ((index % 6) * 28);
-                int gridY = menuY + 22 + ((index / 6) * 28);
-
-                // Check bounding box rules around clicked slots
+            for(Iterator var12 = EmojiRegistry.getRegisteredEmojis().entrySet().iterator(); var12.hasNext(); ++index) {
+                Map.Entry<String, ResourceLocation> entry = (Map.Entry)var12.next();
+                gridX = menuX + 10 + index % 6 * 28;
+                int gridY = menuY + 22 + index / 6 * 28;
                 if (mouseX >= gridX && mouseX <= gridX + 24 && mouseY >= gridY && mouseY <= gridY + 24) {
-                    // Append text code into the textbox
-                    this.inputField.writeText(entry.getKey() + " ");
-                    this.isEmojiMenuOpen = false; // Auto close panel
+                    this.inputField.writeText((String)entry.getKey() + " ");
+                    this.isEmojiMenuOpen = false;
                     break;
                 }
-                index++;
             }
         }
+
     }
 
-    @Override
     public void getSentHistory(int direction) {
-        int historySize = this.mc.ingameGUI.getChatGUI().getSentMessages().size();
-
-        // Initialize custom history index cursor contextually if first time opening
+        int historySize = COMMAND_HISTORY.size();
+        if (historySize == 0 || this.inputField == null) return;
         if (this.customHistoryCursor == -1) {
             this.customHistoryCursor = historySize;
-            // Capture what they were typing *right now* as the base buffer before moving away
             this.customHistoryBuffer = this.inputField.getText();
         }
 
         int newCursor = this.customHistoryCursor + direction;
+        if (newCursor < 0) {
+            newCursor = 0;
+        }
 
-        if (newCursor < 0) newCursor = 0;
-        if (newCursor > historySize) newCursor = historySize;
+        if (newCursor > historySize) {
+            newCursor = historySize;
+        }
 
         if (newCursor != this.customHistoryCursor) {
             if (newCursor == historySize) {
                 this.customHistoryCursor = historySize;
                 this.inputField.setText(this.customHistoryBuffer);
             } else {
-                this.inputField.setText((String) this.mc.ingameGUI.getChatGUI().getSentMessages().get(newCursor));
+                this.inputField.setText(COMMAND_HISTORY.get(newCursor));
                 this.customHistoryCursor = newCursor;
             }
         }
 
-        // Re-sync suggestions after updating the text field from history cycling
-        updateCommandSuggestions();
+        this.updateCommandSuggestions();
+    }
+
+    private static void rememberCommand(String text) {
+        if (!text.startsWith("/")) return;
+        if (!COMMAND_HISTORY.isEmpty() && text.equals(COMMAND_HISTORY.get(COMMAND_HISTORY.size() - 1))) return;
+        COMMAND_HISTORY.add(text);
+        if (COMMAND_HISTORY.size() > MAX_COMMAND_HISTORY) COMMAND_HISTORY.remove(0);
     }
 }

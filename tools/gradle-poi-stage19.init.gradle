@@ -1,0 +1,4 @@
+// Isolate this verification run from other tasks compiling into the shared build/classes directory.
+allprojects {
+    buildDir = new File(rootDir, 'build/poi-stage19')
+}

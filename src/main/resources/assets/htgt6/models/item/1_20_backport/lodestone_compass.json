@@ -1,0 +1,206 @@
+{
+  "parent": "htgt6:item/1_20_backport/lodestone_generated",
+  "textures": {
+    "layer0": "htgt6:item/1_20_backport/compass_16"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "angle": 0.0
+      },
+      "model": "htgt6:item/1_20_backport/lodestone_compass"
+    },
+    {
+      "predicate": {
+        "angle": 0.015625
+      },
+      "model": "htgt6:item/1_20_backport/compass_17"
+    },
+    {
+      "predicate": {
+        "angle": 0.046875
+      },
+      "model": "htgt6:item/1_20_backport/compass_18"
+    },
+    {
+      "predicate": {
+        "angle": 0.078125
+      },
+      "model": "htgt6:item/1_20_backport/compass_19"
+    },
+    {
+      "predicate": {
+        "angle": 0.109375
+      },
+      "model": "htgt6:item/1_20_backport/compass_20"
+    },
+    {
+      "predicate": {
+        "angle": 0.140625
+      },
+      "model": "htgt6:item/1_20_backport/compass_21"
+    },
+    {
+      "predicate": {
+        "angle": 0.171875
+      },
+      "model": "htgt6:item/1_20_backport/compass_22"
+    },
+    {
+      "predicate": {
+        "angle": 0.203125
+      },
+      "model": "htgt6:item/1_20_backport/compass_23"
+    },
+    {
+      "predicate": {
+        "angle": 0.234375
+      },
+      "model": "htgt6:item/1_20_backport/compass_24"
+    },
+    {
+      "predicate": {
+        "angle": 0.265625
+      },
+      "model": "htgt6:item/1_20_backport/compass_25"
+    },
+    {
+      "predicate": {
+        "angle": 0.296875
+      },
+      "model": "htgt6:item/1_20_backport/compass_26"
+    },
+    {
+      "predicate": {
+        "angle": 0.328125
+      },
+      "model": "htgt6:item/1_20_backport/compass_27"
+    },
+    {
+      "predicate": {
+        "angle": 0.359375
+      },
+      "model": "htgt6:item/1_20_backport/compass_28"
+    },
+    {
+      "predicate": {
+        "angle": 0.390625
+      },
+      "model": "htgt6:item/1_20_backport/compass_29"
+    },
+    {
+      "predicate": {
+        "angle": 0.421875
+      },
+      "model": "htgt6:item/1_20_backport/compass_30"
+    },
+    {
+      "predicate": {
+        "angle": 0.453125
+      },
+      "model": "htgt6:item/1_20_backport/compass_31"
+    },
+    {
+      "predicate": {
+        "angle": 0.484375
+      },
+      "model": "htgt6:item/1_20_backport/compass_00"
+    },
+    {
+      "predicate": {
+        "angle": 0.515625
+      },
+      "model": "htgt6:item/1_20_backport/compass_01"
+    },
+    {
+      "predicate": {
+        "angle": 0.546875
+      },
+      "model": "htgt6:item/1_20_backport/compass_02"
+    },
+    {
+      "predicate": {
+        "angle": 0.578125
+      },
+      "model": "htgt6:item/1_20_backport/compass_03"
+    },
+    {
+      "predicate": {
+        "angle": 0.609375
+      },
+      "model": "htgt6:item/1_20_backport/compass_04"
+    },
+    {
+      "predicate": {
+        "angle": 0.640625
+      },
+      "model": "htgt6:item/1_20_backport/compass_05"
+    },
+    {
+      "predicate": {
+        "angle": 0.671875
+      },
+      "model": "htgt6:item/1_20_backport/compass_06"
+    },
+    {
+      "predicate": {
+        "angle": 0.703125
+      },
+      "model": "htgt6:item/1_20_backport/compass_07"
+    },
+    {
+      "predicate": {
+        "angle": 0.734375
+      },
+      "model": "htgt6:item/1_20_backport/compass_08"
+    },
+    {
+      "predicate": {
+        "angle": 0.765625
+      },
+      "model": "htgt6:item/1_20_backport/compass_09"
+    },
+    {
+      "predicate": {
+        "angle": 0.796875
+      },
+      "model": "htgt6:item/1_20_backport/compass_10"
+    },
+    {
+      "predicate": {
+        "angle": 0.828125
+      },
+      "model": "htgt6:item/1_20_backport/compass_11"
+    },
+    {
+      "predicate": {
+        "angle": 0.859375
+      },
+      "model": "htgt6:item/1_20_backport/compass_12"
+    },
+    {
+      "predicate": {
+        "angle": 0.890625
+      },
+      "model": "htgt6:item/1_20_backport/compass_13"
+    },
+    {
+      "predicate": {
+        "angle": 0.921875
+      },
+      "model": "htgt6:item/1_20_backport/compass_14"
+    },
+    {
+      "predicate": {
+        "angle": 0.953125
+      },
+      "model": "htgt6:item/1_20_backport/compass_15"
+    },
+    {
+      "predicate": {
+        "angle": 0.984375
+      },
+      "model": "htgt6:item/1_20_backport/lodestone_compass"
+    }
+  ]
+}

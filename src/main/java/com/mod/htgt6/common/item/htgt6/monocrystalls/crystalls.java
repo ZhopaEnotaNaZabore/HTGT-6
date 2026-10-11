@@ -16,10 +16,10 @@ public class crystalls extends Item
      public static void Monocrystals () {
 
          //register
-         itemMonocrystall1 = register(new Item(), "itemMonocrystall1");
-         itemMonocrystall2 = register(new Item(), "itemMonocrystall2");
-         itemMonocrystall3 = register(new Item(), "itemMonocrystall3");
-         itemMonocrystall4 = register(new Item(), "itemMonocrystall4");
+         itemMonocrystall1 = register(new com.mod.htgt6.common.item.htgt6.AtlasItem(), "itemMonocrystall1");
+         itemMonocrystall2 = register(new com.mod.htgt6.common.item.htgt6.AtlasItem(), "itemMonocrystall2");
+         itemMonocrystall3 = register(new com.mod.htgt6.common.item.htgt6.AtlasItem(), "itemMonocrystall3");
+         itemMonocrystall4 = register(new com.mod.htgt6.common.item.htgt6.AtlasItem(), "itemMonocrystall4");
 
          //name
          itemMonocrystall1.setUnlocalizedName("itemMonocrystall1");

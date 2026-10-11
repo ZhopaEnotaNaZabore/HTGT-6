@@ -1,0 +1,6 @@
+{
+  "parent": "htgt6:buzzy115/item/generated",
+  "textures": {
+    "layer0": "minecraft:item/honey_bottle"
+  }
+}

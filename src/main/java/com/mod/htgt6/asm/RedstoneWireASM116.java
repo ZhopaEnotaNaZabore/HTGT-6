@@ -1,0 +1,23 @@
+package com.mod.htgt6.asm;
+import org.objectweb.asm.*;
+import org.objectweb.asm.tree.*;
+public final class RedstoneWireASM116 {
+ private static final String HOOK="com/mod/htgt6/minecraft1202/Module/Gameplay/Modern/RedstoneWire116";
+ public static byte[] transform(byte[] bytes){ClassNode node=new ClassNode();new ClassReader(bytes).accept(node,0);boolean srg=false;for(MethodNode m:node.methods){if(m.name.equals("func_149709_b"))srg=true;for(AbstractInsnNode i:m.instructions.toArray())if(i instanceof MethodInsnNode&&((MethodInsnNode)i).owner.equals(HOOK))return bytes;}
+  int external=0;for(MethodNode m:node.methods){
+   if((m.name.equals("canProvidePower")||m.name.equals("func_149744_f"))&&m.desc.equals("()Z"))for(AbstractInsnNode n:m.instructions.toArray())if(n.getOpcode()==Opcodes.IRETURN){InsnList gate=new InsnList();gate.add(new VarInsnNode(Opcodes.ALOAD,0));gate.add(new MethodInsnNode(Opcodes.INVOKESTATIC,HOOK,"emitting","(ZLnet/minecraft/block/BlockRedstoneWire;)Z",false));m.instructions.insertBefore(n,gate);}
+   for(AbstractInsnNode n:m.instructions.toArray())if(n instanceof MethodInsnNode){MethodInsnNode call=(MethodInsnNode)n;if(call.owner.equals("net/minecraft/world/World")&&(call.name.equals("getStrongestIndirectPower")||call.name.equals("func_94572_D"))&&call.desc.equals("(III)I")){m.instructions.set(n,new MethodInsnNode(Opcodes.INVOKESTATIC,HOOK,"externalPower","(Lnet/minecraft/world/World;III)I",false));external++;}}
+  }
+  int gates=0;for(MethodNode m:node.methods)for(AbstractInsnNode i:m.instructions.toArray())if(i instanceof MethodInsnNode&&((MethodInsnNode)i).owner.equals(HOOK)&&((MethodInsnNode)i).name.equals("emitting"))gates++;if(gates!=1)throw new IllegalStateException("Redstone emission gate drift: "+gates);
+  if(external!=1)throw new IllegalStateException("Redstone external signal hook drift: "+external);
+  int power=0,render=0;for(MethodNode m:node.methods){if((m.name.equals("isProvidingWeakPower")||m.name.equals("func_149709_b"))&&m.desc.equals("(Lnet/minecraft/world/IBlockAccess;IIII)I")){prepend(m,"power");power++;}if((m.name.equals("getRenderType")||m.name.equals("func_149645_b"))&&m.desc.equals("()I")){prepend(m,"render");render++;}}
+  for(MethodNode m:node.methods)if((m.name.equals("onNeighborBlockChange")||m.name.equals("func_149695_a")||m.name.equals("onBlockAdded")||m.name.equals("func_149726_b")||m.name.equals("breakBlock")||m.name.equals("func_149749_a"))&&m.desc.startsWith("(Lnet/minecraft/world/World;III"))for(AbstractInsnNode n:m.instructions.toArray())if(n.getOpcode()==Opcodes.RETURN){InsnList callback=new InsnList();callback.add(new VarInsnNode(Opcodes.ALOAD,0));callback.add(new VarInsnNode(Opcodes.ALOAD,1));for(int slot=2;slot<=4;slot++)callback.add(new VarInsnNode(Opcodes.ILOAD,slot));callback.add(new MethodInsnNode(Opcodes.INVOKESTATIC,"com/mod/htgt6/minecraft1202/Module/Gameplay/Modern/RedstoneShapeUpdates116","changed","(Lnet/minecraft/block/BlockRedstoneWire;Lnet/minecraft/world/World;III)V",false));m.instructions.insertBefore(n,callback);}
+  String name=srg?"func_149727_a":"onBlockActivated",desc="(Lnet/minecraft/world/World;IIILnet/minecraft/entity/player/EntityPlayer;IFFF)Z";
+  MethodNode use=null;for(MethodNode m:node.methods)if(m.name.equals(name)&&m.desc.equals(desc))use=m;
+  if(use!=null)prepend(use,"toggle");else{use=new MethodNode(Opcodes.ACC_PUBLIC,name,desc,null,null);args(use.instructions,desc);use.instructions.add(new MethodInsnNode(Opcodes.INVOKESTATIC,HOOK,"toggle","(Lnet/minecraft/block/BlockRedstoneWire;"+desc.substring(1),false));use.instructions.add(new InsnNode(Opcodes.IRETURN));node.methods.add(use);}
+  if(power!=1||render!=1)throw new IllegalStateException("Redstone hooks drift: "+power+"/"+render);ClassWriter writer=new ClassWriter(ClassWriter.COMPUTE_MAXS);node.accept(writer);return writer.toByteArray();
+ }
+ private static void prepend(MethodNode m,String hook){InsnList code=new InsnList();LabelNode original=new LabelNode();code.add(new VarInsnNode(Opcodes.ALOAD,0));code.add(new MethodInsnNode(Opcodes.INVOKESTATIC,HOOK,"applies","(Lnet/minecraft/block/BlockRedstoneWire;)Z",false));code.add(new JumpInsnNode(Opcodes.IFEQ,original));args(code,m.desc);code.add(new MethodInsnNode(Opcodes.INVOKESTATIC,HOOK,hook,"(Lnet/minecraft/block/BlockRedstoneWire;"+m.desc.substring(1),false));code.add(new InsnNode(Opcodes.IRETURN));code.add(original);code.add(new FrameNode(Opcodes.F_SAME,0,null,0,null));m.instructions.insert(code);}
+ private static void args(InsnList code,String desc){code.add(new VarInsnNode(Opcodes.ALOAD,0));int slot=1;for(Type t:Type.getArgumentTypes(desc)){code.add(new VarInsnNode(t.getOpcode(Opcodes.ILOAD),slot));slot+=t.getSize();}}
+ private RedstoneWireASM116(){}
+}

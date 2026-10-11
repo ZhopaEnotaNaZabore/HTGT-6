@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "pickles=1": {
+      "model": "htgt6:block/aquatic/sea_pickle"
+    },
+    "pickles=2": {
+      "model": "htgt6:block/aquatic/two_sea_pickles"
+    },
+    "pickles=3": {
+      "model": "htgt6:block/aquatic/three_sea_pickles"
+    },
+    "pickles=4": {
+      "model": "htgt6:block/aquatic/four_sea_pickles"
+    }
+  }
+}

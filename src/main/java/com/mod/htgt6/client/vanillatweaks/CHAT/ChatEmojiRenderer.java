@@ -58,7 +58,7 @@ public class ChatEmojiRenderer {
             if (formattedText.contains(tag)) {
                 // §e§e is our secret marker prefix, followed by a unique letter identifier, ending in a reset (§r)
                 // and 4 spaces ("    ") to create a perfect blank spacing layout width in the chat box
-                String invisibleMarker = "§e§e§" + (char)('a' + emojiIdx) + "§r    ";
+                String invisibleMarker = EmojiRegistry.marker(emojiIdx);
                 formattedText = formattedText.replace(tag, invisibleMarker);
                 modified = true;
             }
@@ -122,7 +122,7 @@ public class ChatEmojiRenderer {
                 int emojiIdx = 0;
                 for (Map.Entry<String, ResourceLocation> entry : EmojiRegistry.getRegisteredEmojis().entrySet()) {
 
-                    String invisibleMarker = "§e§e§" + (char)('a' + emojiIdx) + "§r    ";
+                    String invisibleMarker = EmojiRegistry.marker(emojiIdx);
 
                     if (formattedLineText.contains(invisibleMarker)) {
                         hasEmoji = true;
@@ -140,7 +140,7 @@ public class ChatEmojiRenderer {
                 for (Map.Entry<String, ResourceLocation> entry : EmojiRegistry.getRegisteredEmojis().entrySet()) {
 
                     ResourceLocation texture = entry.getValue();
-                    String invisibleMarker = "§e§e§" + (char)('a' + emojiIdx) + "§r    ";
+                    String invisibleMarker = EmojiRegistry.marker(emojiIdx);
 
                     if (formattedLineText.contains(invisibleMarker)) {
 
@@ -185,10 +185,12 @@ public class ChatEmojiRenderer {
     }
 
     public static void drawInlineEmoji(ResourceLocation texture, int x, int y, int size) {
+        GL11.glPushAttrib(GL11.GL_ENABLE_BIT | GL11.GL_COLOR_BUFFER_BIT | GL11.GL_CURRENT_BIT | GL11.GL_TEXTURE_BIT);
         Minecraft.getMinecraft().getTextureManager().bindTexture(texture);
 
         GL11.glPushMatrix();
         GL11.glEnable(GL11.GL_BLEND);
+        GL11.glEnable(GL11.GL_TEXTURE_2D);
         GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
 
@@ -199,7 +201,7 @@ public class ChatEmojiRenderer {
         GL11.glTexCoord2f(1, 0); GL11.glVertex2f(x + size, y);
         GL11.glEnd();
 
-        GL11.glDisable(GL11.GL_BLEND);
         GL11.glPopMatrix();
+        GL11.glPopAttrib();
     }
 }

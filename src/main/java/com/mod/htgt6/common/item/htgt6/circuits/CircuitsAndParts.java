@@ -36,33 +36,33 @@ public class CircuitsAndParts extends Item {
 
     public static void CP() {
         //register
-        itemPlasticCircBoard = register(new Item(), "itemPlasticCircBoard");
-        itemDiode = register(new Item(), "itemDiode");
-        itemTransistor = register(new Item(), "itemTransistor");
-        itemInductiveCoil = register(new Item(), "itemInductiveCoil");
+        itemPlasticCircBoard = register(new com.mod.htgt6.common.item.htgt6.AtlasItem(), "itemPlasticCircBoard");
+        itemDiode = register(new com.mod.htgt6.common.item.htgt6.AtlasItem(), "itemDiode");
+        itemTransistor = register(new com.mod.htgt6.common.item.htgt6.AtlasItem(), "itemTransistor");
+        itemInductiveCoil = register(new com.mod.htgt6.common.item.htgt6.AtlasItem(), "itemInductiveCoil");
 
-        itemSMDResistor = register(new Item(), "itemSMDResistor");
-        itemSMDdiode = register(new Item(), "itemSMDdiode");
-        itemSMDTransistor = register(new Item(), "itemSMDTransistor");
-        itemSMDCapacitor = register(new Item(), "itemSMDCapacitor");
-        itemSMDInductiveCoil = register(new Item(), "itemSMDInductiveCoil");
+        itemSMDResistor = register(new com.mod.htgt6.common.item.htgt6.AtlasItem(), "itemSMDResistor");
+        itemSMDdiode = register(new com.mod.htgt6.common.item.htgt6.AtlasItem(), "itemSMDdiode");
+        itemSMDTransistor = register(new com.mod.htgt6.common.item.htgt6.AtlasItem(), "itemSMDTransistor");
+        itemSMDCapacitor = register(new com.mod.htgt6.common.item.htgt6.AtlasItem(), "itemSMDCapacitor");
+        itemSMDInductiveCoil = register(new com.mod.htgt6.common.item.htgt6.AtlasItem(), "itemSMDInductiveCoil");
 
-        itemADVSMDResistor = register(new Item(), "itemADVSMDResistor");
-        itemADVSMDdiode = register( new Item(), "itemADVSMDdiode");
-        itemADVSMDTransistor = register(new Item(), "itemADVSMDTransistor");
-        itemADVSMDCapacitor = register(new Item(), "itemADVSMDCapacitor");
-        itemADVSMDInductiveCoil = register(new Item(), "itemADVSMDInductiveCoil");
+        itemADVSMDResistor = register(new com.mod.htgt6.common.item.htgt6.AtlasItem(), "itemADVSMDResistor");
+        itemADVSMDdiode = register( new com.mod.htgt6.common.item.htgt6.AtlasItem(), "itemADVSMDdiode");
+        itemADVSMDTransistor = register(new com.mod.htgt6.common.item.htgt6.AtlasItem(), "itemADVSMDTransistor");
+        itemADVSMDCapacitor = register(new com.mod.htgt6.common.item.htgt6.AtlasItem(), "itemADVSMDCapacitor");
+        itemADVSMDInductiveCoil = register(new com.mod.htgt6.common.item.htgt6.AtlasItem(), "itemADVSMDInductiveCoil");
 
-        itemOPSMDResistor = register(new Item (), "itemOPSMDResistor");
-        itemOPSMDdiode = register(new Item(), "itemOPSMDdiode");
-        itemOPSMDCapacitor = register(new Item(), "itemOPSMDCapacitor");
-        itemOPSMDTransistor = register(new Item(), "itemOPSMDTransistor");
-        itemOPSMDInductiveCoil = register(new Item(), "itemOPSMDInductiveCoil");
-        itemEpoxidCircBoard= register(new Item(), "itemEpoxidCircBoard");
-        itemCrystallCirctBoard= register(new Item(), "itemCrystallCirctBoard");
-        itemOpticalCirctBoard= register(new Item(), "itemOpticalCirctBoard");
-        itemLivingCirctBoard= register(new Item(), "itemLivingCirctBoard");
-        itemMAXcircBoard= register(new Item(), "itemMAXcircBoard");
+        itemOPSMDResistor = register(new com.mod.htgt6.common.item.htgt6.AtlasItem(), "itemOPSMDResistor");
+        itemOPSMDdiode = register(new com.mod.htgt6.common.item.htgt6.AtlasItem(), "itemOPSMDdiode");
+        itemOPSMDCapacitor = register(new com.mod.htgt6.common.item.htgt6.AtlasItem(), "itemOPSMDCapacitor");
+        itemOPSMDTransistor = register(new com.mod.htgt6.common.item.htgt6.AtlasItem(), "itemOPSMDTransistor");
+        itemOPSMDInductiveCoil = register(new com.mod.htgt6.common.item.htgt6.AtlasItem(), "itemOPSMDInductiveCoil");
+        itemEpoxidCircBoard= register(new com.mod.htgt6.common.item.htgt6.AtlasItem(), "itemEpoxidCircBoard");
+        itemCrystallCirctBoard= register(new com.mod.htgt6.common.item.htgt6.AtlasItem(), "itemCrystallCirctBoard");
+        itemOpticalCirctBoard= register(new com.mod.htgt6.common.item.htgt6.AtlasItem(), "itemOpticalCirctBoard");
+        itemLivingCirctBoard= register(new com.mod.htgt6.common.item.htgt6.AtlasItem(), "itemLivingCirctBoard");
+        itemMAXcircBoard= register(new com.mod.htgt6.common.item.htgt6.AtlasItem(), "itemMAXcircBoard");
 
 
         //name

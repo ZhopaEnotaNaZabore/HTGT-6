@@ -2,9 +2,9 @@ package com.mod.htgt6.common.item.greg.coils;
 
 import com.mod.htgt6.HTGT6;
 import com.mod.htgt6.common.handler.ModTab;
-import net.minecraft.item.Item;
+import com.mod.htgt6.common.item.htgt6.AtlasItem;
 
-public class InfiCoil extends Item {
+public class InfiCoil extends AtlasItem {
     public InfiCoil () {
         setUnlocalizedName("InfiCoil");
         setTextureName(HTGT6.MOD_ID+ ":InfiCoil");
